@@ -8,11 +8,15 @@ import { WorkflowStepService } from './workflow-step.service';
 import { ITEMS_PER_PAGE, Principal, ResponseWrapper } from '../../shared';
 import { PaginationConfig } from '../../blocks/config/uib-pagination.config';
 
+import { Workflow, WorkflowService } from '../workflow';
+
 @Component({
     selector: 'jhi-workflow-step',
     templateUrl: './workflow-step.component.html'
 })
 export class WorkflowStepComponent implements OnInit, OnDestroy {
+
+    workflowId: number;
 
     workflowSteps: WorkflowStep[];
     currentAccount: any;
@@ -25,12 +29,16 @@ export class WorkflowStepComponent implements OnInit, OnDestroy {
     reverse: any;
     totalItems: number;
 
+    workflows: Workflow[];
+
     constructor(
         private workflowStepService: WorkflowStepService,
         private alertService: JhiAlertService,
         private eventManager: JhiEventManager,
         private parseLinks: JhiParseLinks,
-        private principal: Principal
+        private principal: Principal,
+
+        private workflowService: WorkflowService
     ) {
         this.workflowSteps = [];
         this.itemsPerPage = ITEMS_PER_PAGE;
@@ -69,6 +77,9 @@ export class WorkflowStepComponent implements OnInit, OnDestroy {
             this.currentAccount = account;
         });
         this.registerChangeInWorkflowSteps();
+
+        this.workflowService.query()
+            .subscribe((res: ResponseWrapper) => { this.workflows = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
     }
 
     ngOnDestroy() {
@@ -100,5 +111,16 @@ export class WorkflowStepComponent implements OnInit, OnDestroy {
 
     private onError(error) {
         this.alertService.error(error.message, null, null);
+    }
+
+    workflow_onChange(workflowId) {
+        console.log('workflowId: ' + workflowId);
+
+        this.workflowStepService.queryByWorkflowId(workflowId)
+            .subscribe((res: ResponseWrapper) => { this.workflowSteps = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
+    }
+
+    trackWorkflowById(index: number, item: Workflow) {
+        return item.id;
     }
 }

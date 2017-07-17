@@ -7,6 +7,12 @@
             Create new Workflow Step
             </span>
         </button>
+
+        <div class="float-right" style="margin-right: 10px;">
+            <select class="form-control" id="field_workflow" name="workflow" [(ngModel)]="workflowId" (ngModelChange)="workflow_onChange($event)">
+                <option [ngValue]="workflowOption.id" *ngFor="let workflowOption of workflows; trackBy: trackWorkflowById">{{workflowOption.workflowName}}</option>
+            </select>
+        </div>
     </h2>
     <jhi-alert></jhi-alert>
     <div class="row">

@@ -10,6 +10,7 @@ import { ResponseWrapper, createRequestOption } from '../../shared';
 export class WorkflowStepService {
 
     private resourceUrl = 'api/workflow-steps';
+    private resourceUrl_ByWorkflowId = 'api/workflow-steps-by-workflow-id';
 
     constructor(private http: Http, private dateUtils: JhiDateUtils) { }
 
@@ -42,6 +43,12 @@ export class WorkflowStepService {
     query(req?: any): Observable<ResponseWrapper> {
         const options = createRequestOption(req);
         return this.http.get(this.resourceUrl, options)
+            .map((res: Response) => this.convertResponse(res));
+    }
+
+    queryByWorkflowId(workflowId: number, req?: any): Observable<ResponseWrapper> {
+        const options = createRequestOption(req);
+        return this.http.get(`${this.resourceUrl_ByWorkflowId}/${workflowId}`, options)
             .map((res: Response) => this.convertResponse(res));
     }
 

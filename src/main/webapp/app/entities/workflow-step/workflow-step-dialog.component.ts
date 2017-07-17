@@ -12,6 +12,10 @@ import { WorkflowStepService } from './workflow-step.service';
 import { Workflow, WorkflowService } from '../workflow';
 import { ResponseWrapper } from '../../shared';
 
+import { Account, Principal } from '../../shared';
+import { User, UserService } from '../../shared';
+import { StuffService } from '../../shared';
+
 @Component({
     selector: 'jhi-workflow-step-dialog',
     templateUrl: './workflow-step-dialog.component.html'
@@ -26,13 +30,36 @@ export class WorkflowStepDialogComponent implements OnInit {
     createdDateDp: any;
     lastModifiedDateDp: any;
 
+    account: Account;
+    user: User;
+
     constructor(
         public activeModal: NgbActiveModal,
         private alertService: JhiAlertService,
         private workflowStepService: WorkflowStepService,
         private workflowService: WorkflowService,
-        private eventManager: JhiEventManager
+        private eventManager: JhiEventManager,
+
+        private userService: UserService,
+        private principal: Principal,
+        private stuffService: StuffService
     ) {
+    }
+
+    initNewEntity() {
+        this.workflowStep.createdDate = this.stuffService.getCurrentDate();
+        this.workflowStep.lastModifiedDate = this.workflowStep.createdDate;
+
+        this.principal.identity().then((account) => {
+            this.account = account;
+
+            this.userService.find(this.account.login).subscribe((user) => {
+                this.user = user;
+
+                this.workflowStep.createdBy = this.user.id;
+                this.workflowStep.lastModifiedBy = this.user.id;
+            });
+        });
     }
 
     ngOnInit() {
@@ -40,6 +67,8 @@ export class WorkflowStepDialogComponent implements OnInit {
         this.authorities = ['ROLE_USER', 'ROLE_ADMIN'];
         this.workflowService.query()
             .subscribe((res: ResponseWrapper) => { this.workflows = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
+
+        this.initNewEntity();
     }
 
     clear() {
