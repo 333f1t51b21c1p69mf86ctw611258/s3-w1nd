@@ -16,6 +16,8 @@ import {
     WorkflowResolvePagingParams,
 } from './';
 
+import { FileUploadComponent } from '../../shared';
+
 const ENTITY_STATES = [
     ...workflowRoute,
     ...workflowPopupRoute,
@@ -33,6 +35,8 @@ const ENTITY_STATES = [
         WorkflowDeleteDialogComponent,
         WorkflowPopupComponent,
         WorkflowDeletePopupComponent,
+
+        FileUploadComponent
     ],
     entryComponents: [
         WorkflowComponent,

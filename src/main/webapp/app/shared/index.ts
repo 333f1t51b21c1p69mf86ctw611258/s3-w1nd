@@ -1,3 +1,8 @@
+export * from './services/stuff.service';
+export * from './services/http-client.service';
+
+export * from './components/file-upload/file-upload.component';
+
 export * from './constants/pagination.constants';
 export * from './alert/alert.component';
 export * from './alert/alert-error.component';

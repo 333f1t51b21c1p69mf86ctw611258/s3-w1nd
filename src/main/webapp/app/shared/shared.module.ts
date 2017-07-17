@@ -2,6 +2,9 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 import {
+    StuffService,
+    HttpClientService,
+
     SwwebSharedLibsModule,
     SwwebSharedCommonModule,
     CSRFService,
@@ -26,6 +29,9 @@ import {
         HasAnyAuthorityDirective
     ],
     providers: [
+        StuffService,
+        HttpClientService,
+
         LoginService,
         LoginModalService,
         AccountService,

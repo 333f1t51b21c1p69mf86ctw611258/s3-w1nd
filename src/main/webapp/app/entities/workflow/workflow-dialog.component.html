@@ -54,6 +54,11 @@
             </div>
         </div>
         <div class="form-group">
+            <label class="form-control-label" for="file_steps">WorkflowSteps</label>
+            <input id="file_steps" type="file" class="form-control" (change)="onChange($event)">
+        </div>
+		
+        <!-- <div class="form-group">
             <label class="form-control-label" for="field_createdBy">Created By</label>
             <input type="number" class="form-control" name="createdBy" id="field_createdBy"
                 [(ngModel)]="workflow.createdBy" required />
@@ -114,7 +119,7 @@
                    This field is required.
                 </small>
             </div>
-        </div>
+        </div> -->
 
     </div>
     <div class="modal-footer">

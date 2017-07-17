@@ -18,8 +18,12 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.io.File;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -66,6 +70,31 @@ public class WorkflowResource {
         return ResponseEntity.created(new URI("/api/workflows/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
+    }
+
+    @RequestMapping(value = "/stepsFile", method = RequestMethod.POST)
+    @ResponseBody
+    public Object saveUserDataAndFile(@RequestParam(value = "field1") String field1,
+                                      @RequestParam(value = "field2") String field2,
+                                      @RequestParam(value = "file") MultipartFile file,
+                                      HttpServletRequest request) {
+
+        System.out.println("field1: " + field1 + "; field2: " + field2);
+
+        //String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+        String rootDirectory = "D:\\testUpload\\";
+        System.out.println("Root Directory "+rootDirectory);
+        try {
+            file.transferTo(new File(rootDirectory  + file.getOriginalFilename()));
+        } catch (IllegalStateException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return null;
     }
 
     /**
