@@ -1,0 +1,83 @@
+
+<div *ngIf="workflowStep">
+    <h2><span>Workflow Step</span> {{workflowStep.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>Step Name</span></dt>
+        <dd>
+            <span>{{workflowStep.stepName}}</span>
+        </dd>
+        <dt><span>Step Number</span></dt>
+        <dd>
+            <span>{{workflowStep.stepNumber}}</span>
+        </dd>
+        <dt><span>Property Name</span></dt>
+        <dd>
+            <span>{{workflowStep.propertyName}}</span>
+        </dd>
+        <dt><span>Property Type</span></dt>
+        <dd>
+            <span>{{workflowStep.propertyType}}</span>
+        </dd>
+        <dt><span>Default Value</span></dt>
+        <dd>
+            <span>{{workflowStep.defaultValue}}</span>
+        </dd>
+        <dt><span>Oid Pattern</span></dt>
+        <dd>
+            <span>{{workflowStep.oidPattern}}</span>
+        </dd>
+        <dt><span>Description</span></dt>
+        <dd>
+            <span>{{workflowStep.description}}</span>
+        </dd>
+        <dt><span>Customized Step</span></dt>
+        <dd>
+            <span>{{workflowStep.customizedStep}}</span>
+        </dd>
+        <dt><span>Set Or Get</span></dt>
+        <dd>
+            <span>{{workflowStep.setOrGet}}</span>
+        </dd>
+        <dt><span>Get Expected Value</span></dt>
+        <dd>
+            <span>{{workflowStep.getExpectedValue}}</span>
+        </dd>
+        <dt><span>Created By</span></dt>
+        <dd>
+            <span>{{workflowStep.createdBy}}</span>
+        </dd>
+        <dt><span>Created Date</span></dt>
+        <dd>
+            <span>{{workflowStep.createdDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Last Modified By</span></dt>
+        <dd>
+            <span>{{workflowStep.lastModifiedBy}}</span>
+        </dd>
+        <dt><span>Last Modified Date</span></dt>
+        <dd>
+            <span>{{workflowStep.lastModifiedDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Workflow</span></dt>
+        <dd>
+            <div *ngIf="workflowStep.workflowId">
+                <a [routerLink]="['/workflow', workflowStep.workflowId]">{{workflowStep.workflowWorkflowName}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'workflow-step/'+ workflowStep.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>
