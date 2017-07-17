@@ -88,6 +88,9 @@
         <!-- Spring properties -->
         <springfox.version>2.7.0</springfox.version>
         <validation-api.version>1.1.0.Final</validation-api.version>
+
+        <!--ADD NEW-->
+        <cxf.version>3.1.12</cxf.version>
     </properties>
 
 
@@ -346,6 +349,55 @@
             <artifactId>spring-security-data</artifactId>
         </dependency>
         <!-- jhipster-needle-maven-add-dependency -->
+
+        <!--ADD NEW-->
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>19.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webnmp</groupId>
+            <artifactId>advent-net-logging</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/libs/AdventNetLogging.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.webnmp</groupId>
+            <artifactId>advent-net-snmp</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/libs/AdventNetSnmp.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.webnmp</groupId>
+            <artifactId>crimson</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/libs/crimson.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.webnmp</groupId>
+            <artifactId>crimson</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/libs/jaxp.jar</systemPath>
+        </dependency>
+
+        <!-- Apache CXF -->
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-frontend-jaxws</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.cxf</groupId>
+            <artifactId>cxf-rt-transports-http</artifactId>
+            <version>${cxf.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <defaultGoal>spring-boot:run</defaultGoal>
@@ -920,6 +972,68 @@
                     <version>${mapstruct.version}</version>
                 </dependency>
             </dependencies>
+        </profile>
+        <profile>
+            <!--
+                Profile for applying IDE-specific configuration.
+                At the moment it only configures MapStruct, which you need when working
+                with DTOs.
+            -->
+            <id>cxf</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-maven-plugin</artifactId>
+                    </plugin>
+                    <!-- Generate Java-Classes inkl. JAXB-Bindings from WSDL & imported XSD -->
+                    <!-- See Doku at http://www.mojohaus.org/jaxws-maven-plugin/usage.html -->
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>jaxws-maven-plugin</artifactId>
+                        <version>2.4.1</version>
+                        <configuration>
+                            <!-- See http://www.mojohaus.org/jaxws-maven-plugin/wsimport-mojo.html -->
+                            <wsdlUrls>
+                                <wsdlUrl>src/main/resources/service-api-definition/Weather1.0.wsdl</wsdlUrl>
+                                <wsdlUrl>src/main/resources/service-api-definition/Device1.0.wsdl</wsdlUrl>
+                            </wsdlUrls>
+                            <!-- <wsdlDirectory>${basedir}/src/main/resources/service-api-definition</wsdlDirectory> -->
+                            <sourceDestDir>src/main/java</sourceDestDir>
+                            <!-- For accessing the imported schema, see https://netbeans.org/bugzilla/show_bug.cgi?id=241570 -->
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
+                            <target>2.1</target>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>wsimport</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>build-helper-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>add-source</id>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>add-source</goal>
+                                </goals>
+                                <configuration>
+                                    <sources>
+                                        <source>src/main/java</source>
+                                    </sources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
 </project>
