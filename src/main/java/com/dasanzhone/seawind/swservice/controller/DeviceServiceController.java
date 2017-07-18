@@ -1,9 +1,16 @@
 package com.dasanzhone.seawind.swservice.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
+import com.dasanzhone.seawind.swweb.domain.Workflow;
+import com.dasanzhone.seawind.swweb.domain.WorkflowStep;
+import com.dasanzhone.seawind.swweb.domain.enumeration.WorkflowCode;
+import com.dasanzhone.seawind.swweb.repository.WorkflowRepository;
+import com.dasanzhone.seawind.swweb.repository.WorkflowStepRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.adventnet.snmp.snmp2.SnmpPDU;
@@ -37,6 +44,12 @@ public class DeviceServiceController {
 
 	private static final Logger LOG = LoggerFactory.getLogger(DeviceServiceController.class);
 
+	@Autowired
+    private WorkflowRepository workflowRepository;
+
+	@Autowired
+    private WorkflowStepRepository workflowStepRepository;
+
 	public ForecastReturn getCityForecastByZIP(ForecastRequest forecastRequest) {
 		/*
 		 * We leave out inbound transformation, plausibility-checking, logging,
@@ -68,6 +81,9 @@ public class DeviceServiceController {
 	}
 
 	public CommonOperationReturn declareOntId(OntInput ontInput) {
+        Workflow workflow = workflowRepository.findByWorkflowCode(WorkflowCode.DECLARE_ONT_ID.toString());
+        List<WorkflowStep> steps = workflowStepRepository.findByWorkflowId(workflow.getId());
+
 		CommonOperationReturn result = new CommonOperationReturn();
 
 		OntInputSwapper ontInputSwapper = new OntInputSwapper(ontInput);
