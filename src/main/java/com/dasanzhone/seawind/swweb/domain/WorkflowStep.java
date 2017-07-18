@@ -36,9 +36,8 @@ public class WorkflowStep implements Serializable {
     @Column(name = "step_number", nullable = false)
     private Integer stepNumber;
 
-    @NotNull
     @Enumerated(EnumType.STRING)
-    @Column(name = "property_name", nullable = false)
+    @Column(name = "property_name")
     private PropertyName propertyName;
 
     @NotNull

@@ -36,7 +36,7 @@
             </column>
 
             <column name="property_name" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints nullable="true" />
             </column>
 
             <column name="property_type" type="varchar(255)">

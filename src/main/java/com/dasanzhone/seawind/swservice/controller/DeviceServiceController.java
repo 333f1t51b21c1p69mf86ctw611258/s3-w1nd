@@ -109,15 +109,20 @@ public class DeviceServiceController {
                 rawValue = ReflectionUtil.get(instance, propertyName);
             }
 
-            rawValue = getCustomizedRawValue(workflow, step, rawValue);
+            if (step.isCustomizedStep()) {
+                rawValue = getCustomizedRawValue(workflow, step, rawValue);
+            }
 
             mapper = new OntInputParamMapper(step.getDefaultValue(), rawValue);
 
-            String lines[] = step.getMapValues().split("\\r?\\n");
-            for (String line : lines) {
-                String segments[] = line.split(":");
-                mapper.getMapValues().put(segments[0], segments[1]);
+            if (StringUtils.isNotEmpty(step.getMapValues())) {
+                String lines[] = step.getMapValues().split("\\r?\\n");
+                for (String line : lines) {
+                    String segments[] = line.split(":");
+                    mapper.getMapValues().put(segments[0].trim(), segments[1].trim());
+                }
             }
+
             if (StringUtils.isNotEmpty(mapper.getFinalValue())) {
                 snmpOid = new SnmpOid(ontInputSwapper.assignOidWithTags(step.getOidPattern()), SnmpUtil.getSnmpVar(step.getPropertyType().toString(), mapper.getFinalValue()));
                 input.getOids().add(snmpOid);

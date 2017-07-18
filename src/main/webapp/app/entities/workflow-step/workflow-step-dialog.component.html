@@ -44,7 +44,7 @@
         </div>
         <div class="form-group">
             <label class="form-control-label" for="field_propertyName">Property Name</label>
-            <select class="form-control" name="propertyName" [(ngModel)]="workflowStep.propertyName" id="field_propertyName"  required>
+            <select class="form-control" name="propertyName" [(ngModel)]="workflowStep.propertyName" id="field_propertyName" >
                 <option value="ONT_INTERFACE">ONT_INTERFACE</option>
                 <option value="ONT_SLOT">ONT_SLOT</option>
                 <option value="ONT_PORT">ONT_PORT</option>
@@ -63,12 +63,6 @@
                 <option value="PLNDNUMVOICEPORTS">PLNDNUMVOICEPORTS</option>
                 <option value="AUTO_DETECT">AUTO_DETECT</option>
             </select>
-            <div [hidden]="!(editForm.controls.propertyName?.dirty && editForm.controls.propertyName?.invalid)">
-                <small class="form-text text-danger"
-                   [hidden]="!editForm.controls.propertyName?.errors?.required">
-                   This field is required.
-                </small>
-            </div>
         </div>
         <div class="form-group">
             <label class="form-control-label" for="field_propertyType">Property Type</label>

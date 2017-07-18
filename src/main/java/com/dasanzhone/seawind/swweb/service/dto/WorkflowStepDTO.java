@@ -24,7 +24,6 @@ public class WorkflowStepDTO implements Serializable {
     @NotNull
     private Integer stepNumber;
 
-    @NotNull
     private PropertyName propertyName;
 
     @NotNull

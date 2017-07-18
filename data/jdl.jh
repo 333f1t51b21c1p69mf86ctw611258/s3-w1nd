@@ -55,7 +55,7 @@ entity Workflow {
 entity WorkflowStep {
     stepName String maxlength(255) required,
     stepNumber Integer required,
-    propertyName PropertyName required,
+    propertyName PropertyName,
     propertyType PropertyType required,
     defaultValue String maxlength(255),
     mapValues String maxlength(1023),

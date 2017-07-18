@@ -250,25 +250,6 @@ public class WorkflowStepResourceIntTest {
 
     @Test
     @Transactional
-    public void checkPropertyNameIsRequired() throws Exception {
-        int databaseSizeBeforeTest = workflowStepRepository.findAll().size();
-        // set the field null
-        workflowStep.setPropertyName(null);
-
-        // Create the WorkflowStep, which fails.
-        WorkflowStepDTO workflowStepDTO = workflowStepMapper.toDto(workflowStep);
-
-        restWorkflowStepMockMvc.perform(post("/api/workflow-steps")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(workflowStepDTO)))
-            .andExpect(status().isBadRequest());
-
-        List<WorkflowStep> workflowStepList = workflowStepRepository.findAll();
-        assertThat(workflowStepList).hasSize(databaseSizeBeforeTest);
-    }
-
-    @Test
-    @Transactional
     public void checkPropertyTypeIsRequired() throws Exception {
         int databaseSizeBeforeTest = workflowStepRepository.findAll().size();
         // set the field null
