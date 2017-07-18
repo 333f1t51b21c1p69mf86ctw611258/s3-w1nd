@@ -95,6 +95,17 @@
             </div>
         </div>
         <div class="form-group">
+            <label class="form-control-label" for="field_mapValues">Map Values</label>
+            <textarea rows="3" class="form-control" name="mapValues" id="field_mapValues"
+                [(ngModel)]="workflowStep.mapValues" maxlength="1023"></textarea>
+            <div [hidden]="!(editForm.controls.mapValues?.dirty && editForm.controls.mapValues?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.mapValues?.errors?.maxlength">
+                   This field cannot be longer than 1023 characters.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
             <label class="form-control-label" for="field_oidPattern">Oid Pattern</label>
             <input type="text" class="form-control" name="oidPattern" id="field_oidPattern"
                 [(ngModel)]="workflowStep.oidPattern" required maxlength="255" />

@@ -52,6 +52,14 @@
             "fieldValidateRulesMaxlength": 255
         },
         {
+            "fieldName": "mapValues",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1023
+        },
+        {
             "fieldName": "oidPattern",
             "fieldType": "String",
             "fieldValidateRules": [

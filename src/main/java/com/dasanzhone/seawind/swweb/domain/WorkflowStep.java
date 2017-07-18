@@ -50,6 +50,10 @@ public class WorkflowStep implements Serializable {
     @Column(name = "default_value", length = 255)
     private String defaultValue;
 
+    @Size(max = 1023)
+    @Column(name = "map_values", length = 1023)
+    private String mapValues;
+
     @NotNull
     @Size(max = 255)
     @Column(name = "oid_pattern", length = 255, nullable = false)
@@ -164,6 +168,19 @@ public class WorkflowStep implements Serializable {
 
     public void setDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
+    }
+
+    public String getMapValues() {
+        return mapValues;
+    }
+
+    public WorkflowStep mapValues(String mapValues) {
+        this.mapValues = mapValues;
+        return this;
+    }
+
+    public void setMapValues(String mapValues) {
+        this.mapValues = mapValues;
     }
 
     public String getOidPattern() {
@@ -325,6 +342,7 @@ public class WorkflowStep implements Serializable {
             ", propertyName='" + getPropertyName() + "'" +
             ", propertyType='" + getPropertyType() + "'" +
             ", defaultValue='" + getDefaultValue() + "'" +
+            ", mapValues='" + getMapValues() + "'" +
             ", oidPattern='" + getOidPattern() + "'" +
             ", description='" + getDescription() + "'" +
             ", customizedStep='" + isCustomizedStep() + "'" +

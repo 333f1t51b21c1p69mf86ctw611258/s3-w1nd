@@ -59,6 +59,9 @@ public class WorkflowStepResourceIntTest {
     private static final String DEFAULT_DEFAULT_VALUE = "AAAAAAAAAA";
     private static final String UPDATED_DEFAULT_VALUE = "BBBBBBBBBB";
 
+    private static final String DEFAULT_MAP_VALUES = "AAAAAAAAAA";
+    private static final String UPDATED_MAP_VALUES = "BBBBBBBBBB";
+
     private static final String DEFAULT_OID_PATTERN = "AAAAAAAAAA";
     private static final String UPDATED_OID_PATTERN = "BBBBBBBBBB";
 
@@ -131,6 +134,7 @@ public class WorkflowStepResourceIntTest {
             .propertyName(DEFAULT_PROPERTY_NAME)
             .propertyType(DEFAULT_PROPERTY_TYPE)
             .defaultValue(DEFAULT_DEFAULT_VALUE)
+            .mapValues(DEFAULT_MAP_VALUES)
             .oidPattern(DEFAULT_OID_PATTERN)
             .description(DEFAULT_DESCRIPTION)
             .customizedStep(DEFAULT_CUSTOMIZED_STEP)
@@ -174,6 +178,7 @@ public class WorkflowStepResourceIntTest {
         assertThat(testWorkflowStep.getPropertyName()).isEqualTo(DEFAULT_PROPERTY_NAME);
         assertThat(testWorkflowStep.getPropertyType()).isEqualTo(DEFAULT_PROPERTY_TYPE);
         assertThat(testWorkflowStep.getDefaultValue()).isEqualTo(DEFAULT_DEFAULT_VALUE);
+        assertThat(testWorkflowStep.getMapValues()).isEqualTo(DEFAULT_MAP_VALUES);
         assertThat(testWorkflowStep.getOidPattern()).isEqualTo(DEFAULT_OID_PATTERN);
         assertThat(testWorkflowStep.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
         assertThat(testWorkflowStep.isCustomizedStep()).isEqualTo(DEFAULT_CUSTOMIZED_STEP);
@@ -411,6 +416,7 @@ public class WorkflowStepResourceIntTest {
             .andExpect(jsonPath("$.[*].propertyName").value(hasItem(DEFAULT_PROPERTY_NAME.toString())))
             .andExpect(jsonPath("$.[*].propertyType").value(hasItem(DEFAULT_PROPERTY_TYPE.toString())))
             .andExpect(jsonPath("$.[*].defaultValue").value(hasItem(DEFAULT_DEFAULT_VALUE.toString())))
+            .andExpect(jsonPath("$.[*].mapValues").value(hasItem(DEFAULT_MAP_VALUES.toString())))
             .andExpect(jsonPath("$.[*].oidPattern").value(hasItem(DEFAULT_OID_PATTERN.toString())))
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())))
             .andExpect(jsonPath("$.[*].customizedStep").value(hasItem(DEFAULT_CUSTOMIZED_STEP.booleanValue())))
@@ -438,6 +444,7 @@ public class WorkflowStepResourceIntTest {
             .andExpect(jsonPath("$.propertyName").value(DEFAULT_PROPERTY_NAME.toString()))
             .andExpect(jsonPath("$.propertyType").value(DEFAULT_PROPERTY_TYPE.toString()))
             .andExpect(jsonPath("$.defaultValue").value(DEFAULT_DEFAULT_VALUE.toString()))
+            .andExpect(jsonPath("$.mapValues").value(DEFAULT_MAP_VALUES.toString()))
             .andExpect(jsonPath("$.oidPattern").value(DEFAULT_OID_PATTERN.toString()))
             .andExpect(jsonPath("$.description").value(DEFAULT_DESCRIPTION.toString()))
             .andExpect(jsonPath("$.customizedStep").value(DEFAULT_CUSTOMIZED_STEP.booleanValue()))
@@ -472,6 +479,7 @@ public class WorkflowStepResourceIntTest {
             .propertyName(UPDATED_PROPERTY_NAME)
             .propertyType(UPDATED_PROPERTY_TYPE)
             .defaultValue(UPDATED_DEFAULT_VALUE)
+            .mapValues(UPDATED_MAP_VALUES)
             .oidPattern(UPDATED_OID_PATTERN)
             .description(UPDATED_DESCRIPTION)
             .customizedStep(UPDATED_CUSTOMIZED_STEP)
@@ -497,6 +505,7 @@ public class WorkflowStepResourceIntTest {
         assertThat(testWorkflowStep.getPropertyName()).isEqualTo(UPDATED_PROPERTY_NAME);
         assertThat(testWorkflowStep.getPropertyType()).isEqualTo(UPDATED_PROPERTY_TYPE);
         assertThat(testWorkflowStep.getDefaultValue()).isEqualTo(UPDATED_DEFAULT_VALUE);
+        assertThat(testWorkflowStep.getMapValues()).isEqualTo(UPDATED_MAP_VALUES);
         assertThat(testWorkflowStep.getOidPattern()).isEqualTo(UPDATED_OID_PATTERN);
         assertThat(testWorkflowStep.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
         assertThat(testWorkflowStep.isCustomizedStep()).isEqualTo(UPDATED_CUSTOMIZED_STEP);

@@ -58,6 +58,7 @@ entity WorkflowStep {
     propertyName PropertyName required,
     propertyType PropertyType required,
     defaultValue String maxlength(255),
+    mapValues String maxlength(1023),
     oidPattern String maxlength(255) required,
     description String maxlength(1023),
     customizedStep Boolean,

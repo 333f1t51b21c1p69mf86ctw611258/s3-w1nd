@@ -33,6 +33,9 @@ public class WorkflowStepDTO implements Serializable {
     @Size(max = 255)
     private String defaultValue;
 
+    @Size(max = 1023)
+    private String mapValues;
+
     @NotNull
     @Size(max = 255)
     private String oidPattern;
@@ -109,6 +112,14 @@ public class WorkflowStepDTO implements Serializable {
 
     public void setDefaultValue(String defaultValue) {
         this.defaultValue = defaultValue;
+    }
+
+    public String getMapValues() {
+        return mapValues;
+    }
+
+    public void setMapValues(String mapValues) {
+        this.mapValues = mapValues;
     }
 
     public String getOidPattern() {
@@ -229,6 +240,7 @@ public class WorkflowStepDTO implements Serializable {
             ", propertyName='" + getPropertyName() + "'" +
             ", propertyType='" + getPropertyType() + "'" +
             ", defaultValue='" + getDefaultValue() + "'" +
+            ", mapValues='" + getMapValues() + "'" +
             ", oidPattern='" + getOidPattern() + "'" +
             ", description='" + getDescription() + "'" +
             ", customizedStep='" + isCustomizedStep() + "'" +

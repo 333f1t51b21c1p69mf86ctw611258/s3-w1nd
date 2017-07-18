@@ -33,6 +33,7 @@ export class WorkflowStep implements BaseEntity {
         public propertyName?: PropertyName,
         public propertyType?: PropertyType,
         public defaultValue?: string,
+        public mapValues?: string,
         public oidPattern?: string,
         public description?: string,
         public customizedStep?: boolean,

@@ -15,4 +15,10 @@
                                  referencedTableName="workflow"/>
 
     </changeSet>
+
+    <changeSet id="20170717045154-3" author="jhipster">
+
+        <addUniqueConstraint constraintName="uniq_workflow_step_id_step_number" tableName="workflow_step" columnNames="id, step_number"/>
+
+    </changeSet>
 </databaseChangeLog>
