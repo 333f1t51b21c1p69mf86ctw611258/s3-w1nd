@@ -81,7 +81,7 @@ public class DeviceServiceController {
 	}
 
 	public CommonOperationReturn declareOntId(OntInput ontInput) {
-        Workflow workflow = workflowRepository.findByWorkflowCode(WorkflowCode.DECLARE_ONT_ID.toString());
+        Workflow workflow = workflowRepository.findByWorkflowCode(WorkflowCode.DECLARE_ONT_ID);
         List<WorkflowStep> steps = workflowStepRepository.findByWorkflowId(workflow.getId());
 
 		CommonOperationReturn result = new CommonOperationReturn();

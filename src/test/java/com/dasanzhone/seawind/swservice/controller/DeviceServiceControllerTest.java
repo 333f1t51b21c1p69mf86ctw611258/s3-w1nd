@@ -37,7 +37,7 @@ public class DeviceServiceControllerTest {
 
     @Test
     public void testStuff01() {
-        assertEquals("DECLARE_ONT_ID", WorkflowCode.DECLARE_ONT_ID.toString());
+        assertEquals("DECLARE_ONT_ID", WorkflowCode.DECLARE_ONT_ID.name());
     }
 
 }
