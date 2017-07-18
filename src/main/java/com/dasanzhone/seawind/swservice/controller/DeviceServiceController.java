@@ -3,11 +3,14 @@ package com.dasanzhone.seawind.swservice.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.dasanzhone.seawind.swservice.util.ReflectionUtil;
 import com.dasanzhone.seawind.swweb.domain.Workflow;
 import com.dasanzhone.seawind.swweb.domain.WorkflowStep;
+import com.dasanzhone.seawind.swweb.domain.enumeration.PropertyName;
 import com.dasanzhone.seawind.swweb.domain.enumeration.WorkflowCode;
 import com.dasanzhone.seawind.swweb.repository.WorkflowRepository;
 import com.dasanzhone.seawind.swweb.repository.WorkflowStepRepository;
+import com.google.common.base.CaseFormat;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,10 +83,80 @@ public class DeviceServiceController {
         throw new NotSupportedException();
 	}
 
-	public CommonOperationReturn declareOntId(OntInput ontInput) {
+    public CommonOperationReturn group1_declareOntId(OntInput ontInput) throws ClassNotFoundException {
         Workflow workflow = workflowRepository.findByWorkflowCode(WorkflowCode.DECLARE_ONT_ID);
         List<WorkflowStep> steps = workflowStepRepository.findByWorkflowId(workflow.getId());
 
+        CommonOperationReturn result = new CommonOperationReturn();
+
+        OntInputSwapper ontInputSwapper = new OntInputSwapper(ontInput);
+
+        SnmpOperationInput input = new SnmpOperationInput();
+
+        input.setHost("10.72.200.125");
+        input.setVersion("v2");
+        input.setOids(new ArrayList<>());
+
+        SnmpOid snmpOid;
+        OntInputParamMapper mapper;
+
+        for (WorkflowStep step : steps) {
+            Class<?> clazz = Class.forName("com.dasanzhone.namespace.deviceservice.general.OntInput");
+            Object instance = clazz.cast(ontInput);
+            String rawValue = null;
+            if (step.getPropertyName() != null) {
+                String propertyName = CaseFormat.UPPER_UNDERSCORE.to(CaseFormat.LOWER_CAMEL, step.getPropertyName().toString());
+                rawValue = ReflectionUtil.get(instance, propertyName);
+            }
+
+            rawValue = getCustomizedRawValue(workflow, step, rawValue);
+
+            mapper = new OntInputParamMapper(step.getDefaultValue(), rawValue);
+
+            String lines[] = step.getMapValues().split("\\r?\\n");
+            for (String line : lines) {
+                String segments[] = line.split(":");
+                mapper.getMapValues().put(segments[0], segments[1]);
+            }
+            if (StringUtils.isNotEmpty(mapper.getFinalValue())) {
+                snmpOid = new SnmpOid(ontInputSwapper.assignOidWithTags(step.getOidPattern()), SnmpUtil.getSnmpVar(step.getPropertyType().toString(), mapper.getFinalValue()));
+                input.getOids().add(snmpOid);
+            }
+        }
+
+        try {
+            SnmpPDU snmpPDU = SnmpOperation.setWithoutMib_Low(input);
+            if (snmpPDU.getErrstat() == 0) {
+                result.setSuccess(true);
+                result.setResponseText("SUCCESSFUL");
+                result.setDescription(snmpPDU.printVarBinds());
+            } else {
+                result.setSuccess(false);
+                result.setResponseText("UNSUCCESSFUL");
+                result.setDescription(snmpPDU.getError());
+            }
+
+            return result;
+
+        } catch (Exception e) {
+
+            result.setSuccess(false);
+            result.setResponseText(e.toString());
+            result.setDescription(ExceptionUtils.getFullStackTrace(e));
+            return result;
+        }
+    }
+
+    private String getCustomizedRawValue(Workflow workflow, WorkflowStep step, String rawValue) {
+        if (workflow.getWorkflowCode() == WorkflowCode.DECLARE_ONT_ID) {
+            if (step.getPropertyName() == PropertyName.SERNUM) {
+                rawValue = ConversionUtil.convertSerialNumberHexStringToSerialNumberByteArrayString(rawValue);
+            }
+        }
+        return rawValue;
+    }
+
+    public CommonOperationReturn declareOntId(OntInput ontInput) {
 		CommonOperationReturn result = new CommonOperationReturn();
 
 		OntInputSwapper ontInputSwapper = new OntInputSwapper(ontInput);

@@ -89,8 +89,15 @@ public class DeviceServiceEndpoint implements DeviceService {
 	public CommonOperationReturn declareOntId(
 			OntInput ontInput) throws DeviceException {
 
-		return deviceServiceController.declareOntId(ontInput);
-	}
+//		return deviceServiceController.declareOntId(ontInput);
+        try {
+            return deviceServiceController.group1_declareOntId(ontInput);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
 
 	public CommonOperationReturn activateDeactivateOntId(OntInput ontInput) throws DeviceException {
 
