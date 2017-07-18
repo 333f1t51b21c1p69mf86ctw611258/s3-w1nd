@@ -9,6 +9,7 @@ enum WorkflowCode {
  * PropertyName enum.
  */
 enum PropertyName {
+    UNKNOWN,
 	ONT_INTERFACE,
     ONT_SLOT,
     ONT_PORT,
