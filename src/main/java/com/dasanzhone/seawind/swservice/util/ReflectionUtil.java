@@ -59,7 +59,7 @@ public class ReflectionUtil {
         return null;
     }
 
-    public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public static void test(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
         Class<?> clazz = Class.forName("com.dasanzhone.seawind.swservice.util.ReflectionUtil");
         Object instance = clazz.newInstance();
         set(instance, "salary", 15);

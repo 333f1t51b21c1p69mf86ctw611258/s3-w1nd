@@ -1,14 +1,5 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
-    <changeSet author="Henrik (generated)" id="1500373220387-1">
-        <dropUniqueConstraint constraintName="uniq_workflow_step_id_step_number" tableName="workflow_step"/>
-    </changeSet>
-    <changeSet author="Henrik (generated)" id="1500373220387-2">
-        <dropUniqueConstraint constraintName="uniq_workflow_workflow_code" tableName="workflow"/>
-    </changeSet>
-    <changeSet author="Henrik (generated)" id="1500373220387-3">
-        <dropUniqueConstraint constraintName="uniq_workflow_workflow_name" tableName="workflow"/>
-    </changeSet>
     <changeSet author="Henrik (generated)" id="1500373220387-4">
         <dropNotNullConstraint columnDataType="varchar(255)" columnName="property_name" tableName="workflow_step"/>
     </changeSet>
