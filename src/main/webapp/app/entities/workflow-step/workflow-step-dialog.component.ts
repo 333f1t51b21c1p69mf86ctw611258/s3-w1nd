@@ -60,6 +60,22 @@ export class WorkflowStepDialogComponent implements OnInit {
                 this.workflowStep.lastModifiedBy = this.user.id;
             });
         });
+
+        if (this.workflowStep.workflowId !== undefined) {
+            this.workflowStepService.queryCountByWorkflowId(this.workflowStep.workflowId)
+                .subscribe((res: ResponseWrapper) => {
+
+                        this.workflowStep.stepNumber = parseInt(res.json, 10) + 1;
+
+                    }, (res: ResponseWrapper) => this.onError(res.json));
+        }
+    }
+
+    initWorkflowStep() {
+        this.workflowStepService.initByStepName(this.workflowStep.stepName).subscribe((res: WorkflowStep) => {
+            this.workflowStep.propertyType = res.propertyType;
+            this.workflowStep.oidPattern = res.oidPattern;
+        }, (res: ResponseWrapper) => this.onError(res.json));
     }
 
     ngOnInit() {
@@ -68,7 +84,9 @@ export class WorkflowStepDialogComponent implements OnInit {
         this.workflowService.query()
             .subscribe((res: ResponseWrapper) => { this.workflows = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
 
-        this.initNewEntity();
+        if (this.workflowStep.id === undefined) {
+            this.initNewEntity();
+        }
     }
 
     clear() {
@@ -132,6 +150,11 @@ export class WorkflowStepPopupComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.routeSub = this.route.params.subscribe((params) => {
+            if ( params['workflowId'] && (typeof params['workflowId'] !== 'undefined') ) {
+                this.modalRef = this.workflowStepPopupService
+                    .openNew(WorkflowStepDialogComponent, params['workflowId']);
+            }
+
             if ( params['id'] ) {
                 this.modalRef = this.workflowStepPopupService
                     .open(WorkflowStepDialogComponent, params['id']);

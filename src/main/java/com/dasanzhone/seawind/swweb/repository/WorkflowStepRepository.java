@@ -18,9 +18,12 @@ import java.util.List;
 public interface WorkflowStepRepository extends JpaRepository<WorkflowStep,Long> {
 
     @Query("select s from WorkflowStep s join s.workflow w where (w.id = :workflowId) order by s.stepNumber")
-    Page<WorkflowStep> findByWorkflowId(Pageable pageable, @Param("workflowId") Long workflowId);
+    public Page<WorkflowStep> findByWorkflowId(Pageable pageable, @Param("workflowId") Long workflowId);
 
     @Query("select s from WorkflowStep s join s.workflow w where (w.id = :workflowId) order by s.stepNumber")
-    List<WorkflowStep> findByWorkflowId(@Param("workflowId") Long workflowId);
+    public List<WorkflowStep> findByWorkflowId(@Param("workflowId") Long workflowId);
+
+    @Query("select count(s) from WorkflowStep s join s.workflow w where (w.id = :workflowId)")
+    public int findCountByWorkflowId(@Param("workflowId") Long workflowId);
 
 }

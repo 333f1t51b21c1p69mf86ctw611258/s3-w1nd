@@ -1,7 +1,7 @@
 <div>
     <h2>
         <span>Workflow Steps</span>
-        <button class="btn btn-primary float-right create-workflow-step" [routerLink]="['/', { outlets: { popup: ['workflow-step-new'] } }]">
+        <button class="btn btn-primary float-right create-workflow-step" [routerLink]="['/', { outlets: { popup: 'workflow-step-new/'+ workflowId } }]">
             <span class="fa fa-plus"></span>
             <span >
             Create new Workflow Step

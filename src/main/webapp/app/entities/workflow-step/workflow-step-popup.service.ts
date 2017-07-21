@@ -43,6 +43,22 @@ export class WorkflowStepPopupService {
         }
     }
 
+    openNew(component: Component, workflowId: any): NgbModalRef {
+        if (this.isOpen) {
+            return;
+        }
+        this.isOpen = true;
+
+        const workflowStep = new WorkflowStep();
+        if (workflowId === 'undefined') {
+            workflowStep.workflowId = undefined;
+        } else {
+            workflowStep.workflowId = parseInt(workflowId, 10);
+        }
+
+        return this.workflowStepModalRef(component, workflowStep);
+    }
+
     workflowStepModalRef(component: Component, workflowStep: WorkflowStep): NgbModalRef {
         const modalRef = this.modalService.open(component, { size: 'lg', backdrop: 'static'});
         modalRef.componentInstance.workflowStep = workflowStep;

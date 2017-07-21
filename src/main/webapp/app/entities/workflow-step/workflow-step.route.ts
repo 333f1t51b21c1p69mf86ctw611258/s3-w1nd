@@ -33,7 +33,7 @@ export const workflowStepRoute: Routes = [
 
 export const workflowStepPopupRoute: Routes = [
     {
-        path: 'workflow-step-new',
+        path: 'workflow-step-new/:workflowId',
         component: WorkflowStepPopupComponent,
         data: {
             authorities: ['ROLE_USER'],

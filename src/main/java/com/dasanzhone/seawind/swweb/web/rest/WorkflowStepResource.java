@@ -3,6 +3,7 @@ package com.dasanzhone.seawind.swweb.web.rest;
 import com.codahale.metrics.annotation.Timed;
 import com.dasanzhone.seawind.swweb.domain.WorkflowStep;
 
+import com.dasanzhone.seawind.swweb.domain.enumeration.PropertyType;
 import com.dasanzhone.seawind.swweb.repository.WorkflowStepRepository;
 import com.dasanzhone.seawind.swweb.web.rest.util.HeaderUtil;
 import com.dasanzhone.seawind.swweb.web.rest.util.PaginationUtil;
@@ -19,6 +20,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.text.html.Option;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -116,6 +118,15 @@ public class WorkflowStepResource {
         return new ResponseEntity<>(workflowStepMapper.toDto(page.getContent()), headers, HttpStatus.OK);
     }
 
+    @GetMapping("/workflow-step-count-by-workflow-id/{workflowId}")
+    @Timed
+    public ResponseEntity<Integer> getWorkflowStepCountByWorkflowId(@PathVariable Long workflowId) {
+        log.debug("REST request to get WorkflowStep Count By WorkflowId: {}", workflowId);
+        int count = workflowStepRepository.findCountByWorkflowId(workflowId);
+        ResponseEntity<Integer> responseEntity = new ResponseEntity<>(count, HttpStatus.OK);
+        return responseEntity;
+    }
+
     /**
      * GET  /workflow-steps/:id : get the "id" workflowStep.
      *
@@ -128,6 +139,17 @@ public class WorkflowStepResource {
         log.debug("REST request to get WorkflowStep : {}", id);
         WorkflowStep workflowStep = workflowStepRepository.findOne(id);
         WorkflowStepDTO workflowStepDTO = workflowStepMapper.toDto(workflowStep);
+        return ResponseUtil.wrapOrNotFound(Optional.ofNullable(workflowStepDTO));
+    }
+
+    @GetMapping("/init-workflow-step-by-step-name/{stepName}")
+    @Timed
+    public ResponseEntity<WorkflowStepDTO> initWorkflowStepByStepName(@PathVariable String stepName) {
+        log.debug("REST request to init WorkflowStep by stepName: {}", stepName);
+        WorkflowStepDTO workflowStepDTO = new WorkflowStepDTO();
+        workflowStepDTO.setStepName(stepName);
+        workflowStepDTO.setPropertyType(PropertyType.INTEGER);
+        workflowStepDTO.setOidPattern("1.1.1.1.1");
         return ResponseUtil.wrapOrNotFound(Optional.ofNullable(workflowStepDTO));
     }
 

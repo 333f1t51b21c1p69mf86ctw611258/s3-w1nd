@@ -11,6 +11,9 @@ export class WorkflowStepService {
 
     private resourceUrl = 'api/workflow-steps';
     private resourceUrl_ByWorkflowId = 'api/workflow-steps-by-workflow-id';
+    private resourceUrl_CountByWorkflowId = 'api/workflow-step-count-by-workflow-id';
+
+    private resourceUrl_InitByStepName = 'api/init-workflow-step-by-step-name';
 
     constructor(private http: Http, private dateUtils: JhiDateUtils) { }
 
@@ -40,6 +43,14 @@ export class WorkflowStepService {
         });
     }
 
+    initByStepName(stepName: string): Observable<WorkflowStep> {
+        return this.http.get(`${this.resourceUrl_InitByStepName}/${stepName}`).map((res: Response) => {
+            const jsonResponse = res.json();
+            this.convertItemFromServer(jsonResponse);
+            return jsonResponse;
+        });
+    }
+
     query(req?: any): Observable<ResponseWrapper> {
         const options = createRequestOption(req);
         return this.http.get(this.resourceUrl, options)
@@ -49,6 +60,11 @@ export class WorkflowStepService {
     queryByWorkflowId(workflowId: number, req?: any): Observable<ResponseWrapper> {
         const options = createRequestOption(req);
         return this.http.get(`${this.resourceUrl_ByWorkflowId}/${workflowId}`, options)
+            .map((res: Response) => this.convertResponse(res));
+    }
+
+    queryCountByWorkflowId(workflowId: number): Observable<ResponseWrapper> {
+        return this.http.get(`${this.resourceUrl_CountByWorkflowId}/${workflowId}`)
             .map((res: Response) => this.convertResponse(res));
     }
 
