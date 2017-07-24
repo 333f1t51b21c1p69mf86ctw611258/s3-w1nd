@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s:schema xmlns:device="http://www.dasanzhone.com/namespace/deviceservice/"
+            xmlns:s="http://www.w3.org/2001/XMLSchema"
+            xmlns:datatypes="http://www.dasanzhone.com/namespace/deviceservice/datatypes"
+            xmlns:exception="http://www.dasanzhone.com/namespace/deviceservice/exception"
+            targetNamespace="http://www.dasanzhone.com/namespace/deviceservice/"
+            elementFormDefault="qualified"
+            version="1.0">
+      
+      <s:import namespace="http://www.dasanzhone.com/namespace/deviceservice/general"
+                schemaLocation="Device-Schemes/device-general.xsd"/>
+                
+      <s:import namespace="http://www.dasanzhone.com/namespace/deviceservice/exception"
+                schemaLocation="Device-Schemes/device-exception.xsd"/>          
+      
+</s:schema>

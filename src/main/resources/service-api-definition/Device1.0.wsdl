@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:device="http://www.dasanzhone.com/namespace/deviceservice/"
+	xmlns:general="http://www.dasanzhone.com/namespace/deviceservice/general"
+	xmlns:exception="http://www.dasanzhone.com/namespace/deviceservice/exception"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	targetNamespace="http://www.dasanzhone.com/namespace/deviceservice/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+	<wsdl:types>
+		<s:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:s="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://www.dasanzhone.com/namespace/deviceservice/"
+			attributeFormDefault="qualified" elementFormDefault="qualified">
+
+			<s:include schemaLocation="Device1.0.xsd" />
+
+		</s:schema>
+	</wsdl:types>
+
+	<wsdl:message name="GetDeviceInformationIn">
+		<wsdl:part name="parameters" element="general:GetDeviceInformation" />
+	</wsdl:message>
+	<wsdl:message name="GetDeviceInformationOut">
+		<wsdl:part name="parameters" element="general:GetDeviceInformationResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetCityForecastByZIPIn">
+		<wsdl:part name="parameters" element="general:GetCityForecastByZIP" />
+	</wsdl:message>
+	<wsdl:message name="GetCityForecastByZIPOut">
+		<wsdl:part name="parameters" element="general:GetCityForecastByZIPResponse" />
+	</wsdl:message>
+	<wsdl:message name="GetCityDeviceByZIPIn">
+		<wsdl:part name="parameters" element="general:GetCityDeviceByZIP" />
+	</wsdl:message>
+	<wsdl:message name="GetCityDeviceByZIPOut">
+		<wsdl:part name="parameters" element="general:GetCityDeviceByZIPResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="GetNetworkDeviceByIdIn">
+		<wsdl:part name="parameters" element="general:GetNetworkDeviceById"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="GetNetworkDeviceByIdOut">
+		<wsdl:part name="parameters" element="general:GetNetworkDeviceByIdResponse"></wsdl:part>
+	</wsdl:message>
+
+	<wsdl:message name="DeclareOntIdIn">
+		<wsdl:part name="parameters" element="general:DeclareOntId"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DeclareOntIdOut">
+		<wsdl:part name="parameters" element="general:DeclareOntIdResponse"></wsdl:part>
+	</wsdl:message>
+
+	<wsdl:message name="ActivateDeactivateOntIdIn">
+		<wsdl:part name="parameters" element="general:ActivateDeactivateOntId"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ActivateDeactivateOntIdOut">
+		<wsdl:part name="parameters" element="general:ActivateDeactivateOntIdResponse"></wsdl:part>
+	</wsdl:message>
+
+	<wsdl:message name="DeclarePpptpCardIn">
+		<wsdl:part name="parameters" element="general:DeclarePpptpCard"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="DeclarePpptpCardOut">
+		<wsdl:part name="parameters" element="general:DeclarePpptpCardResponse"></wsdl:part>
+	</wsdl:message>
+
+	<wsdl:message name="ConfigureUniLanPortsIn">
+		<wsdl:part name="parameters" element="general:ConfigureUniLanPorts"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="ConfigureUniLanPortsOut">
+		<wsdl:part name="parameters" element="general:ConfigureUniLanPortsResponse"></wsdl:part>
+	</wsdl:message>
+
+	<wsdl:message name="DeviceException">
+		<wsdl:part name="parameters" element="exception:DeviceException" />
+	</wsdl:message>
+
+	<wsdl:portType name="DeviceService">
+		<wsdl:operation name="GetDeviceInformation">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Gets Information
+				for each DeviceID
+			</wsdl:documentation>
+			<wsdl:input message="device:GetDeviceInformationIn" />
+			<wsdl:output message="device:GetDeviceInformationOut" />
+			<wsdl:fault name="DeviceException" message="device:DeviceException" />
+		</wsdl:operation>
+		<wsdl:operation name="GetCityForecastByZIP">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows you to get
+				your City Forecast Over the Next 7 Days, which is updated hourly.
+			</wsdl:documentation>
+			<wsdl:input message="device:GetCityForecastByZIPIn" />
+			<wsdl:output message="device:GetCityForecastByZIPOut" />
+			<wsdl:fault name="DeviceException" message="device:DeviceException" />
+		</wsdl:operation>
+		<wsdl:operation name="GetCityDeviceByZIP">
+			<wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">Allows you to get
+				your City's Device, which is updated hourly.
+			</wsdl:documentation>
+			<wsdl:input message="device:GetCityDeviceByZIPIn" />
+			<wsdl:output message="device:GetCityDeviceByZIPOut" />
+			<wsdl:fault name="DeviceException" message="device:DeviceException" />
+		</wsdl:operation>
+
+		<wsdl:operation name="GetNetworkDeviceById">
+			<wsdl:input message="device:GetNetworkDeviceByIdIn"></wsdl:input>
+			<wsdl:output message="device:GetNetworkDeviceByIdOut"></wsdl:output>
+			<wsdl:fault name="DeviceException" message="device:DeviceException" />
+		</wsdl:operation>
+
+		<wsdl:operation name="DeclareOntId">
+			<wsdl:input message="device:DeclareOntIdIn"></wsdl:input>
+			<wsdl:output message="device:DeclareOntIdOut"></wsdl:output>
+			<wsdl:fault name="DeviceException" message="device:DeviceException" />
+		</wsdl:operation>
+
+		<wsdl:operation name="ActivateDeactivateOntId">
+			<wsdl:input message="device:ActivateDeactivateOntIdIn"></wsdl:input>
+			<wsdl:output message="device:ActivateDeactivateOntIdOut"></wsdl:output>
+			<wsdl:fault name="DeviceException" message="device:DeviceException" />
+		</wsdl:operation>
+
+		<wsdl:operation name="DeclarePpptpCard">
+			<wsdl:input message="device:DeclarePpptpCardIn"></wsdl:input>
+			<wsdl:output message="device:DeclarePpptpCardOut"></wsdl:output>
+			<wsdl:fault name="DeviceException" message="device:DeviceException" />
+		</wsdl:operation>
+
+		<wsdl:operation name="ConfigureUniLanPorts">
+			<wsdl:input message="device:ConfigureUniLanPortsIn"></wsdl:input>
+			<wsdl:output message="device:ConfigureUniLanPortsOut"></wsdl:output>
+			<wsdl:fault name="DeviceException" message="device:DeviceException" />
+		</wsdl:operation>
+
+	</wsdl:portType>
+	
+	<wsdl:binding name="DeviceService" type="device:DeviceService">
+		<soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="GetDeviceInformation">
+			<soap:operation
+				soapAction="http://www.dasanzhone.com/namespace/deviceservice/GetDeviceInformation"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="DeviceException">
+				<soap:fault name="DeviceException" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetCityForecastByZIP">
+			<soap:operation
+				soapAction="http://www.dasanzhone.com/namespace/deviceservice/GetCityForecastByZIP"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="DeviceException">
+				<soap:fault name="DeviceException" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetCityDeviceByZIP">
+			<soap:operation
+				soapAction="http://www.dasanzhone.com/namespace/deviceservice/GetCityDeviceByZIP"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="DeviceException">
+				<soap:fault name="DeviceException" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+		
+		<wsdl:operation name="GetNetworkDeviceById">
+			<soap:operation
+				soapAction="http://www.dasanzhone.com/namespace/deviceservice/GetNetworkDeviceById"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="DeviceException">
+				<soap:fault name="DeviceException" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="DeclareOntId">
+			<soap:operation
+				soapAction="http://www.dasanzhone.com/namespace/deviceservice/DeclareOntId"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="DeviceException">
+				<soap:fault name="DeviceException" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="ActivateDeactivateOntId">
+			<soap:operation
+				soapAction="http://www.dasanzhone.com/namespace/deviceservice/ActivateDeactivateOntId"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="DeviceException">
+				<soap:fault name="DeviceException" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="DeclarePpptpCard">
+			<soap:operation
+				soapAction="http://www.dasanzhone.com/namespace/deviceservice/DeclarePpptpCard"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="DeviceException">
+				<soap:fault name="DeviceException" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="ConfigureUniLanPorts">
+			<soap:operation
+				soapAction="http://www.dasanzhone.com/namespace/deviceservice/ConfigureUniLanPorts"
+				style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+			<wsdl:fault name="DeviceException">
+				<soap:fault name="DeviceException" use="literal" />
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="Device">
+		<wsdl:port name="DeviceService" binding="device:DeviceService">
+			<soap:address location="http://localhost:8080/soap-api/DeviceSoapService_1.0" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

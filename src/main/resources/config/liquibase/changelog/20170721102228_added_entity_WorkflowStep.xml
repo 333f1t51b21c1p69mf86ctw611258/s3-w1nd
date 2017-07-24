@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity WorkflowStep.
+    -->
+    <changeSet id="20170721102228-1" author="jhipster">
+    	<preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="workflow_step"/>
+            </not>
+        </preConditions>
+        <createTable tableName="workflow_step">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="step_name" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="property_name" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="step_number" type="integer">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="property_type" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="default_value" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="map_values" type="varchar(1023)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="oid_pattern" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="description" type="varchar(1023)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="customized_step" type="bit">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="set_or_get" type="bit">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="get_expected_value" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="created_by" type="bigint">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="created_date" type="date">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="last_modified_by" type="bigint">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="last_modified_date" type="date">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="workflow_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        
+    </changeSet>
+</databaseChangeLog>

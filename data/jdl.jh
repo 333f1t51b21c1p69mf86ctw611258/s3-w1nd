@@ -1,0 +1,76 @@
+enum WorkflowCode {
+    DECLARE_ONT_ID,
+    ACTIVATE_DEACTIVATE_ONT_ID,
+    DECLARE_PPPTP_CARD,
+    CONFIGURE_UNI_LAN_PORTS
+}
+
+/**
+ * PropertyType enum.
+ */
+enum PropertyType {
+    STRING,
+    INTEGER
+}
+
+/**
+ * Workflow entity.
+ */
+entity Workflow {
+    workflowCode WorkflowCode required,
+	workflowName String maxlength(255) required,
+    description String maxlength(1023),
+    createdBy Long required,
+    createdDate LocalDate required,
+    lastModifiedBy Long required,
+    lastModifiedDate LocalDate required
+}
+
+/**
+ * The WorkflowStep entity.
+ */
+entity WorkflowStep {
+    stepName String maxlength(255) required,
+    propertyName String maxlength(255) required,
+    stepNumber Integer required,
+    propertyType PropertyType required,
+    defaultValue String maxlength(255),
+    mapValues String maxlength(1023),
+    oidPattern String maxlength(255) required,
+    description String maxlength(1023),
+    customizedStep Boolean,
+    setOrGet Boolean required,
+    getExpectedValue String,
+    createdBy Long required,
+    createdDate LocalDate required,
+    lastModifiedBy Long required,
+    lastModifiedDate LocalDate required
+}
+
+relationship OneToMany {
+	/**
+	* The relationship of Workflow entity and WorkflowStep entity.
+	*/
+	Workflow{workflowStep(stepName)} to
+	/**
+	* Another side of the same relationship
+	*/
+	WorkflowStep{workflow(workflowName) required}
+}
+
+//relationship ManyToOne {
+//    Workflow{user(login) required} to User,
+//    WorkflowStep{user(login) required} to User
+//}
+
+// Set pagination options
+paginate WorkflowStep with infinite-scroll
+paginate Workflow with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+// service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+//angularSuffix * with ng
