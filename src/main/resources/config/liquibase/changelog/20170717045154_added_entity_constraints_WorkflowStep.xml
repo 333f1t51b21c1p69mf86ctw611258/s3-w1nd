@@ -7,7 +7,11 @@
         Added the constraints for entity WorkflowStep.
     -->
     <changeSet id="20170717045154-2" author="jhipster">
-        
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <foreignKeyConstraintExists schemaName="seawind" foreignKeyName="fk_workflow_step_workflow_id"/>
+            </not>
+        </preConditions>
         <addForeignKeyConstraint baseColumnNames="workflow_id"
                                  baseTableName="workflow_step"
                                  constraintName="fk_workflow_step_workflow_id"
@@ -17,7 +21,12 @@
     </changeSet>
 
     <changeSet id="20170717045154-3" author="jhipster">
-
+	<preConditions onFail="MARK_RAN">
+            <not>
+                <indexExists schemaName="seawind" indexName="uniq_workflow_step_id_step_number"/>
+            </not>
+        </preConditions>
+	
         <addUniqueConstraint constraintName="uniq_workflow_step_id_step_number" tableName="workflow_step" columnNames="id, step_number"/>
 
     </changeSet>

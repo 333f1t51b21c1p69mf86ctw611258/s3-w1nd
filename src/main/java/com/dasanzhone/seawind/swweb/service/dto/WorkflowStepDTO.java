@@ -7,7 +7,6 @@ import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Objects;
-import com.dasanzhone.seawind.swweb.domain.enumeration.PropertyName;
 import com.dasanzhone.seawind.swweb.domain.enumeration.PropertyType;
 
 /**
@@ -22,9 +21,11 @@ public class WorkflowStepDTO implements Serializable {
     private String stepName;
 
     @NotNull
-    private Integer stepNumber;
+    @Size(max = 255)
+    private String propertyName;
 
-    private PropertyName propertyName;
+    @NotNull
+    private Integer stepNumber;
 
     @NotNull
     private PropertyType propertyType;
@@ -81,20 +82,20 @@ public class WorkflowStepDTO implements Serializable {
         this.stepName = stepName;
     }
 
+    public String getPropertyName() {
+        return propertyName;
+    }
+
+    public void setPropertyName(String propertyName) {
+        this.propertyName = propertyName;
+    }
+
     public Integer getStepNumber() {
         return stepNumber;
     }
 
     public void setStepNumber(Integer stepNumber) {
         this.stepNumber = stepNumber;
-    }
-
-    public PropertyName getPropertyName() {
-        return propertyName;
-    }
-
-    public void setPropertyName(PropertyName propertyName) {
-        this.propertyName = propertyName;
     }
 
     public PropertyType getPropertyType() {
@@ -235,8 +236,8 @@ public class WorkflowStepDTO implements Serializable {
         return "WorkflowStepDTO{" +
             "id=" + getId() +
             ", stepName='" + getStepName() + "'" +
-            ", stepNumber='" + getStepNumber() + "'" +
             ", propertyName='" + getPropertyName() + "'" +
+            ", stepNumber='" + getStepNumber() + "'" +
             ", propertyType='" + getPropertyType() + "'" +
             ", defaultValue='" + getDefaultValue() + "'" +
             ", mapValues='" + getMapValues() + "'" +

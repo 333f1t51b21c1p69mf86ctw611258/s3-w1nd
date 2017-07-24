@@ -6,30 +6,6 @@ enum WorkflowCode {
 }
 
 /**
- * PropertyName enum.
- */
-enum PropertyName {
-    UNKNOWN,
-	ONT_INTERFACE,
-    ONT_SLOT,
-    ONT_PORT,
-    SW_VER_PLAND,
-    SW_DNLOAD_VERSION,
-    SERNUM,
-    FEC_UP,
-    ENABLE_AES,
-    PLND_VAR,
-    OPTICS_HIST,
-    BERINT,
-    PROVVERSION,
-    ADMIN_STATE,
-    PLANNED_CARD_TYPE,
-    PLNDNUMDATAPORTS,
-    PLNDNUMVOICEPORTS,
-    AUTO_DETECT
-}
-
-/**
  * PropertyType enum.
  */
 enum PropertyType {
@@ -55,8 +31,8 @@ entity Workflow {
  */
 entity WorkflowStep {
     stepName String maxlength(255) required,
+    propertyName String maxlength(255) required,
     stepNumber Integer required,
-    propertyName PropertyName,
     propertyType PropertyType required,
     defaultValue String maxlength(255),
     mapValues String maxlength(1023),

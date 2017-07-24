@@ -24,8 +24,8 @@
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="reset.bind(this)">
             <th jhiSortBy="id"><span>ID</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="stepName"><span>Step Name</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="stepNumber"><span>Step Number</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="propertyName"><span>Property Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="stepNumber"><span>Step Number</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="propertyType"><span>Property Type</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="defaultValue"><span>Default Value</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="mapValues"><span>Map Values</span> <span class="fa fa-sort"></span></th>
@@ -46,8 +46,8 @@
             <tr *ngFor="let workflowStep of workflowSteps ;trackBy: trackId">
                 <td><a [routerLink]="['../workflow-step', workflowStep.id ]">{{workflowStep.id}}</a></td>
                 <td>{{workflowStep.stepName}}</td>
-                <td>{{workflowStep.stepNumber}}</td>
                 <td>{{workflowStep.propertyName}}</td>
+                <td>{{workflowStep.stepNumber}}</td>
                 <td>{{workflowStep.propertyType}}</td>
                 <td>{{workflowStep.defaultValue}}</td>
                 <td>{{workflowStep.mapValues}}</td>

@@ -33,7 +33,6 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-import com.dasanzhone.seawind.swweb.domain.enumeration.PropertyName;
 import com.dasanzhone.seawind.swweb.domain.enumeration.PropertyType;
 /**
  * Test class for the WorkflowStepResource REST controller.
@@ -47,11 +46,11 @@ public class WorkflowStepResourceIntTest {
     private static final String DEFAULT_STEP_NAME = "AAAAAAAAAA";
     private static final String UPDATED_STEP_NAME = "BBBBBBBBBB";
 
+    private static final String DEFAULT_PROPERTY_NAME = "AAAAAAAAAA";
+    private static final String UPDATED_PROPERTY_NAME = "BBBBBBBBBB";
+
     private static final Integer DEFAULT_STEP_NUMBER = 1;
     private static final Integer UPDATED_STEP_NUMBER = 2;
-
-    private static final PropertyName DEFAULT_PROPERTY_NAME = PropertyName.ONT_INTERFACE;
-    private static final PropertyName UPDATED_PROPERTY_NAME = PropertyName.ONT_SLOT;
 
     private static final PropertyType DEFAULT_PROPERTY_TYPE = PropertyType.STRING;
     private static final PropertyType UPDATED_PROPERTY_TYPE = PropertyType.INTEGER;
@@ -130,8 +129,8 @@ public class WorkflowStepResourceIntTest {
     public static WorkflowStep createEntity(EntityManager em) {
         WorkflowStep workflowStep = new WorkflowStep()
             .stepName(DEFAULT_STEP_NAME)
-            .stepNumber(DEFAULT_STEP_NUMBER)
             .propertyName(DEFAULT_PROPERTY_NAME)
+            .stepNumber(DEFAULT_STEP_NUMBER)
             .propertyType(DEFAULT_PROPERTY_TYPE)
             .defaultValue(DEFAULT_DEFAULT_VALUE)
             .mapValues(DEFAULT_MAP_VALUES)
@@ -174,8 +173,8 @@ public class WorkflowStepResourceIntTest {
         assertThat(workflowStepList).hasSize(databaseSizeBeforeCreate + 1);
         WorkflowStep testWorkflowStep = workflowStepList.get(workflowStepList.size() - 1);
         assertThat(testWorkflowStep.getStepName()).isEqualTo(DEFAULT_STEP_NAME);
-        assertThat(testWorkflowStep.getStepNumber()).isEqualTo(DEFAULT_STEP_NUMBER);
         assertThat(testWorkflowStep.getPropertyName()).isEqualTo(DEFAULT_PROPERTY_NAME);
+        assertThat(testWorkflowStep.getStepNumber()).isEqualTo(DEFAULT_STEP_NUMBER);
         assertThat(testWorkflowStep.getPropertyType()).isEqualTo(DEFAULT_PROPERTY_TYPE);
         assertThat(testWorkflowStep.getDefaultValue()).isEqualTo(DEFAULT_DEFAULT_VALUE);
         assertThat(testWorkflowStep.getMapValues()).isEqualTo(DEFAULT_MAP_VALUES);
@@ -216,6 +215,25 @@ public class WorkflowStepResourceIntTest {
         int databaseSizeBeforeTest = workflowStepRepository.findAll().size();
         // set the field null
         workflowStep.setStepName(null);
+
+        // Create the WorkflowStep, which fails.
+        WorkflowStepDTO workflowStepDTO = workflowStepMapper.toDto(workflowStep);
+
+        restWorkflowStepMockMvc.perform(post("/api/workflow-steps")
+            .contentType(TestUtil.APPLICATION_JSON_UTF8)
+            .content(TestUtil.convertObjectToJsonBytes(workflowStepDTO)))
+            .andExpect(status().isBadRequest());
+
+        List<WorkflowStep> workflowStepList = workflowStepRepository.findAll();
+        assertThat(workflowStepList).hasSize(databaseSizeBeforeTest);
+    }
+
+    @Test
+    @Transactional
+    public void checkPropertyNameIsRequired() throws Exception {
+        int databaseSizeBeforeTest = workflowStepRepository.findAll().size();
+        // set the field null
+        workflowStep.setPropertyName(null);
 
         // Create the WorkflowStep, which fails.
         WorkflowStepDTO workflowStepDTO = workflowStepMapper.toDto(workflowStep);
@@ -393,8 +411,8 @@ public class WorkflowStepResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(workflowStep.getId().intValue())))
             .andExpect(jsonPath("$.[*].stepName").value(hasItem(DEFAULT_STEP_NAME.toString())))
-            .andExpect(jsonPath("$.[*].stepNumber").value(hasItem(DEFAULT_STEP_NUMBER)))
             .andExpect(jsonPath("$.[*].propertyName").value(hasItem(DEFAULT_PROPERTY_NAME.toString())))
+            .andExpect(jsonPath("$.[*].stepNumber").value(hasItem(DEFAULT_STEP_NUMBER)))
             .andExpect(jsonPath("$.[*].propertyType").value(hasItem(DEFAULT_PROPERTY_TYPE.toString())))
             .andExpect(jsonPath("$.[*].defaultValue").value(hasItem(DEFAULT_DEFAULT_VALUE.toString())))
             .andExpect(jsonPath("$.[*].mapValues").value(hasItem(DEFAULT_MAP_VALUES.toString())))
@@ -421,8 +439,8 @@ public class WorkflowStepResourceIntTest {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.id").value(workflowStep.getId().intValue()))
             .andExpect(jsonPath("$.stepName").value(DEFAULT_STEP_NAME.toString()))
-            .andExpect(jsonPath("$.stepNumber").value(DEFAULT_STEP_NUMBER))
             .andExpect(jsonPath("$.propertyName").value(DEFAULT_PROPERTY_NAME.toString()))
+            .andExpect(jsonPath("$.stepNumber").value(DEFAULT_STEP_NUMBER))
             .andExpect(jsonPath("$.propertyType").value(DEFAULT_PROPERTY_TYPE.toString()))
             .andExpect(jsonPath("$.defaultValue").value(DEFAULT_DEFAULT_VALUE.toString()))
             .andExpect(jsonPath("$.mapValues").value(DEFAULT_MAP_VALUES.toString()))
@@ -456,8 +474,8 @@ public class WorkflowStepResourceIntTest {
         WorkflowStep updatedWorkflowStep = workflowStepRepository.findOne(workflowStep.getId());
         updatedWorkflowStep
             .stepName(UPDATED_STEP_NAME)
-            .stepNumber(UPDATED_STEP_NUMBER)
             .propertyName(UPDATED_PROPERTY_NAME)
+            .stepNumber(UPDATED_STEP_NUMBER)
             .propertyType(UPDATED_PROPERTY_TYPE)
             .defaultValue(UPDATED_DEFAULT_VALUE)
             .mapValues(UPDATED_MAP_VALUES)
@@ -482,8 +500,8 @@ public class WorkflowStepResourceIntTest {
         assertThat(workflowStepList).hasSize(databaseSizeBeforeUpdate);
         WorkflowStep testWorkflowStep = workflowStepList.get(workflowStepList.size() - 1);
         assertThat(testWorkflowStep.getStepName()).isEqualTo(UPDATED_STEP_NAME);
-        assertThat(testWorkflowStep.getStepNumber()).isEqualTo(UPDATED_STEP_NUMBER);
         assertThat(testWorkflowStep.getPropertyName()).isEqualTo(UPDATED_PROPERTY_NAME);
+        assertThat(testWorkflowStep.getStepNumber()).isEqualTo(UPDATED_STEP_NUMBER);
         assertThat(testWorkflowStep.getPropertyType()).isEqualTo(UPDATED_PROPERTY_TYPE);
         assertThat(testWorkflowStep.getDefaultValue()).isEqualTo(UPDATED_DEFAULT_VALUE);
         assertThat(testWorkflowStep.getMapValues()).isEqualTo(UPDATED_MAP_VALUES);

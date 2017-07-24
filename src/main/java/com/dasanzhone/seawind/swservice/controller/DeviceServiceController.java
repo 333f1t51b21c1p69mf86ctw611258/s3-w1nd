@@ -6,7 +6,6 @@ import java.util.List;
 import com.dasanzhone.seawind.swservice.util.ReflectionUtil;
 import com.dasanzhone.seawind.swweb.domain.Workflow;
 import com.dasanzhone.seawind.swweb.domain.WorkflowStep;
-import com.dasanzhone.seawind.swweb.domain.enumeration.PropertyName;
 import com.dasanzhone.seawind.swweb.domain.enumeration.WorkflowCode;
 import com.dasanzhone.seawind.swweb.repository.WorkflowRepository;
 import com.dasanzhone.seawind.swweb.repository.WorkflowStepRepository;
@@ -154,7 +153,7 @@ public class DeviceServiceController {
 
     private String getCustomizedRawValue(Workflow workflow, WorkflowStep step, String rawValue) {
         if (workflow.getWorkflowCode() == WorkflowCode.DECLARE_ONT_ID) {
-            if (step.getPropertyName() == PropertyName.SERNUM) {
+            if (step.getPropertyName().equalsIgnoreCase("alaOntSernum")) {
                 rawValue = ConversionUtil.convertSerialNumberHexStringToSerialNumberByteArrayString(rawValue);
             }
         }

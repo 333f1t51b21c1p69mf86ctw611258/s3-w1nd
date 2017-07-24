@@ -9,8 +9,6 @@ import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-import com.dasanzhone.seawind.swweb.domain.enumeration.PropertyName;
-
 import com.dasanzhone.seawind.swweb.domain.enumeration.PropertyType;
 
 /**
@@ -33,12 +31,13 @@ public class WorkflowStep implements Serializable {
     private String stepName;
 
     @NotNull
+    @Size(max = 255)
+    @Column(name = "property_name", length = 255, nullable = false)
+    private String propertyName;
+
+    @NotNull
     @Column(name = "step_number", nullable = false)
     private Integer stepNumber;
-
-    @Enumerated(EnumType.STRING)
-    @Column(name = "property_name")
-    private PropertyName propertyName;
 
     @NotNull
     @Enumerated(EnumType.STRING)
@@ -117,6 +116,19 @@ public class WorkflowStep implements Serializable {
         this.stepName = stepName;
     }
 
+    public String getPropertyName() {
+        return propertyName;
+    }
+
+    public WorkflowStep propertyName(String propertyName) {
+        this.propertyName = propertyName;
+        return this;
+    }
+
+    public void setPropertyName(String propertyName) {
+        this.propertyName = propertyName;
+    }
+
     public Integer getStepNumber() {
         return stepNumber;
     }
@@ -128,19 +140,6 @@ public class WorkflowStep implements Serializable {
 
     public void setStepNumber(Integer stepNumber) {
         this.stepNumber = stepNumber;
-    }
-
-    public PropertyName getPropertyName() {
-        return propertyName;
-    }
-
-    public WorkflowStep propertyName(PropertyName propertyName) {
-        this.propertyName = propertyName;
-        return this;
-    }
-
-    public void setPropertyName(PropertyName propertyName) {
-        this.propertyName = propertyName;
     }
 
     public PropertyType getPropertyType() {
@@ -337,8 +336,8 @@ public class WorkflowStep implements Serializable {
         return "WorkflowStep{" +
             "id=" + getId() +
             ", stepName='" + getStepName() + "'" +
-            ", stepNumber='" + getStepNumber() + "'" +
             ", propertyName='" + getPropertyName() + "'" +
+            ", stepNumber='" + getStepNumber() + "'" +
             ", propertyType='" + getPropertyType() + "'" +
             ", defaultValue='" + getDefaultValue() + "'" +
             ", mapValues='" + getMapValues() + "'" +

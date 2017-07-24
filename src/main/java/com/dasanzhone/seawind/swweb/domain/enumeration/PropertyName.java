@@ -1,8 +1,0 @@
-package com.dasanzhone.seawind.swweb.domain.enumeration;
-
-/**
- * The PropertyName enumeration.
- */
-public enum PropertyName {
-    UNKNOWN, ONT_INTERFACE, ONT_SLOT, ONT_PORT, SW_VER_PLAND, SW_DNLOAD_VERSION, SERNUM, FEC_UP, ENABLE_AES, PLND_VAR, OPTICS_HIST, BERINT, PROVVERSION, ADMIN_STATE, PLANNED_CARD_TYPE, PLNDNUMDATAPORTS, PLNDNUMVOICEPORTS, AUTO_DETECT
-}

@@ -31,12 +31,12 @@
                 <constraints nullable="false" />
             </column>
 
-            <column name="step_number" type="integer">
+            <column name="property_name" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
 
-            <column name="property_name" type="varchar(255)">
-                <constraints nullable="true" />
+            <column name="step_number" type="integer">
+                <constraints nullable="false" />
             </column>
 
             <column name="property_type" type="varchar(255)">

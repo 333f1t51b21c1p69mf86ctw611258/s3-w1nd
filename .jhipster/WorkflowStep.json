@@ -21,16 +21,20 @@
             "fieldValidateRulesMaxlength": 255
         },
         {
+            "fieldName": "propertyName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength",
+                "required"
+            ],
+            "fieldValidateRulesMaxlength": 255
+        },
+        {
             "fieldName": "stepNumber",
             "fieldType": "Integer",
             "fieldValidateRules": [
                 "required"
             ]
-        },
-        {
-            "fieldName": "propertyName",
-            "fieldType": "PropertyName",
-            "fieldValues": "UNKNOWN,ONT_INTERFACE,ONT_SLOT,ONT_PORT,SW_VER_PLAND,SW_DNLOAD_VERSION,SERNUM,FEC_UP,ENABLE_AES,PLND_VAR,OPTICS_HIST,BERINT,PROVVERSION,ADMIN_STATE,PLANNED_CARD_TYPE,PLNDNUMDATAPORTS,PLNDNUMVOICEPORTS,AUTO_DETECT"
         },
         {
             "fieldName": "propertyType",
