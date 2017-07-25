@@ -94,7 +94,7 @@ public class WorkflowResource {
             e.printStackTrace();
         }
 
-        return null;
+        return file.getOriginalFilename();
     }
 
     /**

@@ -39,7 +39,8 @@ export class HttpClientService {
                 headers: objHeaders
             }).subscribe(
                 (res) => {
-                    this.responseData = res.json();
+                    this.responseData = res.text(); // res.json();
+                    console.log('Uploaded: ' + this.responseData);
                     resolve(this.responseData);
                 },
                 (error) => {

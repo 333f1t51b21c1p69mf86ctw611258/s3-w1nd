@@ -14,14 +14,8 @@
         </div>
         <div class="form-group">
             <label class="form-control-label" for="field_stepName">Step Name</label>
-            <div>
-                <input type="text" class="form-control" name="stepName" id="field_stepName"
-                       [(ngModel)]="workflowStep.stepName" required maxlength="255" style="width: 85% !important; float: left;"/>
-                <button type="button" [disabled]="!workflowStep.stepName" class="btn btn-primary"
-                        style="width: 14% !important; float: right;" (click)="initWorkflowStep()">
-                    <span class="fa fa-filter"></span>&nbsp;<span>Initiate</span>
-                </button>
-            </div>
+            <input type="text" class="form-control" name="stepName" id="field_stepName"
+                   [(ngModel)]="workflowStep.stepName" required maxlength="255" />
             <div [hidden]="!(editForm.controls.stepName?.dirty && editForm.controls.stepName?.invalid)">
                 <small class="form-text text-danger"
                    [hidden]="!editForm.controls.stepName?.errors?.required">
@@ -32,12 +26,17 @@
                    This field cannot be longer than 255 characters.
                 </small>
             </div>
-            <div style="clear: both; height: 10px;"></div>
         </div>
         <div class="form-group">
             <label class="form-control-label" for="field_propertyName">Property Name</label>
-            <input type="text" class="form-control" name="propertyName" id="field_propertyName"
-                [(ngModel)]="workflowStep.propertyName" required maxlength="255" />
+            <div>
+                <input type="text" class="form-control" name="propertyName" id="field_propertyName"
+                    [(ngModel)]="workflowStep.propertyName" required maxlength="255" style="width: 85% !important; float: left;" />
+                <button type="button" [disabled]="!workflowStep.propertyName" class="btn btn-primary"
+                        (click)="initWorkflowStep()" style="width: 14% !important; float: right;">
+                    <span class="fa fa-filter"></span>&nbsp;<span>Initiate</span>
+                </button>
+            </div>
             <div [hidden]="!(editForm.controls.propertyName?.dirty && editForm.controls.propertyName?.invalid)">
                 <small class="form-text text-danger"
                    [hidden]="!editForm.controls.propertyName?.errors?.required">
@@ -48,6 +47,7 @@
                    This field cannot be longer than 255 characters.
                 </small>
             </div>
+            <div style="clear: both; height: 10px;"></div>
         </div>
         <div class="form-group">
             <label class="form-control-label" for="field_stepNumber">Step Number</label>
@@ -146,7 +146,7 @@
             <input type="text" class="form-control" name="getExpectedValue" id="field_getExpectedValue"
                 [(ngModel)]="workflowStep.getExpectedValue"  />
         </div>
-        <div class="form-group">
+        <!--<div class="form-group">
             <label class="form-control-label" for="field_createdBy">Created By</label>
             <input type="number" class="form-control" name="createdBy" id="field_createdBy"
                 [(ngModel)]="workflowStep.createdBy" required />
@@ -207,7 +207,7 @@
                    This field is required.
                 </small>
             </div>
-        </div>
+        </div>-->
 
         <div class="form-group">
             <label for="field_workflow">Workflow</label>

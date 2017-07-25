@@ -153,7 +153,7 @@ public class DeviceServiceController {
 
     private String getCustomizedRawValue(Workflow workflow, WorkflowStep step, String rawValue) {
         if (workflow.getWorkflowCode() == WorkflowCode.DECLARE_ONT_ID) {
-            if (step.getPropertyName().equalsIgnoreCase("alaOntSernum")) {
+            if (step.getPropertyName().equalsIgnoreCase("alaOntSernum") || step.getPropertyName().equalsIgnoreCase("SERNUM")) {
                 rawValue = ConversionUtil.convertSerialNumberHexStringToSerialNumberByteArrayString(rawValue);
             }
         }

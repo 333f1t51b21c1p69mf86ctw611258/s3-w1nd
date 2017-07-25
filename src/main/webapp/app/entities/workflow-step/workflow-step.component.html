@@ -30,14 +30,14 @@
             <th jhiSortBy="defaultValue"><span>Default Value</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="mapValues"><span>Map Values</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="oidPattern"><span>Oid Pattern</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="description"><span>Description</span> <span class="fa fa-sort"></span></th>
+            <!--<th jhiSortBy="description"><span>Description</span> <span class="fa fa-sort"></span></th>-->
             <th jhiSortBy="customizedStep"><span>Customized Step</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="setOrGet"><span>Set Or Get</span> <span class="fa fa-sort"></span></th>
             <th jhiSortBy="getExpectedValue"><span>Get Expected Value</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="createdBy"><span>Created By</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="createdDate"><span>Created Date</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="lastModifiedBy"><span>Last Modified By</span> <span class="fa fa-sort"></span></th>
-            <th jhiSortBy="lastModifiedDate"><span>Last Modified Date</span> <span class="fa fa-sort"></span></th>
+            <!--<th jhiSortBy="createdBy"><span>Created By</span> <span class="fa fa-sort"></span></th>-->
+            <!--<th jhiSortBy="createdDate"><span>Created Date</span> <span class="fa fa-sort"></span></th>-->
+            <!--<th jhiSortBy="lastModifiedBy"><span>Last Modified By</span> <span class="fa fa-sort"></span></th>-->
+            <!--<th jhiSortBy="lastModifiedDate"><span>Last Modified Date</span> <span class="fa fa-sort"></span></th>-->
             <th jhiSortBy="workflowWorkflowName"><span>Workflow</span> <span class="fa fa-sort"></span></th>
             <th></th>
             </tr>
@@ -52,14 +52,14 @@
                 <td>{{workflowStep.defaultValue}}</td>
                 <td>{{workflowStep.mapValues}}</td>
                 <td>{{workflowStep.oidPattern}}</td>
-                <td>{{workflowStep.description}}</td>
+                <!--<td>{{workflowStep.description}}</td>-->
                 <td>{{workflowStep.customizedStep}}</td>
                 <td>{{workflowStep.setOrGet}}</td>
                 <td>{{workflowStep.getExpectedValue}}</td>
-                <td>{{workflowStep.createdBy}}</td>
-                <td>{{workflowStep.createdDate | date:'mediumDate'}}</td>
-                <td>{{workflowStep.lastModifiedBy}}</td>
-                <td>{{workflowStep.lastModifiedDate | date:'mediumDate'}}</td>
+                <!--<td>{{workflowStep.createdBy}}</td>-->
+                <!--<td>{{workflowStep.createdDate | date:'mediumDate'}}</td>-->
+                <!--<td>{{workflowStep.lastModifiedBy}}</td>-->
+                <!--<td>{{workflowStep.lastModifiedDate | date:'mediumDate'}}</td>-->
                 <td>
                     <div *ngIf="workflowStep.workflowId">
                         <a [routerLink]="['../workflow', workflowStep.workflowId  ]" >{{workflowStep.workflowWorkflowName}}</a>
