@@ -19,9 +19,12 @@
         "mobile": false,
         "styles": [
             "content/css/vendor.css",
-            "content/css/global.css"
+            "content/css/global.css",
+            "../../../js/jsTree/themes/default/style.min.css"
         ],
-        "scripts": []
+        "scripts": [
+            "../../../js/jsTree/jstree.min.js"
+        ]
     }],
     "lint": [{
             "project": "../../../tsconfig.json"
