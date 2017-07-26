@@ -10,6 +10,7 @@
 
         <div class="float-right" style="margin-right: 10px;">
             <select class="form-control" id="field_workflow" name="workflow" [(ngModel)]="workflowId" (ngModelChange)="workflow_onChange($event)">
+                <option [ngValue]="0" selected>[--- Choose Workflow ---]</option>
                 <option [ngValue]="workflowOption.id" *ngFor="let workflowOption of workflows; trackBy: trackWorkflowById">{{workflowOption.workflowName}}</option>
             </select>
         </div>

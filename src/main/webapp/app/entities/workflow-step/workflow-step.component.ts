@@ -114,8 +114,12 @@ export class WorkflowStepComponent implements OnInit, OnDestroy {
     }
 
     workflow_onChange(workflowId) {
-        this.workflowStepService.queryByWorkflowId(workflowId)
-            .subscribe((res: ResponseWrapper) => { this.workflowSteps = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
+        if (workflowId > 0) {
+            this.workflowStepService.queryByWorkflowId(workflowId)
+                .subscribe((res: ResponseWrapper) => { this.workflowSteps = res.json; }, (res: ResponseWrapper) => this.onError(res.json));
+        } else {
+            this.loadAll();
+        }
     }
 
     trackWorkflowById(index: number, item: Workflow) {
