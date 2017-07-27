@@ -2,6 +2,7 @@ export * from './services/stuff.service';
 export * from './services/http-client.service';
 
 export * from './components/file-upload/file-upload.component';
+export * from './components/ng4-jstree/ng4-jstree.component';
 
 export * from './constants/pagination.constants';
 export * from './alert/alert.component';

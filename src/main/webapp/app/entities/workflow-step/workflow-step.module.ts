@@ -15,6 +15,8 @@ import {
     workflowStepPopupRoute,
 } from './';
 
+import { Ng4JstreeComponent } from '../../shared';
+
 const ENTITY_STATES = [
     ...workflowStepRoute,
     ...workflowStepPopupRoute,
@@ -32,6 +34,8 @@ const ENTITY_STATES = [
         WorkflowStepDeleteDialogComponent,
         WorkflowStepPopupComponent,
         WorkflowStepDeletePopupComponent,
+
+        Ng4JstreeComponent
     ],
     entryComponents: [
         WorkflowStepComponent,
