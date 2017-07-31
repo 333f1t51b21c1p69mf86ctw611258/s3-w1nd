@@ -1,0 +1,298 @@
+1.3.6.1.2.1.1.1           sysDescr                OctetString  RO  S   (0,255) d
+1.3.6.1.2.1.1.2           sysObjectID             ObjectID     RO  S   
+1.3.6.1.2.1.1.3           sysUpTime               TimeTicks    RO  S   
+1.3.6.1.2.1.1.4           sysContact              OctetString  RW  S   (0,255) d
+1.3.6.1.2.1.1.5           sysName                 OctetString  RW  S   (0,255) d
+1.3.6.1.2.1.1.6           sysLocation             OctetString  RW  S   (0,255) d
+1.3.6.1.2.1.1.7           sysServices             Integer      RO  S   (0,164000)
+1.3.6.1.2.1.2.1           ifNumber                Integer      RO  S   
+1.3.6.1.2.1.2.2.1.1       ifIndex                 Integer      RO  C1  
+1.3.6.1.2.1.2.2.1.2       ifDescr                 OctetString  RO  C2  (0,255) d
+1.3.6.1.2.1.2.2.1.3       ifType                  Integer      RO  C3  (1,32) e
+1.3.6.1.2.1.2.2.1.4       ifMtu                   Integer      RO  C4  
+1.3.6.1.2.1.2.2.1.5       ifSpeed                 Gauge        RO  C5  
+1.3.6.1.2.1.2.2.1.6       ifPhysAddress           OctetString  RO  C6  (6,6) p
+1.3.6.1.2.1.2.2.1.7       ifAdminStatus           Integer      RW  C7  (1,3) e
+1.3.6.1.2.1.2.2.1.8       ifOperStatus            Integer      RO  C8  (1,3) e
+1.3.6.1.2.1.2.2.1.9       ifLastChange            TimeTicks    RO  C9  
+1.3.6.1.2.1.2.2.1.10      ifInOctets              Counter      RO  C10 
+1.3.6.1.2.1.2.2.1.11      ifInUcastPkts           Counter      RO  C11 
+1.3.6.1.2.1.2.2.1.12      ifInNUcastPkts          Counter      RO  C12 
+1.3.6.1.2.1.2.2.1.13      ifInDiscards            Counter      RO  C13 
+1.3.6.1.2.1.2.2.1.14      ifInErrors              Counter      RO  C14 
+1.3.6.1.2.1.2.2.1.15      ifInUnknownProtos       Counter      RO  C15 
+1.3.6.1.2.1.2.2.1.16      ifOutOctets             Counter      RO  C16 
+1.3.6.1.2.1.2.2.1.17      ifOutUcastPkts          Counter      RO  C17 
+1.3.6.1.2.1.2.2.1.18      ifOutNUcastPkts         Counter      RO  C18 
+1.3.6.1.2.1.2.2.1.19      ifOutDiscards           Counter      RO  C19 
+1.3.6.1.2.1.2.2.1.20      ifOutErrors             Counter      RO  C20 
+1.3.6.1.2.1.2.2.1.21      ifOutQLen               Gauge        RO  C21 
+1.3.6.1.2.1.2.2.1.22      ifSpecific              ObjectID     RO  C22 
+1.3.6.1.2.1.3.1.1.1       atIfIndex               Integer      RW  C1  
+1.3.6.1.2.1.3.1.1.2       atPhysAddress           OctetString  RW  C2  (6,6) p
+1.3.6.1.2.1.3.1.1.3       atNetAddress            NetworkAddress RW  C3  
+1.3.6.1.2.1.4.1           ipForwarding            Integer      RW  S   (1,2) e
+1.3.6.1.2.1.4.2           ipDefaultTTL            Integer      RW  S   
+1.3.6.1.2.1.4.3           ipInReceives            Counter      RO  S   
+1.3.6.1.2.1.4.4           ipInHdrErrors           Counter      RO  S   
+1.3.6.1.2.1.4.5           ipInAddrErrors          Counter      RO  S   
+1.3.6.1.2.1.4.6           ipForwDatagrams         Counter      RO  S   
+1.3.6.1.2.1.4.7           ipInUnknownProtos       Counter      RO  S   
+1.3.6.1.2.1.4.8           ipInDiscards            Counter      RO  S   
+1.3.6.1.2.1.4.9           ipInDelivers            Counter      RO  S   
+1.3.6.1.2.1.4.10          ipOutRequests           Counter      RO  S   
+1.3.6.1.2.1.4.11          ipOutDiscards           Counter      RO  S   
+1.3.6.1.2.1.4.12          ipOutNoRoutes           Counter      RO  S   
+1.3.6.1.2.1.4.13          ipReasmTimeout          Integer      RO  S   
+1.3.6.1.2.1.4.14          ipReasmReqds            Counter      RO  S   
+1.3.6.1.2.1.4.15          ipReasmOKs              Counter      RO  S   
+1.3.6.1.2.1.4.16          ipReasmFails            Counter      RO  S   
+1.3.6.1.2.1.4.17          ipFragOKs               Counter      RO  S   
+1.3.6.1.2.1.4.18          ipFragFails             Counter      RO  S   
+1.3.6.1.2.1.4.19          ipFragCreates           Counter      RO  S   
+1.3.6.1.2.1.4.20.1.1      ipAdEntAddr             IpAddress    RO  C1  
+1.3.6.1.2.1.4.20.1.2      ipAdEntIfIndex          Integer      RO  C2  
+1.3.6.1.2.1.4.20.1.3      ipAdEntNetMask          IpAddress    RO  C3  
+1.3.6.1.2.1.4.20.1.4      ipAdEntBcastAddr        Integer      RO  C4  
+1.3.6.1.2.1.4.20.1.5      ipAdEntReasmMaxSize     Integer      RO  C5  (0,65535)
+1.3.6.1.2.1.4.21.1.1      ipRouteDest             IpAddress    RW  C1  
+1.3.6.1.2.1.4.21.1.2      ipRouteIfIndex          Integer      RW  C2  
+1.3.6.1.2.1.4.21.1.3      ipRouteMetric1          Integer      RW  C3  
+1.3.6.1.2.1.4.21.1.4      ipRouteMetric2          Integer      RW  C4  
+1.3.6.1.2.1.4.21.1.5      ipRouteMetric3          Integer      RW  C5  
+1.3.6.1.2.1.4.21.1.6      ipRouteMetric4          Integer      RW  C6  
+1.3.6.1.2.1.4.21.1.7      ipRouteNextHop          IpAddress    RW  C7  
+1.3.6.1.2.1.4.21.1.8      ipRouteType             Integer      RW  C8  (1,4) e
+1.3.6.1.2.1.4.21.1.9      ipRouteProto            Integer      RO  C9  (1,14) e
+1.3.6.1.2.1.4.21.1.10     ipRouteAge              Integer      RW  C10 
+1.3.6.1.2.1.4.21.1.11     ipRouteMask             IpAddress    RW  C11 
+1.3.6.1.2.1.4.21.1.12     ipRouteMetric5          Integer      RW  C12 
+1.3.6.1.2.1.4.21.1.13     ipRouteInfo             ObjectID     RO  C13 
+1.3.6.1.2.1.4.22.1.1      ipNetToMediaIfIndex     Integer      RW  C1  
+1.3.6.1.2.1.4.22.1.2      ipNetToMediaPhysAddress OctetString  RW  C2  (6,6) p
+1.3.6.1.2.1.4.22.1.3      ipNetToMediaNetAddress  IpAddress    RW  C3  
+1.3.6.1.2.1.4.22.1.4      ipNetToMediaType        Integer      RW  C4  (1,4) e
+1.3.6.1.2.1.4.23          ipRoutingDiscards       Counter      RO  S   
+1.3.6.1.2.1.5.1           icmpInMsgs              Counter      RO  S   
+1.3.6.1.2.1.5.2           icmpInErrors            Counter      RO  S   
+1.3.6.1.2.1.5.3           icmpInDestUnreachs      Counter      RO  S   
+1.3.6.1.2.1.5.4           icmpInTimeExcds         Counter      RO  S   
+1.3.6.1.2.1.5.5           icmpInParmProbs         Counter      RO  S   
+1.3.6.1.2.1.5.6           icmpInSrcQuenchs        Counter      RO  S   
+1.3.6.1.2.1.5.7           icmpInRedirects         Counter      RO  S   
+1.3.6.1.2.1.5.8           icmpInEchos             Counter      RO  S   
+1.3.6.1.2.1.5.9           icmpInEchoReps          Counter      RO  S   
+1.3.6.1.2.1.5.10          icmpInTimestamps        Counter      RO  S   
+1.3.6.1.2.1.5.11          icmpInTimestampReps     Counter      RO  S   
+1.3.6.1.2.1.5.12          icmpInAddrMasks         Counter      RO  S   
+1.3.6.1.2.1.5.13          icmpInAddrMaskReps      Counter      RO  S   
+1.3.6.1.2.1.5.14          icmpOutMsgs             Counter      RO  S   
+1.3.6.1.2.1.5.15          icmpOutErrors           Counter      RO  S   
+1.3.6.1.2.1.5.16          icmpOutDestUnreachs     Counter      RO  S   
+1.3.6.1.2.1.5.17          icmpOutTimeExcds        Counter      RO  S   
+1.3.6.1.2.1.5.18          icmpOutParmProbs        Counter      RO  S   
+1.3.6.1.2.1.5.19          icmpOutSrcQuenchs       Counter      RO  S   
+1.3.6.1.2.1.5.20          icmpOutRedirects        Counter      RO  S   
+1.3.6.1.2.1.5.21          icmpOutEchos            Counter      RO  S   
+1.3.6.1.2.1.5.22          icmpOutEchoReps         Counter      RO  S   
+1.3.6.1.2.1.5.23          icmpOutTimestamps       Counter      RO  S   
+1.3.6.1.2.1.5.24          icmpOutTimestampReps    Counter      RO  S   
+1.3.6.1.2.1.5.25          icmpOutAddrMasks        Counter      RO  S   
+1.3.6.1.2.1.5.26          icmpOutAddrMaskReps     Counter      RO  S   
+1.3.6.1.2.1.6.1           tcpRtoAlgorithm         Integer      RO  S   (1,4) e
+1.3.6.1.2.1.6.2           tcpRtoMin               Integer      RO  S   
+1.3.6.1.2.1.6.3           tcpRtoMax               Integer      RO  S   
+1.3.6.1.2.1.6.4           tcpMaxConn              Integer      RO  S   
+1.3.6.1.2.1.6.5           tcpActiveOpens          Counter      RO  S   
+1.3.6.1.2.1.6.6           tcpPassiveOpens         Counter      RO  S   
+1.3.6.1.2.1.6.7           tcpAttemptFails         Counter      RO  S   
+1.3.6.1.2.1.6.8           tcpEstabResets          Counter      RO  S   
+1.3.6.1.2.1.6.9           tcpCurrEstab            Gauge        RO  S   
+1.3.6.1.2.1.6.10          tcpInSegs               Counter      RO  S   
+1.3.6.1.2.1.6.11          tcpOutSegs              Counter      RO  S   
+1.3.6.1.2.1.6.12          tcpRetransSegs          Counter      RO  S   
+1.3.6.1.2.1.6.13.1.1      tcpConnState            Integer      RW  C1  (1,12) e
+1.3.6.1.2.1.6.13.1.2      tcpConnLocalAddress     IpAddress    RO  C2  
+1.3.6.1.2.1.6.13.1.3      tcpConnLocalPort        Integer      RO  C3  (0,65535)
+1.3.6.1.2.1.6.13.1.4      tcpConnRemAddress       IpAddress    RO  C4  
+1.3.6.1.2.1.6.13.1.5      tcpConnRemPort          Integer      RO  C5  (0,65535)
+1.3.6.1.2.1.6.14          tcpInErrs               Counter      RO  S   
+1.3.6.1.2.1.6.15          tcpOutRsts              Counter      RO  S   
+1.3.6.1.2.1.7.1           udpInDatagrams          Counter      RO  S   
+1.3.6.1.2.1.7.2           udpNoPorts              Counter      RO  S   
+1.3.6.1.2.1.7.3           udpInErrors             Counter      RO  S   
+1.3.6.1.2.1.7.4           udpOutDatagrams         Counter      RO  S   
+1.3.6.1.2.1.7.5.1.1       udpLocalAddress         IpAddress    RO  C1  
+1.3.6.1.2.1.7.5.1.2       udpLocalPort            Integer      RO  C2  (0,65535)
+1.3.6.1.2.1.8.1           egpInMsgs               Counter      RO  S   
+1.3.6.1.2.1.8.2           egpInErrors             Counter      RO  S   
+1.3.6.1.2.1.8.3           egpOutMsgs              Counter      RO  S   
+1.3.6.1.2.1.8.4           egpOutErrors            Counter      RO  S   
+1.3.6.1.2.1.8.5.1.1       egpNeighState           Integer      RO  C1  (1,5) e
+1.3.6.1.2.1.8.5.1.2       egpNeighAddr            IpAddress    RO  C2  
+1.3.6.1.2.1.8.5.1.3       egpNeighAs              Integer      RO  C3  
+1.3.6.1.2.1.8.5.1.4       egpNeighInMsgs          Counter      RO  C4  
+1.3.6.1.2.1.8.5.1.5       egpNeighInErrs          Counter      RO  C5  
+1.3.6.1.2.1.8.5.1.6       egpNeighOutMsgs         Counter      RO  C6  
+1.3.6.1.2.1.8.5.1.7       egpNeighOutErrs         Counter      RO  C7  
+1.3.6.1.2.1.8.5.1.8       egpNeighInErrMsgs       Counter      RO  C8  
+1.3.6.1.2.1.8.5.1.9       egpNeighOutErrMsgs      Counter      RO  C9  
+1.3.6.1.2.1.8.5.1.10      egpNeighStateUps        Counter      RO  C10 
+1.3.6.1.2.1.8.5.1.11      egpNeighStateDowns      Counter      RO  C11 
+1.3.6.1.2.1.8.5.1.12      egpNeighIntervalHello   Integer      RO  C12 
+1.3.6.1.2.1.8.5.1.13      egpNeighIntervalPoll    Integer      RO  C13 
+1.3.6.1.2.1.8.5.1.14      egpNeighMode            Integer      RO  C14 (1,2) e
+1.3.6.1.2.1.8.5.1.15      egpNeighEventTrigger    Integer      RW  C15 (1,2) e
+1.3.6.1.2.1.8.6           egpAs                   Integer      RO  S   
+1.3.6.1.2.1.11.1          snmpInPkts              Counter      RO  S   
+1.3.6.1.2.1.11.2          snmpOutPkts             Counter      RO  S   
+1.3.6.1.2.1.11.3          snmpInBadVersions       Counter      RO  S   
+1.3.6.1.2.1.11.4          snmpInBadCommunityNames Counter      RO  S   
+1.3.6.1.2.1.11.5          snmpInBadCommunityUses  Counter      RO  S   
+1.3.6.1.2.1.11.6          snmpInASNParseErrs      Counter      RO  S   
+1.3.6.1.2.1.11.8          snmpInTooBigs           Counter      RO  S   
+1.3.6.1.2.1.11.9          snmpInNoSuchNames       Counter      RO  S   
+1.3.6.1.2.1.11.10         snmpInBadValues         Counter      RO  S   
+1.3.6.1.2.1.11.11         snmpInReadOnlys         Counter      RO  S   
+1.3.6.1.2.1.11.12         snmpInGenErrs           Counter      RO  S   
+1.3.6.1.2.1.11.13         snmpInTotalReqVars      Counter      RO  S   
+1.3.6.1.2.1.11.14         snmpInTotalSetVars      Counter      RO  S   
+1.3.6.1.2.1.11.15         snmpInGetRequests       Counter      RO  S   
+1.3.6.1.2.1.11.16         snmpInGetNexts          Counter      RO  S   
+1.3.6.1.2.1.11.17         snmpInSetRequests       Counter      RO  S   
+1.3.6.1.2.1.11.18         snmpInGetResponses      Counter      RO  S   
+1.3.6.1.2.1.11.19         snmpInTraps             Counter      RO  S   
+1.3.6.1.2.1.11.20         snmpOutTooBigs          Counter      RO  S   
+1.3.6.1.2.1.11.21         snmpOutNoSuchNames      Counter      RO  S   
+1.3.6.1.2.1.11.22         snmpOutBadValues        Counter      RO  S   
+1.3.6.1.2.1.11.24         snmpOutGenErrs          Counter      RO  S   
+1.3.6.1.2.1.11.25         snmpOutGetRequests      Counter      RO  S   
+1.3.6.1.2.1.11.26         snmpOutGetNexts         Counter      RO  S   
+1.3.6.1.2.1.11.27         snmpOutSetRequests      Counter      RO  S   
+1.3.6.1.2.1.11.28         snmpOutGetResponses     Counter      RO  S   
+1.3.6.1.2.1.11.29         snmpOutTraps            Counter      RO  S   
+1.3.6.1.2.1.11.30         snmpEnableAuthenTraps   Integer      RW  S   (1,2) e
+%en         1.3.6.1.2.1               mib-2                  
+%en         1.3.6.1.2.1.1             system                 
+%en         1.3.6.1.2.1.2             interfaces             
+%en         1.3.6.1.2.1.3             at                     
+%en         1.3.6.1.2.1.4             ip                     
+%en         1.3.6.1.2.1.5             icmp                   
+%en         1.3.6.1.2.1.6             tcp                    
+%en         1.3.6.1.2.1.7             udp                    
+%en         1.3.6.1.2.1.8             egp                    
+%en         1.3.6.1.2.1.10            transmission           
+%en         1.3.6.1.2.1.11            snmp                   
+%en         1.3.6.1.2.1.2.2           ifTable                
+%en         1.3.6.1.2.1.2.2.1         ifEntry                
+%ei   1.3.6.1.2.1.2.2.1 "ifIndex"
+%ev                  ifType           other           1
+%ev                  ifType           regular1822     2
+%ev                  ifType           hdh1822         3
+%ev                  ifType           ddn-x25         4
+%ev                  ifType           rfc877-x25      5
+%ev                  ifType           ethernet-csmacd 6
+%ev                  ifType           iso88023-csmacd 7
+%ev                  ifType           iso88024-tokenBus 8
+%ev                  ifType           iso88025-tokenRing 9
+%ev                  ifType           iso88026-man    10
+%ev                  ifType           starLan         11
+%ev                  ifType           proteon-10Mbit  12
+%ev                  ifType           proteon-80Mbit  13
+%ev                  ifType           hyperchannel    14
+%ev                  ifType           fddi            15
+%ev                  ifType           lapb            16
+%ev                  ifType           sdlc            17
+%ev                  ifType           ds1             18
+%ev                  ifType           e1              19
+%ev                  ifType           basicISDN       20
+%ev                  ifType           primaryISDN     21
+%ev                  ifType           propPointToPointSerial 22
+%ev                  ifType           ppp             23
+%ev                  ifType           softwareLoopback 24
+%ev                  ifType           eon             25
+%ev                  ifType           ethernet-3Mbit  26
+%ev                  ifType           nsip            27
+%ev                  ifType           slip            28
+%ev                  ifType           ultra           29
+%ev                  ifType           ds3             30
+%ev                  ifType           sip             31
+%ev                  ifType           frame-relay     32
+%ev                  ifAdminStatus    up              1
+%ev                  ifAdminStatus    down            2
+%ev                  ifAdminStatus    testing         3
+%ev                  ifOperStatus     up              1
+%ev                  ifOperStatus     down            2
+%ev                  ifOperStatus     testing         3
+%en         1.3.6.1.2.1.3.1           atTable                
+%en         1.3.6.1.2.1.3.1.1         atEntry                
+%ei   1.3.6.1.2.1.3.1.1 "atIfIndex atNetAddress"
+%ev                  ipForwarding     forwarding      1
+%ev                  ipForwarding     not-forwarding  2
+%en         1.3.6.1.2.1.4.20          ipAddrTable            
+%en         1.3.6.1.2.1.4.20.1        ipAddrEntry            
+%ei   1.3.6.1.2.1.4.20.1 "ipAdEntAddr"
+%en         1.3.6.1.2.1.4.21          ipRouteTable           
+%en         1.3.6.1.2.1.4.21.1        ipRouteEntry           
+%ei   1.3.6.1.2.1.4.21.1 "ipRouteDest"
+%ev                  ipRouteType      other           1
+%ev                  ipRouteType      invalid         2
+%ev                  ipRouteType      direct          3
+%ev                  ipRouteType      indirect        4
+%ev                  ipRouteProto     other           1
+%ev                  ipRouteProto     local           2
+%ev                  ipRouteProto     netmgmt         3
+%ev                  ipRouteProto     icmp            4
+%ev                  ipRouteProto     egp             5
+%ev                  ipRouteProto     ggp             6
+%ev                  ipRouteProto     hello           7
+%ev                  ipRouteProto     rip             8
+%ev                  ipRouteProto     is-is           9
+%ev                  ipRouteProto     es-is           10
+%ev                  ipRouteProto     ciscoIgrp       11
+%ev                  ipRouteProto     bbnSpfIgp       12
+%ev                  ipRouteProto     ospf            13
+%ev                  ipRouteProto     bgp             14
+%en         1.3.6.1.2.1.4.22          ipNetToMediaTable      
+%en         1.3.6.1.2.1.4.22.1        ipNetToMediaEntry      
+%ei   1.3.6.1.2.1.4.22.1 "ipNetToMediaIfIndex ipNetToMediaNetAddress"
+%ev                  ipNetToMediaType other           1
+%ev                  ipNetToMediaType invalid         2
+%ev                  ipNetToMediaType dynamic         3
+%ev                  ipNetToMediaType static          4
+%ev                  tcpRtoAlgorithm  other           1
+%ev                  tcpRtoAlgorithm  constant        2
+%ev                  tcpRtoAlgorithm  rsre            3
+%ev                  tcpRtoAlgorithm  vanj            4
+%en         1.3.6.1.2.1.6.13          tcpConnTable           
+%en         1.3.6.1.2.1.6.13.1        tcpConnEntry           
+%ei   1.3.6.1.2.1.6.13.1 "tcpConnLocalAddress tcpConnLocalPort tcpConnRemAddress tcpConnRemPort"
+%ev                  tcpConnState     closed          1
+%ev                  tcpConnState     listen          2
+%ev                  tcpConnState     synSent         3
+%ev                  tcpConnState     synReceived     4
+%ev                  tcpConnState     established     5
+%ev                  tcpConnState     finWait1        6
+%ev                  tcpConnState     finWait2        7
+%ev                  tcpConnState     closeWait       8
+%ev                  tcpConnState     lastAck         9
+%ev                  tcpConnState     closing         10
+%ev                  tcpConnState     timeWait        11
+%ev                  tcpConnState     deleteTCB       12
+%en         1.3.6.1.2.1.7.5           udpTable               
+%en         1.3.6.1.2.1.7.5.1         udpEntry               
+%ei   1.3.6.1.2.1.7.5.1 "udpLocalAddress udpLocalPort"
+%en         1.3.6.1.2.1.8.5           egpNeighTable          
+%en         1.3.6.1.2.1.8.5.1         egpNeighEntry          
+%ei   1.3.6.1.2.1.8.5.1 "egpNeighAddr"
+%ev                  egpNeighState    idle            1
+%ev                  egpNeighState    acquisition     2
+%ev                  egpNeighState    down            3
+%ev                  egpNeighState    up              4
+%ev                  egpNeighState    cease           5
+%ev                  egpNeighMode     active          1
+%ev                  egpNeighMode     passive         2
+%ev                  egpNeighEventTrigger start           1
+%ev                  egpNeighEventTrigger stop            2
+%ev                  snmpEnableAuthenTraps enabled         1
+%ev                  snmpEnableAuthenTraps disabled        2

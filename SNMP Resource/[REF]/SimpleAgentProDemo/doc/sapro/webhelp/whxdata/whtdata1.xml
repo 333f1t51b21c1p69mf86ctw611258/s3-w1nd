@@ -1,0 +1,38 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+<tocdata>
+<item name="The Devices Menu" url="pro_205.htm#The_Devices_Menubc-76" />
+<book name="Creating a Device" url="pro_205.htm#Creating_a_Devicebc-77" >
+  <item name="General Information Tab" url="pro_205.htm#General_Information_Tabbc-78" />
+  <item name="SNMP Information Tab" url="pro_205.htm#SNMP_Information_Tabbc-79" />
+  <item name="Telnet/CLI Information Tab" url="pro_205.htm#Telnet_CLI_Informationbc-80" />
+  <item name="Http(local) Information Tab" url="pro_205.htm#Http_local_Informationbc-81" />
+  <item name="SSH Information Tab" url="pro_205.htm#SSH_Information_Tabbc-82" />
+  <item name="TL1 Information Tab" url="pro_205.htm#TL1_Information_Tabbc-83" />
+  <item name="FTP Information Tab" url="pro_205.htm#FTP_Information_Tabbc-84" />
+  <item name="TFTP Information Tab" url="pro_205.htm#TFTP_Information_Tabbc-85" />
+  <item name="Flow Information Tab" url="pro_205.htm#Flow_Information_Tabbc-86" />
+  <item name="Http/XML Information Tab" url="pro_205.htm#Http_XML_Information_Tabbc-87" />
+  <item name="Cloud Information Tab" url="pro_205.htm#Cloud_Information_Tabbc-88" />
+  <item name="IPMI Information Tab" url="pro_205.htm#IPMI_Information_Tabbc-89" />
+  <item name="Netconf Information Tab" url="pro_205.htm#Netconf_Information_Tabbc-90" />
+  <item name="CoAP Information Tab" url="pro_205.htm#CoAP_Information_Tabbc-91" />
+  <item name="MQTT Information Tab" url="pro_205.htm#MQTT_Information_Tabbc-92" />
+  <item name="Modbus Information Tab" url="pro_205.htm#Modbus_Information_Tabbc-93" />
+  <item name="BACnet Information Tab" url="pro_205.htm#BACnet_Information_Tabbc-94" />
+  <item name="HTTP Client Information Tab" url="pro_205.htm#HTTP_Client_Informationbc-95" />
+</book>
+<item name="Modifying a Device" url="pro_205.htm#Modifying_a_Devicebc-96" />
+<item name="Deleting a Device" url="pro_205.htm#Deleting_a_Devicebc-97" />
+<item name="Cloning a Device" url="pro_205.htm#Cloning_a_Devicebc-98" />
+<item name="Precompiling a Device" url="pro_205.htm#Precompiling_a_Devicebc-99" />
+<item name="Getting Statistics from a Device" url="pro_205.htm#Getting_Statistics_frombc-100" />
+<item name="Sending TCL Commands to a Device" url="pro_205.htm#Sending_TCL_Commands_tobc-101" />
+<item name="Sending Traps from Device" url="pro_205.htm#Sending_Traps_from_Devicebc-102" />
+<item name="Enabling/Disabling a Device" url="pro_205.htm#Enabling_Disabling_abc-103" />
+<item name="Stopping/Starting a Device" url="pro_205.htm#Stopping_Starting_abc-104" />
+<item name="Restarting a Device" url="pro_205.htm#Restarting_a_Devicebc-105" />
+<item name="Triggering Flag Action on a Device" url="pro_205.htm#Triggering_Flag_Action1bc-106" />
+<item name="Debug SNMP Packets for a Device" url="pro_205.htm#Debug_SNMP_Packets_for_abc-107" />
+<item name="MIB Browser" url="pro_205.htm#MIB_Browserbc-108" />
+
+</tocdata>

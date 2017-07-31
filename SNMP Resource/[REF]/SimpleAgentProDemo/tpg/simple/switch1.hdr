@@ -1,0 +1,59 @@
+####################################################
+# Name:               switch.var  
+#
+#                     Copyright 2009 SimpleSoft Inc.
+#                     All rights reserved
+#
+# Description:        This is the var file for the 
+#                     layer of switches.
+#
+#                     This switch is assumed to be
+#                     connected to 50 hosts below
+#                     it, and a router above it.
+#                     
+#                     The Switches's own IP address is one of
+#                     87.2.2.1....87.2.101.1 if it is connected
+#                     to 87.1.2.1 router, and its Mac is 
+#                     one of 0x010302020101 ..0x010302650101
+#                     or
+#                     87.3.2.1....87.3.101.1 if it is connected
+#                     to 87.1.3.1 router, and its Mac is 
+#                     one of 0x010303020101 ..0x010303650101
+#                     or
+#                     87.51.1.1....87.51.100.1 if it is connected
+#                     to 87.1.51.1 router, and its Mac is 
+#                     one of 0x010333020101 ..0x010333650101
+#
+#                     It is connected to 50 hosts with
+#                     IPs 87.2.2.3....87.2.2.53 or
+#                         87.3.2.3....87.3.2.53 or
+#                         87.51.2.3...87.51.2.3 
+#                     Their main macs are 
+#                        0x010402020101 to 0x010402650132 or 
+#                        0x010402650101 to 0x010403650132 or 
+#
+#                     To have only 5 hosts instead of 50, change
+#                     51 to 6 in the range specification and ifNum
+# 
+#                     This assumes that it has 10 vlans, each with
+#                     5 hosts on 5 consequtive ports.
+#
+#  Tokens:            $$MYTOKENS001$$ = 2 to 51 (changed from 51 to 6)
+#                     $$MYTOKENS002$$ = 02 to 33 (changed from 33 to 06 in hex)
+#                     $$MYTOKENS003$$ = 2.2 to 2.101
+#                     $$MYTOKENS004$$ = 0202 to 0265 (2 to 101 in hex)
+#                     $$MYTOKENS005$$ = 2.1.1.2 to 2.1.1.101
+#                     $$MYTOKENS006$$ = 02010102 to 02010165 (2 to 101 in hex)
+#                     $$MYTOKENS007$$ = 2 to 101
+#                     $$MYTOKENS008$$ = 0202 to 0211 
+#
+#
+###################################################
+%sapdefine STARTIP_DEC   87
+%sapdefine STARTIP_HEX   57
+%sapdefine NUMIFS        51
+%sapdefine NUMVLANS      10
+%sapdefine NUM_HIFS      52
+%sapdefine STARTMAC_HEX  01
+%sapdefine STARTMAC_DEC  1
+#

@@ -1,0 +1,157 @@
+-- 
+-- This is FriendlySNMP DEMO-TABLE-WAREHOUSE-MIB
+--
+
+DEMO-TABLE-WAREHOUSE-MIB DEFINITIONS ::= BEGIN
+
+IMPORTS
+    enterprises,
+    MODULE-IDENTITY,
+    Integer32,
+    Unsigned32,
+    OBJECT-TYPE
+        FROM SNMPv2-SMI
+    DisplayString,
+    RowStatus,
+    TEXTUAL-CONVENTION
+        FROM SNMPv2-TC
+    MODULE-COMPLIANCE, 
+    OBJECT-GROUP
+        FROM SNMPv2-CONF
+    ;
+
+-- Module Identity
+------------------
+demoTableWarehouse MODULE-IDENTITY 
+    -- Date Format is "YYYYMMDDhhmmZ"
+    LAST-UPDATED "201004010000Z"    
+    ORGANIZATION "FriendlySNMP"
+    CONTACT-INFO "info@friendlysnmp.org"
+    DESCRIPTION  "This is demo MIB to test basic SNMP agent functionality"
+    -- Multiple pairs revision/description are allowed
+    REVISION     "201004010000Z"
+    DESCRIPTION  "FriendlySNMP Demo MIB"
+    -- 1.3.6.1.4.1.29091.10.5
+    ::= { friendlySNMP demo(10) 5 }
+
+-- Enterprise OIDs
+------------------
+friendlySNMP OBJECT IDENTIFIER ::= { enterprises 29091 }
+
+-- Textual Conventions
+----------------------
+DemoWarehouseDepartmentTC ::= TEXTUAL-CONVENTION
+    STATUS  current
+    DESCRIPTION "Defines warehouse departments"
+    SYNTAX INTEGER { appliances(1), electronics(2), sports(3), jewerly(4) }
+    
+DemoPriceTC ::= TEXTUAL-CONVENTION
+    DISPLAY-HINT "d-2"
+    STATUS      current
+    DESCRIPTION "A positive integer in range 0..MAX_INT and displayed as price."
+    SYNTAX Integer32 (0..2147483647)
+    
+-- Top-level tree (sections)
+----------------------------
+demoMIBObjects       OBJECT IDENTIFIER ::= { demoTableWarehouse 1 }
+demoMIBConformance   OBJECT IDENTIFIER ::= { demoTableWarehouse 3 }
+
+-- Table
+--------------------
+warehouseTable OBJECT-TYPE
+    SYNTAX      SEQUENCE OF WarehouseEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION "Table of Warehouse items"
+    ::= { demoMIBObjects 9 }
+
+warehouseEntry OBJECT-TYPE
+    SYNTAX      WarehouseEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION "Row with warehouse item"
+    INDEX { warehouseDepartmentIndex, warehouseItemIndex }
+    ::= { warehouseTable 1 }
+
+WarehouseEntry ::= SEQUENCE {
+    warehouseDepartmentIndex  DemoWarehouseDepartmentTC,
+    warehouseItemIndex        Unsigned32,
+    warehouseItemBrand        DisplayString,
+    warehouseItemName         DisplayString,
+    warehouseItemPrice        DemoPriceTC,
+    warehouseRowStatus        RowStatus
+}
+
+warehouseDepartmentIndex OBJECT-TYPE
+    SYNTAX      DemoWarehouseDepartmentTC
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION "This is a table column: Department INDEX"
+    ::= { warehouseEntry 2 }
+
+warehouseItemIndex OBJECT-TYPE
+    SYNTAX      Unsigned32
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION "This is a table column: Item INDEX"
+    ::= { warehouseEntry 3 }
+    
+warehouseItemBrand OBJECT-TYPE
+    SYNTAX      DisplayString
+    MAX-ACCESS  read-create
+    STATUS      current
+    DESCRIPTION "This is a table column: brand."
+    ::= { warehouseEntry 8 }
+
+warehouseItemName OBJECT-TYPE
+    SYNTAX      DisplayString
+    MAX-ACCESS  read-create
+    STATUS      current
+    DESCRIPTION "This is a table column: item name."
+    ::= { warehouseEntry 12 }
+
+warehouseItemPrice OBJECT-TYPE
+    SYNTAX      DemoPriceTC
+    MAX-ACCESS  read-create
+    STATUS      current
+    DESCRIPTION "This is a table column: price."
+    ::= { warehouseEntry 18 }
+
+warehouseRowStatus OBJECT-TYPE
+    SYNTAX      RowStatus
+    MAX-ACCESS  read-create
+    STATUS      current
+    DESCRIPTION "The row status. 
+        GET returns:  'active = 1' for all rows.
+        Not used: 'notInService = 2' and 'notReady = 3'.
+        SET allows actions 'createAndGo = 4' and 'destroy = 6'.
+        Not used: 'createAndWait = 5'."
+    DEFVAL  { active }
+    ::= { warehouseEntry 40 }
+
+--
+-- SECTION: Conformance
+--
+demoCompliance MODULE-COMPLIANCE
+    STATUS  current
+    DESCRIPTION
+        "The compliance statement for SNMP entities which
+        implement this MIB."
+    MODULE  -- this module
+    MANDATORY-GROUPS { 
+        demoObjectGroup
+    }
+    ::= { demoMIBConformance 1 }
+
+demoObjectGroup OBJECT-GROUP
+    OBJECTS {
+        warehouseItemBrand,
+        warehouseItemName,
+        warehouseItemPrice,
+        warehouseRowStatus
+    }
+    STATUS current
+    DESCRIPTION "A collection of object nodes in this MIB"
+    ::= { demoMIBConformance 2 }
+
+END

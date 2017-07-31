@@ -1,0 +1,14 @@
+#
+# This file will get overwritten by the SA_updatemygatewayinfo call.
+# initially it will just have some instances for the system group
+#
+###################
+# system group
+###################
+sysDescr.0                    , OctetString , RO , fixed(Simulated Gateway 1)
+sysObjectID.0                 , ObjectID    , RO , fixed(1.3.6.1.4.1.786.2)
+sysUpTime.0                   , TimeTicks   , RO , clock(0)
+sysContact.0                  , OctetString , RW , lastset(TheOne)
+sysName.0                     , OctetString , RW , lastset(Simulator)
+sysLocation.0                 , OctetString , RW , lastset(Matrix)
+sysServices.0                 , Integer     , RO , fixed(7)

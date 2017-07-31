@@ -1,0 +1,223 @@
+<TopoGenList>
+    <TopoGen
+        Label = "Simple Topology" 
+        Picture = "../tpg/simple/simple1.bmp">
+        <ParamGroupType>
+            <Restriction>
+                <Enumeration 
+                    Value = "Def"
+                />
+                <Enumeration 
+                    Value = "Var"
+                />
+                <Enumeration 
+                    Value = "Cmf"
+                />
+                <Enumeration 
+                    Value = "Tel"
+                />
+            </Restriction>
+        </ParamGroupType>
+        <SubDialogList>
+            <SubDialog
+                Title = "Number of Devices"
+                Picture = "../tpg/simple/simple2.bmp"
+                Instructions = "Specify the number of routers attached to the seed router, the number of switches attached to each second teer router, and the number of hosts attached to each switch:"
+                Tips = "">
+                <Param
+                    Label = "Routers (1-254)" 
+                    Value = "10" 
+                />
+                <Param 
+                    Label = "Switches (1-254)" 
+                    Value = "100" 
+                />
+                <Param 
+                    Label = "Hosts (5-254)" 
+                    Value = "50" 
+                />
+                <Param 
+                    Label = "Hosts / VLAN (1-Hosts)" 
+                    Value = "5" 
+                />
+                <Param 
+                    Label = "Simulate Hosts" 
+                    Value = "Yes" 
+                    Type = "CheckBox" 
+                />
+            </SubDialog>
+            <SubDialog 
+                Title = "Seed Router"
+                Picture = "../tpg/simple/simple3.bmp"
+                Instructions = "Specify the starting IP address in standard dotted notation, the starting MAC address in the form of a hex string, and the first sub-value of the router and switch addresses:"
+                Tips = "Specifying a different Var file will result in the same file with the topology related information merged in. Ensure that the corresponding Cmf file is specified and that different files have unique names.">
+                <Param
+                    Label = "IP Addr" 
+                    Value = "10.1.1.1" 
+                />
+                <Param 
+                    Label = "MAC Addr" 
+                    Value = "010101010101" 
+                />
+                <Param 
+                    Label = "Starting Sub-IP" 
+                    Value = "10" 
+                />
+                <Param
+                    Label = "Seed Router Var" 
+                    Value = "../tpg/simple/seed1.var" 
+                    Type = "FileName" 
+                    Grouptype = "Var" 
+                />
+                <Param
+                    Label = "Seed Router Cmf"
+                    Value = "../tpg/simple/mib2.cmf" 
+                    Type = "FileName" 
+                    Grouptype = "Cmf" 
+                />
+            </SubDialog>
+            <SubDialog 
+                Title = "Template Var Files"
+                Picture = "../tpg/simple/simple2.bmp"
+                Instructions = "Specify the var files used as a template for each of the nodes:"
+                Tips = "Specifying a different Var file will result in the same file with the topology related information merged in. Ensure that the corresponding Cmf file is specified and that different files have unique names.">
+                <Param 
+                    Label = "Router Var" 
+                    Value = "../tpg/simple/router1.var" 
+                    Type = "FileName" 
+                    Grouptype = "Var" 
+                />
+                <Param
+                    Label = "Router Cmf"
+                    Value = "../tpg/simple/mib2.cmf" 
+                    Type = "FileName" 
+                    Grouptype = "Cmf" 
+                />
+                <Param 
+                    Label = "Switch Var" 
+                    Value = "../tpg/simple/switch1.var" 
+                    Type = "FileName" 
+                    Grouptype = "Var" 
+                />
+                <Param
+                    Label = "Switch Cmf"
+                    Value = "../tpg/simple/mib2.cmf" 
+                    Type = "FileName" 
+                    Grouptype = "Cmf" 
+                />
+                <Param 
+                    Label = "Host Var" 
+                    Value = "../tpg/simple/host1.var" 
+                    Type = "FileName" 
+                    Grouptype = "Var" 
+                />
+                <Param
+                    Label = "Host Cmf"
+                    Value = "../tpg/simple/mib2.cmf" 
+                    Type = "FileName" 
+                    Grouptype = "Cmf" 
+                />
+            </SubDialog>
+            <SubDialog 
+                Title = "Telnet Modeling Files"
+                Picture = "../tpg/simple/simple1.bmp"
+                Instructions = "Specify the Telnet modeling files for the seed router, routers, switches, and hosts:"
+                Tips = "Leave the field as None if Telnet is disabled.">
+                <Param
+                    Label = "Seed Router" 
+                    Value = "../telnet/None" 
+                    Type = "FileName" 
+                    Grouptype = "Tel" 
+                />
+                <Param 
+                    Label = "Router" 
+                    Value = "../telnet/None" 
+                    Type = "FileName" 
+                    Grouptype = "Tel" 
+                />
+                <Param 
+                    Label = "Switch" 
+                    Value = "../telnet/None" 
+                    Type = "FileName"
+                    Grouptype = "Tel" 
+                />
+                <Param 
+                    Label = "Host" 
+                    Value = "../telnet/None" 
+                    Type = "FileName" 
+                    Grouptype = "Tel" 
+                />
+            </SubDialog>
+        </SubDialogList>
+        <MapGenerator
+                ScriptName = "../tpg/simple/simple.tcl">
+        </MapGenerator>
+    </TopoGen>
+    <TopoGen
+        Label = "Simple Cloud" 
+        Picture = "../tpg/cloud/cloud1.bmp">
+        <ParamGroupType>
+            <Restriction>
+                <Enumeration 
+                    Value = "Def"
+                />
+                <Enumeration 
+                    Value = "Dat"
+                />
+            </Restriction>
+        </ParamGroupType>
+        <SubDialogList>
+            <SubDialog
+                Title = "Number of Cloud Elements"
+                Picture = "../tpg/cloud/cloud2.bmp"
+                Instructions = "Specify the number of vCenters, hosts within a vCenter, and VMs within a host to be simulated:"
+                Tips = "">
+                <Param
+                    Label = "vCenters (1-254)" 
+                    Value = "3" 
+                />
+                <Param 
+                    Label = "Hosts (1-1000)" 
+                    Value = "5" 
+                />
+                <Param 
+                    Label = "VMs (1-1000)" 
+                    Value = "10" 
+                />
+            </SubDialog>
+            <SubDialog 
+                Title = "vCenter"
+                Picture = "../tpg/cloud/cloud3.bmp"
+                Instructions = "Specify the starting IP address in standard dotted notation, and the template vCenter data file:"
+                Tips = "The specified vCenter data file will be used as a starting template to which new hosts and VMs will be added. Ensure that the specified vCenter data file has atleast one host and one vm to use for duplication.">
+                <Param
+                    Label = "IP Addr" 
+                    Value = "10.1.1.1" 
+                />
+                <Param
+                    Label = "vCenter Data" 
+                    Value = "../tpg/cloud/demovc.dat" 
+                    Type = "FileName" 
+                    Grouptype = "Dat" 
+                />
+            </SubDialog>
+            <SubDialog 
+                Title = "Template Host and Vms"
+                Picture = "../tpg/cloud/cloud3.bmp"
+                Instructions = "Specify the host and vm to use as templates for duplication in the template vCenter file provided earlier:"
+                Tips = "Make sure that the template host and VM specied are present in the data file.">
+                <Param 
+                    Label = "Template Host" 
+                    Value = "host-65" 
+                />
+                <Param 
+                    Label = "Template VM" 
+                    Value = "vm-70" 
+                />
+            </SubDialog>
+        </SubDialogList>
+        <MapGenerator
+                ScriptName = "../tpg/cloud/cloud.tcl">
+        </MapGenerator>
+    </TopoGen>
+</TopoGenList>

@@ -1,0 +1,561 @@
+####################################################
+# Name:               switch.var  
+#
+#                     Copyright 2009 SimpleSoft Inc.
+#                     All rights reserved
+#
+# Description:        This is the var file for the 
+#                     layer of switches.
+#
+#                     This switch is assumed to be
+#                     connected to 50 hosts below
+#                     it, and a router above it.
+#                     
+#                     The Switches's own IP address is one of
+#                     87.2.2.1....87.2.101.1 if it is connected
+#                     to 87.1.2.1 router, and its Mac is 
+#                     one of 0x010302020101 ..0x010302650101
+#                     or
+#                     87.3.2.1....87.3.101.1 if it is connected
+#                     to 87.1.3.1 router, and its Mac is 
+#                     one of 0x010303020101 ..0x010303650101
+#                     or
+#                     87.51.1.1....87.51.100.1 if it is connected
+#                     to 87.1.51.1 router, and its Mac is 
+#                     one of 0x010333020101 ..0x010333650101
+#
+#                     It is connected to 50 hosts with
+#                     IPs 87.2.2.3....87.2.2.53 or
+#                         87.3.2.3....87.3.2.53 or
+#                         87.51.2.3...87.51.2.3 
+#                     Their main macs are 
+#                        0x010402020101 to 0x010402650132 or 
+#                        0x010402650101 to 0x010403650132 or 
+#
+#                     To have only 5 hosts instead of 50, change
+#                     51 to 6 in the range specification and ifNum
+# 
+#                     This assumes that it has 10 vlans, each with
+#                     5 hosts on 5 consequtive ports.
+#
+#  Tokens:            $$MYTOKENS001$$ = 2 to 51 (changed from 51 to 6)
+#                     $$MYTOKENS002$$ = 02 to 33 (changed from 33 to 06 in hex)
+#                     $$MYTOKENS003$$ = 2.2 to 2.101
+#                     $$MYTOKENS004$$ = 0202 to 0265 (2 to 101 in hex)
+#                     $$MYTOKENS005$$ = 2.1.1.2 to 2.1.1.101
+#                     $$MYTOKENS006$$ = 02010102 to 02010165 (2 to 101 in hex)
+#                     $$MYTOKENS007$$ = 2 to 101
+#                     $$MYTOKENS008$$ = 0202 to 0211 
+#
+#
+###################################################
+%sapdefine STARTIP_DEC   87
+%sapdefine STARTIP_HEX   57
+%sapdefine NUMIFS        51
+%sapdefine NUMVLANS      10
+%sapdefine NUM_HIFS      52
+%sapdefine STARTMAC_HEX  01
+%sapdefine STARTMAC_DEC  1
+#
+sysDescr.0                    , OctetString , RO , fixed(Catalyst 2900)
+sysObjectID.0                 , ObjectID    , RO , fixed(1.3.6.1.4.1.9.5.35)
+sysUpTime.0                   , TimeTicks   , RO , clock(0)
+sysContact.0                  , OctetString , RW , lastset(My_sysContact_string)
+sysName.0                     , OctetString , RW , lastset(Switch_STARTIP_DEC.$$MYTOKENS003$$.1)
+sysLocation.0                 , OctetString , RW , lastset(My_sysLocation_string)
+sysServices.0                 , Integer     , RO , fixed(0)
+#ifNum (number of interfaces for this box)
+1.3.6.1.2.1.2.1.0                  , Integer     , RO , fixed(NUMIFS)
+#ifTable (list of all our interfaces)
+# indexed by interface number
+1.3.6.1.2.1.2.2.1.1.[1-NUMIFS]         , Integer     , RO , indexvalue(0)
+1.3.6.1.2.1.2.2.1.2.[1-NUMIFS]         , OctetString , RO , indexstr(0, 0, fastEthernet%d/0)
+1.3.6.1.2.1.2.2.1.3.[1-NUMIFS]         , Integer     , RO , fixed(62)
+1.3.6.1.2.1.2.2.1.4.[1-NUMIFS]         , Integer     , RO , fixed(1500)
+1.3.6.1.2.1.2.2.1.5.[1-NUMIFS]         , Gauge       , RO , fixed(10000000)
+1.3.6.1.2.1.2.2.1.6.[1-NUMIFS]         , OctetString , RO , indexmac(0,0xSTARTMAC_HEX03$$MYTOKENS004$$0101)
+1.3.6.1.2.1.2.2.1.7.[1-NUMIFS]         , Integer     , RW , r_lastset(1, 3, 1)
+1.3.6.1.2.1.2.2.1.8.[1-NUMIFS]         , Integer     , RO , lastset(1)
+1.3.6.1.2.1.2.2.1.9.[1-NUMIFS]         , TimeTicks   , RO , fixed(0)
+1.3.6.1.2.1.2.2.1.10.[1-NUMIFS]        , Counter     , RO , randomup(0,100)
+1.3.6.1.2.1.2.2.1.11.[1-NUMIFS]        , Counter     , RO , randomup(0,100)
+1.3.6.1.2.1.2.2.1.12.[1-NUMIFS]        , Counter     , RO , randomup(0,100)
+1.3.6.1.2.1.2.2.1.13.[1-NUMIFS]        , Counter     , RO , randomup(0, 0)
+1.3.6.1.2.1.2.2.1.14.[1-NUMIFS]        , Counter     , RO , randomup(0, 0)
+1.3.6.1.2.1.2.2.1.15.[1-NUMIFS]        , Counter     , RO , randomup(0, 100)
+1.3.6.1.2.1.2.2.1.16.[1-NUMIFS]        , Counter     , RO , randomup(0,100)
+1.3.6.1.2.1.2.2.1.17.[1-NUMIFS]        , Counter     , RO , randomup(0,100)
+1.3.6.1.2.1.2.2.1.18.[1-NUMIFS]        , Counter     , RO , randomup(0,100)
+1.3.6.1.2.1.2.2.1.19.[1-NUMIFS]        , Counter     , RO , randomup(0, 0)
+1.3.6.1.2.1.2.2.1.20.[1-NUMIFS]        , Counter     , RO , randomup(0, 0)
+1.3.6.1.2.1.2.2.1.21.[1-NUMIFS]        , Gauge       , RO , random(0, 100)
+1.3.6.1.2.1.2.2.1.22.[1-NUMIFS]        , ObjectID    , RO , fixed(0.0)
+#at (older arp cache)
+# indexed by port.1.ipaddress
+1.3.6.1.2.1.3.1.1.1.1.1.STARTIP_DEC.$$MYTOKENS003$$.2           , Integer      , RW , indexvalue(10)
+1.3.6.1.2.1.3.1.1.1.[2-NUMIFS].1.STARTIP_DEC.$$MYTOKENS003$$.(3-NUM_HIFS)  , Integer      , RW , indexvalue(10)
+1.3.6.1.2.1.3.1.1.2.1.1.STARTIP_DEC.$$MYTOKENS003$$.2           , OctetString  , RO , fixed(0xSTARTMAC_HEX02$$MYTOKENS006$$)
+1.3.6.1.2.1.3.1.1.2.[2-NUMIFS].1.STARTIP_DEC.$$MYTOKENS003$$.(3-NUM_HIFS)  , OctetString  , RO , indexstr(10, 1, 0xSTARTMAC_HEX04$$MYTOKENS004$$%02x01)
+1.3.6.1.2.1.3.1.1.3.1.1.STARTIP_DEC.$$MYTOKENS003$$.2           , IpAddress    , RW , indexip(12,15,ip)
+1.3.6.1.2.1.3.1.1.3.[2-NUMIFS].1.STARTIP_DEC.$$MYTOKENS003$$.(3-NUM_HIFS)  , IpAddress    , RW , indexip(12,15,ip)
+#ipforwarding (for a router, it must be 1, for a switch 2)
+1.3.6.1.2.1.4.1.0       , Integer   , RW , r_lastset(1, 2, 2)
+#ipaddr (list of all our own ipaddresses)
+# indexed by ipaddress
+1.3.6.1.2.1.4.20.1.1.$$MYIPADDRESS$$     , IpAddress   , RO , fixed($$MYIPADDRESS$$)
+1.3.6.1.2.1.4.20.1.2.$$MYIPADDRESS$$     , Integer     , RO , fixed(1)
+1.3.6.1.2.1.4.20.1.3.$$MYIPADDRESS$$     , IpAddress   , RO , fixed(255.255.255.0)
+1.3.6.1.2.1.4.20.1.4.$$MYIPADDRESS$$     , Integer     , RO , fixed(1)
+1.3.6.1.2.1.4.20.1.5.$$MYIPADDRESS$$     , Integer     , RO , fixed(18024)
+#iproute
+#
+#ipnet2media (newer arp cache)
+# indexed by port.ipaddress
+1.3.6.1.2.1.4.22.1.1.1.STARTIP_DEC.$$MYTOKENS003$$.2            , Integer      , RW , indexvalue(10)
+1.3.6.1.2.1.4.22.1.1.[2-NUMIFS].STARTIP_DEC.$$MYTOKENS003$$.(3-NUM_HIFS)   , Integer      , RW , indexvalue(10)
+1.3.6.1.2.1.4.22.1.2.1.STARTIP_DEC.$$MYTOKENS003$$.2            , OctetString  , RW , fixed(0xSTARTMAC_HEX02$$MYTOKENS006$$)
+1.3.6.1.2.1.4.22.1.2.[2-NUMIFS].STARTIP_DEC.$$MYTOKENS003$$.(3-NUM_HIFS)   , OctetString  , RW , indexstr(10, 1, 0xSTARTMAC_HEX04$$MYTOKENS004$$%02x01)
+1.3.6.1.2.1.4.22.1.3.1.STARTIP_DEC.$$MYTOKENS003$$.2            , IpAddress    , RW , indexip(11,14,ip)
+1.3.6.1.2.1.4.22.1.3.[2-NUMIFS].STARTIP_DEC.$$MYTOKENS003$$.(3-NUM_HIFS)   , IpAddress    , RW , indexip(11,14,ip)
+1.3.6.1.2.1.4.22.1.4.1.STARTIP_DEC.$$MYTOKENS003$$.2            , Integer      , RW , r_lastset(1, 4, 3)
+1.3.6.1.2.1.4.22.1.4.[2-NUMIFS].STARTIP_DEC.$$MYTOKENS003$$.(3-NUM_HIFS)   , Integer      , RW , r_lastset(1, 4, 3)
+#udp (udp ports open)
+# indexed by ipaddress.port
+1.3.6.1.2.1.7.5.1.1.$$MYIPADDRESS$$.161, IpAddress   , RO , fixed($$MYIPADDRESS$$)
+1.3.6.1.2.1.7.5.1.2.$$MYIPADDRESS$$.161, Integer     , RO , fixed(161)
+#
+1.3.6.1.2.1.10.7.2.1.1.[1-NUMIFS],    Integer,  RO, indexvalue(0)
+1.3.6.1.2.1.10.7.2.1.2.[1-NUMIFS],    Counter,  RO, randomup(0, 100)
+1.3.6.1.2.1.10.7.2.1.3.[1-NUMIFS],    Counter,  RO, randomup(0, 100)
+1.3.6.1.2.1.10.7.2.1.4.[1-NUMIFS],    Counter,  RO, randomup(0, 100)
+1.3.6.1.2.1.10.7.2.1.5.[1-NUMIFS],    Counter,  RO, randomup(0, 100)
+1.3.6.1.2.1.10.7.2.1.6.[1-NUMIFS],    Counter,  RO, randomup(0, 100)
+1.3.6.1.2.1.10.7.2.1.7.[1-NUMIFS],    Counter,  RO, randomup(0, 100)
+1.3.6.1.2.1.10.7.2.1.8.[1-NUMIFS],    Counter,  RO, randomup(0, 100)
+1.3.6.1.2.1.10.7.2.1.9.[1-NUMIFS],    Counter,  RO, randomup(0, 100)
+1.3.6.1.2.1.10.7.2.1.10.[1-NUMIFS],   Counter,  RO, randomup(0, 100)
+1.3.6.1.2.1.10.7.2.1.11.[1-NUMIFS],   Counter,  RO, randomup(0, 100)
+1.3.6.1.2.1.10.7.2.1.12.[1-NUMIFS],   Counter,  RO, randomup(0, 100)
+1.3.6.1.2.1.10.7.2.1.13.[1-NUMIFS],   Counter,  RO, randomup(0, 100)
+1.3.6.1.2.1.10.7.2.1.14.[1-NUMIFS],   Counter,  RO, randomup(0, 100)
+1.3.6.1.2.1.10.7.2.1.15.[1-NUMIFS],   Counter,  RO, randomup(0, 100)
+1.3.6.1.2.1.10.7.2.1.16.[1-NUMIFS],   Counter,  RO, randomup(0, 100)
+1.3.6.1.2.1.10.7.2.1.17.[1-NUMIFS],   ObjectID, RO, fixed()
+1.3.6.1.2.1.10.7.2.1.18.[1-NUMIFS],   Counter,  RO, fixed(0)
+1.3.6.1.2.1.10.7.2.1.19.[1-NUMIFS],   Integer,  RO, fixed(1)
+1.3.6.1.2.1.10.7.2.1.20.[1-NUMIFS],   Integer,  RO, fixed(1)
+1.3.6.1.2.1.10.7.2.1.21.[1-NUMIFS],   Integer,  RO, fixed(1)
+#bridge mib
+1.3.6.1.2.1.17.1.1.0         ,   OctetString,   RO, fixed(1.2.$$MYTOKENS005$$)
+1.3.6.1.2.1.17.1.2.0         ,   Integer,       RO, fixed(3)
+1.3.6.1.2.1.17.1.3.0         ,   Integer,       RO, fixed(2)
+# Bridge Port Table
+# Index: Bridge port number
+1.3.6.1.2.1.17.1.4.1.1.[1-6] ,   Integer,  RO, indexvalue(0)
+1.3.6.1.2.1.17.1.4.1.2.[1-6] ,   Integer,  RO, indexvalue(0)
+1.3.6.1.2.1.17.1.4.1.3.[1-6] ,   ObjectID, RO, fixed(0.0)
+1.3.6.1.2.1.17.1.4.1.4.[1-6] ,   Counter,  RO, randomup(0, 100)
+1.3.6.1.2.1.17.1.4.1.5.[1-6] ,   Counter,  RO, randomup(0, 100)
+# forwarding database
+# Has entries for the first 6 ports in vlan-1/default
+# Index: MAC address
+1.3.6.1.2.1.17.4.3.1.1.STARTMAC_DEC.2.$$MYTOKENS005$$           , OctetString , RO , fixed(0xSTARTMAC_HEX02$$MYTOKENS006$$)
+1.3.6.1.2.1.17.4.3.1.1.STARTMAC_DEC.4.$$MYTOKENS003$$.[2-6].1   , OctetString , RO , indexstr(15,0,0xSTARTMAC_HEX04$$MYTOKENS004$$%02x01)
+1.3.6.1.2.1.17.4.3.1.2.STARTMAC_DEC.2.$$MYTOKENS005$$           , Integer     , RO , fixed(1)
+1.3.6.1.2.1.17.4.3.1.2.STARTMAC_DEC.4.$$MYTOKENS003$$.[2-6].1   , Integer     , RO , indexvalue(15)
+1.3.6.1.2.1.17.4.3.1.3.STARTMAC_DEC.2.$$MYTOKENS005$$           , Integer     , RO , fixed(3)
+1.3.6.1.2.1.17.4.3.1.3.STARTMAC_DEC.4.$$MYTOKENS003$$.[2-6].1   , Integer     , RO , fixed(3)
+#
+# ifTable extension (interface extension table with 64 bit counters)
+# indexed by interface numbers
+1.3.6.1.2.1.31.1.1.1.1.[1-NUMIFS]       , OctetString, RO, indexstr(0, 0,fa0/%d)
+1.3.6.1.2.1.31.1.1.1.2.[1-NUMIFS]       , Counter    , RO, randomup(, 100)
+1.3.6.1.2.1.31.1.1.1.3.[1-NUMIFS]       , Counter    , RO, randomup(, 100)
+1.3.6.1.2.1.31.1.1.1.4.[1-NUMIFS]       , Counter    , RO, randomup(, 100)
+1.3.6.1.2.1.31.1.1.1.5.[1-NUMIFS]       , Counter    , RO, randomup(, 100)
+1.3.6.1.2.1.31.1.1.1.6.[1-NUMIFS]       , Counter64  , RO, randomup(, 100)
+1.3.6.1.2.1.31.1.1.1.7.[1-NUMIFS]       , Counter64  , RO, randomup(, 100)
+1.3.6.1.2.1.31.1.1.1.8.[1-NUMIFS]       , Counter64  , RO, randomup(, 100)
+1.3.6.1.2.1.31.1.1.1.9.[1-NUMIFS]       , Counter64  , RO, randomup(, 100)
+1.3.6.1.2.1.31.1.1.1.10.[1-NUMIFS]      , Counter64  , RO, randomup(, 100)
+1.3.6.1.2.1.31.1.1.1.11.[1-NUMIFS]      , Counter64  , RO, randomup(, 100)
+1.3.6.1.2.1.31.1.1.1.12.[1-NUMIFS]      , Counter64  , RO, randomup(, 100)
+1.3.6.1.2.1.31.1.1.1.13.[1-NUMIFS]      , Counter64  , RO, randomup(, 100)
+1.3.6.1.2.1.31.1.1.1.14.[1-NUMIFS]      , Integer    , RO, fixed(1)
+1.3.6.1.2.1.31.1.1.1.15.[1-NUMIFS]      , Gauge      , RO, fixed(10000000)
+1.3.6.1.2.1.31.1.1.1.16.[1-NUMIFS]      , Integer    , RO, fixed(2)
+1.3.6.1.2.1.31.1.1.1.17.[1-NUMIFS]      , Integer    , RO, fixed(1)
+1.3.6.1.2.1.31.1.1.1.18.[1-NUMIFS]      , OctetString, RO, fixed()
+1.3.6.1.2.1.31.1.1.1.19.[1-NUMIFS]      , TimeTicks  , RO, fixed(0)
+#
+1.3.6.1.2.1.31.1.2.1.3.0.[1-NUMIFS]    , Integer     , RO, fixed(1)
+1.3.6.1.2.1.31.1.2.1.3.[1-NUMIFS].0    , Integer     , RO, fixed(1)
+#
+1.3.6.1.2.1.31.1.5.0      , TimeTicks , RO , fixed(0)
+1.3.6.1.2.1.31.1.6.0      , TimeTicks , RO , fixed(1485)
+#
+###########################
+# Cisco Specific MIBs
+###########################
+1.3.6.1.4.1.9.2.1.56.0  , Integer , RO , utilization(5,2,10)
+1.3.6.1.4.1.9.2.1.57.0  , Integer , RO , utilization(5,2,10)
+1.3.6.1.4.1.9.2.1.58.0  , Integer , RO , utilization(5,2,10)
+#
+# CISCO-STACK Module Group
+# Module Table, indexed by module number
+1.3.6.1.4.1.9.5.1.3.1.1.1.1,        Integer,      RO,  fixed(1)
+1.3.6.1.4.1.9.5.1.3.1.1.2.1,        Integer,      RO,  fixed(509)
+1.3.6.1.4.1.9.5.1.3.1.1.3.1,        Integer,      RO,  fixed(999$$MYTOKENS008$$)
+# moduleHwHiVersion -- Deprecated
+#1.3.6.1.4.1.9.5.1.3.1.1.4.1,       Integer,      RO,  fixed(1)
+# moduleHwLoVersion -- Deprecated
+#1.3.6.1.4.1.9.5.1.3.1.1.5.1,       Integer,      RO,  fixed(0)
+# moduleFwHiVersion -- Deprecated
+#1.3.6.1.4.1.9.5.1.3.1.1.6.1,       Integer,      RO,  fixed(1)
+# moduleFwLoVersion -- Deprecated
+#1.3.6.1.4.1.9.5.1.3.1.1.7.1,       Integer,      RO,  fixed(0)
+# moduleSwHiVersion -- Deprecated
+#1.3.6.1.4.1.9.5.1.3.1.1.8.1,       Integer,      RO,  fixed(1)
+# moduleSwLoVersion -- Deprecated
+#1.3.6.1.4.1.9.5.1.3.1.1.9.1,       Integer,      RO,  fixed(0)
+1.3.6.1.4.1.9.5.1.3.1.1.10.1,       Integer,      RO,  fixed(2)
+1.3.6.1.4.1.9.5.1.3.1.1.11.1,       Integer,      RO,  fixed(0)
+1.3.6.1.4.1.9.5.1.3.1.1.12.1,       Integer,      RW,  fixed(3)
+1.3.6.1.4.1.9.5.1.3.1.1.13.1,       DisplayString,RW,  lastset(Module1)
+1.3.6.1.4.1.9.5.1.3.1.1.14.1,       Integer,      RO,  fixed(NUMIFS)
+# modulePortStatus -- One octet per VLAN: Currently no means to determine length
+#                     Hardcoded to 50 VLANs
+1.3.6.1.4.1.9.5.1.3.1.1.15.1,       OctetString,  RO,  fixed(0x0101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101010101)
+1.3.6.1.4.1.9.5.1.3.1.1.16.1,       Integer,      RO,  fixed(216)
+1.3.6.1.4.1.9.5.1.3.1.1.17.1,       DisplayString,RO,  fixed(Model 1)
+1.3.6.1.4.1.9.5.1.3.1.1.18.1,       OctetString,  RO,  fixed(4.4)
+1.3.6.1.4.1.9.5.1.3.1.1.19.1,       OctetString,  RO,  fixed(12.2)
+1.3.6.1.4.1.9.5.1.3.1.1.20.1,       OctetString,  RO,  fixed(8.7(2a))
+1.3.6.1.4.1.9.5.1.3.1.1.21.1,       Integer,      RO,  fixed(2)
+1.3.6.1.4.1.9.5.1.3.1.1.22.1,       IpAddress,    RO,  fixed(0.0.0.0)
+1.3.6.1.4.1.9.5.1.3.1.1.23.1,       Integer,      RO,  fixed(0)
+1.3.6.1.4.1.9.5.1.3.1.1.24.1,       Integer,      RO,  fixed(2)
+1.3.6.1.4.1.9.5.1.3.1.1.25.1,       Integer,      RO,  fixed(1)
+1.3.6.1.4.1.9.5.1.3.1.1.26.1,       DisplayString,RO,  fixed(999$$MYTOKENS008$$)
+1.3.6.1.4.1.9.5.1.3.1.1.27.1,       Integer,      RO,  fixed(1)
+1.3.6.1.4.1.9.5.1.3.1.1.28.1,       Bits,         RO,  fixed(0x00)
+#
+# CISCO-STACK Port Group
+# Port Table, indexed by module number & port number
+1.3.6.1.4.1.9.5.1.4.1.1.1.1.[1-NUMIFS],        Integer,      RO,  fixed(1)
+1.3.6.1.4.1.9.5.1.4.1.1.2.1.[1-NUMIFS],        Integer,      RO,  indexvalue(0)
+1.3.6.1.4.1.9.5.1.4.1.1.3.1.[1-NUMIFS],        Integer,      RO,  indexvalue(0)
+1.3.6.1.4.1.9.5.1.4.1.1.4.1.[1-NUMIFS],        OctetString,  RO,  fixed()
+1.3.6.1.4.1.9.5.1.4.1.1.5.1.[1-NUMIFS],        Integer,      RO,  fixed(61)
+1.3.6.1.4.1.9.5.1.4.1.1.6.1.[1-NUMIFS],        Integer,      RO,  fixed(2)
+1.3.6.1.4.1.9.5.1.4.1.1.7.1.[1-NUMIFS],        Integer,      RO,  fixed(3)
+1.3.6.1.4.1.9.5.1.4.1.1.8.1.[1-NUMIFS],        Integer,      RO,  fixed(3)
+1.3.6.1.4.1.9.5.1.4.1.1.9.1.[1-NUMIFS],        Integer,      RW,  fixed(2)
+1.3.6.1.4.1.9.5.1.4.1.1.10.1.[1-NUMIFS],       Integer,      RO,  fixed(2)
+1.3.6.1.4.1.9.5.1.4.1.1.11.1.[1-NUMIFS],       Integer,      RO,  indexvalue(0)
+1.3.6.1.4.1.9.5.1.4.1.1.12.1.[1-NUMIFS],       Integer,      RO,  fixed(2)
+1.3.6.1.4.1.9.5.1.4.1.1.13.1.[1-NUMIFS],       Integer,      RW,  fixed(2)
+1.3.6.1.4.1.9.5.1.4.1.1.14.1.[1-NUMIFS],       Integer,      RO,  fixed(2)
+1.3.6.1.4.1.9.5.1.4.1.1.15.1.[1-NUMIFS],       Integer,      RW,  fixed(2)
+1.3.6.1.4.1.9.5.1.4.1.1.16.1.[1-NUMIFS],       Integer,      RO,  fixed(2)
+1.3.6.1.4.1.9.5.1.4.1.1.17.1.[1-NUMIFS],       Counter,      RO,  randomup(0, 100)
+1.3.6.1.4.1.9.5.1.4.1.1.18.1.[1-NUMIFS],       Counter,      RO,  randomup(0, 100)
+1.3.6.1.4.1.9.5.1.4.1.1.19.1.[1-NUMIFS],       Counter,      RO,  randomup(0, 100)
+1.3.6.1.4.1.9.5.1.4.1.1.20.1.[1-NUMIFS],       Counter,      RO,  randomup(0, 100)
+1.3.6.1.4.1.9.5.1.4.1.1.21.1.[1-NUMIFS],       Counter,      RO,  randomup(0, 100)
+1.3.6.1.4.1.9.5.1.4.1.1.22.1.[1-NUMIFS],       Integer,      RO,  fixed(1)
+1.3.6.1.4.1.9.5.1.4.1.1.23.1.[1-NUMIFS],       OctetString,  RO,  fixed(0x0800)
+1.3.6.1.4.1.9.5.1.4.1.1.24.1.[1-NUMIFS],       Integer,      RO,  fixed(2)
+1.3.6.1.4.1.9.5.1.4.1.1.25.1.[1-NUMIFS],       Integer,      RO,  fixed(1)
+1.3.6.1.4.1.9.5.1.4.1.1.26.1.[1-NUMIFS],       Integer,      RW,  r_lastset(1, 2, 1)
+#
+# CISCO-STACK VLAN Group
+# VLAN port table, indexed by module number & port number
+1.3.6.1.4.1.9.5.1.9.3.1.1.1.[1-NUMIFS],        Integer,      RO,  fixed(1)
+1.3.6.1.4.1.9.5.1.9.3.1.2.1.[1-NUMIFS],        Integer,      RO,  indexvalue(0)
+1.3.6.1.4.1.9.5.1.9.3.1.3.1.[1-NUMIFS],        Integer,      RO,  fixed(1)
+1.3.6.1.4.1.9.5.1.9.3.1.6.1.[1-NUMIFS],        Integer,      RW,  r_lastset(1, 3, 1)
+1.3.6.1.4.1.9.5.1.9.3.1.7.1.[1-NUMIFS],        Integer,      RW,  r_lastset(1, 5, 4)
+1.3.6.1.4.1.9.5.1.9.3.1.8.1.[1-NUMIFS],        Integer,      RO,  fixed(2)
+1.3.6.1.4.1.9.5.1.9.3.1.9.1.[1-NUMIFS],    OctetString,      RW,  fixed(0x00000000000000000000)
+1.3.6.1.4.1.9.5.1.9.3.1.10.1.[1-NUMIFS],       Integer,      RO,  fixed(1)
+1.3.6.1.4.1.9.5.1.9.3.1.11.1.[1-NUMIFS],       Integer,      RO,  fixed(2)
+1.3.6.1.4.1.9.5.1.9.3.1.12.1.[1-NUMIFS],       Integer,      RO,  fixed(4096)
+#
+1.3.6.1.4.1.9.5.1.9.5.0,                       Integer,      RW,  r_lastset(1, 8, 1)
+1.3.6.1.4.1.9.5.1.9.6.0,                       IpAddress,    RO,  fixed(0.0.0.0)
+#
+# CISCO-STACK Port Security Group
+# Port security table, indexed by module number & port number
+1.3.6.1.4.1.9.5.1.10.1.1.1.1.[1-NUMIFS],         Integer,      RO,  fixed(1) 
+1.3.6.1.4.1.9.5.1.10.1.1.2.1.[1-NUMIFS],         Integer,      RO,  indexvalue(0) 
+1.3.6.1.4.1.9.5.1.10.1.1.3.1.[1-NUMIFS],         Integer,      RW,  r_lastset(1, 2, 2) 
+1.3.6.1.4.1.9.5.1.10.1.1.4.1.[1-NUMIFS],         Integer,      RO,  fixed(1) 
+1.3.6.1.4.1.9.5.1.10.1.1.5.1.[1-NUMIFS],         OctetString,  RO,  fixed(0x000000000000) 
+1.3.6.1.4.1.9.5.1.10.1.1.6.1.[1-NUMIFS],         OctetString,  RW,  fixed(0.0.0.0.0.0) 
+1.3.6.1.4.1.9.5.1.10.1.1.7.1.[1-NUMIFS],         Integer,      RW,  r_lastset(1, 1025, 1) 
+1.3.6.1.4.1.9.5.1.10.1.1.8.1.[1-NUMIFS],         Integer,      RW,  lastset(0) 
+1.3.6.1.4.1.9.5.1.10.1.1.9.1.[1-NUMIFS],         Integer,      RW,  lastset(0) 
+1.3.6.1.4.1.9.5.1.10.1.1.10.1.[1-NUMIFS],        Integer,      RW,  r_lastset(1, 2, 1) 
+#
+# CISCO-STACK Port Capability Group
+# Port capability table, indexed by module number & port number
+1.3.6.1.4.1.9.5.1.19.1.1.1.1.[1-NUMIFS],         Integer,      RO,  fixed(1) 
+1.3.6.1.4.1.9.5.1.19.1.1.2.1.[1-NUMIFS],         Integer,      RO,  indexvalue(0) 
+1.3.6.1.4.1.9.5.1.19.1.1.3.1.[1-NUMIFS],         Bits,         RO,  fixed(0x4000) 
+1.3.6.1.4.1.9.5.1.19.1.1.4.1.[1-NUMIFS],         Bits,         RO,  fixed(0x10) 
+1.3.6.1.4.1.9.5.1.19.1.1.5.1.[1-NUMIFS],         OctetString,  RO,  fixed(0) 
+1.3.6.1.4.1.9.5.1.19.1.1.6.1.[1-NUMIFS],         Bits,         RO,  fixed(0x08) 
+1.3.6.1.4.1.9.5.1.19.1.1.7.1.[1-NUMIFS],         OctetString,  RO,  fixed(no) 
+1.3.6.1.4.1.9.5.1.19.1.1.8.1.[1-NUMIFS],         Bits,         RO,  fixed(0x00) 
+1.3.6.1.4.1.9.5.1.19.1.1.9.1.[1-NUMIFS],         Bits,         RO,  fixed(0x24) 
+1.3.6.1.4.1.9.5.1.19.1.1.10.1.[1-NUMIFS],        Integer,      RO,  fixed(2) 
+1.3.6.1.4.1.9.5.1.19.1.1.11.1.[1-NUMIFS],        Bits,         RO,  fixed(0x01) 
+1.3.6.1.4.1.9.5.1.19.1.1.12.1.[1-NUMIFS],        Integer,      RO,  fixed(1) 
+1.3.6.1.4.1.9.5.1.19.1.1.13.1.[1-NUMIFS],        Integer,      RO,  fixed(1) 
+1.3.6.1.4.1.9.5.1.19.1.1.14.1.[1-NUMIFS],        Bits,         RO,  fixed(0x08) 
+1.3.6.1.4.1.9.5.1.19.1.1.15.1.[1-NUMIFS],        OctetString,  RO,  fixed() 
+1.3.6.1.4.1.9.5.1.19.1.1.16.1.[1-NUMIFS],        Bits,         RO,  fixed(0x00) 
+1.3.6.1.4.1.9.5.1.19.1.1.17.1.[1-NUMIFS],        Integer,      RO,  fixed(1) 
+1.3.6.1.4.1.9.5.1.19.1.1.18.1.[1-NUMIFS],        Bits,         RO,  fixed(0x00) 
+1.3.6.1.4.1.9.5.1.19.1.1.19.1.[1-NUMIFS],        OctetString,  RO,  fixed() 
+1.3.6.1.4.1.9.5.1.19.1.1.20.1.[1-NUMIFS],        Integer,      RO,  fixed(1) 
+1.3.6.1.4.1.9.5.1.19.1.1.21.1.[1-NUMIFS],        Integer,      RO,  fixed(1) 
+#
+# Cisco Flash MIB
+# Hardcoded to three flash units
+1.3.6.1.4.1.9.9.10.1.1.1.0    , Gauge       , RO , fixed(3)
+1.3.6.1.4.1.9.9.10.1.1.2.1.2.1, Gauge       , RO , fixed(16252924)
+1.3.6.1.4.1.9.9.10.1.1.2.1.2.2, Gauge       , RO , fixed(0)
+1.3.6.1.4.1.9.9.10.1.1.2.1.2.3, Gauge       , RO , fixed(25165820)
+1.3.6.1.4.1.9.9.10.1.1.2.1.3.1, Gauge       , RO , fixed(4194304)
+1.3.6.1.4.1.9.9.10.1.1.2.1.3.2, Gauge       , RO , fixed(0)
+1.3.6.1.4.1.9.9.10.1.1.2.1.3.3, Gauge       , RO , fixed(25165824)
+1.3.6.1.4.1.9.9.10.1.1.2.1.4.1, Gauge       , RO , fixed(4)
+1.3.6.1.4.1.9.9.10.1.1.2.1.4.2, Gauge       , RO , fixed(1)
+1.3.6.1.4.1.9.9.10.1.1.2.1.4.3, Gauge       , RO , fixed(1)
+1.3.6.1.4.1.9.9.10.1.1.2.1.5.1, Gauge       , RO , fixed(1)
+1.3.6.1.4.1.9.9.10.1.1.2.1.5.2, Gauge       , RO , fixed(0)
+1.3.6.1.4.1.9.9.10.1.1.2.1.5.3, Gauge       , RO , fixed(1)
+1.3.6.1.4.1.9.9.10.1.1.2.1.6.1, Integer     , RO , fixed(16)
+1.3.6.1.4.1.9.9.10.1.1.2.1.6.2, Integer     , RO , fixed(1)
+1.3.6.1.4.1.9.9.10.1.1.2.1.6.3, Integer     , RO , fixed(1)
+1.3.6.1.4.1.9.9.10.1.1.2.1.7.1, OctetString , RO , fixed(flash)
+1.3.6.1.4.1.9.9.10.1.1.2.1.7.2, OctetString , RO , fixed(slot0)
+1.3.6.1.4.1.9.9.10.1.1.2.1.7.3, OctetString , RO , fixed(slot1)
+1.3.6.1.4.1.9.9.10.1.1.2.1.8.1, OctetString , RO , fixed(System flash)
+1.3.6.1.4.1.9.9.10.1.1.2.1.8.2, OctetString , RO , fixed(PCMCIA Slot0 flash)
+1.3.6.1.4.1.9.9.10.1.1.2.1.8.3, OctetString , RO , fixed(PCMCIA Slot1 flash)
+1.3.6.1.4.1.9.9.10.1.1.2.1.9.1, OctetString , RO , fixed()
+1.3.6.1.4.1.9.9.10.1.1.2.1.9.2, OctetString , RO , fixed()
+1.3.6.1.4.1.9.9.10.1.1.2.1.9.3, OctetString , RO , fixed()
+1.3.6.1.4.1.9.9.10.1.1.2.1.11.1, Integer     , RO , fixed(2)
+1.3.6.1.4.1.9.9.10.1.1.2.1.11.2, Integer     , RO , fixed(2)
+1.3.6.1.4.1.9.9.10.1.1.2.1.11.3, Integer     , RO , fixed(2)
+1.3.6.1.4.1.9.9.10.1.1.2.1.12.1, TimeTicks   , RO , fixed(422)
+1.3.6.1.4.1.9.9.10.1.1.2.1.12.2, TimeTicks   , RO , fixed(0)
+1.3.6.1.4.1.9.9.10.1.1.2.1.12.3, TimeTicks   , RO , fixed(506)
+1.3.6.1.4.1.9.9.10.1.1.2.1.13.1, Integer     , RO , fixed(2)
+1.3.6.1.4.1.9.9.10.1.1.2.1.13.2, Integer     , RO , fixed(1)
+1.3.6.1.4.1.9.9.10.1.1.2.1.13.3, Integer     , RO , fixed(1)
+#
+# CDP Interface
+# Indexed by interface number
+1.3.6.1.4.1.9.9.23.1.1.1.1.2.[1-NUMIFS]      , Integer       , RW , r_lastset(1, 2, 1)
+1.3.6.1.4.1.9.9.23.1.1.1.1.3.[1-NUMIFS]      , Integer       , RW , r_lastset(5, 254, 60)
+1.3.6.1.4.1.9.9.23.1.1.1.1.4.[1-NUMIFS]      , Integer       , RO , fixed(0)
+1.3.6.1.4.1.9.9.23.1.1.1.1.5.[1-NUMIFS]      , Integer       , RO , fixed(0)
+#
+# CDP Cache
+# indexed by portnumber.1
+1.3.6.1.4.1.9.9.23.1.2.1.1.3.1.1 , Integer     , RO , fixed(1)
+1.3.6.1.4.1.9.9.23.1.2.1.1.4.1.1 , OctetString , RO , fixed(0xSTARTIP_HEX$$MYTOKENS004$$02)
+1.3.6.1.4.1.9.9.23.1.2.1.1.5.1.1 , OctetString , RO , fixed(0x57532d433535303520536f6674776172652c2056657273696f6e204d637053573a20352e3128316129204e6d7053573a20352e31283161290a436f707972696768742028632920313939352d3139393920627920436973636f2053797374656d730a)
+1.3.6.1.4.1.9.9.23.1.2.1.1.6.1.1 , OctetString , RO , fixed(Router_STARTIP_DEC.1.$$MYTOKENS001$$.1)
+1.3.6.1.4.1.9.9.23.1.2.1.1.7.1.1 , OctetString , RO , fixed(fastEthernet$$MYTOKENS007$$/0)
+1.3.6.1.4.1.9.9.23.1.2.1.1.8.1.1 , OctetString , RO , fixed(Cisco Device)
+1.3.6.1.4.1.9.9.23.1.2.1.1.9.1.1 , OctetString , RO , fixed(0x00000001)
+1.3.6.1.4.1.9.9.23.1.2.1.1.10.1.1, OctetString,  RO,  fixed()
+1.3.6.1.4.1.9.9.23.1.2.1.1.11.1.1, Integer,      RO,  fixed(0)
+1.3.6.1.4.1.9.9.23.1.2.1.1.12.1.1, Integer,      RO,  fixed(1)
+1.3.6.1.4.1.9.9.23.1.2.1.1.13.1.1, Gauge,        RO,  fixed(0)
+1.3.6.1.4.1.9.9.23.1.2.1.1.14.1.1, Gauge,        RO,  fixed(0)
+1.3.6.1.4.1.9.9.23.1.2.1.1.15.1.1, Gauge,        RO,  fixed()
+1.3.6.1.4.1.9.9.23.1.2.1.1.16.1.1, Gauge,        RO,  fixed(1500)
+1.3.6.1.4.1.9.9.23.1.2.1.1.17.1.1, OctetString,  RO,  fixed(Router_STARTIP_DEC.1.$$MYTOKENS001$$.1)
+1.3.6.1.4.1.9.9.23.1.2.1.1.18.1.1, ObjectID,     RO,  fixed()
+1.3.6.1.4.1.9.9.23.1.2.1.1.19.1.1, Integer,      RO,  fixed()
+1.3.6.1.4.1.9.9.23.1.2.1.1.20.1.1, OctetString,  RO,  fixed()
+1.3.6.1.4.1.9.9.23.1.2.1.1.21.1.1, Integer,      RO,  fixed()
+1.3.6.1.4.1.9.9.23.1.2.1.1.22.1.1, OctetString,  RO,  fixed()
+1.3.6.1.4.1.9.9.23.1.2.1.1.23.1.1, OctetString,  RO,  fixed(Lab)
+1.3.6.1.4.1.9.9.23.1.2.1.1.24.1.1, TimeTicks,    RO,  fixed(0)
+#
+# cdpGlobalRun
+1.3.6.1.4.1.9.9.23.1.3.1.0,        OctetString,  RW,  r_lastset(1, 2, 1)
+#
+# cdpGlobalMessageInterval
+1.3.6.1.4.1.9.9.23.1.3.2.0,        OctetString,  RW,  r_lastset(5, 254, 60)
+#
+# CDP Global Device ID
+1.3.6.1.4.1.9.9.23.1.3.4.0,        OctetString,  RO,  fixed(Switch_STARTIP_DEC.$$MYTOKENS003$$.1)
+#
+# Cisco Image MIB
+# ciscoImageTable -- hardcoded to 9 entries
+1.3.6.1.4.1.9.9.25.1.1.1.2.1  , OctetString , RO , fixed(CW_BEGIN$-gs-i-m$)
+1.3.6.1.4.1.9.9.25.1.1.1.2.2  , OctetString , RO , fixed(CW_IMAGE$C3640-I-M$)
+1.3.6.1.4.1.9.9.25.1.1.1.2.3  , OctetString , RO , fixed(CW_FAMILY$C3640$)
+1.3.6.1.4.1.9.9.25.1.1.1.2.4  , OctetString , RO , fixed(CW_FEATURE$IP$)
+1.3.6.1.4.1.9.9.25.1.1.1.2.5  , OctetString , RO , fixed(CW_VERSION$12.4(25)$)
+1.3.6.1.4.1.9.9.25.1.1.1.2.6  , OctetString , RO , fixed(CW_MEDIA$RAM$)
+1.3.6.1.4.1.9.9.25.1.1.1.2.7  , OctetString , RO , fixed(0x43575f535953444553435224436973636f20494f5320536f6674776172652c203336303020536f667477617265202843333634302d492d4d292c2056657273696f6e2031322e34283235292c2052454c4541534520534f4654574152452028666332290a546563686e6963616c20537570706f72743a20687474703a2f2f7777772e636973636f2e636f6d2f74656368737570706f72740a436f707972696768742028632920313938362d3230303920627920436973636f2053797374656d732c20496e632e0a436f6d70696c6564205475652032312d4170722d30392031323a33392062792070726f645f72656c5f7465616d24)
+1.3.6.1.4.1.9.9.25.1.1.1.2.8  , OctetString , RO , fixed(CW_MAGIC$$)
+1.3.6.1.4.1.9.9.25.1.1.1.2.9  , OctetString , RO , fixed(CW_END$-gs-i-m$)
+#
+# Cisco VTP MIB
+# managementDomainTable -- hardcoded to one entry
+1.3.6.1.4.1.9.9.46.1.2.1.1.2.1   , OctetString , RO , fixed(PVST)
+1.3.6.1.4.1.9.9.46.1.2.1.1.3.1   , Integer     , RO , fixed(1)
+1.3.6.1.4.1.9.9.46.1.2.1.1.4.1   , Gauge       , RO , fixed(0)
+1.3.6.1.4.1.9.9.46.1.2.1.1.5.1   , IpAddress   , RO , fixed(0.0.0.0)
+1.3.6.1.4.1.9.9.46.1.2.1.1.6.1   , OctetString , RO , fixed(0x0000000000000000)
+1.3.6.1.4.1.9.9.46.1.2.1.1.7.1   , Integer     , RO , fixed(1)
+1.3.6.1.4.1.9.9.46.1.2.1.1.8.1   , IpAddress   , RO , fixed(4)
+1.3.6.1.4.1.9.9.46.1.2.1.1.9.1   , OctetString , RO , fixed()
+1.3.6.1.4.1.9.9.46.1.2.1.1.10.1  , Integer     , RO , fixed(1)
+1.3.6.1.4.1.9.9.46.1.2.1.1.11.1  , Integer     , RO , fixed(1)
+#
+#cisco vtp vlan table. indexed by vlanindex
+#shows 10 vlans
+#state(.2)=operation (1),type(.3)=ethernet (1), name(.4)=vlan-<number>
+1.3.6.1.4.1.9.9.46.1.3.1.1.2.[1-NUMVLANS] ,   Integer,      RO, fixed(1)
+1.3.6.1.4.1.9.9.46.1.3.1.1.3.[1-NUMVLANS] ,   Integer,      RO, fixed(1)
+1.3.6.1.4.1.9.9.46.1.3.1.1.4.[1-NUMVLANS] ,   OctetString,  RO, indexstr(0, 0, vlan-%d)
+1.3.6.1.4.1.9.9.46.1.3.1.1.5.[1-NUMVLANS] ,   Integer,      RO, fixed(1500)
+1.3.6.1.4.1.9.9.46.1.3.1.1.6.[1-NUMVLANS] ,   OctetString,  RO, fixed(" ")
+1.3.6.1.4.1.9.9.46.1.3.1.1.7.[1-NUMVLANS] ,   Integer,      RO, fixed(0)
+1.3.6.1.4.1.9.9.46.1.3.1.1.8.[1-NUMVLANS] ,   Integer,      RO, fixed(0)
+1.3.6.1.4.1.9.9.46.1.3.1.1.9.[1-NUMVLANS] ,   Integer,      RO, fixed(1)
+1.3.6.1.4.1.9.9.46.1.3.1.1.10.[1-NUMVLANS],   Gauge,        RO, fixed(0)
+1.3.6.1.4.1.9.9.46.1.3.1.1.11.[1-NUMVLANS],   Integer,      RO, fixed(0)
+1.3.6.1.4.1.9.9.46.1.3.1.1.12.[1-NUMVLANS],   Integer,      RO, fixed(0)
+1.3.6.1.4.1.9.9.46.1.3.1.1.13.[1-NUMVLANS],   Integer,      RO, fixed(1)
+1.3.6.1.4.1.9.9.46.1.3.1.1.14.[1-NUMVLANS],   Integer,      RO, fixed(1)
+1.3.6.1.4.1.9.9.46.1.3.1.1.15.[1-NUMVLANS],   Integer,      RO, fixed(1)
+1.3.6.1.4.1.9.9.46.1.3.1.1.16.[1-NUMVLANS],   Integer,      RO, fixed(2)
+1.3.6.1.4.1.9.9.46.1.3.1.1.17.[1-NUMVLANS],   Integer,      RO, fixed(1)
+1.3.6.1.4.1.9.9.46.1.3.1.1.18.[1-NUMVLANS],   Integer,      RO, fixed(0)
+#
+# vlanTrunkPortTable
+# Index: Port Number
+1.3.6.1.4.1.9.9.46.1.6.1.1.2.[1-NUMIFS]   ,   Integer      ,  RC , r_lastset(1, 255, 1)
+1.3.6.1.4.1.9.9.46.1.6.1.1.3.[1-NUMIFS]   ,   Integer      ,  RC , r_lastset(1, 5, 3)
+1.3.6.1.4.1.9.9.46.1.6.1.1.4.[1-NUMIFS]   ,   OctetString  ,  RC , lastset(0x00000000000000000000)
+1.3.6.1.4.1.9.9.46.1.6.1.1.5.[1-NUMIFS]   ,   Integer      ,  RC , r_lastset(0, 4095, 0)
+1.3.6.1.4.1.9.9.46.1.6.1.1.6.[1-NUMIFS]   ,   Integer      ,  RC , r_lastset(1, 6, 1)
+1.3.6.1.4.1.9.9.46.1.6.1.1.7.[1-NUMIFS]   ,   Counter      ,  RO , randomup(0, 100)
+1.3.6.1.4.1.9.9.46.1.6.1.1.8.[1-NUMIFS]   ,   Counter      ,  RO , randomup(0, 100)
+1.3.6.1.4.1.9.9.46.1.6.1.1.9.[1-NUMIFS]   ,   Counter      ,  RO , randomup(0, 100)
+1.3.6.1.4.1.9.9.46.1.6.1.1.10.[1-NUMIFS]  ,   OctetString  ,  RC , lastset(0x00000000000000000000)
+1.3.6.1.4.1.9.9.46.1.6.1.1.11.[1-NUMIFS]  ,   OctetString  ,  RO , lastset(0x00000000000000000000)
+1.3.6.1.4.1.9.9.46.1.6.1.1.12.[1-NUMIFS]  ,   OctetString  ,  RO , lastset(0x00000000000000000000)
+1.3.6.1.4.1.9.9.46.1.6.1.1.13.[1-NUMIFS]  ,   Integer      ,  RC , r_lastset(1, 5, 4)
+1.3.6.1.4.1.9.9.46.1.6.1.1.14.[1-NUMIFS]  ,   Integer      ,  RO , fixed(2)
+1.3.6.1.4.1.9.9.46.1.6.1.1.14.[1-NUMIFS]  ,   Integer      ,  RO , fixed(2)
+1.3.6.1.4.1.9.9.46.1.6.1.1.15.[1-NUMIFS]  ,   Integer      ,  RC , r_lastset(1, 2, 1)
+1.3.6.1.4.1.9.9.46.1.6.1.1.16.[1-NUMIFS]  ,   Integer      ,  RO , fixed(6)
+1.3.6.1.4.1.9.9.46.1.6.1.1.17.[1-NUMIFS]  ,   OctetString  ,  RC , lastset(0x00000000000000000000)
+1.3.6.1.4.1.9.9.46.1.6.1.1.18.[1-NUMIFS]  ,   OctetString  ,  RC , lastset(0x00000000000000000000)
+1.3.6.1.4.1.9.9.46.1.6.1.1.19.[1-NUMIFS]  ,   OctetString  ,  RC , lastset(0x00000000000000000000)
+1.3.6.1.4.1.9.9.46.1.6.1.1.20.[1-NUMIFS]  ,   OctetString  ,  RC , lastset(0x00000000000000000000)
+1.3.6.1.4.1.9.9.46.1.6.1.1.21.[1-NUMIFS]  ,   OctetString  ,  RC , lastset(0x00000000000000000000)
+1.3.6.1.4.1.9.9.46.1.6.1.1.22.[1-NUMIFS]  ,   OctetString  ,  RC , lastset(0x00000000000000000000)
+1.3.6.1.4.1.9.9.46.1.6.1.1.23.[1-NUMIFS]  ,   OctetString  ,  RO , fixed(0x00000000000000000000)
+1.3.6.1.4.1.9.9.46.1.6.1.1.24.[1-NUMIFS]  ,   OctetString  ,  RO , fixed(0x00000000000000000000)
+1.3.6.1.4.1.9.9.46.1.6.1.1.25.[1-NUMIFS]  ,   OctetString  ,  RO , fixed(0x00000000000000000000)
+1.3.6.1.4.1.9.9.46.1.6.1.1.26.[1-NUMIFS]  ,   OctetString  ,  RO , fixed(0x00000000000000000000)
+1.3.6.1.4.1.9.9.46.1.6.1.1.27.[1-NUMIFS]  ,   OctetString  ,  RO , fixed(0x00000000000000000000)
+1.3.6.1.4.1.9.9.46.1.6.1.1.28.[1-NUMIFS]  ,   OctetString  ,  RO , fixed(0x00000000000000000000)
+# Deprecated
+#1.3.6.1.4.1.9.9.46.1.6.1.1.29.[1-NUMIFS] ,   Integer  ,      RO , fixed(2)
+1.3.6.1.4.1.9.9.46.1.6.1.1.30.[1-NUMIFS]  ,   OctetString  ,  RO , fixed(0x00000000000000000000)
+1.3.6.1.4.1.9.9.46.1.6.1.1.31.[1-NUMIFS]  ,   OctetString  ,  RO , fixed(0x00000000000000000000)
+#
+# vlanTrunkPortSetSerialNo
+1.3.6.1.4.1.9.9.46.1.6.2.0     ,   integer,    RW, r_lastset(0, 2147483647, 0)
+#
+#
+1.3.6.1.4.1.9.9.48.1.1.1.2.1,      OctetString,  RO,  fixed(DRAM)
+1.3.6.1.4.1.9.9.48.1.1.1.2.6,      OctetString,  RO,  fixed(FLASH)
+1.3.6.1.4.1.9.9.48.1.1.1.2.7,      OctetString,  RO,  fixed(NVRAM)
+1.3.6.1.4.1.9.9.48.1.1.1.2.8,      OctetString,  RO,  fixed(MBUF)
+1.3.6.1.4.1.9.9.48.1.1.1.2.9,      OctetString,  RO,  fixed(CLUSTER)
+1.3.6.1.4.1.9.9.48.1.1.1.2.10,     OctetString,  RO,  fixed(MALLOC)
+1.3.6.1.4.1.9.9.48.1.1.1.3.1,      Integer,      RO,  fixed(0)
+1.3.6.1.4.1.9.9.48.1.1.1.3.6,      Integer,      RO,  fixed(0)
+1.3.6.1.4.1.9.9.48.1.1.1.3.7,      Integer,      RO,  fixed(0)
+1.3.6.1.4.1.9.9.48.1.1.1.3.8,      Integer,      RO,  fixed(0)
+1.3.6.1.4.1.9.9.48.1.1.1.3.9,      Integer,      RO,  fixed(0)
+1.3.6.1.4.1.9.9.48.1.1.1.3.10,     Integer,      RO,  fixed(0)
+1.3.6.1.4.1.9.9.48.1.1.1.4.1,      Integer,      RO,  fixed(1)
+1.3.6.1.4.1.9.9.48.1.1.1.4.6,      Integer,      RO,  fixed(1)
+1.3.6.1.4.1.9.9.48.1.1.1.4.7,      Integer,      RO,  fixed(1)
+1.3.6.1.4.1.9.9.48.1.1.1.4.8,      Integer,      RO,  fixed(1)
+1.3.6.1.4.1.9.9.48.1.1.1.4.9,      Integer,      RO,  fixed(1)
+1.3.6.1.4.1.9.9.48.1.1.1.4.10,     Integer,      RO,  fixed(1)
+1.3.6.1.4.1.9.9.48.1.1.1.5.1,      Gauge  ,      RO,  utilization(8, 2, 12)
+1.3.6.1.4.1.9.9.48.1.1.1.5.6,      Gauge  ,      RO,  utilization(8, 2, 12)
+1.3.6.1.4.1.9.9.48.1.1.1.5.7,      Gauge  ,      RO,  utilization(8, 2, 12)
+1.3.6.1.4.1.9.9.48.1.1.1.5.8,      Gauge  ,      RO,  utilization(8, 2, 12)
+1.3.6.1.4.1.9.9.48.1.1.1.5.9,      Gauge  ,      RO,  utilization(8, 2, 12)
+1.3.6.1.4.1.9.9.48.1.1.1.5.10,     Gauge  ,      RO,  utilization(8, 2, 12)
+1.3.6.1.4.1.9.9.48.1.1.1.6.1,      Gauge  ,      RO,  utilization(8, 2, 12)
+1.3.6.1.4.1.9.9.48.1.1.1.6.6,      Gauge  ,      RO,  utilization(8, 2, 12)
+1.3.6.1.4.1.9.9.48.1.1.1.6.7,      Gauge  ,      RO,  utilization(8, 2, 12)
+1.3.6.1.4.1.9.9.48.1.1.1.6.8,      Gauge  ,      RO,  utilization(8, 2, 12)
+1.3.6.1.4.1.9.9.48.1.1.1.6.9,      Gauge  ,      RO,  utilization(8, 2, 12)
+1.3.6.1.4.1.9.9.48.1.1.1.6.10,     Gauge  ,      RO,  utilization(8, 2, 12)
+1.3.6.1.4.1.9.9.48.1.1.1.7.1,      Gauge  ,      RO,  utilization(8, 2, 12)
+1.3.6.1.4.1.9.9.48.1.1.1.7.6,      Gauge  ,      RO,  utilization(8, 2, 12)
+1.3.6.1.4.1.9.9.48.1.1.1.7.7,      Gauge  ,      RO,  utilization(8, 2, 12)
+1.3.6.1.4.1.9.9.48.1.1.1.7.8,      Gauge  ,      RO,  utilization(8, 2, 12)
+1.3.6.1.4.1.9.9.48.1.1.1.7.9,      Gauge  ,      RO,  utilization(8, 2, 12)
+1.3.6.1.4.1.9.9.48.1.1.1.7.10,     Gauge  ,      RO,  utilization(8, 2, 12)
+1.3.6.1.4.1.9.9.48.1.1.1.8.1,      Integer,      RW, r_lastset(0, 100, 20)
+1.3.6.1.4.1.9.9.48.1.1.1.8.6,      Integer,      RW, r_lastset(0, 100, 20)
+1.3.6.1.4.1.9.9.48.1.1.1.8.7,      Integer,      RW, r_lastset(0, 100, 20)
+1.3.6.1.4.1.9.9.48.1.1.1.8.8,      Integer,      RW, r_lastset(0, 100, 20)
+1.3.6.1.4.1.9.9.48.1.1.1.8.9,      Integer,      RW, r_lastset(0, 100, 20)
+1.3.6.1.4.1.9.9.48.1.1.1.8.10,     Integer,      RW, r_lastset(0, 100, 20)
+#
+# cseL2StatsTable 
+# Index: Port number
+1.3.6.1.4.1.9.9.97.1.1.1.1.1.[1-NUMIFS] ,  Counter,   RO, randomup(0, 100)
+1.3.6.1.4.1.9.9.97.1.1.1.1.2.[1-NUMIFS] ,  Counter64, RO, randomup(0, 100)
+1.3.6.1.4.1.9.9.97.1.1.1.1.3.[1-NUMIFS] ,  Counter,   RO, randomup(0, 100)
+1.3.6.1.4.1.9.9.97.1.1.1.1.4.[1-NUMIFS] ,  Counter,   RO, randomup(0, 100)
+1.3.6.1.4.1.9.9.97.1.1.1.1.5.[1-NUMIFS] ,  Counter,   RO, randomup(0, 100)
+1.3.6.1.4.1.9.9.97.1.1.1.1.6.[1-NUMIFS] ,  Counter,   RO, randomup(0, 100)
+1.3.6.1.4.1.9.9.97.1.1.1.1.7.[1-NUMIFS] ,  Counter,   RO, randomup(0, 100)
+1.3.6.1.4.1.9.9.97.1.1.1.1.8.[1-NUMIFS] ,  Counter,   RO, randomup(0, 100)
+1.3.6.1.4.1.9.9.97.1.1.1.1.9.[1-NUMIFS] ,  Counter,   RO, randomup(0, 100)
+1.3.6.1.4.1.9.9.97.1.1.1.1.10.[1-NUMIFS] , Counter,   RO, randomup(0, 100)
+#
+# cseRouterTable
+# Index: Router IP Address
+1.3.6.1.4.1.9.9.97.1.2.4.1.2.STARTIP_DEC.$$MYTOKENS003$$.2 , Integer      ,  RO,  fixed(2)
+1.3.6.1.4.1.9.9.97.1.2.4.1.3.STARTIP_DEC.$$MYTOKENS003$$.2 , DisplayString,  RO,  fixed()
+1.3.6.1.4.1.9.9.97.1.2.4.1.4.STARTIP_DEC.$$MYTOKENS003$$.2 , Integer      ,  RO,  fixed(2)
+1.3.6.1.4.1.9.9.97.1.2.4.1.5.STARTIP_DEC.$$MYTOKENS003$$.2 , Integer      ,  RO,  fixed(4)
+#
+# cseFlowMaxQueries
+1.3.6.1.4.1.9.9.97.1.2.7.0    ,    Gauge  ,      RO,   fixed(5)
+#
+# cseNetflowLSExportStatus
+1.3.6.1.4.1.9.9.97.1.3.1.0    ,    Integer  ,    RW ,  r_lastset(1, 2, 2)
+#
+# cseProtocolFilterPortAdminStatus
+1.3.6.1.4.1.9.9.97.1.5.2.1.2.0  ,  Integer  ,    RW , r_lastset(1, 3, 2)
+#
+# cseProtocolFilterPortOperStatus
+1.3.6.1.4.1.9.9.97.1.5.2.1.3.0  ,  Integer  ,    RW , r_lastset(1, 3, 2)

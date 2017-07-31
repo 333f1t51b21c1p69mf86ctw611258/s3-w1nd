@@ -1,0 +1,768 @@
+<DeviceLibrary
+	Name = "Vendors"
+	Release = "2.0">
+	<Vendor
+		Name = "Airespace"
+		Directory = "airespace"
+		Description = "Networking Company"
+		Logo = "vendorairespacelogo.bmp">
+		<Category
+			Name = "Switches"
+			Description = "Switch"
+			Logo = "categoryswitcheslogo.xpm">
+			<Device
+				Name = "Airespace Switch"
+				CmfFile = "mib2.cmf"
+				VarFile = "as_switch.var">
+			</Device>
+		</Category>
+	</Vendor>
+	<Vendor
+		Name = "Alcatel-Lucent"
+		Directory = "alcatel"
+		Description = "Networking Company"
+		Logo = "vendoralcatellogo.bmp">
+		<Category
+			Name = "Switches"
+			Description = "Switch"
+			Logo = "categoryswitcheslogo.xpm">
+			<Device
+				Name = "Omnicore"
+				CmfFile = "mib2.cmf"
+				VarFile = "al_omnicore.var">
+			</Device>
+			<Device
+				Name = "Omniswitch"
+				CmfFile = "mib2.cmf"
+				VarFile = "al_omniswitch.var">
+			</Device>
+		</Category>
+		<Category
+			Name = "Routers"
+			Description = "Routers"
+			Logo = "categoryrouterlogo.xpm">
+			<Device
+				Name = "SR 7750"
+				CmfFile = "mib2.cmf"
+				VarFile = "al_sr7750.var">
+			</Device>
+		</Category>
+	</Vendor>
+	<Vendor
+		Name = "Avaya"
+		Directory = "avaya"
+		Description = "Networking Company"
+		Logo = "vendoravayalogo.bmp">
+		<Category
+			Name = "Switches"
+			Description = "Switch"
+			Logo = "categoryswitcheslogo.xpm">
+			<Device
+				Name = "MultiVantage"
+				CmfFile = "mib2.cmf"
+				VarFile = "av_multivantage.var">
+			</Device>
+		</Category>
+		<Category
+			Name = "IP Phone"
+			Description = "IP Phone"
+			Logo = "categoryswitcheslogo.xpm">
+			<Device
+				Name = "IPPhone 4620"
+				CmfFile = "mib2.cmf"
+				VarFile = "av_ip4620.var">
+			</Device>
+		</Category>
+		<Category
+			Name = "Media Server"
+			Description = "Media Server"
+			Logo = "categoryswitcheslogo.xpm">
+			<Device
+				Name = "Server S8700"
+				CmfFile = "mib2.cmf"
+				VarFile = "av_msS8700.var">
+			</Device>
+		</Category>
+	</Vendor>
+	<Vendor
+		Name = "Brocade"
+		Directory = "brocade"
+		Description = "Networking Company"
+		Logo = "vendorbrocadelogo.bmp">
+		<Category
+			Name = "Switches"
+			Description = "Switch"
+			Logo = "categoryrouterlogo.xpm">
+			<Device
+				Name = "SilkWorm 2010 Fiber Channel Switch"
+				CmfFile = "brocade.cmf"
+				VarFile = "brocade_2010.var">
+			</Device>
+			<Device
+				Name = "SilkWorm 2050 Fiber Channel Switch"
+				CmfFile = "brocade.cmf"
+				VarFile = "brocade_2050.var">
+			</Device>
+			<Device
+				Name = "SilkWorm 2250 Fiber Channel Switch"
+				CmfFile = "brocade.cmf"
+				VarFile = "brocade_2250.var">
+			</Device>
+			<Device
+				Name = "SilkWorm 2400 Fiber Channel Switch"
+				CmfFile = "brocade.cmf"
+				VarFile = "brocade_2400.var">
+			</Device>
+			<Device
+				Name = "SilkWorm 2800 Fiber Channel Switch"
+				CmfFile = "brocade.cmf"
+				VarFile = "brocade_2800.var">
+			</Device>
+			<Device
+				Name = "SilkWorm 3800 Enterprise Fabric Switch"
+				CmfFile = "brocade.cmf"
+				VarFile = "brocade_3800.var">
+			</Device>
+			<Device
+				Name = "SilkWorm 12000 Fabric Switch"
+				CmfFile = "brocade.cmf"
+				VarFile = "br_sw12000.var">
+			</Device>
+		</Category>
+	</Vendor>
+	<Vendor
+		Name = "Cisco"
+		Directory = "cisco"
+		Description = "Networking Company"
+		Logo = "vendorciscologo.bmp">
+		<Category
+			Name = "Switches"
+			Description = "Switches "
+			Logo = "categoryswitcheslogo.xpm">
+			<Device
+				Name = "Catalyst 1900 Switch"
+				CmfFile = "cisco.cmf"
+				VarFile = "Cat1900.var">
+			</Device>
+			<Device
+				Name = "Catalyst 2820 Switch"
+				CmfFile = "cisco.cmf"
+				VarFile = "Cat2820.var">
+			</Device>
+			<Device
+				Name = "Catalyst 2900 Switch"
+				CmfFile = "cisco.cmf"
+				VarFile = "Cat2900.var">
+			</Device>
+			<Device
+				Name = "Catalyst 3400 Switch"
+				CmfFile = "cisco.cmf"
+				VarFile = "Cat3400.var">
+			</Device>
+			<Device
+				Name = "Catalyst 3500XL Switch"
+				CmfFile = "cisco.cmf"
+				VarFile = "Cat3500XL.var">
+			</Device>
+			<Device
+				Name = "Catalyst 3550 Switch"
+				CmfFile = "cisco.cmf"
+				VarFile = "Cat3550.var">
+			</Device>
+			<Device
+				Name = "Catalyst 4000 Switch"
+				CmfFile = "cisco.cmf"
+				VarFile = "Cat4000.var">
+			</Device>
+			<Device
+				Name = "Catalyst 4006 Switch"
+				CmfFile = "cisco.cmf"
+				VarFile = "Cat4006.var">
+			</Device>
+			<Device
+				Name = "Catalyst 5000 Switch"
+				CmfFile = "cisco.cmf"
+				VarFile = "Cat5000.var">
+			</Device>
+			<Device
+				Name = "Catalyst 5500 Switch"
+				CmfFile = "cisco.cmf"
+				VarFile = "Cat5500.var">
+			</Device>
+			<Device
+				Name = "Catalyst 6000 Switch"
+				CmfFile = "cisco.cmf"
+				VarFile = "Cat6000.var">
+			</Device>
+			<Device
+				Name = "Catalyst 6500 Switch"
+				CmfFile = "cisco.cmf"
+				VarFile = "Cat6500.var">
+			</Device>
+			<Device
+				Name = "Catalyst 6509 Switch"
+				CmfFile = "cisco.cmf"
+				VarFile = "Cat6509.var">
+			</Device>
+			<Device
+				Name = "Catalyst 8510 CSR Switch"
+				CmfFile = "cisco.cmf"
+				VarFile = "Cat8510CSR.var">
+			</Device>
+		</Category>
+		<Category
+			Name = "Routers"
+			Description = "Routers"
+			Logo = "categoryrouterlogo.xpm">
+			<Device
+				Name = "800 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr800.var">
+			</Device>
+			<Device
+				Name = "1400 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr1400.var">
+			</Device>
+			<Device
+				Name = "15540 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr15540.var">
+			</Device>
+			<Device
+				Name = "1600 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr1600.var">
+			</Device>
+			<Device
+				Name = "1700 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr1700.var">
+			</Device>
+			<Device
+				Name = "1751 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr1751.var">
+			</Device>
+			<Device
+                Name = "1841 Router"
+				CmfFile = "cisco.cmf"
+                VarFile = "Rtr1841.var">
+			</Device>
+			<Device
+				Name = "2500 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr2500.var">
+			</Device>
+			<Device
+				Name = "2600 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr2600.var">
+			</Device>
+			<Device
+				Name = "2610 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr2610.var">
+			</Device>
+			<Device
+				Name = "2611 XM Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr2611XM.var">
+			</Device>
+			<Device
+				Name = "2621 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr2621.var">
+			</Device>
+			<Device
+				Name = "2800 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr2800.var">
+			</Device>
+			<Device
+				Name = "2811 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr2811.var">
+			</Device>
+			<Device
+				Name = "2900 XL Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr2900XL.var">
+			</Device>
+			<Device
+				Name = "3015 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr3015.var">
+			</Device>
+			<Device
+				Name = "3600 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr3600.var">
+			</Device>
+			<Device
+				Name = "3640 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr3640.var">
+			</Device>
+			<Device
+				Name = "3745 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr3745.var">
+			</Device>
+			<Device
+				Name = "3825 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr3825.var">
+			</Device>
+			<Device
+				Name = "3845 Router"
+				CmfFile = "cisco.cmf"
+                VarFile = "Rtr3845.var">
+			</Device>
+			<Device
+				Name = "7000 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr7000.var">
+			</Device>
+			<Device
+				Name = "7200 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr7200.var">
+			</Device>
+			<Device
+				Name = "7204 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr7204.var">
+			</Device>
+			<Device
+				Name = "7204 XVR Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr7204XVR.var">
+			</Device>
+			<Device
+				Name = "7301 ITP Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr7301ITP.var">
+			</Device>
+			<Device
+				Name = "7505 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr7505.var">
+			</Device>
+			<Device
+				Name = "7507 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr7507.var">
+			</Device>
+			<Device
+				Name = "7513 Router"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr7513.var">
+			</Device>
+		</Category>
+		<Category
+			Name = "Hubs"
+			Description = "Connect Machines"
+			Logo = "categoryhubslogo.xpm">
+			<Device
+				Name = "1516 Hub"
+				CmfFile = "cisco.cmf"
+				VarFile = "Rtr800.var">
+			</Device>
+		</Category>
+		<Category
+			Name = "Access Servers"
+			Description = "Access Servers"
+			Logo = "categoryaccessserverlogo.xpm">
+			<Device
+				Name = "AS5300 Universal Access Server"
+				CmfFile = "cisco.cmf"
+				VarFile = "AS5300.var">
+			</Device>
+		</Category>
+	</Vendor>
+	<Vendor
+		Name = "Enterasys"
+		Directory = "enterasys"
+		Description = "Networking Company"
+		Logo = "vendorenterasyslogo.bmp">
+		<Category
+			Name = "Switches"
+			Description = "Switch"
+			Logo = "categoryswitchlogo.xpm">
+			<Device
+				Name = "6G302 6"
+				CmfFile = "mib2.cmf"
+				VarFile = "en_6g302_6.var">
+			</Device>
+			<Device
+				Name = "Xpedition 8600"
+				CmfFile = "mib2.cmf"
+				VarFile = "en_x8600.var">
+			</Device>
+		</Category>
+	</Vendor>
+	<Vendor
+		Name = "Ericsson"
+		Directory = "ericsson"
+		Description = "Networking Company"
+		Logo = "vendorericssonlogo.bmp">
+		<Category
+			Name = "PBX"
+			Description = "IP PBX"
+			Logo = "categoryswitchlogo.xpm">
+			<Device
+				Name = "MD110"
+				CmfFile = "mib2.cmf"
+				VarFile = "er_md110.var">
+			</Device>
+		</Category>
+	</Vendor>
+	<Vendor
+		Name = "Extreme"
+		Directory = "extreme"
+		Description = "Networking Company"
+		Logo = "vendorextremelogo.bmp">
+		<Category
+			Name = "Switches"
+			Description = "Switch"
+			Logo = "categoryswitchlogo.xpm">
+			<Device
+				Name = "Summit 7i Switch"
+				CmfFile = "extreme.cmf"
+				VarFile = "summit7i.var">
+			</Device>
+			<Device
+				Name = "Alpine 3808"
+				CmfFile = "mib2.cmf"
+				VarFile = "alpine3808.var">
+			</Device>
+			<Device
+				Name = "BlackDiamond 6808"
+				CmfFile = "mib2.cmf"
+				VarFile = "blackdiamond6808.var">
+			</Device>
+			<Device
+				Name = "Summit 48"
+				CmfFile = "mib2.cmf"
+				VarFile = "summit48.var">
+			</Device>
+			<Device
+				Name = "Summit 200"
+				CmfFile = "mib2.cmf"
+				VarFile = "summit200.var">
+			</Device>
+		</Category>
+	</Vendor>
+	<Vendor
+		Name = "Foundry"
+		Directory = "foundry"
+		Description = "Networking Company"
+		Logo = "vendorfoundrylogo.bmp">
+		<Category
+			Name = "Switches"
+			Description = "Switch"
+			Logo = "categoryswitchlogo.xpm">
+			<Device
+				Name = "snFE9604 Switch"
+				CmfFile = "mib2.cmf"
+				VarFile = "snFE9604s.var">
+			</Device>
+			<Device
+				Name = "snFastIron3"
+				CmfFile = "mib2.cmf"
+				VarFile = "snFI3.var">
+			</Device>
+		</Category>
+		<Category
+			Name = "Routers"
+			Description = "Routers"
+			Logo = "categoryrouterlogo.xpm">
+			<Device
+				Name = "Router1"
+				CmfFile = "foundry.cmf"
+				VarFile = "router1.var">
+			</Device>
+			<Device
+				Name = "Router2"
+				CmfFile = "foundry.cmf"
+				VarFile = "router2.var">
+			</Device>
+		</Category>
+	</Vendor>
+	<Vendor
+		Name = "HP"
+		Directory = "hp"
+		Description = "Printer Company"
+		Logo = "vendorhplogo.bmp">
+		<Category
+			Name = "Switches"
+			Description = "Switch"
+			Logo = "categoryswitchlogo.xpm">
+			<Device
+				Name = "Procurve 4000M Switch"
+				CmfFile = "mib2.cmf"
+				VarFile = "procurv4000.var">
+			</Device>
+			<Device
+				Name = "Procurve 2650 Switch"
+				CmfFile = "mib2.cmf"
+				VarFile = "procurv2650.var">
+			</Device>
+		</Category>
+		<Category
+			Name = "Printers"
+			Description = "Printers"
+			Logo = "categoryprinterlogo.xpm">
+			<Device
+				Name = "Jet Printer"
+				CmfFile = "hp.cmf"
+				VarFile = "hp_jet.var">
+			</Device>
+		</Category>
+	</Vendor>
+	<Vendor
+		Name = "Juniper"
+		Directory = "juniper"
+		Description = "Networking Company"
+		Logo = "vendorjuniperlogo.bmp">
+		<Category
+			Name = "Routers"
+			Description = "Routers"
+			Logo = "categoryrouterslogo.xpm">
+			<Device
+				Name = "M5 Router"
+				CmfFile = "juniper.cmf"
+				VarFile = "m_5.var">
+			</Device>
+			<Device
+				Name = "M10 Router"
+				CmfFile = "juniper.cmf"
+				VarFile = "m_10.var">
+			</Device>
+			<Device
+				Name = "M20 Router"
+				CmfFile = "juniper.cmf"
+				VarFile = "m_20.var">
+			</Device>
+			<Device
+				Name = "M40 Router"
+				CmfFile = "juniper.cmf"
+				VarFile = "m_40.var">
+			</Device>
+			<Device
+				Name = "M160 Router"
+				CmfFile = "juniper.cmf"
+				VarFile = "m_160.var">
+			</Device>
+			<Device
+				Name = "6300 Router"
+				CmfFile = "mib2.cmf"
+				VarFile = "juniper6300.var">
+			</Device>
+			<Device
+				Name = "JNS-5GT Router"
+				CmfFile = "jnetscreen.cmf"
+				VarFile = "jnetscreen5GT.var">
+			</Device>
+			<Device
+				Name = "NetScreen ISG 2000"
+				CmfFile = "mib2.cmf"
+				VarFile = "isg2000.var">
+			</Device>
+			<Device
+				Name = "SSG 550"
+				CmfFile = "mib2.cmf"
+				VarFile = "ssg550.var">
+			</Device>
+		</Category>
+	</Vendor>
+	<Vendor
+		Name = "Microsoft"
+		Directory = "microsoft"
+		Description = "Software Company"
+		Logo = "vendormicrosoftlogo.bmp">
+		<Category
+			Name = "PCs"
+			Description = "PCs"
+			Logo = "categorypclogo.xpm">
+			<Device
+				Name = "Windows 2000 PC"
+				CmfFile = "microsoft.cmf"
+				VarFile = "win2000.var">
+			</Device>
+			<Device
+				Name = "Windows NT PC"
+				CmfFile = "mib2.cmf"
+				VarFile = "winnt.var">
+			</Device>
+			<Device
+				Name = "Windows 2000 Ver5 PC"
+				CmfFile = "mib2.cmf"
+				VarFile = "win2000_5.var">
+			</Device>
+		</Category>
+	</Vendor>
+	<Vendor
+		Name = "Motorola"
+		Directory = "motorola"
+		Description = "Networking Company"
+		Logo = "vendormotorolalogo.bmp">
+		<Category
+			Name = "CMTS"
+			Description = "Cmts"
+			Logo = "categorycmtslogo.xpm">
+			<Device
+				Name = "BSR 64000"
+				CmfFile = "motorolacmts.cmf"
+				VarFile = "bsr6400.var">
+			</Device>
+		</Category>
+		<Category
+			Name = "CM-MTA"
+			Description = ""
+			Logo = "">
+			<Device
+				Name = "CG 4500"
+				CmfFile = "motcg4500.cmf"
+				VarFile = "motcg4500.var">
+			</Device>
+		</Category>
+	</Vendor>
+	<Vendor
+		Name = "Nokia"
+		Directory = "nokia"
+		Description = "Networking Company"
+		Logo = "vendornokialogo.bmp">
+		<Category
+			Name = "Router"
+			Description = "Router"
+			Logo = "categoryrouterslogo.xpm">
+			<Device
+				Name = "IP300"
+				CmfFile = "mib2.cmf"
+				VarFile = "ip300.var">
+			</Device>
+			<Device
+				Name = "IP530"
+				CmfFile = "mib2.cmf"
+				VarFile = "ip530.var">
+			</Device>
+			<Device
+				Name = "IP740"
+				CmfFile = "mib2.cmf"
+				VarFile = "ip740.var">
+			</Device>
+		</Category>
+	</Vendor>
+	<Vendor
+		Name = "Nortel"
+		Directory = "nortel"
+		Description = "Networking Company"
+		Logo = "vendornortellogo.bmp">
+		<Category
+			Name = "Switches"
+			Description = "Switch"
+			Logo = "categoryrouterlogo.xpm">
+			<Device
+				Name = "Passport 7480"
+				CmfFile = "mib2.cmf"
+				VarFile = "passport7480.var">
+			</Device>
+			<Device
+				Name = "BayStack 5510"
+				CmfFile = "mib2.cmf"
+				VarFile = "baystack5510.var">
+			</Device>
+		</Category>
+	</Vendor>
+	<Vendor
+		Name = "RCA"
+		Directory = "rca"
+		Description = "Networking Company"
+		Logo = "vendorrcalogo.bmp">
+		<Category
+			Name = "CM"
+			Description = ""
+			Logo = "">
+			<Device
+				Name = "RCA DCM225"
+				CmfFile = "rcacm.cmf"
+				VarFile = "dcm225.var">
+			</Device>
+		</Category>
+	</Vendor>
+	<Vendor
+		Name = "Riverstone"
+		Directory = "riverstone"
+		Description = "Networking Company"
+		Logo = "vendorriverstonelogo.bmp">
+		<Category
+			Name = "Routers"
+			Description = "Routers"
+			Logo = "categoryrouterlogo.xpm">
+			<Device
+				Name = "RS 3000 Switch Router"
+				CmfFile = "riverstone.cmf"
+				VarFile = "rs_3000.var">
+			</Device>
+			<Device
+				Name = "RS 8600 Switch Router"
+				CmfFile = "riverstone.cmf"
+				VarFile = "rs_8600.var">
+			</Device>
+			<Device
+				Name = "RS 30000 Switch Router"
+				CmfFile = "mib2.cmf"
+				VarFile = "rs30000.var">
+			</Device>
+			<Device
+				Name = "RS 32000 Switch Router"
+				CmfFile = "mib2.cmf"
+				VarFile = "rs32000.var">
+			</Device>
+			<Device
+				Name = "RS 2100 Switch Router"
+				CmfFile = "mib2.cmf"
+				VarFile = "rs2100.var">
+			</Device>
+		</Category>
+	</Vendor>
+	<Vendor
+		Name = "Sun"
+		Directory = "sun"
+		Description = "Computer Company"
+		Logo = "vendorsunlogo.bmp">
+		<Category
+			Name = "Servers"
+			Description = "Server"
+			Logo = "categoryrouterslogo.xpm">
+			<Device
+				Name = "Sun-BladeServer"
+				CmfFile = "mib2.cmf"
+				VarFile = "sun_bladeserv.var">
+			</Device>
+			<Device
+				Name = "Sun-Fire"
+				CmfFile = "mib2.cmf"
+				VarFile = "sun_fire.var">
+			</Device>
+		</Category>
+	</Vendor>
+	<Vendor
+		Name = "Yamaha"
+		Directory = "yamaha"
+		Description = "Networking Company"
+		Logo = "vendoryamahalogo.bmp">
+		<Category
+			Name = "Routers"
+			Description = "Routers"
+			Logo = "categoryrouterslogo.xpm">
+			<Device
+				Name = "RTX-1000"
+				CmfFile = "yamaha.cmf"
+				VarFile = "rtx1000.var">
+			</Device>
+		</Category>
+	</Vendor>
+</DeviceLibrary>

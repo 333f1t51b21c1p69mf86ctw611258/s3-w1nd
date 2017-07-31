@@ -1,0 +1,169 @@
+-- 
+-- This is FriendlySNMP DEMO-TABLE-FLIGHT-MIB
+--
+
+DEMO-TABLE-FLIGHT-MIB DEFINITIONS ::= BEGIN
+
+IMPORTS
+    enterprises,
+    MODULE-IDENTITY,
+    Unsigned32,
+    Integer32,
+    OBJECT-TYPE
+        FROM SNMPv2-SMI
+    DisplayString,
+    RowStatus,
+    TEXTUAL-CONVENTION
+        FROM SNMPv2-TC
+    MODULE-COMPLIANCE, 
+    OBJECT-GROUP
+        FROM SNMPv2-CONF
+    ;
+
+-- Module Identity
+------------------
+demoTableFlight MODULE-IDENTITY 
+    -- Date Format is "YYYYMMDDhhmmZ"
+    LAST-UPDATED "201004010000Z"    
+    ORGANIZATION "FriendlySNMP"
+    CONTACT-INFO "info@friendlysnmp.org"
+    DESCRIPTION  "This is demo MIB to test basic SNMP agent functionality"
+    -- Multiple pairs revision/description are allowed
+    REVISION     "201004010000Z"
+    DESCRIPTION  "FriendlySNMP Demo MIB"
+    -- 1.3.6.1.4.1.29091.10.4
+    ::= { friendlySNMP demo(10) 4 }
+
+-- Enterprise OIDs
+------------------
+friendlySNMP OBJECT IDENTIFIER ::= { enterprises 29091 }
+
+-- Textual Conventions
+----------------------
+DemoFlightNumberTC ::= TEXTUAL-CONVENTION
+    DISPLAY-HINT "d"
+    STATUS      current
+    DESCRIPTION "A positive integer in range 0..999."
+    SYNTAX Integer32 (0..999)
+    
+DemoFlightStatusTC ::= TEXTUAL-CONVENTION
+    STATUS  current
+    DESCRIPTION "Defines flight status"
+    SYNTAX INTEGER { boarding(1), delayed(4), departed(8), canceled(12) }
+    
+-- Top-level tree (sections)
+----------------------------
+demoMIBObjects       OBJECT IDENTIFIER ::= { demoTableFlight 1 }
+demoMIBConformance   OBJECT IDENTIFIER ::= { demoTableFlight 3 }
+
+-- Table
+--------------------
+flightTable OBJECT-TYPE
+    SYNTAX      SEQUENCE OF FlightEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION "Table of Flights"
+    ::= { demoMIBObjects 13 }
+
+flightEntry OBJECT-TYPE
+    SYNTAX      FlightEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION "Row with flight info"
+    INDEX { flightIndex }
+    ::= { flightTable 1 }
+
+FlightEntry ::= SEQUENCE {
+    flightIndex       Unsigned32,
+    flightCarrier     DisplayString,
+    flightNumber      DemoFlightNumberTC,
+    flightDestination DisplayString,
+    flightDepartTime  DisplayString,
+    flightStatus      DemoFlightStatusTC,
+    flightRowStatus   RowStatus
+}
+
+flightIndex OBJECT-TYPE
+    SYNTAX      Unsigned32
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION "This is a table column: INDEX"
+    ::= { flightEntry 2 }
+
+flightCarrier OBJECT-TYPE
+    SYNTAX      DisplayString
+    MAX-ACCESS  read-create
+    STATUS      current
+    DESCRIPTION "This is a table column: flight carrier."
+    ::= { flightEntry 10 }
+
+flightNumber OBJECT-TYPE
+    SYNTAX      DemoFlightNumberTC
+    MAX-ACCESS  read-create
+    STATUS      current
+    DESCRIPTION "This is a table column: flight number."
+    ::= { flightEntry 14 }
+    
+flightDestination OBJECT-TYPE
+    SYNTAX      DisplayString
+    MAX-ACCESS  read-create
+    STATUS      current
+    DESCRIPTION "This is a table column: flight destination."
+    ::= { flightEntry 20 }
+    
+flightDepartTime OBJECT-TYPE
+    SYNTAX      DisplayString
+    MAX-ACCESS  read-create
+    STATUS      current
+    DESCRIPTION "This is a table column: departure time.
+                 The time is validated to format HH:MM,
+                 where HH = 0..23, MM = 0..59"
+    ::= { flightEntry 25 }
+
+flightStatus OBJECT-TYPE
+    SYNTAX      DemoFlightStatusTC
+    MAX-ACCESS  read-create
+    STATUS      current
+    DESCRIPTION "This is a table column: flight status."
+    ::= { flightEntry 33 }
+
+flightRowStatus OBJECT-TYPE
+    SYNTAX      RowStatus
+    MAX-ACCESS  read-create
+    STATUS      current
+    DESCRIPTION "The row status. 
+        GET returns:  'active = 1' for all rows.
+        Not used: 'notInService = 2' and 'notReady = 3'.
+        SET allows actions 'createAndGo = 4' and 'destroy = 6'.
+        Not used: 'createAndWait = 5'."
+    DEFVAL  { active }
+    ::= { flightEntry 40 }
+
+--
+-- SECTION: Conformance
+--
+demoCompliance MODULE-COMPLIANCE
+    STATUS  current
+    DESCRIPTION
+        "The compliance statement for SNMP entities which
+        implement this MIB."
+    MODULE  -- this module
+    MANDATORY-GROUPS { 
+        demoObjectGroup
+    }
+    ::= { demoMIBConformance 1 }
+
+demoObjectGroup OBJECT-GROUP
+    OBJECTS {
+        flightCarrier,
+        flightNumber,
+        flightDestination,
+        flightDepartTime,
+        flightStatus,
+        flightRowStatus
+    }
+    STATUS current
+    DESCRIPTION "A collection of object nodes in this MIB"
+    ::= { demoMIBConformance 2 }
+
+END

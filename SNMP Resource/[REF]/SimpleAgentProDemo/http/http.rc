@@ -1,0 +1,31 @@
+###############################################################################
+#
+# Additional configuration statements for the HTTPd
+#
+###############################################################################
+
+############################
+# Authentication Configuration
+
+# The auth config creates a default authentication array.
+# To create passwords for user $u and group $g
+# Config Auth {user,$u $password group,$g group}
+# Note: these passwords are plaintext, so it's not very secure.
+#
+# If Auth is undefined, a random password
+# is created and logged per invocation of the server
+# If Auth is defined (even if empty, it is considered authoritative and
+# no default passwords are generated.
+#Config Auth {}
+
+# Default password file - used if .htaccess doesn't specify AuthUserFile
+# this defaults to the authentication array authdefault()
+#Config AuthUserFile {}
+
+# Default group file - used if .htaccess doesn't specify AuthGroupFile
+# this defaults to the authentication array authdefault()
+#Config AuthGroupFile {}
+
+# Default mail servers - the smtp servers to use when sending mail
+Config MailServer {}
+

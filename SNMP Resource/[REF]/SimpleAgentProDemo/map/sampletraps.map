@@ -1,0 +1,530 @@
+<DeviceMap
+	Release = "4.0"
+	Description = ""
+	UserData = ""
+	SetupFile = ""
+	Interface = ""
+	StartInterfaceNum = "0"
+	Username = ""
+	DefaultDevice = "192.168.20.1//161">
+	<Device
+		<General
+			Name = "192.168.20.1"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+	<Device
+		<General
+			Name = "192.168.20.2"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+	<Device
+		<General
+			Name = "192.168.20.3"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+	<Device
+		<General
+			Name = "192.168.20.4"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+	<Device
+		<General
+			Name = "192.168.20.5"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+	<Device
+		<General
+			Name = "192.168.20.6"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+	<Device
+		<General
+			Name = "192.168.20.7"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+	<Device
+		<General
+			Name = "192.168.20.8"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+	<Device
+		<General
+			Name = "192.168.20.9"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+	<Device
+		<General
+			Name = "192.168.20.10"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+	<Device
+		<General
+			Name = "192.168.20.11"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+	<Device
+		<General
+			Name = "192.168.20.12"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+	<Device
+		<General
+			Name = "192.168.20.13"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+	<Device
+		<General
+			Name = "192.168.20.14"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+	<Device
+		<General
+			Name = "192.168.20.15"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+	<Device
+		<General
+			Name = "192.168.20.16"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+	<Device
+		<General
+			Name = "192.168.20.17"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+	<Device
+		<General
+			Name = "192.168.20.18"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+	<Device
+		<General
+			Name = "192.168.20.19"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+	<Device
+		<General
+			Name = "192.168.20.20"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "traps.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+</DeviceMap>

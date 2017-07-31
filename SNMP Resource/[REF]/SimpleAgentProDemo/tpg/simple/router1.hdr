@@ -1,0 +1,45 @@
+####################################################
+# Name:               router.var  
+#
+# Description:        This is the var file for the 
+#                     layer of routers.
+#
+#                     This router is assumed to be
+#                     connected to 100 switches below
+#                     it, and a seed router above it.
+#                     
+#                     The Seed Router's IP address is 87.1.1.1
+#                     and Its Mac is 0x010101010101
+#
+#                     The Router's own IP address is one of
+#                     87.1.2.1....87.1.51.1 and Its Mac is 
+#                     one of 0x010202010101 ..0x010202010133
+#
+#                     It is connected to 100 Switches with
+#                     IPs 10.2.2.1....10.2.101.1 or
+#                         10.3.2.1....10.3.101.1 or
+#                         10.51.2.1...10.51.101.1 
+#                     Their main macs are 
+#                        0x010302020101 to 0x010302650101 or 
+#                        0x010303020101 to 0x010303650101 or 
+#                        0x010333020101 to 0x010333650101
+#
+#                     The IPs for the routers other interfaces 
+#                     are  10.2.2.2....10.2.101.2 or
+#                          10.3.2.2....10.3.101.2 or
+#                          10.51.2.2...10.51.101.2 
+#
+#                     To have only 10 switches use 11 instead of 101
+#                     in the range specification and ifNum value
+#                     
+#  Tokens:            $$MYTOKENS001$$ = 2 to 51
+#                     $$MYTOKENS002$$ = 02 to 33 (2 to 51 in hex) 
+#                     
+###################################################
+%sapdefine STARTIP_DEC   87
+%sapdefine STARTIP_HEX   57
+%sapdefine NUMIFS        11
+%sapdefine NUM_HIFS      52
+%sapdefine STARTMAC_HEX  01
+%sapdefine STARTMAC_DEC  1
+#

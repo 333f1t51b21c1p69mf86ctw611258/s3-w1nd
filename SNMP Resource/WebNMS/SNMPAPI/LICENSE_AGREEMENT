@@ -1,0 +1,160 @@
+             TERMS AND CONDITIONS FOR WebNMS SNMP API LICENSE              
+
+This License Agreement details the policy for license of WebNMS SNMP API on
+the following topics:
+
+ 1. Evaluation License
+
+ 2. Developer License
+   
+ 3. Distribution License
+   
+ 4. Development Support
+   
+ 5. Deployment/ Production Support
+
+Please read the following license carefully, before either (i) completing the
+electronic order or download of SNMP API from an authorized web site, or (ii)
+installing SNMP API from media that was delivered after being ordered by
+alternative order process, as applicable.
+
+This Agreement ("Agreement") is made by and between ZOHO Corp., (hereinafter "Zoho") and any person (collectively "you", "your" or "I") who completes the download form for use of the Zoho Software ("Software").
+
+1.Evaluation License
+
+Zoho grants to you a non-exclusive, non-transferable, Evaluation license
+for trial and evaluation of the software,	in binary object code form, for a 
+period of Forty-five (45) days from the date of download. You may use any third
+party software products or modules supplied by Zoho solely with the 
+Software, unless the licensing terms of the third party software products or 
+modules specify otherwise. You may not disclose the results of software 
+performance benchmarks to any third party without Zoho's prior written 
+consent.
+
+This license begins upon downloading and ends Forty-five (45) days thereafter
+("Evaluation Period"). If you wish to use the software after 45 day evaluation 
+period, formal license authorization from Zoho is required. If you are
+not willing to use the software after evaluation period, delete all the copies
+installed in your computer with immediate effect. You are forbidden from using
+the Software for any other use or otherwise offering it for resale under the 
+terms of this section 1. Zoho retains all rights not specifically granted 
+to you herein. 
+
+2. Developer License & Ownership
+
+SNMP API is owned by Zoho and is copyrighted and licensed, not sold. As
+part of purchasing development license for each named developer, Zoho
+grants you a non-exclusive, non-transferable license to use SNMP API as part
+of your development environment. This development license does not entitle you
+to any technical support or bug fixes or other maintenance services from
+Zoho. If technical support or maintenance services, as described in
+Section 4, are desired, a development support license needs to be obtained 
+from Zoho.
+
+3. Distribution License
+
+You must obtain a Distribution License from Zoho for distributing components of 
+SNMP API as part of your application. The Distribution License grants you a worldwide, 
+non-exclusive, non-transferable right to use and distribute permitted components of 
+SNMP API in binary form embedded as part of your application.  Unless specifically 
+permitted, you may not distribute MIB Browser application, which is included in the 
+SNMP API Professional Edition. You must contact us to obtain the appropriate Distribution License.
+
+Display of Copyright Information: You must not remove any of the copyright information 
+from the SNMP API documentation.
+
+4. Development Support
+
+During the development phase of your application, Zoho provides you the
+option of availing Classic or Premium support. The terms of development
+support shall be as provided in Exhibit A. Zoho specifically excludes
+upgrades from the support programs. Upgrade to SNMP API will be provided upon
+payment of an Upgrade License Fee in accordance with Zoho's then current
+pricing policy.
+
+5. Deployment/Production Support
+
+During the deployment phase of your application, Zoho provides you
+Deployment/Production Support services. Please contact Zoho Sales, for
+the deployment license terms, which may require additional fees.
+
+6. Restrictions on Use
+
+Regardless of how the SNMP API is being used, you may not reverse engineer,
+decompile, disassemble or otherwise attempt to determine source code of SNMP
+API. You may not publish or provide any results of benchmark tests run on SNMP
+API to a third party without prior written consent from Zoho. During the
+term of this Agreement, you shall not use the SNMP API to develop for
+commercial distribution software products that compete with SNMP API.
+
+7. Term and Termination
+
+This Agreement is effective until terminated. You may terminate this Agreement
+at any time by destroying all copies of SNMP API. This Agreement will
+terminate immediately without notice from Zoho if you fail to comply with
+any provision of this Agreement. Upon termination, you must destroy all copies
+of SNMP API.
+
+8. Warranty Disclaimer and Limitation of Liability
+
+Zoho licenses SNMP API to you on an "as is" basis, without warranty of
+any kind. Zoho hereby expressly disclaims all warranties or conditions,
+either express or implied, including, but not limited to, the implied
+warranties or conditions of merchantability and fitness for a particular
+purpose. You are solely responsible for determining the appropriateness of
+using SNMP API and assume all risks associated with the use of it, including
+but not limited to the risks of program errors, damage to or loss of data,
+programs or equipment, and unavailability or interruption of operations.
+
+Some jurisdictions do not allow for the exclusion or limitation of implied
+warranties, so the above limitations or exclusions may not apply to you.
+
+Zoho will not be liable for any direct damages or for any special,
+incidental, or indirect damages or for any economic consequential damages
+(including lost profits or savings), even if Zoho has been advised of the
+possibility of such damages. Zoho will not be liable for the loss of, or
+damage to, your records or data, or any damages claimed by you based on a
+third party claim.
+
+Some jurisdictions do not allow for the exclusion or limitation of incidental
+or consequential damages, so the above limitations or exclusions may not apply
+to you.
+
+9. General
+
+This Agreement is governed by the laws of the State of California. This
+Agreement is the only understanding and agreement we have regarding your use
+of SNMP API. You shall not export SNMP API or the derived application except
+in compliance with United States export regulations and applicable laws and
+regulations. It supersedes all other communications, understandings or
+agreements we may have had prior to this Agreement.
+
+Exhibit A - Development Support Terms 
+ 
+A.1 Classic Support Terms
+
+- Business Hours 9 x 5 
+- Acknowledgement (email response) within  2 Business Days
+- Email Support 
+- Online Access (documentation, FAQs, release notes and white papers)  
+- Service Pack (cumulative collection of workarounds, patches and bug fixes)  
+- Minor Release (feature releases and service packs, indicated by a change in the decimal)
+
+A.2   Premium  Support Terms
+
+- Business Hours   9 x 5 
+- Acknowledgement (email response)  within  1 Business Day 
+- Email Support
+- Online Access (documentation, FAQs, release notes and white papers)  
+- Service Pack (cumulative collection of workarounds, patches and bug fixes)  
+- Minor Release (feature releases and service packs, indicated by a change in the decimal)  
+- Telephone Support
+- Customer Patches (Fixes to severity 1 problems that do not have any acceptable workaround)
+- Customer Owner (designated technical contact person for all technical issues and escalations)
+
+Note:
+Upgrade (significant new features, additions to functionalities, indicated by a change in the 
+number to the left of the decimal) is not included in both Classic and Premium support terms.
+
+
+

@@ -1,0 +1,142 @@
+-- 
+-- This is FriendlySNMP DEMO-TABLE-MARRIAGE-MIB
+--
+
+DEMO-TABLE-MARRIAGE-MIB DEFINITIONS ::= BEGIN
+
+IMPORTS
+    enterprises,
+    MODULE-IDENTITY,
+    Integer32,
+    OBJECT-TYPE
+        FROM SNMPv2-SMI
+    DisplayString,
+    RowStatus,
+    TEXTUAL-CONVENTION
+        FROM SNMPv2-TC
+    MODULE-COMPLIANCE, 
+    OBJECT-GROUP
+        FROM SNMPv2-CONF
+    ;
+
+-- Module Identity
+------------------
+demoTableMarriage MODULE-IDENTITY 
+    -- Date Format is "YYYYMMDDhhmmZ"
+    LAST-UPDATED "201004010000Z"    
+    ORGANIZATION "FriendlySNMP"
+    CONTACT-INFO "info@friendlysnmp.org"
+    DESCRIPTION  "This is demo MIB to test basic SNMP agent functionality"
+    -- Multiple pairs revision/description are allowed
+    REVISION     "201004010000Z"
+    DESCRIPTION  "FriendlySNMP Demo MIB"
+    -- 1.3.6.1.4.1.29091.10.6
+    ::= { friendlySNMP demo(10) 6 }
+
+-- Enterprise OIDs
+------------------
+friendlySNMP OBJECT IDENTIFIER ::= { enterprises 29091 }
+
+-- Textual Conventions
+----------------------
+DemoMarrigeYearTC ::= TEXTUAL-CONVENTION
+    DISPLAY-HINT "d"
+    STATUS      current
+    DESCRIPTION "A positive integer in range 0..3000"
+    SYNTAX Integer32 (0..3000)
+
+-- Top-level tree (sections)
+----------------------------
+demoMIBObjects       OBJECT IDENTIFIER ::= { demoTableMarriage 1 }
+demoMIBConformance   OBJECT IDENTIFIER ::= { demoTableMarriage 3 }
+
+-- Table
+--------------------
+marriageTable OBJECT-TYPE
+    SYNTAX      SEQUENCE OF MarriageEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION "Table of Marriage items"
+    ::= { demoMIBObjects 9 }
+
+marriageEntry OBJECT-TYPE
+    SYNTAX      MarriageEntry
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION "Row with marriage items"
+    INDEX { marriageHusbandName, marriageWifeName }
+    ::= { marriageTable 1 }
+
+MarriageEntry ::= SEQUENCE {
+    marriageHusbandName  DisplayString,
+    marriageWifeName     DisplayString,
+    marriageYear         DemoMarrigeYearTC,
+    marriageCity         DisplayString,
+    marriageRowStatus    RowStatus
+}
+
+marriageHusbandName OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..16))
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION "Husband's name (index-1)"
+    ::= { marriageEntry 2 }
+
+marriageWifeName OBJECT-TYPE
+    SYNTAX      DisplayString (SIZE(1..16))
+    MAX-ACCESS  not-accessible
+    STATUS      current
+    DESCRIPTION "Wife's name (index-2)"
+    ::= { marriageEntry 3 }
+    
+marriageYear OBJECT-TYPE
+    SYNTAX      DemoMarrigeYearTC
+    MAX-ACCESS  read-create
+    STATUS      current
+    DESCRIPTION "The marriage year"
+    ::= { marriageEntry 4 }
+
+marriageCity OBJECT-TYPE
+    SYNTAX      DisplayString
+    MAX-ACCESS  read-create
+    STATUS      current
+    DESCRIPTION "The marriage city"
+    ::= { marriageEntry 5 }
+
+marriageRowStatus OBJECT-TYPE
+    SYNTAX      RowStatus
+    MAX-ACCESS  read-create
+    STATUS      current
+    DESCRIPTION "The row status. 
+        GET returns:  'active = 1' for all rows.
+        Not used: 'notInService = 2' and 'notReady = 3'.
+        SET allows actions 'createAndGo = 4' and 'destroy = 6'.
+        Not used: 'createAndWait = 5'."
+    DEFVAL  { active }
+    ::= { marriageEntry 10 }
+
+--
+-- SECTION: Conformance
+--
+demoCompliance MODULE-COMPLIANCE
+    STATUS  current
+    DESCRIPTION
+        "The compliance statement for SNMP entities which
+        implement this MIB."
+    MODULE  -- this module
+    MANDATORY-GROUPS { 
+        demoObjectGroup
+    }
+    ::= { demoMIBConformance 1 }
+
+demoObjectGroup OBJECT-GROUP
+    OBJECTS {
+        marriageYear,
+        marriageCity,
+        marriageRowStatus
+    }
+    STATUS current
+    DESCRIPTION "A collection of object nodes in this MIB"
+    ::= { demoMIBConformance 2 }
+
+END

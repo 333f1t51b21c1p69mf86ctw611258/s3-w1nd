@@ -1,0 +1,179 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+<tocdata>
+<item name="Contents" url="pro_205.htm#Contents" />
+<book name="Preface" url="pro_205.htm#Prefacebc-1" >
+  <item name="Key Features" url="pro_205.htm#Key_Featuresbc-2" />
+  <item name="SimpleAgentEnterprise" url="pro_205.htm#SimpleAgentEnterprisebc-3" />
+  <item name="Hardware and Software Requirements" url="pro_205.htm#Hardware_and_Softwarebc-4" />
+  <item name="Documentation Conventions" url="pro_205.htm#Documentation_Conventionsbc-5" />
+</book>
+<book name="Chapter 1 Using SimpleAgentPro" url="pro_205.htm#Chapter_1_Usingbc-6" >
+  <item name="How to Use SimpleAgentPro" url="pro_205.htm#How_to_Use_SimpleAgentProbc-7" />
+  <item name="Example 1: Simulating a Device You Do Not Have" url="pro_205.htm#Example_1_Simulating_abc-8" />
+  <item name="Example 2: Learning Variables from a Real Device" url="pro_205.htm#Example_2_Learningbc-9" />
+  <item name="Example 3: Using Pre-learnt devices from the device library" url="pro_205.htm#Example_3_Using_Prebc-10" />
+</book>
+<book name="Chapter 2 Installing SimpleAgentPro" url="pro_205.htm#Chapter_2_Installingbc-11" >
+  <book name="Installing SimpleAgentPro on Linux (RedHat)" url="pro_205.htm#Installingbc-12" >
+    <item name="Directory Structure for RedHat Linux" url="pro_205.htm#Directory_Structure_forbc-13" />
+    <item name="Installing the Device Library" url="pro_205.htm#Installing_the_Devicebc-14" />
+    <item name="Installing standard and enterprise-specific MIBs" url="pro_205.htm#Installing_standard_andbc-15" />
+    <item name="Installing the Sentinel Device Drivers for Linux" url="pro_205.htm#Installing_the_Sentinel1bc-16" />
+  </book>
+  <item name="Installing SimpleAgentPro on SUN Solaris" url="pro_205.htm#Installing1bc-17" />
+  <book name="Installing SimpleAgentPro in Windows NT 4.0/2000/XP" url="pro_205.htm#Installing2bc-18" >
+    <item name="Installing the Sentinel Device Drivers" url="pro_205.htm#Installing_the_Sentinelbc-19" />
+    <item name="Directory Structure for Windows" url="pro_205.htm#Directory_Structure_for1bc-20" />
+    <item name="Installing the Device Library" url="pro_205.htm#Installing_the_Device1bc-21" />
+    <item name="Installing standard and enterprise-specific MIBs" url="pro_205.htm#Installing_standard_and1bc-22" />
+  </book>
+  <item name="Installing SimpleAgentEnterprise on Linux (RedHat)" url="pro_205.htm#Installing3bc-23" />
+</book>
+<book name="Chapter 3 Workspaces, Servers &amp; Folders" url="pro_205.htm#Chapter_3_Workspacesbc-24" >
+  <item name="Adding New Workspaces" url="pro_205.htm#Adding_New_Workspacesbc-25" />
+  <item name="Opening an Existing Workspaces" url="pro_205.htm#Opening_an_Existingbc-26" />
+  <item name="Adding Servers to a Workspace" url="pro_205.htm#Adding_Servers_to_abc-27" />
+  <item name="Removing Servers from Workspace" url="pro_205.htm#Removing_Servers_frombc-28" />
+  <item name="Adding Folders to Servers" url="pro_205.htm#Adding_Folders_to_Serversbc-29" />
+  <item name="Adding Maps to Servers" url="pro_205.htm#Adding_Maps_to_Serversbc-30" />
+  <item name="Modifying a Server" url="pro_205.htm#Modifying_a_Serverbc-31" />
+  <item name="Running the Name Server as Service or Daemon" url="pro_205.htm#Running_the_Name_Serverbc-32" />
+  <item name="Stopping a SimpleAgentPro Name Server" url="pro_205.htm#Stopping_abc-33" />
+  <item name="Getting Statistics for all currently running Maps" url="pro_205.htm#Getting_Statistics_forbc-34" />
+  <item name="Workspace File Format" url="pro_205.htm#Workspace_File_Formatbc-35" />
+</book>
+<book name="Chapter 4 Creating Maps" url="pro_205.htm#Chapter_4_Creating_Mapsbc-36" >
+  <item name="Using the Map Menu" url="pro_205.htm#Using_the_Map_Menubc-37" />
+  <item name="Creating a Map" url="pro_205.htm#Creating_a_Mapbc-38" />
+  <item name="Cloning a Map" url="pro_205.htm#Cloning_a_Mapbc-39" />
+  <item name="Modifying a Map" url="pro_205.htm#Modifying_a_Mapbc-40" />
+  <item name="Deleting a Map" url="pro_205.htm#Deleting_a_Mapbc-41" />
+  <item name="Drag and Drop Devices Across Maps" url="pro_205.htm#Drag_and_Drop_Devicesbc-42" />
+  <item name="Remove from Server" url="pro_205.htm#Remove_from_Serverbc-43" />
+  <item name="Getting Statistics" url="pro_205.htm#Getting_Statisticsbc-44" />
+  <item name="Downloading TCL Scripts to Devices in a Map" url="pro_205.htm#Downloading_TCL_Scriptsbc-45" />
+  <item name="Creating Many Maps from an Existing Map" url="pro_205.htm#Creating_Many_Maps_frombc-46" />
+  <item name="Editing/Viewing Log files" url="pro_205.htm#Editing_Viewing_Log_filesbc-47" />
+  <item name="Editing/Viewing Debug files" url="pro_205.htm#Editing_Viewing_Debugbc-48" />
+  <item name="Starting Maps" url="pro_205.htm#Starting_Mapsbc-49" />
+  <item name="Stoping a running Map" url="pro_205.htm#Stoping_a_running_Mapbc-50" />
+  <item name="Additional Information About Map File Format" url="pro_205.htm#Additional_Informationbc-51" />
+</book>
+<book name="Chapter 5 Compiling MIB Files" url="pro_205.htm#Chapter_5_Compiling_MIBbc-52" >
+  <item name="Opening the MIB Compilation Window" url="pro_205.htm#Opening_the_MIBbc-53" />
+  <item name="Compiling MIB Files: An Example" url="pro_205.htm#Compiling_MIB_Files_Anbc-54" />
+  <item name="Viewing the Contents of a Compiled MIB File" url="pro_205.htm#Viewing_the_Contents_ofbc-55" />
+  <item name="Unloading a Compiled MIB" url="pro_205.htm#Unloading_a_Compiled_MIBbc-56" />
+  <item name="Additional Information About Compiling MIBs" url="pro_205.htm#Additional_Information1bc-57" />
+</book>
+<book name="Chapter 6 Creating Variable Files" url="pro_205.htm#Chapter_6_Creatingbc-58" >
+  <book name="Creating Variables from an MIB File" url="pro_205.htm#Creating_Variables_frombc-59" >
+    <item name="Using the Default Rules File: An Example" url="pro_205.htm#Using_the_Default_Rulesbc-60" />
+    <item name="Additional Information About Creating Variables from a MIB" url="pro_205.htm#Additional_Information2bc-61" />
+  </book>
+  <item name="Learning Variables from a Device" url="pro_205.htm#Learning_Variables_frombc-62" />
+  <book name="Using the Learn SNMP Variables Window" url="pro_205.htm#Using_the_Learn_SNMPbc-63" >
+    <item name="Dealing with Lexicographical Errors During Learning" url="pro_205.htm#Dealing_withbc-64" />
+    <item name="Doing Rate Computation for Counter Variables" url="pro_205.htm#Doing_Rate_Computationbc-65" />
+    <item name="Mapping Learnt IP address in the variable file" url="pro_205.htm#Mapping_Learnt_IPbc-66" />
+    <item name="Algorithms Used when Learning Variables" url="pro_205.htm#Algorithms_Used_whenbc-67" />
+  </book>
+  <item name="Editing the Variable File" url="pro_205.htm#Editing_the_Variable_Filebc-68" />
+  <book name="Variable Information File Format (*.var)" url="pro_205.htm#Variable_Informationbc-69" >
+    <item name="Defines" url="pro_205.htm#Definesbc-70" />
+    <item name="Includes" url="pro_205.htm#Includesbc-71" />
+    <item name="Attribute Information" url="pro_205.htm#Attribute_Informationbc-72" />
+    <item name="Dynamic Row Creation Information" url="pro_205.htm#Dynamic_Row_Creationbc-73" />
+    <item name="Community String Indexing" url="pro_205.htm#Community_String_Indexingbc-74" />
+  </book>
+</book>
+<book name="Chapter 7 Creating Devices" url="pro_205.htm#Chapter_7_Creatingbc-75" >
+<chunk name="Chapter 7 Creating Devices" url="pro_205.htm#Chapter_7_Creatingbc-75" ref="whtdata1.xml" />
+</book>
+<book name="Chapter 8 Running the Simulator" url="pro_205.htm#Chapter_8_Running_thebc-109" >
+<chunk name="Chapter 8 Running the Simulator" url="pro_205.htm#Chapter_8_Running_thebc-109" ref="whtdata2.xml" />
+</book>
+<book name="Chapter 9 Traps" url="pro_205.htm#Chapter_9_Trapsbc-128" >
+  <item name="Formulating Tcl Commands (Step 1)" url="pro_205.htm#Formulating_Tcl_Commandsbc-129" />
+  <item name="Creating traps from MIB" url="pro_205.htm#Creating_traps_from_MIBbc-130" />
+  <item name="Learning traps from Device" url="pro_205.htm#Learning_traps_frombc-131" />
+  <item name="Editing the Tcl Trap File" url="pro_205.htm#Editing_the_Tcl_Trap_Filebc-132" />
+  <item name="Using the GUI to send Traps at Device Level(Step 2a)" url="pro_205.htm#Using_the_GUI_to_sendbc-133" />
+  <item name="Using the GUI to send Traps at Map Level(Step 2b)" url="pro_205.htm#Using_the_GUI_to_send1bc-134" />
+  <item name="Interpreting Tcl commands to emit traps (Step 2c)" url="pro_205.htm#Interpreting_Tclbc-135" />
+</book>
+<book name="Chapter 10 Device Library" url="pro_205.htm#Chapter_10_Device_Librarybc-136" >
+  <item name="Opening the Device Library" url="pro_205.htm#Opening_the_Devicebc-137" />
+  <item name="Adding/Modifying/Deleting Vendor Information" url="pro_205.htm#Adding_Modifying1bc-138" />
+  <item name="Adding/Modifying/Deleting Category Information" url="pro_205.htm#Adding_Modifying2bc-139" />
+  <item name="Adding/Modifying/Deleting Device Information" url="pro_205.htm#Adding_Modifyingbc-140" />
+</book>
+<book name="Chapter 11 TCL Commands" url="pro_205.htm#Chapter_11_TCL_Commandsbc-141" >
+<chunk name="Chapter 11 TCL Commands" url="pro_205.htm#Chapter_11_TCL_Commandsbc-141" ref="whtdata3.xml" />
+</book>
+<book name="Chapter 12 Telnet/CLI Support" url="pro_205.htm#Chapter_12_Telnet_CLIbc-168" >
+<chunk name="Chapter 12 Telnet/CLI Support" url="pro_205.htm#Chapter_12_Telnet_CLIbc-168" ref="whtdata4.xml" />
+</book>
+<book name="Chapter 13 Http/Https Support" url="pro_205.htm#Chapter_13_Http_Httpsbc-173" >
+<chunk name="Chapter 13 Http/Https Support" url="pro_205.htm#Chapter_13_Http_Httpsbc-173" ref="whtdata5.xml" />
+</book>
+<book name="Chapter 14 SSH Support" url="pro_205.htm#Chapter_14_SSH_Supportbc-180" >
+<chunk name="Chapter 14 SSH Support" url="pro_205.htm#Chapter_14_SSH_Supportbc-180" ref="whtdata6.xml" />
+</book>
+<book name="Chapter 15 TL1 Support" url="pro_205.htm#Chapter_15_TL1_Supportbc-184" >
+<chunk name="Chapter 15 TL1 Support" url="pro_205.htm#Chapter_15_TL1_Supportbc-184" ref="whtdata7.xml" />
+</book>
+<book name="Chapter 16 Netflow Support" url="pro_205.htm#Chapter_16_Netflowbc-187" >
+<chunk name="Chapter 16 Netflow Support" url="pro_205.htm#Chapter_16_Netflowbc-187" ref="whtdata8.xml" />
+</book>
+<book name="Chapter 17 XML/SOAP Support" url="pro_205.htm#Chapter_17_XML_SOAPbc-196" >
+<chunk name="Chapter 17 XML/SOAP Support" url="pro_205.htm#Chapter_17_XML_SOAPbc-196" ref="whtdata9.xml" />
+</book>
+<book name="Chapter 18 IPMI Support" url="pro_205.htm#Chapter_18_IPMI_Supportbc-206" >
+<chunk name="Chapter 18 IPMI Support" url="pro_205.htm#Chapter_18_IPMI_Supportbc-206" ref="whtdata10.xml" />
+</book>
+<book name="Chapter 19 Netconf Support" url="pro_205.htm#Chapter_19_Netconfbc-209" >
+<chunk name="Chapter 19 Netconf Support" url="pro_205.htm#Chapter_19_Netconfbc-209" ref="whtdata11.xml" />
+</book>
+<book name="Chapter 20 HTTP-Client Support" url="pro_205.htm#Chapter_20_HTTP_Clientbc-212" >
+<chunk name="Chapter 20 HTTP-Client Support" url="pro_205.htm#Chapter_20_HTTP_Clientbc-212" ref="whtdata12.xml" />
+</book>
+<book name="Chapter 21 Wizards" url="pro_205.htm#Chapter_21_Wizardsbc-215" >
+<chunk name="Chapter 21 Wizards" url="pro_205.htm#Chapter_21_Wizardsbc-215" ref="whtdata13.xml" />
+</book>
+<book name="Chapter 22 Topology Editor" url="pro_205.htm#Chapter_22_Topologybc-223" >
+<chunk name="Chapter 22 Topology Editor" url="pro_205.htm#Chapter_22_Topologybc-223" ref="whtdata14.xml" />
+</book>
+<book name="Appendix A TCL Modeling File Format" url="pro_205.htm#Appendix_A_TCL_Modelingbc-233" >
+<chunk name="Appendix A TCL Modeling File Format" url="pro_205.htm#Appendix_A_TCL_Modelingbc-233" ref="whtdata15.xml" />
+</book>
+<book name="Appendix B Setup File" url="pro_205.htm#Appendix_B_Setup_Filebc-242" >
+<chunk name="Appendix B Setup File" url="pro_205.htm#Appendix_B_Setup_Filebc-242" ref="whtdata16.xml" />
+</book>
+<book name="Appendix C Default Rules File" url="pro_205.htm#Appendix_C_Default_Rulesbc-246" >
+  <item name="Sample Default Rules File" url="pro_205.htm#Sample_Default_Rules_Filebc-247" />
+</book>
+<book name="Appendix D Modifying SimpleAgentPro Execution" url="pro_205.htm#Appendix_DModifyingbc-248" >
+<chunk name="Appendix D Modifying SimpleAgentPro Execution" url="pro_205.htm#Appendix_DModifyingbc-248" ref="whtdata17.xml" />
+</book>
+<book name="Appendix E Command Line Invocation" url="pro_205.htm#Appendix_E_Command_Linebc-250" >
+<chunk name="Appendix E Command Line Invocation" url="pro_205.htm#Appendix_E_Command_Linebc-250" ref="whtdata18.xml" />
+</book>
+<book name="Appendix F Frequently Asked Questions" url="pro_205.htm#Appendix_F_Frequentlybc-252" >
+<chunk name="Appendix F Frequently Asked Questions" url="pro_205.htm#Appendix_F_Frequentlybc-252" ref="whtdata19.xml" />
+</book>
+<book name="Appendix G Other Utilities" url="pro_205.htm#Appendix_G_Otherbc-254" >
+<chunk name="Appendix G Other Utilities" url="pro_205.htm#Appendix_G_Otherbc-254" ref="whtdata20.xml" />
+</book>
+<book name="Appendix H Troubleshooting" url="pro_205.htm#Appendix_Hbc-300" >
+<chunk name="Appendix H Troubleshooting" url="pro_205.htm#Appendix_Hbc-300" ref="whtdata21.xml" />
+</book>
+<book name="Appendix I Cable Provisioning Support" url="pro_205.htm#Appendix_I_Cablebc-303" >
+<chunk name="Appendix I Cable Provisioning Support" url="pro_205.htm#Appendix_I_Cablebc-303" ref="whtdata22.xml" />
+</book>
+<book name="Appendix J Scalable Topologies" url="pro_205.htm#Appendix_J_Scalablebc-314" >
+<chunk name="Appendix J Scalable Topologies" url="pro_205.htm#Appendix_J_Scalablebc-314" ref="whtdata23.xml" />
+</book>
+<item name="Copyright Notices" url="pro_205.htm#Copyright_Noticesbc-316" />
+
+</tocdata>

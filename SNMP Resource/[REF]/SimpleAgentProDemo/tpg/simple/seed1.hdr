@@ -1,0 +1,34 @@
+####################################################
+# Name:               seed.var  (seed router)
+#
+#                     Copyright 2009 SimpleSoft Inc.
+#                     All rights reserved
+#
+# Description:        This is the var file for the 
+#                     seed router.
+#
+#                     This router is assumed to be
+#                     connected to 50 other routers
+#                     below it.
+#                     
+#                     The Router's IP addressis 87.1.1.1
+#                     Its main Mac is 0x010101010101
+#
+#                     It is connected to 50 Routers with
+#                     IPs 87.1.2.1....87.1.51.1
+#                     Their macs are 0x010201010201 to 
+#                     0x010201013301
+#
+#                     The IPs for the seed routers other
+#                     interfaces are 87.1.2.2....87.1.51.2
+#
+#                     To have only 5 routers connected, you
+#                     would need to change 51 to 6 in the
+#                     range specifications and ifNum 
+####################################################
+%sapdefine STARTIP_DEC   87
+%sapdefine STARTIP_HEX   57
+%sapdefine NUMIFS        6
+%sapdefine STARTMAC_HEX  01
+%sapdefine STARTMAC_DEC  1
+#

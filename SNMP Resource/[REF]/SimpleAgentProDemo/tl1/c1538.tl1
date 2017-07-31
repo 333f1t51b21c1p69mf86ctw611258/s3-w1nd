@@ -1,0 +1,112 @@
+%init_action
+   #
+   # set the banner text
+   #
+   SA_telnet_setbanner  ""
+   #
+   # disable login
+   #
+   SA_telnet_setloginmode  0
+
+
+###################################################################    
+#
+# sample processing of input message with command code of "verb-mod1-mod2"
+# input message
+#      verb-mod1-mod2:tid:aid:ctag:gb:abc=pqr;
+#
+###################################################################    
+%cmd_action  verb-mod1-mod2
+    #
+    # example send ack
+    # default ack already set up with code = IP and ctag = CTAG from input
+    #
+    SA_TL1_sendackmsg
+    #
+    # example sending response
+    # default response structure already set up with CTAG, current timestamp
+    #
+    SA_TL1_setresp_appendline "unquotedline1"
+    SA_TL1_setresp_appendline "unquotedline2"
+    SA_TL1_sendrespmsg
+    #
+    # example sending autonomous message
+    # sets up default values
+    SA_TL1_setauto_default
+    SA_TL1_sendautomsg
+
+
+
+###################################################################    
+#
+# sample processing of input message with command code of "ACT-USER"
+# input message
+#      ACT-USER:12345UA:simplesoft:3::perf_9_ptc;
+#
+###################################################################    
+%cmd_action  ACT-USER
+    #
+    # default ack already set up with code = IP and ctag = CTAG from input
+    #
+    SA_TL1_sendackmsg
+    #
+    # default response structure already set up with CTAG, current timestamp
+    #
+    SA_TL1_setresp_appendline "/* act-user */"
+    SA_TL1_setresp_appendline "/*       12345SMX : This is a private computer system.       */"
+    SA_TL1_setresp_appendline "/*       Unauthorized access or use may lead to prosecution. */"
+    SA_TL1_setresp_appendline "/* 4 User(s) Logged On */"
+    SA_TL1_sendrespmsg
+
+###################################################################    
+#
+# sample processing of input message with command code of "RTRV-PM-STS5"
+# input message
+#      RTRV-PM-STS5:12345UA:LG5-STS5B-35:45::,0-UP,,,1-DAY,,;
+#
+###################################################################    
+%cmd_action  RTRV-PM-STS5
+    #
+    # default ack already set up with code = IP and ctag = CTAG from input
+    #
+    SA_TL1_sendackmsg
+    #
+    # default response structure already set up with CTAG, current timestamp
+    #
+    SA_TL1_setresp_appendline "/* RTRV-PM-STS5:12345UA:LG5-STS5B-35:45::,0-UP,,,1-DAY,, */"
+    SA_TL1_setresp_appendline "\"LG5-STS5B-35,STS5:NPJCDET,0,NA,NEND,,1-DAY,4-17,\""
+    SA_TL1_setresp_appendline "\"LG5-STS5B-35,STS5:NPJCGEN,0,NA,NEND,,1-DAY,4-17,\""
+    SA_TL1_setresp_appendline "\"LG5-STS5B-35,STS5:PPJCDET,0,NA,NEND,,1-DAY,4-17,\""
+    SA_TL1_setresp_appendline "\""
+    SA_TL1_setresp_appendline "/* More Output Follows */"
+    SA_TL1_setresp_terminator ">"
+    SA_TL1_sendrespmsg
+
+    SA_TL1_setresp_textblock ""
+    SA_TL1_setresp_appendline "\"LG5-STS5B-35,STS5:PPJCGEN,0,NA,NEND,,1-DAY,4-17,\""
+    SA_TL1_setresp_appendline "\"LG5-STS5B-35,STS5:PJCSDET,0,NA,NEND,,1-DAY,4-17,\""
+    SA_TL1_setresp_appendline "\"LG5-STS5B-35,STS5:PJCSGEN,0,NA,NEND,,1-DAY,4-17,\""
+    SA_TL1_setresp_appendline "\"LG5-STS5B-35,STS5:PJCDIFF,0,NA,NEND,,1-DAY,4-17,\""
+    SA_TL1_setresp_terminator ";"
+    SA_TL1_sendrespmsg
+    #
+    # sending autonomous message
+    # sets up default values
+    SA_TL1_setauto_default
+    SA_TL1_setauto_alarmcode "A"
+    SA_TL1_setauto_atag "56550"
+    SA_TL1_setauto_verb "REPT"
+    SA_TL1_setauto_modifiers "EVT OC12"
+    SA_TL1_setauto_textblock "\"DG5-OC12A-1:T-ESL,TC,,,NEND,,25,25,15-MIN:,:,\""
+    SA_TL1_sendautomsg
+    #
+    # sending autonomous message
+    # sets up default values
+    SA_TL1_setauto_default
+    SA_TL1_setauto_alarmcode "A"
+    SA_TL1_setauto_atag "56551"
+    SA_TL1_setauto_verb "REPT"
+    SA_TL1_setauto_modifiers "EVT OC12"
+    SA_TL1_setauto_textblock "\"DG5-OC12A-1:T-ESL,TC,,,NEND,,25,25,15-MIN:,:,\""
+    SA_TL1_sendautomsg
+

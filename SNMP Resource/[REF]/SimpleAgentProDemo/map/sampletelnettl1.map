@@ -1,0 +1,44 @@
+<DeviceMap
+	Release = "4.0"
+	Description = "Demo map with telnet functionality"
+	UserData = ""
+	SetupFile = ""
+	Interface = ""
+	StartInterfaceNum = "0"
+	Username = "Jane Doe"
+	DefaultDevice = "192.168.10.200//161">
+	<Device
+		<General
+			Name = "192.168.10.200"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = "none"
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = "none"
+			ResponseDelay = "0"
+			ModelingFile = "none"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+		<Telnet
+			TelnetPort = "23"
+			TelnetFile = "c1538.tel"
+		/>
+		<TL1
+			TL1Port = "2003"
+			TL1File = "tl1file.tl1"
+		/>
+	/>
+</DeviceMap>

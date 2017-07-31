@@ -1,0 +1,52 @@
+####################################################
+# VENDOR:             Cisco Systems Inc.
+# PRODUCT:            Hub 1538M
+###################################################
+%init_action
+    # 
+    # login information
+    # 
+    SA_telnet_setloginmode 0
+    #
+    # setting up banner
+    #
+    SA_telnet_setbanner "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nCisco console system\r\n      CLI session with the hub is open.\r\n      To end the CLI session, enter \[Exit\].\r\n"
+    #
+    # setting up command prompt
+    #
+    SA_telnet_setcmdprompt "Cisco 1538M>"
+# 
+# response handler for  show version
+# 
+%cmd_action show version
+    SA_telnet_puts "Cisco 1538M Enterprise Edition Software"
+    SA_telnet_puts "Version 1.00.00"
+    SA_telnet_puts "Copyright (c) Cisco Systems, Inc. 1993-1999"
+    SA_telnet_puts "ROM: System Bootstrap, Version 1.01.00 "
+    SA_telnet_puts "Host uptime is 490day(s) 1hour(s) 21minute(s) 25second(s)"
+    SA_telnet_puts "MPC860EN processor with 4096K bytes of memory"
+    SA_telnet_puts "Hardware board revision is 3"
+    SA_telnet_puts "Upgrade Status: No upgrade currently in progress"
+    SA_telnet_puts "Base Ethernet Address: 00-90-F2-B0-3B-0F"
+    SA_telnet_puts "Serial number: ACT034103VV"
+# 
+# response handler for  show terminal
+# 
+%cmd_action show terminal
+    SA_telnet_puts "RS-232 configuration:"
+    SA_telnet_puts "9600 baud, 8 data bits, 1 stop bits, None parity"
+# 
+# response handler for  show cdp
+# 
+%cmd_action show cdp
+    SA_telnet_puts "Global CDP information :"
+    SA_telnet_puts "Sending CDP packets every 255 seconds"
+    SA_telnet_puts "Sending a holdtime value of 180 seconds"
+#
+# processing of Exit to close connection
+#
+%cmd_action  Exit
+   SA_telnet_closeconnection
+
+%cmd_action  exit
+   SA_telnet_closeconnection

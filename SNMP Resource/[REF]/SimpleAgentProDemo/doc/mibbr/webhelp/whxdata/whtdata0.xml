@@ -1,0 +1,76 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+<tocdata>
+<item name="Contents............................................................................................" url="smb50.htm#Contents" />
+<book name="Preface" url="smb50.htm#Prefacebc-1" >
+  <item name="About Managers, Agents, MIBs and SNMP" url="smb50.htm#About_Managers_Agentsbc-2" />
+  <item name="Hardware and Software Requirements" url="smb50.htm#Hardware_and_Softwarebc-3" />
+  <item name="Documentation Conventions" url="smb50.htm#Documentation_Conventionsbc-4" />
+</book>
+<book name="Chapter 1 Installing SimpleMIBBrowser" url="smb50.htm#Chapter_1_Installingbc-5" >
+  <item name="Installing SimpleMIBBrowser on Windows" url="smb50.htm#Installingbc-6" />
+  <item name="Installing SimpleMIBBrowser on Linux" url="smb50.htm#Installing1bc-7" />
+  <item name="SimpleMIBBrowser Directory Structure" url="smb50.htm#SimpleMIBBrowserbc-8" />
+</book>
+<book name="Chapter 2 Using SimpleMIBBrowser: An Overview" url="smb50.htm#Chapter_2_Usingbc-9" >
+  <item name="Basic Steps" url="smb50.htm#Basic_Stepsbc-10" />
+  <item name="Menu Options in SimpleMIBBrowser" url="smb50.htm#Menu_Options_inbc-11" />
+  <item name="Tool Bar within SimpleMIBBrowser" url="smb50.htm#Tool_Bar_withinbc-12" />
+  <item name="Popup Menu for MIB Nodes" url="smb50.htm#Popup_Menu_for_MIB_Nodesbc-13" />
+</book>
+<book name="Chapter 3 Specifying Devices and their Settings" url="smb50.htm#Chapter_3_Specifyingbc-14" >
+  <book name="Individual Device Settings" url="smb50.htm#Individual_Devicebc-15" >
+    <item name="Device Specific" url="smb50.htm#Device_Specificbc-16" />
+    <item name="SNMPv3 Settings Screen" url="smb50.htm#SNMPv3_Settings_Screenbc-17" />
+  </book>
+  <item name="Device List Window Pane" url="smb50.htm#Device_List_Window_Panebc-18" />
+  <book name="Application Settings" url="smb50.htm#Application_Settingsbc-19" >
+    <item name="Applicationwide Tab" url="smb50.htm#Applicationwide_Tabbc-20" />
+  </book>
+</book>
+<book name="Chapter 4 Importing MIB Files" url="smb50.htm#Chapter_4_Importing_MIBbc-21" >
+  <item name="Opening the MIB Compilation Window" url="smb50.htm#Opening_the_MIBbc-22" />
+  <item name="Resolving MIB dependencies" url="smb50.htm#Resolving_MIBbc-23" />
+</book>
+<book name="Chapter 5 Viewing MIB Variable Information" url="smb50.htm#Chapter_5_Viewing_MIBbc-24" >
+  <book name="Group Node Info" url="smb50.htm#Group_Node_Infobc-25" >
+    <item name="Scalar Node Info" url="smb50.htm#Scalar_Node_Infobc-26" />
+    <item name="Table Node Info" url="smb50.htm#Table_Node_Infobc-27" />
+    <item name="Entry Node Info" url="smb50.htm#Entry_Node_Infobc-28" />
+    <item name="Columnar Node Info" url="smb50.htm#Columnar_Node_Infobc-29" />
+  </book>
+</book>
+<book name="Chapter 6 Retrieving Data" url="smb50.htm#Chapter_6_Retrieving_Databc-30" >
+  <item name="Getting MIB data using the SNMP GetNext Operator (Walk)" url="smb50.htm#Getting_MIB_data_usingbc-31" />
+  <item name="Getting Tabular Data" url="smb50.htm#Getting_Tabular_Databc-32" />
+  <item name="Getting MIB data using the SNMP Get Operator" url="smb50.htm#Getting_MIB_data_using1bc-33" />
+  <item name="Getting MIB data using the SNMP GetBulk Operator" url="smb50.htm#Getting_MIB_data_using2bc-34" />
+  <item name="Using Data Profiles" url="smb50.htm#Using_Data_Profilesbc-35" />
+</book>
+<book name="Chapter 7 Setting/Configuring Data" url="smb50.htm#Chapter_7_Settingbc-36" >
+  <item name="SNMP SET Operation" url="smb50.htm#SNMP_SET_Operationbc-37" />
+  <item name="Set From File" url="smb50.htm#Set_From_Filebc-38" />
+  <item name="Carrying out Sets from Command Line" url="smb50.htm#Carrying_out_Sets_frombc-39" />
+  <item name="Adding a new row to a SNMP table" url="smb50.htm#Adding_a_new_row_to_abc-40" />
+</book>
+<book name="Chapter 8 Performance Graph" url="smb50.htm#Chapter_8_Performancebc-41" >
+  <item name="Plotting Performance Data" url="smb50.htm#Plotting_Performance_Databc-42" />
+  <item name="Running Predefined Performance Profiles" url="smb50.htm#Running_Predefinedbc-43" />
+</book>
+<book name="Chapter 9 Traps" url="smb50.htm#Chapter_9_Trapsbc-44" >
+  <item name="Starting the Trap Receiver" url="smb50.htm#Starting_the_Trapbc-45" />
+</book>
+<item name="Chapter 10 Checking for IP connectivity" url="smb50.htm#Chapter_10_Checking_forbc-46" />
+<book name="Chapter 11 View Log" url="smb50.htm#Chapter_11_View_Logbc-47" >
+  <item name="Sample Log File" url="smb50.htm#Sample_Log_Filebc-48" />
+</book>
+<book name="Appendix A: Reference Books and Material" url="smb50.htm#Appendix_A_Referencebc-49" >
+  <item name="SNMP MIB related" url="smb50.htm#SNMP_MIB_relatedbc-50" />
+  <item name="SNMP related" url="smb50.htm#SNMP_relatedbc-51" />
+</book>
+<item name="Appendix B: INI File Options" url="smb50.htm#Appendix_B_INI_Filebc-52" />
+<book name="Appendix C: Frequently Asked Questions" url="smb50.htm#Appendix_C_Frequentlybc-53" >
+  <item name="Questions" url="smb50.htm#Questionsbc-54" />
+</book>
+<item name="Appendix D: Copyright Notices" url="smb50.htm#Appendix_D_Copyrightbc-55" />
+
+</tocdata>

@@ -1,0 +1,6 @@
+smibc: Processing file (C:\Users\Henrik\SimpleSoft\SimpleAgentProDemo\mib\rfc1213.mib)
+Processing SNMPv1 MIB.
+----------------------------------------------------------------------------------------------------
+Msg: Sorting object identifiers and resolving dependencies...
+Msg: Resolving imported syntaxes/objects from Mibs.
+Msg: Writting compiler output to henrik_mib2.cmf

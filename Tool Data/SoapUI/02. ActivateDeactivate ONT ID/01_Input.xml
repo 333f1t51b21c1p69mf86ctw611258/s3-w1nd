@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:gen="http://www.dasanzhone.com/namespace/deviceservice/general">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <gen:ActivateDeactivateOntId>
+         <!--Optional:-->
+         <gen:OntInput>
+            <!--Optional:-->
+            <gen:OntInterface>1/1/1/1/30</gen:OntInterface>
+            <!--Optional:-->
+<!--            <gen:OntSlot>?</gen:OntSlot>
+-->
+            <!--Optional:-->
+<!--            <gen:OntPort>?</gen:OntPort>
+-->
+            <!--Optional:-->
+<!--            <gen:SwVerPland>?</gen:SwVerPland>
+-->
+            <!--Optional:-->
+<!--            <gen:SwDnloadVersion>?</gen:SwDnloadVersion>
+-->
+            <!--Optional:-->
+<!--            <gen:Sernum>?</gen:Sernum>
+-->
+            <!--Optional:-->
+<!--            <gen:FecUp>?</gen:FecUp>
+-->
+            <!--Optional:-->
+<!--            <gen:EnableAes>?</gen:EnableAes>
+-->
+            <!--Optional:-->
+<!--            <gen:PlndVar>?</gen:PlndVar>
+-->
+            <!--Optional:-->
+<!--            <gen:OpticsHist>?</gen:OpticsHist>
+-->
+            <!--Optional:-->
+<!--            <gen:Berint>?</gen:Berint>
+-->
+            <!--Optional:-->
+<!--            <gen:Provversion>?</gen:Provversion>
+-->
+            <!--Optional:-->
+            <gen:AdminState>up</gen:AdminState>
+            <!--Optional:-->
+<!--            <gen:PlannedCardType>?</gen:PlannedCardType>
+-->
+            <!--Optional:-->
+<!--            <gen:Plndnumdataports>?</gen:Plndnumdataports>
+-->
+            <!--Optional:-->
+<!--            <gen:Plndnumvoiceports>?</gen:Plndnumvoiceports>
+-->
+            <!--Optional:-->
+<!--            <gen:AutoDetect>?</gen:AutoDetect>
+-->
+         </gen:OntInput>
+      </gen:ActivateDeactivateOntId>
+   </soapenv:Body>
+</soapenv:Envelope>

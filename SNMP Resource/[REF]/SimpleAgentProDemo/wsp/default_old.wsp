@@ -1,0 +1,10 @@
+<WorkSpace
+    Release = "2.0">
+    <Server
+        IPAddress = "localmachine"
+        LocalMappedDir = "">
+        <Map
+            Name = "sample.map"
+        />
+    </Server>
+</WorkSpace>

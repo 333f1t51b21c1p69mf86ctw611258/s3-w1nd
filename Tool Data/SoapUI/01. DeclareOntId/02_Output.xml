@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+   <soap:Body>
+      <DeclareOntIdResponse xmlns="http://www.dasanzhone.com/namespace/deviceservice/general" xmlns:ns2="http://www.dasanzhone.com/namespace/deviceservice/datatypes" xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:ns4="http://www.dasanzhone.com/namespace/deviceservice/exception">
+         <DeclareOntIdResult>
+            <Success>true</Success>
+            <ResponseText>SUCCESSFUL</ResponseText>
+            <Description>Object ID: .1.3.6.1.4.1.637.61.1.35.10.1.1.2.96498688
+INTEGER: 4
+Object ID: .1.3.6.1.4.1.637.61.1.35.10.1.1.5.96498688
+STRING: DSNWoUUP
+Object ID: .1.3.6.1.4.1.637.61.1.35.10.1.1.8.96498688
+INTEGER: 0
+Object ID: .1.3.6.1.4.1.637.61.1.35.10.1.1.11.96498688
+STRING: auto
+Object ID: .1.3.6.1.4.1.637.61.1.35.10.1.1.18.96498688
+INTEGER: 8000
+Object ID: .1.3.6.1.4.1.637.61.1.35.10.1.1.21.96498688
+STRING: *
+Object ID: .1.3.6.1.4.1.637.61.1.35.10.1.1.39.96498688
+INTEGER: 1
+Object ID: .1.3.6.1.4.1.637.61.1.35.10.1.1.60.96498688
+STRING: auto
+Object ID: .1.3.6.1.4.1.637.61.1.35.10.1.1.65.96498688
+STRING: H646EW
+Object ID: .1.3.6.1.4.1.637.61.1.47.6.1.1.18.96498688
+INTEGER: 8
+Object ID: .1.3.6.1.4.1.637.61.1.47.6.1.1.19.96498688
+INTEGER: 2
+Object ID: .1.3.6.1.4.1.637.61.1.35.10.1.1.75.96498688
+INTEGER: 1</Description>
+         </DeclareOntIdResult>
+      </DeclareOntIdResponse>
+   </soap:Body>
+</soap:Envelope>

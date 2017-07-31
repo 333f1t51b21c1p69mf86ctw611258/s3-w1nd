@@ -1,0 +1,40 @@
+<DeviceMap
+	Release = "3.0"
+	Description = "This is sample map that uses multiple IP addresses"
+	Username = "John Doe"
+	DefaultDevice = "192.168.15.11/161">
+	<Device
+		Name = "192.168.15.10"
+		ReadCommunity = "public"
+		WriteCommunity = "private"
+		MibFile = "mib2.cmf"
+		AgentFile = "dev1.var"
+		TrapMgr = "none"
+		ResponseDelay = "0"
+		MultiHome = "1"
+		DHCP = "0"
+		ModelingFile = "none"
+		SnmpStr = "V1V2"
+		MtuSize = "1500"
+		SubnetMask = "255.255.255.0"
+		MacAddress = "none"
+		SnmpPort = "161"
+	/>
+	<Device
+		Name = "192.168.15.11"
+		ReadCommunity = "public"
+		WriteCommunity = "private"
+		MibFile = "mib2.cmf"
+		AgentFile = "dev2.var"
+		TrapMgr = "none"
+		ResponseDelay = "0"
+		MultiHome = "1"
+		DHCP = "0"
+		ModelingFile = "none"
+		SnmpStr = "V1V2"
+		MtuSize = "1500"
+		SubnetMask = "255.255.255.0"
+		MacAddress = "none"
+		SnmpPort = "161"
+	/>
+</DeviceMap>

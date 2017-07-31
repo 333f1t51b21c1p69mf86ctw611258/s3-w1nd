@@ -1,0 +1,1226 @@
+<?xml version="1.0"?>
+<SnmpSimulatorData>
+<Instances
+readCommunity="public"
+writeCommunity="private"
+>
+<!-- sysDescr -->
+<Instance
+oid=".1.3.6.1.2.1.1.1.0"
+valueType="OctetString"
+>
+<Value><![CDATA[string]]></Value>
+</Instance>
+<!-- sysObjectID -->
+<Instance
+oid=".1.3.6.1.2.1.1.2.0"
+valueType="OID"
+>
+<Value><![CDATA[.1.3]]></Value>
+</Instance>
+<!-- sysUpTime -->
+<Instance
+oid=".1.3.6.1.2.1.1.3.0"
+valueType="TimeTicks"
+>
+<Value isSimpleScript="y"><![CDATA[getSysUpTime()]]></Value>
+</Instance>
+<!-- sysContact -->
+<Instance
+oid=".1.3.6.1.2.1.1.4.0"
+valueType="OctetString"
+>
+<Value><![CDATA[string]]></Value>
+</Instance>
+<!-- sysName -->
+<Instance
+oid=".1.3.6.1.2.1.1.5.0"
+valueType="OctetString"
+>
+<Value><![CDATA[string]]></Value>
+</Instance>
+<!-- sysLocation -->
+<Instance
+oid=".1.3.6.1.2.1.1.6.0"
+valueType="OctetString"
+>
+<Value><![CDATA[string]]></Value>
+</Instance>
+<!-- sysServices -->
+<Instance
+oid=".1.3.6.1.2.1.1.7.0"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ifNumber -->
+<Instance
+oid=".1.3.6.1.2.1.2.1.0"
+valueType="Integer"
+>
+<Value isSimpleScript="y"><![CDATA[getSubtreeInstanceCount(".1.3.6.1.2.1.2.2.1.1")]]></Value>
+</Instance>
+<!-- ifIndex -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.1.1"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ifDescr -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.2.1"
+valueType="OctetString"
+>
+<Value><![CDATA[string]]></Value>
+</Instance>
+<!-- ifType -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.3.1"
+valueType="Integer"
+>
+<Value><![CDATA[32]]></Value>
+</Instance>
+<!-- ifMtu -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.4.1"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ifSpeed -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.5.1"
+valueType="Gauge"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ifPhysAddress -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.6.1"
+valueType="OctetString"
+>
+<Value><![CDATA[string]]></Value>
+</Instance>
+<!-- ifAdminStatus -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.7.1"
+valueType="Integer"
+>
+<Value><![CDATA[3]]></Value>
+</Instance>
+<!-- ifOperStatus -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.8.1"
+valueType="Integer"
+>
+<Value><![CDATA[3]]></Value>
+</Instance>
+<!-- ifLastChange -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.9.1"
+valueType="TimeTicks"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ifInOctets -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.10.1"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ifInUcastPkts -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.11.1"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ifInNUcastPkts -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.12.1"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ifInDiscards -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.13.1"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ifInErrors -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.14.1"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ifInUnknownProtos -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.15.1"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ifOutOctets -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.16.1"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ifOutUcastPkts -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.17.1"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ifOutNUcastPkts -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.18.1"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ifOutDiscards -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.19.1"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ifOutErrors -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.20.1"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ifOutQLen -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.21.1"
+valueType="Gauge"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ifSpecific -->
+<Instance
+oid=".1.3.6.1.2.1.2.2.1.22.1"
+valueType="OID"
+>
+<Value><![CDATA[.1.3]]></Value>
+</Instance>
+<!-- atIfIndex -->
+<Instance
+oid=".1.3.6.1.2.1.3.1.1.1.1.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- atPhysAddress -->
+<Instance
+oid=".1.3.6.1.2.1.3.1.1.2.1.10.10.10.10"
+valueType="OctetString"
+>
+<Value><![CDATA[string]]></Value>
+</Instance>
+<!-- atNetAddress -->
+<Instance
+oid=".1.3.6.1.2.1.3.1.1.3.1.10.10.10.10"
+valueType="IpAddress"
+>
+<Value><![CDATA[10.10.10.10]]></Value>
+</Instance>
+<!-- ipForwarding -->
+<Instance
+oid=".1.3.6.1.2.1.4.1.0"
+valueType="Integer"
+>
+<Value><![CDATA[2]]></Value>
+</Instance>
+<!-- ipDefaultTTL -->
+<Instance
+oid=".1.3.6.1.2.1.4.2.0"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipInReceives -->
+<Instance
+oid=".1.3.6.1.2.1.4.3.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipInHdrErrors -->
+<Instance
+oid=".1.3.6.1.2.1.4.4.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipInAddrErrors -->
+<Instance
+oid=".1.3.6.1.2.1.4.5.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipForwDatagrams -->
+<Instance
+oid=".1.3.6.1.2.1.4.6.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipInUnknownProtos -->
+<Instance
+oid=".1.3.6.1.2.1.4.7.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipInDiscards -->
+<Instance
+oid=".1.3.6.1.2.1.4.8.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipInDelivers -->
+<Instance
+oid=".1.3.6.1.2.1.4.9.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipOutRequests -->
+<Instance
+oid=".1.3.6.1.2.1.4.10.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipOutDiscards -->
+<Instance
+oid=".1.3.6.1.2.1.4.11.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipOutNoRoutes -->
+<Instance
+oid=".1.3.6.1.2.1.4.12.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipReasmTimeout -->
+<Instance
+oid=".1.3.6.1.2.1.4.13.0"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipReasmReqds -->
+<Instance
+oid=".1.3.6.1.2.1.4.14.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipReasmOKs -->
+<Instance
+oid=".1.3.6.1.2.1.4.15.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipReasmFails -->
+<Instance
+oid=".1.3.6.1.2.1.4.16.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipFragOKs -->
+<Instance
+oid=".1.3.6.1.2.1.4.17.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipFragFails -->
+<Instance
+oid=".1.3.6.1.2.1.4.18.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipFragCreates -->
+<Instance
+oid=".1.3.6.1.2.1.4.19.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipAdEntAddr -->
+<Instance
+oid=".1.3.6.1.2.1.4.20.1.1.10.10.10.10"
+valueType="IpAddress"
+>
+<Value><![CDATA[10.10.10.10]]></Value>
+</Instance>
+<!-- ipAdEntIfIndex -->
+<Instance
+oid=".1.3.6.1.2.1.4.20.1.2.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipAdEntNetMask -->
+<Instance
+oid=".1.3.6.1.2.1.4.20.1.3.10.10.10.10"
+valueType="IpAddress"
+>
+<Value><![CDATA[10.10.10.10]]></Value>
+</Instance>
+<!-- ipAdEntBcastAddr -->
+<Instance
+oid=".1.3.6.1.2.1.4.20.1.4.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipAdEntReasmMaxSize -->
+<Instance
+oid=".1.3.6.1.2.1.4.20.1.5.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipRouteDest -->
+<Instance
+oid=".1.3.6.1.2.1.4.21.1.1.10.10.10.10"
+valueType="IpAddress"
+>
+<Value><![CDATA[10.10.10.10]]></Value>
+</Instance>
+<!-- ipRouteIfIndex -->
+<Instance
+oid=".1.3.6.1.2.1.4.21.1.2.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipRouteMetric1 -->
+<Instance
+oid=".1.3.6.1.2.1.4.21.1.3.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipRouteMetric2 -->
+<Instance
+oid=".1.3.6.1.2.1.4.21.1.4.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipRouteMetric3 -->
+<Instance
+oid=".1.3.6.1.2.1.4.21.1.5.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipRouteMetric4 -->
+<Instance
+oid=".1.3.6.1.2.1.4.21.1.6.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipRouteNextHop -->
+<Instance
+oid=".1.3.6.1.2.1.4.21.1.7.10.10.10.10"
+valueType="IpAddress"
+>
+<Value><![CDATA[10.10.10.10]]></Value>
+</Instance>
+<!-- ipRouteType -->
+<Instance
+oid=".1.3.6.1.2.1.4.21.1.8.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[4]]></Value>
+</Instance>
+<!-- ipRouteProto -->
+<Instance
+oid=".1.3.6.1.2.1.4.21.1.9.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[9]]></Value>
+</Instance>
+<!-- ipRouteAge -->
+<Instance
+oid=".1.3.6.1.2.1.4.21.1.10.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipRouteMask -->
+<Instance
+oid=".1.3.6.1.2.1.4.21.1.11.10.10.10.10"
+valueType="IpAddress"
+>
+<Value><![CDATA[10.10.10.10]]></Value>
+</Instance>
+<!-- ipRouteMetric5 -->
+<Instance
+oid=".1.3.6.1.2.1.4.21.1.12.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipRouteInfo -->
+<Instance
+oid=".1.3.6.1.2.1.4.21.1.13.10.10.10.10"
+valueType="OID"
+>
+<Value><![CDATA[.1.3]]></Value>
+</Instance>
+<!-- ipNetToMediaIfIndex -->
+<Instance
+oid=".1.3.6.1.2.1.4.22.1.1.1.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- ipNetToMediaPhysAddress -->
+<Instance
+oid=".1.3.6.1.2.1.4.22.1.2.1.10.10.10.10"
+valueType="OctetString"
+>
+<Value><![CDATA[string]]></Value>
+</Instance>
+<!-- ipNetToMediaNetAddress -->
+<Instance
+oid=".1.3.6.1.2.1.4.22.1.3.1.10.10.10.10"
+valueType="IpAddress"
+>
+<Value><![CDATA[10.10.10.10]]></Value>
+</Instance>
+<!-- ipNetToMediaType -->
+<Instance
+oid=".1.3.6.1.2.1.4.22.1.4.1.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[4]]></Value>
+</Instance>
+<!-- ipRoutingDiscards -->
+<Instance
+oid=".1.3.6.1.2.1.4.23.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpInMsgs -->
+<Instance
+oid=".1.3.6.1.2.1.5.1.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpInErrors -->
+<Instance
+oid=".1.3.6.1.2.1.5.2.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpInDestUnreachs -->
+<Instance
+oid=".1.3.6.1.2.1.5.3.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpInTimeExcds -->
+<Instance
+oid=".1.3.6.1.2.1.5.4.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpInParmProbs -->
+<Instance
+oid=".1.3.6.1.2.1.5.5.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpInSrcQuenchs -->
+<Instance
+oid=".1.3.6.1.2.1.5.6.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpInRedirects -->
+<Instance
+oid=".1.3.6.1.2.1.5.7.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpInEchos -->
+<Instance
+oid=".1.3.6.1.2.1.5.8.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpInEchoReps -->
+<Instance
+oid=".1.3.6.1.2.1.5.9.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpInTimestamps -->
+<Instance
+oid=".1.3.6.1.2.1.5.10.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpInTimestampReps -->
+<Instance
+oid=".1.3.6.1.2.1.5.11.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpInAddrMasks -->
+<Instance
+oid=".1.3.6.1.2.1.5.12.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpInAddrMaskReps -->
+<Instance
+oid=".1.3.6.1.2.1.5.13.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpOutMsgs -->
+<Instance
+oid=".1.3.6.1.2.1.5.14.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpOutErrors -->
+<Instance
+oid=".1.3.6.1.2.1.5.15.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpOutDestUnreachs -->
+<Instance
+oid=".1.3.6.1.2.1.5.16.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpOutTimeExcds -->
+<Instance
+oid=".1.3.6.1.2.1.5.17.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpOutParmProbs -->
+<Instance
+oid=".1.3.6.1.2.1.5.18.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpOutSrcQuenchs -->
+<Instance
+oid=".1.3.6.1.2.1.5.19.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpOutRedirects -->
+<Instance
+oid=".1.3.6.1.2.1.5.20.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpOutEchos -->
+<Instance
+oid=".1.3.6.1.2.1.5.21.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpOutEchoReps -->
+<Instance
+oid=".1.3.6.1.2.1.5.22.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpOutTimestamps -->
+<Instance
+oid=".1.3.6.1.2.1.5.23.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpOutTimestampReps -->
+<Instance
+oid=".1.3.6.1.2.1.5.24.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpOutAddrMasks -->
+<Instance
+oid=".1.3.6.1.2.1.5.25.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- icmpOutAddrMaskReps -->
+<Instance
+oid=".1.3.6.1.2.1.5.26.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- tcpRtoAlgorithm -->
+<Instance
+oid=".1.3.6.1.2.1.6.1.0"
+valueType="Integer"
+>
+<Value><![CDATA[4]]></Value>
+</Instance>
+<!-- tcpRtoMin -->
+<Instance
+oid=".1.3.6.1.2.1.6.2.0"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- tcpRtoMax -->
+<Instance
+oid=".1.3.6.1.2.1.6.3.0"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- tcpMaxConn -->
+<Instance
+oid=".1.3.6.1.2.1.6.4.0"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- tcpActiveOpens -->
+<Instance
+oid=".1.3.6.1.2.1.6.5.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- tcpPassiveOpens -->
+<Instance
+oid=".1.3.6.1.2.1.6.6.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- tcpAttemptFails -->
+<Instance
+oid=".1.3.6.1.2.1.6.7.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- tcpEstabResets -->
+<Instance
+oid=".1.3.6.1.2.1.6.8.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- tcpCurrEstab -->
+<Instance
+oid=".1.3.6.1.2.1.6.9.0"
+valueType="Gauge"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- tcpInSegs -->
+<Instance
+oid=".1.3.6.1.2.1.6.10.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- tcpOutSegs -->
+<Instance
+oid=".1.3.6.1.2.1.6.11.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- tcpRetransSegs -->
+<Instance
+oid=".1.3.6.1.2.1.6.12.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- tcpConnState -->
+<Instance
+oid=".1.3.6.1.2.1.6.13.1.1.10.10.10.10.1.10.10.10.10.1"
+valueType="Integer"
+>
+<Value><![CDATA[9]]></Value>
+</Instance>
+<!-- tcpConnLocalAddress -->
+<Instance
+oid=".1.3.6.1.2.1.6.13.1.2.10.10.10.10.1.10.10.10.10.1"
+valueType="IpAddress"
+>
+<Value><![CDATA[10.10.10.10]]></Value>
+</Instance>
+<!-- tcpConnLocalPort -->
+<Instance
+oid=".1.3.6.1.2.1.6.13.1.3.10.10.10.10.1.10.10.10.10.1"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- tcpConnRemAddress -->
+<Instance
+oid=".1.3.6.1.2.1.6.13.1.4.10.10.10.10.1.10.10.10.10.1"
+valueType="IpAddress"
+>
+<Value><![CDATA[10.10.10.10]]></Value>
+</Instance>
+<!-- tcpConnRemPort -->
+<Instance
+oid=".1.3.6.1.2.1.6.13.1.5.10.10.10.10.1.10.10.10.10.1"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- tcpInErrs -->
+<Instance
+oid=".1.3.6.1.2.1.6.14.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- tcpOutRsts -->
+<Instance
+oid=".1.3.6.1.2.1.6.15.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- udpInDatagrams -->
+<Instance
+oid=".1.3.6.1.2.1.7.1.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- udpNoPorts -->
+<Instance
+oid=".1.3.6.1.2.1.7.2.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- udpInErrors -->
+<Instance
+oid=".1.3.6.1.2.1.7.3.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- udpOutDatagrams -->
+<Instance
+oid=".1.3.6.1.2.1.7.4.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- udpLocalAddress -->
+<Instance
+oid=".1.3.6.1.2.1.7.5.1.1.10.10.10.10.1"
+valueType="IpAddress"
+>
+<Value><![CDATA[10.10.10.10]]></Value>
+</Instance>
+<!-- udpLocalPort -->
+<Instance
+oid=".1.3.6.1.2.1.7.5.1.2.10.10.10.10.1"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- egpInMsgs -->
+<Instance
+oid=".1.3.6.1.2.1.8.1.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- egpInErrors -->
+<Instance
+oid=".1.3.6.1.2.1.8.2.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- egpOutMsgs -->
+<Instance
+oid=".1.3.6.1.2.1.8.3.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- egpOutErrors -->
+<Instance
+oid=".1.3.6.1.2.1.8.4.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- egpNeighState -->
+<Instance
+oid=".1.3.6.1.2.1.8.5.1.1.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[5]]></Value>
+</Instance>
+<!-- egpNeighAddr -->
+<Instance
+oid=".1.3.6.1.2.1.8.5.1.2.10.10.10.10"
+valueType="IpAddress"
+>
+<Value><![CDATA[10.10.10.10]]></Value>
+</Instance>
+<!-- egpNeighAs -->
+<Instance
+oid=".1.3.6.1.2.1.8.5.1.3.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- egpNeighInMsgs -->
+<Instance
+oid=".1.3.6.1.2.1.8.5.1.4.10.10.10.10"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- egpNeighInErrs -->
+<Instance
+oid=".1.3.6.1.2.1.8.5.1.5.10.10.10.10"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- egpNeighOutMsgs -->
+<Instance
+oid=".1.3.6.1.2.1.8.5.1.6.10.10.10.10"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- egpNeighOutErrs -->
+<Instance
+oid=".1.3.6.1.2.1.8.5.1.7.10.10.10.10"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- egpNeighInErrMsgs -->
+<Instance
+oid=".1.3.6.1.2.1.8.5.1.8.10.10.10.10"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- egpNeighOutErrMsgs -->
+<Instance
+oid=".1.3.6.1.2.1.8.5.1.9.10.10.10.10"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- egpNeighStateUps -->
+<Instance
+oid=".1.3.6.1.2.1.8.5.1.10.10.10.10.10"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- egpNeighStateDowns -->
+<Instance
+oid=".1.3.6.1.2.1.8.5.1.11.10.10.10.10"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- egpNeighIntervalHello -->
+<Instance
+oid=".1.3.6.1.2.1.8.5.1.12.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- egpNeighIntervalPoll -->
+<Instance
+oid=".1.3.6.1.2.1.8.5.1.13.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- egpNeighMode -->
+<Instance
+oid=".1.3.6.1.2.1.8.5.1.14.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[2]]></Value>
+</Instance>
+<!-- egpNeighEventTrigger -->
+<Instance
+oid=".1.3.6.1.2.1.8.5.1.15.10.10.10.10"
+valueType="Integer"
+>
+<Value><![CDATA[2]]></Value>
+</Instance>
+<!-- egpAs -->
+<Instance
+oid=".1.3.6.1.2.1.8.6.0"
+valueType="Integer"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpInPkts -->
+<Instance
+oid=".1.3.6.1.2.1.11.1.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpOutPkts -->
+<Instance
+oid=".1.3.6.1.2.1.11.2.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpInBadVersions -->
+<Instance
+oid=".1.3.6.1.2.1.11.3.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpInBadCommunityNames -->
+<Instance
+oid=".1.3.6.1.2.1.11.4.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpInBadCommunityUses -->
+<Instance
+oid=".1.3.6.1.2.1.11.5.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpInASNParseErrs -->
+<Instance
+oid=".1.3.6.1.2.1.11.6.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpInTooBigs -->
+<Instance
+oid=".1.3.6.1.2.1.11.8.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpInNoSuchNames -->
+<Instance
+oid=".1.3.6.1.2.1.11.9.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpInBadValues -->
+<Instance
+oid=".1.3.6.1.2.1.11.10.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpInReadOnlys -->
+<Instance
+oid=".1.3.6.1.2.1.11.11.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpInGenErrs -->
+<Instance
+oid=".1.3.6.1.2.1.11.12.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpInTotalReqVars -->
+<Instance
+oid=".1.3.6.1.2.1.11.13.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpInTotalSetVars -->
+<Instance
+oid=".1.3.6.1.2.1.11.14.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpInGetRequests -->
+<Instance
+oid=".1.3.6.1.2.1.11.15.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpInGetNexts -->
+<Instance
+oid=".1.3.6.1.2.1.11.16.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpInSetRequests -->
+<Instance
+oid=".1.3.6.1.2.1.11.17.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpInGetResponses -->
+<Instance
+oid=".1.3.6.1.2.1.11.18.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpInTraps -->
+<Instance
+oid=".1.3.6.1.2.1.11.19.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpOutTooBigs -->
+<Instance
+oid=".1.3.6.1.2.1.11.20.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpOutNoSuchNames -->
+<Instance
+oid=".1.3.6.1.2.1.11.21.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpOutBadValues -->
+<Instance
+oid=".1.3.6.1.2.1.11.22.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpOutGenErrs -->
+<Instance
+oid=".1.3.6.1.2.1.11.24.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpOutGetRequests -->
+<Instance
+oid=".1.3.6.1.2.1.11.25.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpOutGetNexts -->
+<Instance
+oid=".1.3.6.1.2.1.11.26.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpOutSetRequests -->
+<Instance
+oid=".1.3.6.1.2.1.11.27.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpOutGetResponses -->
+<Instance
+oid=".1.3.6.1.2.1.11.28.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpOutTraps -->
+<Instance
+oid=".1.3.6.1.2.1.11.29.0"
+valueType="Counter32"
+>
+<Value><![CDATA[1]]></Value>
+</Instance>
+<!-- snmpEnableAuthenTraps -->
+<Instance
+oid=".1.3.6.1.2.1.11.30.0"
+valueType="Integer"
+>
+<Value><![CDATA[2]]></Value>
+</Instance>
+</Instances>
+</SnmpSimulatorData>

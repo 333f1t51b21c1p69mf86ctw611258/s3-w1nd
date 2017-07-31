@@ -1,0 +1,36 @@
+<DeviceMap
+	Release = "4.0"
+	Description = ""
+	UserData = ""
+	SetupFile = ""
+	Interface = ""
+	Separator = ""
+	Username = "">
+	<Device
+		<General
+			Name = "localmachine"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = ""
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+			DisplayTag = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "gateway.var"
+			TrapMgr = ""
+			ResponseDelay = "0"
+			ModelingFile = "gateway.tcl"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+			AuthType = "MD5"
+		/>
+	/>
+</DeviceMap>

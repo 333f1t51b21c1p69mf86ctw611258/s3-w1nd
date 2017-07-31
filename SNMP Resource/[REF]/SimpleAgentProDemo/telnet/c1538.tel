@@ -1,0 +1,115 @@
+%init_action
+   #
+   # turn debugging on at the beginning.  later on turn it off for better
+   # performance
+   #
+   SA_telnet_debugflag 1
+   SA_telnet_debugfile tel.dbg
+   #
+   # set the banner text
+   #
+   SA_telnet_setbanner  "\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nCisco console system\r\n\r\n      CLI session with hub is open.\r\n      To end the CLI session, enter \[Exit\].\r\n\r\n"
+   #
+   # enable login
+   #
+   SA_telnet_setloginmode  1
+   #
+   # set the allowed user
+   #
+   SA_telnet_setloginuser admin
+   #
+   # set the valid password for the above user
+   #
+   SA_telnet_setloginpasswd abc
+   #
+   # set valid password for enable mode
+   #
+   SA_telnet_setaddloginpasswd bigfish
+  
+   #
+   # this is an example of the telnet tcl code accessing the snmp mib data.
+   # now get the value of sysName and use it as the command prompt
+   #
+   set snmpsysname [SA_telnet_getsnmpval {sysName.0}]
+   SA_telnet_setcmdprompt  "$snmpsysname >"
+
+#
+# processing of "show version" command
+#
+%cmd_action  show version
+   SA_telnet_puts "Cisco 1538M Enterprise Edition Software"
+   SA_telnet_puts "Version 1.00.00"
+   SA_telnet_puts "Copyright (c) Cisco Systems, Inc. 1993-1999"
+   SA_telnet_puts "ROM: System Bootstrap, Version 1.01.00"
+   SA_telnet_puts "Host uptime is 0day(s) 1hour(s) 52minute(s) 34second(s)"
+   SA_telnet_puts "MPC860N processor with 4096K bytes of memory"
+   SA_telnet_puts "Hardware board revision is 3"
+   SA_telnet_puts "Upgrade Status: No upgrade currently in progress"
+   SA_telnet_puts "Base Ethernet Address: 00-90-F2-B0-3B-0f"
+   SA_telnet_puts "Serial number: ACT034103VV"
+
+#
+# processing of "show interfaces" command with additional arguments
+# like $SAtcmd(3) being used in the output.  $SAtcmd(0) would have
+# been "show", $SAtcmd(1) would have been set to "interfaces" etc...
+#
+%cmd_action  show interfaces fastethernet
+   SA_telnet_puts "Fastethernet $SAtcmd(3) is link-off"
+   SA_telnet_puts "Hardware is built in 10Base-Tx"
+   SA_telnet_puts "Description:"
+   SA_telnet_puts "Port Admin: Enabled"
+   SA_telnet_puts "Port Partition: not Auto Partitioned"
+   SA_telnet_puts "Port Operation: not operational"
+   SA_telnet_puts "Speed admin: Auto Negotiation"
+   SA_telnet_puts "Speed status: 10M"
+   SA_telnet_puts "Last Source MAC Address: 00-00-00-00-00-00"
+   SA_telnet_puts ""
+   SA_telnet_puts "Counters"
+   SA_telnet_puts "------------------------------------------------------------"
+   SA_telnet_puts "Bytes Received              0  Frames Received            0"
+   SA_telnet_puts "CRC Errors                  0  Allignment Errors          0"
+   SA_telnet_puts "Frames Too Long             0  Short Events               0"
+   SA_telnet_puts "Port Runts                  0  Collisions                 0"
+   SA_telnet_puts "Late Events                 0  Date Rate Mismatches       0"
+   SA_telnet_puts "Auto Partitions             0  Total Errors               0"
+
+
+#
+# processing of Exit to close connection
+#
+%cmd_action  Exit
+   SA_telnet_closeconnection
+
+%cmd_action  exit
+   SA_telnet_closeconnection
+
+#
+# processing additional login
+#
+%cmd_action  enable
+   SA_telnet_setaddloginmode 2
+
+#
+# doing action after the additional login is successful
+#
+%after_addlogin_action
+   #
+   # change the prompt to have a #
+   #
+   set varbind [SA_getvar {sysName.0}]
+   set vb1 [lindex $varbind 0]
+   set val1 [lindex $vb1 2]
+   SA_telnet_setcmdprompt  "$val1 #"
+
+#
+# processing exit from enabled mode
+#
+%cmd_action  disable
+   #
+   # change the prompt back
+   #
+   set varbind [SA_getvar {sysName.0}]
+   set vb1 [lindex $varbind 0]
+   set val1 [lindex $vb1 2]
+   SA_telnet_setcmdprompt  "$val1 >"
+

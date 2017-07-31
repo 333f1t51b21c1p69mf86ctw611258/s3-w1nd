@@ -1,0 +1,47 @@
+SIMPLESOFT SOFTWARE EVALUATION LICENSE AGREEMENT
+================================================
+
+This Evaluation License Agreement (the "Agreement") is an agreement between you and SimpleSoft, Inc. ("SimpleSoft") and governs your use of the software (the "Software").
+
+SIMPLESOFT IS WILLING TO GRANT YOU A LICENSE TO USE THE SOFTWARE ONLY UPON THE CONDITION THAT YOU ACCEPT ALL OF THE TERMS CONTAINED IN THIS AGREEMENT. IF YOU DO NOT ACCEPT ALL OF THE TERMS CONTAINED IN THIS AGREEMENT, THEN SIMPLESOFT IS NOT WILLING TO LICENSE THE SOFTWARE TO YOU AND YOU MAY NOT DOWNLOAD, INSTALL OR USE THE SOFTWARE. BY DOWNLOADING, INSTALLING OR USING THE SOFTWARE, YOU ARE INDICATING YOUR ACCEPTANCE OF THE TERMS AND CONDITIONS CONTAINED IN THIS AGREEMENT.
+IF YOU ARE AGREEING TO THESE TERMS ON BEHALF OF A COMPANY, YOU REPRESENT AND WARRANT THAT YOU HAVE AUTHORITY TO BIND THAT COMPANY TO THIS AGREEMENT, AND YOUR AGREEMENT TO THESE TERMS WILL BE TREATED AS THE AGREEMENT OF THE COMPANY.  IN THAT EVENT, "YOU" AND "YOUR" WILL REFER TO THAT COMPANY.
+
+1.License.  
+==========
+Subject to your compliance with the terms and conditions of this Agreement, Simplesoft grants you a limited, non-exclusive, nontransferable, revocable license during the evaluation term to use the Software, in object code form, solely for the purposes of internally testing and evaluation the Software, and not for general production use.  SimpleSoft reserves all rights and licenses not expressly granted to you under this Agreement.
+
+2.Restrictions on Use. 
+======================
+You are granted one evaluation license of the Software to be used only on a single licensed computer. You may not disclose the results of Software performance benchmarks to any third party without SimpleSoft's prior written consent. You may not use, copy, modify or transfer the Software (including the documentation), or any copy thereof, in whole or in part, except as expressly provided in this Agreement. You may not use the Software for production or development use or in any manner to provide testing, network management or any other services to any third party. You may not rent, lease, loan, resell, license, sublicense, or otherwise distribute the Software or any portion thereof, or make the Software available to multiple users through any means (for instance, by uploading the Software to a network or file-sharing service or through any hosting, application services provider, service bureau or any other type of services). You may not reverse engineer, decompile, disassemble or otherwise attempt to determine source codes or protocols from the Software.  
+
+3.Ownership.  
+============
+This Software is licensed, not sold, to you.  SimpleSoft retains ownership of the Software, including all intellectual property rights therein.  The Software is protected by U.S. copyright law and international treaties. You may not delete or in any manner alter the copyright, trademark, and other proprietary rights notices or markings appearing on the Software as delivered to you.
+
+4.Term.  
+=======
+This Agreement shall continue for a period of at most thirty (30) days from the date of installation, unless sooner terminated as provided below.  You may terminate this Agreement at any time prior to its expiration by deleting and uninstalling all copies of the Software in your possession or control.  This Agreement will automatically and immediately terminate without notice if you breach any term of this Agreement.  Upon expiration or termination, you must promptly delete and destroy (and permanently erase) all copies of the Software in your possession or control.
+
+5.No Warranty.  
+==============
+The Software provided "AS IS" without warranty of any kind, either express or implied.  You agree that you are evaluating the Software completely at your own risk. 
+
+6.Limitation of Liability.  
+==========================
+IN NO EVENT WILL SIMPLESOFT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, PUNITIVE, OR CONSEQUENTIAL DAMAGES OR OTHER RELIEF ARISING OUT OF YOUR USE OR INABILITY TO USE THE SOFTWARE INCLUDING, BY WAY OF ILLUSTRATION AND NOT LIMITATION, LOST PROFITS, LOST BUSINESS OR LOST OPPORTUNITY, OR ANY SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF SUCH USE OR INABILITY TO USE THE SOFTWARE, EVEN IF SIMPLESOFT HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES AND WHETHER OR NOT SUCH DAMAGES ARE FORESEEABLE, OR FOR ANY CLAIM BY ANY THIRD PARTY.
+
+7.Export Law.  
+=============
+You agree to comply fully with all relevant export laws and regulations of the United States to ensure that neither the Software, nor any direct product thereof are: (a) exported or re-exported directly or indirectly in violation of the export laws; or (b) used for any purposes prohibited by the export laws.
+
+8.General.  
+==========
+This Agreement will be governed by and construed in accordance with the laws of the State of California, without regard to or application of conflicts of law rules or principles. The United Nations Convention on Contracts for the International Sale of Goods will not apply.  You may not assign or transfer this Agreement or any rights granted hereunder, by operation of law or otherwise, without Company's prior written consent, and any attempt by you to do so, without such consent, will be void and of no effect. Except as expressly set forth in this Agreement, the exercise by either party of any of its remedies under this Agreement will be without prejudice to its other remedies under this Agreement or otherwise. All notices or approvals must be in writing and delivered by confirmed facsimile transmission, by overnight delivery service, or by certified mail, and in each instance will be deemed given upon receipt. The failure by either party to enforce any provision of this Agreement will not constitute a waiver of future enforcement of that or any other provision. Any waiver, modification or amendment of any provision of this Agreement will be effective only if in writing and signed by authorized representatives of both parties. If any provision of this Agreement is held to be unenforceable or invalid, that provision will be enforced to the maximum extent possible and the other provisions will remain in full force and effect. This Agreement is the complete and exclusive understanding and agreement between the parties regarding its subject matter, and supersedes all proposals, understandings or communications between the parties, oral or written, regarding its subject matter.
+
+9.Contact Information.  
+=======================
+If you have any questions regarding this Agreement, you may contact SimpleSoft at 257 Castro Street, Suite #220, Mountain View, CA 94041, (650) 965-4515.
+
+
+
+

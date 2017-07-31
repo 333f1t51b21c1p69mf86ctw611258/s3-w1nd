@@ -1,0 +1,12 @@
+<?xml version="1.0"  encoding="UTF-8"?>
+<Networks name="Seawind">
+  <Simulator initialState="up" port="161" name="Linux"
+    ipAddress="192.168.16.100">
+    <configFile
+      name="D:\Develop\Java\Github\spring\dzs-seawind\Tool Data\iReasoning\Seawind/config/192.168.16.100_161_config.xml"/>
+    <trapFile name="C:\Users\Henrik\Desktop\test_Trap"/>
+    <dataFile
+      name="d:\Develop\Java\Github\spring\dzs-seawind\Tool Data\iReasoning\Seawind_Generator_Data"/>
+    <device name="linux"/>
+  </Simulator>
+</Networks>

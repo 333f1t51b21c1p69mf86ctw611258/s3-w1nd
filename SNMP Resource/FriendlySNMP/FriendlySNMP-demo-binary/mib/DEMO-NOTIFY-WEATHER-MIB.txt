@@ -1,0 +1,88 @@
+-- 
+-- This is FriendlySNMP DEMO-NOTIFY-WEATHER-MIB
+--
+
+DEMO-NOTIFY-WEATHER-MIB DEFINITIONS ::= BEGIN
+
+IMPORTS
+    enterprises,
+    MODULE-IDENTITY,
+    NOTIFICATION-TYPE
+        FROM SNMPv2-SMI
+    MODULE-COMPLIANCE,
+    NOTIFICATION-GROUP
+        FROM SNMPv2-CONF
+    ;
+
+-- Module Identity
+------------------
+demoNotifyWeather MODULE-IDENTITY 
+    -- Date Format is "YYYYMMDDhhmmZ"
+    LAST-UPDATED "201004010000Z"    
+    ORGANIZATION "FriendlySNMP"
+    CONTACT-INFO "info@friendlysnmp.org"
+    DESCRIPTION  "This is demo MIB to test basic SNMP agent functionality"
+    -- Multiple pairs revision/description are allowed
+    REVISION     "201004010000Z"
+    DESCRIPTION  "FriendlySNMP Demo MIB"
+    -- 1.3.6.1.4.1.29091.10.20
+    ::= { friendlySNMP demo(10) 20 }
+
+-- Enterprise OIDs
+------------------
+friendlySNMP OBJECT IDENTIFIER ::= { enterprises 29091 }
+
+-- Top-level tree (sections)
+----------------------------
+demoMIBObjects       OBJECT IDENTIFIER ::= { demoNotifyWeather 0 }
+demoMIBConformance   OBJECT IDENTIFIER ::= { demoNotifyWeather 3 }
+
+--
+-- SECTION: Notifications
+--
+weatherSunny NOTIFICATION-TYPE
+    STATUS  current
+    DESCRIPTION "Notification: sunny"
+    ::= { demoMIBObjects 1 }
+
+weatherCloudy NOTIFICATION-TYPE
+    STATUS  current
+    DESCRIPTION "Notification: cloudy"
+    ::= { demoMIBObjects 2 }
+
+weatherRain NOTIFICATION-TYPE
+    STATUS  current
+    DESCRIPTION "Notification: rain"
+    ::= { demoMIBObjects 5 }
+
+weatherSnow NOTIFICATION-TYPE
+    STATUS  current
+    DESCRIPTION "Notification: snow"
+    ::= { demoMIBObjects 8 }
+
+--
+-- SECTION: Conformance
+--
+demoCompliance MODULE-COMPLIANCE
+    STATUS  current
+    DESCRIPTION
+        "The compliance statement for SNMP entities which
+        implement this MIB."
+    MODULE  -- this module
+    MANDATORY-GROUPS { 
+        demoNotifyGroup
+    }
+    ::= { demoMIBConformance 1 }
+
+demoNotifyGroup NOTIFICATION-GROUP
+    NOTIFICATIONS {
+        weatherSunny,
+        weatherCloudy,
+        weatherRain,
+        weatherSnow
+    }
+    STATUS current
+    DESCRIPTION "A collection of notification nodes in this MIB"
+    ::= { demoMIBConformance 2 }
+
+END

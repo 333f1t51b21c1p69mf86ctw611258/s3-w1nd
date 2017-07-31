@@ -1,0 +1,2205 @@
+1.3.6.1.2.1.1.1           sysDescr                OctetString  RO  S   (0,255) d
+1.3.6.1.2.1.1.2           sysObjectID             ObjectID     RO  S   
+1.3.6.1.2.1.1.3           sysUpTime               TimeTicks    RO  S   
+1.3.6.1.2.1.1.4           sysContact              OctetString  RW  S   (0,255) d
+1.3.6.1.2.1.1.5           sysName                 OctetString  RW  S   (0,255) d
+1.3.6.1.2.1.1.6           sysLocation             OctetString  RW  S   (0,255) d
+1.3.6.1.2.1.1.7           sysServices             Integer      RO  S   (0,127)
+1.3.6.1.2.1.2.1           ifNumber                Integer      RO  S   
+1.3.6.1.2.1.2.2.1.1       ifIndex                 Integer      RO  C1  
+1.3.6.1.2.1.2.2.1.2       ifDescr                 OctetString  RO  C2  (0,255) d
+1.3.6.1.2.1.2.2.1.3       ifType                  Integer      RO  C3  (1,32) e
+1.3.6.1.2.1.2.2.1.4       ifMtu                   Integer      RO  C4  
+1.3.6.1.2.1.2.2.1.5       ifSpeed                 Gauge        RO  C5  
+1.3.6.1.2.1.2.2.1.6       ifPhysAddress           OctetString  RO  C6  (6,6) p
+1.3.6.1.2.1.2.2.1.7       ifAdminStatus           Integer      RW  C7  (1,3) e
+1.3.6.1.2.1.2.2.1.8       ifOperStatus            Integer      RO  C8  (1,3) e
+1.3.6.1.2.1.2.2.1.9       ifLastChange            TimeTicks    RO  C9  
+1.3.6.1.2.1.2.2.1.10      ifInOctets              Counter      RO  C10 
+1.3.6.1.2.1.2.2.1.11      ifInUcastPkts           Counter      RO  C11 
+1.3.6.1.2.1.2.2.1.12      ifInNUcastPkts          Counter      RO  C12 
+1.3.6.1.2.1.2.2.1.13      ifInDiscards            Counter      RO  C13 
+1.3.6.1.2.1.2.2.1.14      ifInErrors              Counter      RO  C14 
+1.3.6.1.2.1.2.2.1.15      ifInUnknownProtos       Counter      RO  C15 
+1.3.6.1.2.1.2.2.1.16      ifOutOctets             Counter      RO  C16 
+1.3.6.1.2.1.2.2.1.17      ifOutUcastPkts          Counter      RO  C17 
+1.3.6.1.2.1.2.2.1.18      ifOutNUcastPkts         Counter      RO  C18 
+1.3.6.1.2.1.2.2.1.19      ifOutDiscards           Counter      RO  C19 
+1.3.6.1.2.1.2.2.1.20      ifOutErrors             Counter      RO  C20 
+1.3.6.1.2.1.2.2.1.21      ifOutQLen               Gauge        RO  C21 
+1.3.6.1.2.1.2.2.1.22      ifSpecific              ObjectID     RO  C22 
+1.3.6.1.2.1.3.1.1.1       atIfIndex               Integer      RW  C1  
+1.3.6.1.2.1.3.1.1.2       atPhysAddress           OctetString  RW  C2  (6,6) p
+1.3.6.1.2.1.3.1.1.3       atNetAddress            NetworkAddress RW  C3  
+1.3.6.1.2.1.4.1           ipForwarding            Integer      RW  S   (1,2) e
+1.3.6.1.2.1.4.2           ipDefaultTTL            Integer      RW  S   
+1.3.6.1.2.1.4.3           ipInReceives            Counter      RO  S   
+1.3.6.1.2.1.4.4           ipInHdrErrors           Counter      RO  S   
+1.3.6.1.2.1.4.5           ipInAddrErrors          Counter      RO  S   
+1.3.6.1.2.1.4.6           ipForwDatagrams         Counter      RO  S   
+1.3.6.1.2.1.4.7           ipInUnknownProtos       Counter      RO  S   
+1.3.6.1.2.1.4.8           ipInDiscards            Counter      RO  S   
+1.3.6.1.2.1.4.9           ipInDelivers            Counter      RO  S   
+1.3.6.1.2.1.4.10          ipOutRequests           Counter      RO  S   
+1.3.6.1.2.1.4.11          ipOutDiscards           Counter      RO  S   
+1.3.6.1.2.1.4.12          ipOutNoRoutes           Counter      RO  S   
+1.3.6.1.2.1.4.13          ipReasmTimeout          Integer      RO  S   
+1.3.6.1.2.1.4.14          ipReasmReqds            Counter      RO  S   
+1.3.6.1.2.1.4.15          ipReasmOKs              Counter      RO  S   
+1.3.6.1.2.1.4.16          ipReasmFails            Counter      RO  S   
+1.3.6.1.2.1.4.17          ipFragOKs               Counter      RO  S   
+1.3.6.1.2.1.4.18          ipFragFails             Counter      RO  S   
+1.3.6.1.2.1.4.19          ipFragCreates           Counter      RO  S   
+1.3.6.1.2.1.4.20.1.1      ipAdEntAddr             IpAddress    RO  C1  
+1.3.6.1.2.1.4.20.1.2      ipAdEntIfIndex          Integer      RO  C2  
+1.3.6.1.2.1.4.20.1.3      ipAdEntNetMask          IpAddress    RO  C3  
+1.3.6.1.2.1.4.20.1.4      ipAdEntBcastAddr        Integer      RO  C4  
+1.3.6.1.2.1.4.20.1.5      ipAdEntReasmMaxSize     Integer      RO  C5  (0,65535)
+1.3.6.1.2.1.4.21.1.1      ipRouteDest             IpAddress    RW  C1  
+1.3.6.1.2.1.4.21.1.2      ipRouteIfIndex          Integer      RW  C2  
+1.3.6.1.2.1.4.21.1.3      ipRouteMetric1          Integer      RW  C3  
+1.3.6.1.2.1.4.21.1.4      ipRouteMetric2          Integer      RW  C4  
+1.3.6.1.2.1.4.21.1.5      ipRouteMetric3          Integer      RW  C5  
+1.3.6.1.2.1.4.21.1.6      ipRouteMetric4          Integer      RW  C6  
+1.3.6.1.2.1.4.21.1.7      ipRouteNextHop          IpAddress    RW  C7  
+1.3.6.1.2.1.4.21.1.8      ipRouteType             Integer      RW  C8  (1,4) e
+1.3.6.1.2.1.4.21.1.9      ipRouteProto            Integer      RO  C9  (1,14) e
+1.3.6.1.2.1.4.21.1.10     ipRouteAge              Integer      RW  C10 
+1.3.6.1.2.1.4.21.1.11     ipRouteMask             IpAddress    RW  C11 
+1.3.6.1.2.1.4.21.1.12     ipRouteMetric5          Integer      RW  C12 
+1.3.6.1.2.1.4.21.1.13     ipRouteInfo             ObjectID     RO  C13 
+1.3.6.1.2.1.4.22.1.1      ipNetToMediaIfIndex     Integer      RW  C1  
+1.3.6.1.2.1.4.22.1.2      ipNetToMediaPhysAddress OctetString  RW  C2  (6,6) p
+1.3.6.1.2.1.4.22.1.3      ipNetToMediaNetAddress  IpAddress    RW  C3  
+1.3.6.1.2.1.4.22.1.4      ipNetToMediaType        Integer      RW  C4  (1,4) e
+1.3.6.1.2.1.4.23          ipRoutingDiscards       Counter      RO  S   
+1.3.6.1.2.1.4.24.1        ipForwardNumber         Gauge        RO  S   
+1.3.6.1.2.1.4.24.2.1.1    ipForwardDest           IpAddress    RO  C1  
+1.3.6.1.2.1.4.24.2.1.2    ipForwardMask           IpAddress    RW  C2  
+1.3.6.1.2.1.4.24.2.1.3    ipForwardPolicy         Integer      RO  C3  
+1.3.6.1.2.1.4.24.2.1.4    ipForwardNextHop        IpAddress    RO  C4  
+1.3.6.1.2.1.4.24.2.1.5    ipForwardIfIndex        Integer      RW  C5  
+1.3.6.1.2.1.4.24.2.1.6    ipForwardType           Integer      RW  C6  (1,4) e
+1.3.6.1.2.1.4.24.2.1.7    ipForwardProto          Integer      RO  C7  (1,15) e
+1.3.6.1.2.1.4.24.2.1.8    ipForwardAge            Integer      RO  C8  
+1.3.6.1.2.1.4.24.2.1.9    ipForwardInfo           ObjectID     RW  C9  
+1.3.6.1.2.1.4.24.2.1.10   ipForwardNextHopAS      Integer      RW  C10 
+1.3.6.1.2.1.4.24.2.1.11   ipForwardMetric1        Integer      RW  C11 
+1.3.6.1.2.1.4.24.2.1.12   ipForwardMetric2        Integer      RW  C12 
+1.3.6.1.2.1.4.24.2.1.13   ipForwardMetric3        Integer      RW  C13 
+1.3.6.1.2.1.4.24.2.1.14   ipForwardMetric4        Integer      RW  C14 
+1.3.6.1.2.1.4.24.2.1.15   ipForwardMetric5        Integer      RW  C15 
+1.3.6.1.2.1.5.1           icmpInMsgs              Counter      RO  S   
+1.3.6.1.2.1.5.2           icmpInErrors            Counter      RO  S   
+1.3.6.1.2.1.5.3           icmpInDestUnreachs      Counter      RO  S   
+1.3.6.1.2.1.5.4           icmpInTimeExcds         Counter      RO  S   
+1.3.6.1.2.1.5.5           icmpInParmProbs         Counter      RO  S   
+1.3.6.1.2.1.5.6           icmpInSrcQuenchs        Counter      RO  S   
+1.3.6.1.2.1.5.7           icmpInRedirects         Counter      RO  S   
+1.3.6.1.2.1.5.8           icmpInEchos             Counter      RO  S   
+1.3.6.1.2.1.5.9           icmpInEchoReps          Counter      RO  S   
+1.3.6.1.2.1.5.10          icmpInTimestamps        Counter      RO  S   
+1.3.6.1.2.1.5.11          icmpInTimestampReps     Counter      RO  S   
+1.3.6.1.2.1.5.12          icmpInAddrMasks         Counter      RO  S   
+1.3.6.1.2.1.5.13          icmpInAddrMaskReps      Counter      RO  S   
+1.3.6.1.2.1.5.14          icmpOutMsgs             Counter      RO  S   
+1.3.6.1.2.1.5.15          icmpOutErrors           Counter      RO  S   
+1.3.6.1.2.1.5.16          icmpOutDestUnreachs     Counter      RO  S   
+1.3.6.1.2.1.5.17          icmpOutTimeExcds        Counter      RO  S   
+1.3.6.1.2.1.5.18          icmpOutParmProbs        Counter      RO  S   
+1.3.6.1.2.1.5.19          icmpOutSrcQuenchs       Counter      RO  S   
+1.3.6.1.2.1.5.20          icmpOutRedirects        Counter      RO  S   
+1.3.6.1.2.1.5.21          icmpOutEchos            Counter      RO  S   
+1.3.6.1.2.1.5.22          icmpOutEchoReps         Counter      RO  S   
+1.3.6.1.2.1.5.23          icmpOutTimestamps       Counter      RO  S   
+1.3.6.1.2.1.5.24          icmpOutTimestampReps    Counter      RO  S   
+1.3.6.1.2.1.5.25          icmpOutAddrMasks        Counter      RO  S   
+1.3.6.1.2.1.5.26          icmpOutAddrMaskReps     Counter      RO  S   
+1.3.6.1.2.1.6.1           tcpRtoAlgorithm         Integer      RO  S   (1,4) e
+1.3.6.1.2.1.6.2           tcpRtoMin               Integer      RO  S   
+1.3.6.1.2.1.6.3           tcpRtoMax               Integer      RO  S   
+1.3.6.1.2.1.6.4           tcpMaxConn              Integer      RO  S   
+1.3.6.1.2.1.6.5           tcpActiveOpens          Counter      RO  S   
+1.3.6.1.2.1.6.6           tcpPassiveOpens         Counter      RO  S   
+1.3.6.1.2.1.6.7           tcpAttemptFails         Counter      RO  S   
+1.3.6.1.2.1.6.8           tcpEstabResets          Counter      RO  S   
+1.3.6.1.2.1.6.9           tcpCurrEstab            Gauge        RO  S   
+1.3.6.1.2.1.6.10          tcpInSegs               Counter      RO  S   
+1.3.6.1.2.1.6.11          tcpOutSegs              Counter      RO  S   
+1.3.6.1.2.1.6.12          tcpRetransSegs          Counter      RO  S   
+1.3.6.1.2.1.6.13.1.1      tcpConnState            Integer      RW  C1  (1,12) e
+1.3.6.1.2.1.6.13.1.2      tcpConnLocalAddress     IpAddress    RO  C2  
+1.3.6.1.2.1.6.13.1.3      tcpConnLocalPort        Integer      RO  C3  (0,65535)
+1.3.6.1.2.1.6.13.1.4      tcpConnRemAddress       IpAddress    RO  C4  
+1.3.6.1.2.1.6.13.1.5      tcpConnRemPort          Integer      RO  C5  (0,65535)
+1.3.6.1.2.1.6.14          tcpInErrs               Counter      RO  S   
+1.3.6.1.2.1.6.15          tcpOutRsts              Counter      RO  S   
+1.3.6.1.2.1.7.1           udpInDatagrams          Counter      RO  S   
+1.3.6.1.2.1.7.2           udpNoPorts              Counter      RO  S   
+1.3.6.1.2.1.7.3           udpInErrors             Counter      RO  S   
+1.3.6.1.2.1.7.4           udpOutDatagrams         Counter      RO  S   
+1.3.6.1.2.1.7.5.1.1       udpLocalAddress         IpAddress    RO  C1  
+1.3.6.1.2.1.7.5.1.2       udpLocalPort            Integer      RO  C2  (0,65535)
+1.3.6.1.2.1.8.1           egpInMsgs               Counter      RO  S   
+1.3.6.1.2.1.8.2           egpInErrors             Counter      RO  S   
+1.3.6.1.2.1.8.3           egpOutMsgs              Counter      RO  S   
+1.3.6.1.2.1.8.4           egpOutErrors            Counter      RO  S   
+1.3.6.1.2.1.8.5.1.1       egpNeighState           Integer      RO  C1  (1,5) e
+1.3.6.1.2.1.8.5.1.2       egpNeighAddr            IpAddress    RO  C2  
+1.3.6.1.2.1.8.5.1.3       egpNeighAs              Integer      RO  C3  
+1.3.6.1.2.1.8.5.1.4       egpNeighInMsgs          Counter      RO  C4  
+1.3.6.1.2.1.8.5.1.5       egpNeighInErrs          Counter      RO  C5  
+1.3.6.1.2.1.8.5.1.6       egpNeighOutMsgs         Counter      RO  C6  
+1.3.6.1.2.1.8.5.1.7       egpNeighOutErrs         Counter      RO  C7  
+1.3.6.1.2.1.8.5.1.8       egpNeighInErrMsgs       Counter      RO  C8  
+1.3.6.1.2.1.8.5.1.9       egpNeighOutErrMsgs      Counter      RO  C9  
+1.3.6.1.2.1.8.5.1.10      egpNeighStateUps        Counter      RO  C10 
+1.3.6.1.2.1.8.5.1.11      egpNeighStateDowns      Counter      RO  C11 
+1.3.6.1.2.1.8.5.1.12      egpNeighIntervalHello   Integer      RO  C12 
+1.3.6.1.2.1.8.5.1.13      egpNeighIntervalPoll    Integer      RO  C13 
+1.3.6.1.2.1.8.5.1.14      egpNeighMode            Integer      RO  C14 (1,2) e
+1.3.6.1.2.1.8.5.1.15      egpNeighEventTrigger    Integer      RW  C15 (1,2) e
+1.3.6.1.2.1.8.6           egpAs                   Integer      RO  S   
+1.3.6.1.2.1.11.1          snmpInPkts              Counter      RO  S   
+1.3.6.1.2.1.11.2          snmpOutPkts             Counter      RO  S   
+1.3.6.1.2.1.11.3          snmpInBadVersions       Counter      RO  S   
+1.3.6.1.2.1.11.4          snmpInBadCommunityNames Counter      RO  S   
+1.3.6.1.2.1.11.5          snmpInBadCommunityUses  Counter      RO  S   
+1.3.6.1.2.1.11.6          snmpInASNParseErrs      Counter      RO  S   
+1.3.6.1.2.1.11.8          snmpInTooBigs           Counter      RO  S   
+1.3.6.1.2.1.11.9          snmpInNoSuchNames       Counter      RO  S   
+1.3.6.1.2.1.11.10         snmpInBadValues         Counter      RO  S   
+1.3.6.1.2.1.11.11         snmpInReadOnlys         Counter      RO  S   
+1.3.6.1.2.1.11.12         snmpInGenErrs           Counter      RO  S   
+1.3.6.1.2.1.11.13         snmpInTotalReqVars      Counter      RO  S   
+1.3.6.1.2.1.11.14         snmpInTotalSetVars      Counter      RO  S   
+1.3.6.1.2.1.11.15         snmpInGetRequests       Counter      RO  S   
+1.3.6.1.2.1.11.16         snmpInGetNexts          Counter      RO  S   
+1.3.6.1.2.1.11.17         snmpInSetRequests       Counter      RO  S   
+1.3.6.1.2.1.11.18         snmpInGetResponses      Counter      RO  S   
+1.3.6.1.2.1.11.19         snmpInTraps             Counter      RO  S   
+1.3.6.1.2.1.11.20         snmpOutTooBigs          Counter      RO  S   
+1.3.6.1.2.1.11.21         snmpOutNoSuchNames      Counter      RO  S   
+1.3.6.1.2.1.11.22         snmpOutBadValues        Counter      RO  S   
+1.3.6.1.2.1.11.24         snmpOutGenErrs          Counter      RO  S   
+1.3.6.1.2.1.11.25         snmpOutGetRequests      Counter      RO  S   
+1.3.6.1.2.1.11.26         snmpOutGetNexts         Counter      RO  S   
+1.3.6.1.2.1.11.27         snmpOutSetRequests      Counter      RO  S   
+1.3.6.1.2.1.11.28         snmpOutGetResponses     Counter      RO  S   
+1.3.6.1.2.1.11.29         snmpOutTraps            Counter      RO  S   
+1.3.6.1.2.1.11.30         snmpEnableAuthenTraps   Integer      RW  S   (1,2) e
+1.3.6.1.2.1.25.1.1        hrSystemUptime          TimeTicks    RO  S   
+1.3.6.1.2.1.25.1.2        hrSystemDate            OctetString  RW  S   (8,11)
+1.3.6.1.2.1.25.1.3        hrSystemInitialLoadDevice Integer      RW  S   (1,2147483647)
+1.3.6.1.2.1.25.1.4        hrSystemInitialLoadParameters OctetString  RW  S   (0,128)
+1.3.6.1.2.1.25.1.5        hrSystemNumUsers        Gauge        RO  S   
+1.3.6.1.2.1.25.1.6        hrSystemProcesses       Gauge        RO  S   
+1.3.6.1.2.1.25.1.7        hrSystemMaxProcesses    Integer      RO  S   (0,2147483647)
+1.3.6.1.2.1.25.2.2        hrMemorySize            Integer      RO  S   (0,2147483647)
+1.3.6.1.2.1.25.2.3.1.1    hrStorageIndex          Integer      RO  C1  (1,2147483647)
+1.3.6.1.2.1.25.2.3.1.2    hrStorageType           ObjectID     RO  C2  
+1.3.6.1.2.1.25.2.3.1.3    hrStorageDescr          OctetString  RO  C3   d
+1.3.6.1.2.1.25.2.3.1.4    hrStorageAllocationUnits Integer      RO  C4  (1,2147483647)
+1.3.6.1.2.1.25.2.3.1.5    hrStorageSize           Integer      RW  C5  (0,2147483647)
+1.3.6.1.2.1.25.2.3.1.6    hrStorageUsed           Integer      RO  C6  (0,2147483647)
+1.3.6.1.2.1.25.2.3.1.7    hrStorageAllocationFailures Counter      RO  C7  
+1.3.6.1.2.1.25.3.2.1.1    hrDeviceIndex           Integer      RO  C1  (1,2147483647)
+1.3.6.1.2.1.25.3.2.1.2    hrDeviceType            ObjectID     RO  C2  
+1.3.6.1.2.1.25.3.2.1.3    hrDeviceDescr           OctetString  RO  C3  (0,64) d
+1.3.6.1.2.1.25.3.2.1.4    hrDeviceID              ObjectID     RO  C4  
+1.3.6.1.2.1.25.3.2.1.5    hrDeviceStatus          Integer      RO  C5  (1,5) e
+1.3.6.1.2.1.25.3.2.1.6    hrDeviceErrors          Counter      RO  C6  
+1.3.6.1.2.1.25.3.3.1.1    hrProcessorFrwID        ObjectID     RO  C1  
+1.3.6.1.2.1.25.3.3.1.2    hrProcessorLoad         Integer      RO  C2  (0,100)
+1.3.6.1.2.1.25.3.4.1.1    hrNetworkIfIndex        Integer      RO  C1  
+1.3.6.1.2.1.25.3.5.1.1    hrPrinterStatus         Integer      RO  C1  (1,5) e
+1.3.6.1.2.1.25.3.5.1.2    hrPrinterDetectedErrorState OctetString  RO  C2  
+1.3.6.1.2.1.25.3.6.1.1    hrDiskStorageAccess     Integer      RO  C1  (1,2) e
+1.3.6.1.2.1.25.3.6.1.2    hrDiskStorageMedia      Integer      RO  C2  (1,8) e
+1.3.6.1.2.1.25.3.6.1.3    hrDiskStorageRemoveble  Integer      RO  C3  (1,2) e
+1.3.6.1.2.1.25.3.6.1.4    hrDiskStorageCapacity   Integer      RO  C4  (0,2147483647)
+1.3.6.1.2.1.25.3.7.1.1    hrPartitionIndex        Integer      RO  C1  (1,2147483647)
+1.3.6.1.2.1.25.3.7.1.2    hrPartitionLabel        OctetString  RO  C2  (0,128)
+1.3.6.1.2.1.25.3.7.1.3    hrPartitionID           OctetString  RO  C3  
+1.3.6.1.2.1.25.3.7.1.4    hrPartitionSize         Integer      RO  C4  (0,2147483647)
+1.3.6.1.2.1.25.3.7.1.5    hrPartitionFSIndex      Integer      RO  C5  (0,2147483647)
+1.3.6.1.2.1.25.3.8.1.1    hrFSIndex               Integer      RO  C1  (1,2147483647)
+1.3.6.1.2.1.25.3.8.1.2    hrFSMountPoint          OctetString  RO  C2  (0,128)
+1.3.6.1.2.1.25.3.8.1.3    hrFSRemoteMountPoint    OctetString  RO  C3  (0,128)
+1.3.6.1.2.1.25.3.8.1.4    hrFSType                ObjectID     RO  C4  
+1.3.6.1.2.1.25.3.8.1.5    hrFSAccess              Integer      RO  C5  (1,2) e
+1.3.6.1.2.1.25.3.8.1.6    hrFSBootable            Integer      RO  C6  (1,2) e
+1.3.6.1.2.1.25.3.8.1.7    hrFSStorageIndex        Integer      RO  C7  (0,2147483647)
+1.3.6.1.2.1.25.3.8.1.8    hrFSLastFullBackupDate  OctetString  RW  C8  (8,11)
+1.3.6.1.2.1.25.3.8.1.9    hrFSLastPartialBackupDate OctetString  RW  C9  (8,11)
+1.3.6.1.2.1.25.4.1        hrSWOSIndex             Integer      RO  S   (1,2147483647)
+1.3.6.1.2.1.25.4.2.1.1    hrSWRunIndex            Integer      RO  C1  (1,2147483647)
+1.3.6.1.2.1.25.4.2.1.2    hrSWRunName             OctetString  RO  C2  (0,64)
+1.3.6.1.2.1.25.4.2.1.3    hrSWRunID               ObjectID     RO  C3  
+1.3.6.1.2.1.25.4.2.1.4    hrSWRunPath             OctetString  RO  C4  (0,128)
+1.3.6.1.2.1.25.4.2.1.5    hrSWRunParameters       OctetString  RO  C5  (0,128)
+1.3.6.1.2.1.25.4.2.1.6    hrSWRunType             Integer      RO  C6  (1,4) e
+1.3.6.1.2.1.25.4.2.1.7    hrSWRunStatus           Integer      RW  C7  (1,4) e
+1.3.6.1.2.1.25.5.1.1.1    hrSWRunPerfCPU          Integer      RO  C1  
+1.3.6.1.2.1.25.5.1.1.2    hrSWRunPerfMem          Integer      RO  C2  (0,2147483647)
+1.3.6.1.2.1.25.6.1        hrSWInstalledLastChange TimeTicks    RO  S   
+1.3.6.1.2.1.25.6.2        hrSWInstalledLastUpdateTime TimeTicks    RO  S   
+1.3.6.1.2.1.25.6.3.1.1    hrSWInstalledIndex      Integer      RO  C1  (1,2147483647)
+1.3.6.1.2.1.25.6.3.1.2    hrSWInstalledName       OctetString  RO  C2  (0,64)
+1.3.6.1.2.1.25.6.3.1.3    hrSWInstalledID         ObjectID     RO  C3  
+1.3.6.1.2.1.25.6.3.1.4    hrSWInstalledType       Integer      RO  C4  (1,4) e
+1.3.6.1.2.1.25.6.3.1.5    hrSWInstalledDate       OctetString  RO  C5  (8,11)
+1.3.6.1.3.60.1.1.1        ipMRouteEnable          Integer      RW  S   (1,2) e
+1.3.6.1.3.60.1.1.2.1.1    ipMRouteGroup           IpAddress    NA  C1  
+1.3.6.1.3.60.1.1.2.1.2    ipMRouteSource          IpAddress    NA  C2  
+1.3.6.1.3.60.1.1.2.1.3    ipMRouteSourceMask      IpAddress    NA  C3  
+1.3.6.1.3.60.1.1.2.1.4    ipMRouteUpstreamNeighbor IpAddress    RO  C4  
+1.3.6.1.3.60.1.1.2.1.5    ipMRouteInIfIndex       Integer      RO  C5  
+1.3.6.1.3.60.1.1.2.1.6    ipMRouteUpTime          TimeTicks    RO  C6  
+1.3.6.1.3.60.1.1.2.1.7    ipMRouteExpiryTime      TimeTicks    RO  C7  
+1.3.6.1.3.60.1.1.2.1.8    ipMRoutePkts            Counter      RO  C8  
+1.3.6.1.3.60.1.1.2.1.9    ipMRouteDifferentInIfPackets Counter      RO  C9  
+1.3.6.1.3.60.1.1.2.1.10   ipMRouteOctets          Counter      RO  C10 
+1.3.6.1.3.60.1.1.2.1.11   ipMRouteProtocol        Integer      RO  C11 (1,10) e
+1.3.6.1.3.60.1.1.2.1.12   ipMRouteRtProto         Integer      RO  C12 (1,17) e
+1.3.6.1.3.60.1.1.2.1.13   ipMRouteRtAddress       IpAddress    RO  C13 
+1.3.6.1.3.60.1.1.2.1.14   ipMRouteRtMask          IpAddress    RO  C14 
+1.3.6.1.3.60.1.1.2.1.15   ipMRouteRtType          Integer      RO  C15 (1,2) e
+1.3.6.1.3.60.1.1.3.1.1    ipMRouteNextHopGroup    IpAddress    NA  C1  
+1.3.6.1.3.60.1.1.3.1.2    ipMRouteNextHopSource   IpAddress    NA  C2  
+1.3.6.1.3.60.1.1.3.1.3    ipMRouteNextHopSourceMask IpAddress    NA  C3  
+1.3.6.1.3.60.1.1.3.1.4    ipMRouteNextHopIfIndex  Integer      NA  C4  
+1.3.6.1.3.60.1.1.3.1.5    ipMRouteNextHopAddress  IpAddress    NA  C5  
+1.3.6.1.3.60.1.1.3.1.6    ipMRouteNextHopState    Integer      RO  C6  (1,2) e
+1.3.6.1.3.60.1.1.3.1.7    ipMRouteNextHopUpTime   TimeTicks    RO  C7  
+1.3.6.1.3.60.1.1.3.1.8    ipMRouteNextHopExpiryTime TimeTicks    RO  C8  
+1.3.6.1.3.60.1.1.3.1.9    ipMRouteNextHopClosestMemberHops Integer      RO  C9  
+1.3.6.1.3.60.1.1.3.1.10   ipMRouteNextHopProtocol Integer      RO  C10 (1,10) e
+1.3.6.1.3.60.1.1.3.1.11   ipMRouteNextHopPkts     Counter      RO  C11 
+1.3.6.1.3.60.1.1.4.1.1    ipMRouteInterfaceIfIndex Integer      NA  C1  
+1.3.6.1.3.60.1.1.4.1.2    ipMRouteInterfaceTtl    Integer      RW  C2  
+1.3.6.1.3.60.1.1.4.1.3    ipMRouteInterfaceProtocol Integer      RO  C3  (1,10) e
+1.3.6.1.3.60.1.1.4.1.4    ipMRouteInterfaceRateLimit Integer      RW  C4  
+1.3.6.1.3.60.1.1.4.1.5    ipMRouteInterfaceInMcastOctets Counter      RO  C5  
+1.3.6.1.3.60.1.1.4.1.6    ipMRouteInterfaceOutMcastOctets Counter      RO  C6  
+1.3.6.1.3.60.1.1.4.1.7    ipMRouteInterfaceHCInMcastOctets Counter64    RO  C7  
+1.3.6.1.3.60.1.1.4.1.8    ipMRouteInterfaceHCOutMcastOctets Counter64    RO  C8  
+1.3.6.1.3.60.1.1.5.1.1    ipMRouteBoundaryIfIndex Integer      NA  C1  
+1.3.6.1.3.60.1.1.5.1.2    ipMRouteBoundaryAddress IpAddress    NA  C2  
+1.3.6.1.3.60.1.1.5.1.3    ipMRouteBoundaryAddressMask IpAddress    NA  C3  
+1.3.6.1.3.60.1.1.5.1.4    ipMRouteBoundaryStatus  Integer      RC  C4  (1,6) r
+%ev                  ipMRouteBoundaryStatus active          1
+%ev                  ipMRouteBoundaryStatus notInService    2
+%ev                  ipMRouteBoundaryStatus notReady        3
+%ev                  ipMRouteBoundaryStatus createAndGo     4
+%ev                  ipMRouteBoundaryStatus createAndWait   5
+%ev                  ipMRouteBoundaryStatus destroy         6
+%ev                  ipMRouteBoundaryStatus active          1
+%ev                  ipMRouteBoundaryStatus notInService    2
+%ev                  ipMRouteBoundaryStatus notReady        3
+%ev                  ipMRouteBoundaryStatus createAndGo     4
+%ev                  ipMRouteBoundaryStatus createAndWait   5
+%ev                  ipMRouteBoundaryStatus destroy         6
+1.3.6.1.3.60.1.1.6.1.1    ipMRouteScopeAddress    IpAddress    NA  C1  
+1.3.6.1.3.60.1.1.6.1.2    ipMRouteScopeAddressMask IpAddress    NA  C2  
+1.3.6.1.3.60.1.1.6.1.3    ipMRouteScopeName       OctetString  RC  C3  (1,255) d
+1.3.6.1.3.60.1.1.6.1.4    ipMRouteScopeStatus     Integer      RC  C4  (1,6) r
+%ev                  ipMRouteScopeStatus active          1
+%ev                  ipMRouteScopeStatus notInService    2
+%ev                  ipMRouteScopeStatus notReady        3
+%ev                  ipMRouteScopeStatus createAndGo     4
+%ev                  ipMRouteScopeStatus createAndWait   5
+%ev                  ipMRouteScopeStatus destroy         6
+%ev                  ipMRouteScopeStatus active          1
+%ev                  ipMRouteScopeStatus notInService    2
+%ev                  ipMRouteScopeStatus notReady        3
+%ev                  ipMRouteScopeStatus createAndGo     4
+%ev                  ipMRouteScopeStatus createAndWait   5
+%ev                  ipMRouteScopeStatus destroy         6
+1.3.6.1.3.79.1.1.1.1.1    radiusAuthServIdent     OctetString  RO  S  (0,255)
+1.3.6.1.3.79.1.1.1.1.2    radiusAuthServUpTime    TimeTicks    RO  S   
+1.3.6.1.3.79.1.1.1.1.3    radiusAuthServResetTime TimeTicks    RO  S   
+1.3.6.1.3.79.1.1.1.1.4    radiusAuthServConfigReset Integer      RW  S   (1,4) e
+1.3.6.1.3.79.1.1.1.1.5    radiusAuthServTotalAccessRequests Counter      RO  S   
+1.3.6.1.3.79.1.1.1.1.6    radiusAuthServTotalInvalidRequests Counter      RO  S   
+1.3.6.1.3.79.1.1.1.1.7    radiusAuthServTotalDupAccessRequests Counter      RO  S   
+1.3.6.1.3.79.1.1.1.1.8    radiusAuthServTotalAccessAccepts Counter      RO  S   
+1.3.6.1.3.79.1.1.1.1.9    radiusAuthServTotalAccessRejects Counter      RO  S   
+1.3.6.1.3.79.1.1.1.1.10   radiusAuthServTotalAccessChallenges Counter      RO  S   
+1.3.6.1.3.79.1.1.1.1.11   radiusAuthServTotalMalformedAccessRequests Counter      RO  S   
+1.3.6.1.3.79.1.1.1.1.12   radiusAuthServTotalBadAuthenticators Counter      RO  S   
+1.3.6.1.3.79.1.1.1.1.13   radiusAuthServTotalPacketsDropped Counter      RO  S   
+1.3.6.1.3.79.1.1.1.1.14   radiusAuthServTotalUnknownTypes Counter      RO  S   
+1.3.6.1.3.79.1.1.1.1.15.1.1 radiusAuthClientIndex   Integer      NA  C1  
+1.3.6.1.3.79.1.1.1.1.15.1.2 radiusAuthClientAddress IpAddress    RO  C2  
+1.3.6.1.3.79.1.1.1.1.15.1.3 radiusAuthClientID      OctetString  RO  C3  (0,255)
+1.3.6.1.3.79.1.1.1.1.15.1.4 radiusAuthServAccessRequests Counter      RO  C4  
+1.3.6.1.3.79.1.1.1.1.15.1.5 radiusAuthServDupAccessRequests Counter      RO  C5  
+1.3.6.1.3.79.1.1.1.1.15.1.6 radiusAuthServAccessAccepts Counter      RO  C6  
+1.3.6.1.3.79.1.1.1.1.15.1.7 radiusAuthServAccessRejects Counter      RO  C7  
+1.3.6.1.3.79.1.1.1.1.15.1.8 radiusAuthServAccessChallenges Counter      RO  C8  
+1.3.6.1.3.79.1.1.1.1.15.1.9 radiusAuthServMalformedAccessRequests Counter      RO  C9  
+1.3.6.1.3.79.1.1.1.1.15.1.10 radiusAuthServBadAuthenticators Counter      RO  C10 
+1.3.6.1.3.79.1.1.1.1.15.1.11 radiusAuthServPacketsDropped Counter      RO  C11 
+1.3.6.1.3.79.1.1.1.1.15.1.12 radiusAuthServUnknownTypes Counter      RO  C12 
+1.3.6.1.3.79.2.1.1.1.1    radiusAccServIdent      OctetString  RO  S  (0,255)
+1.3.6.1.3.79.2.1.1.1.2    radiusAccServUpTime     TimeTicks    RO  S   
+1.3.6.1.3.79.2.1.1.1.3    radiusAccServResetTime  TimeTicks    RO  S   
+1.3.6.1.3.79.2.1.1.1.4    radiusAccServConfigReset Integer      RW  S   (1,4) e
+1.3.6.1.3.79.2.1.1.1.5    radiusAccServTotalRequests Counter      RO  S   
+1.3.6.1.3.79.2.1.1.1.6    radiusAccServTotalInvalidRequests Counter      RO  S   
+1.3.6.1.3.79.2.1.1.1.7    radiusAccServTotalDupRequests Counter      RO  S   
+1.3.6.1.3.79.2.1.1.1.8    radiusAccServTotalResponses Counter      RO  S   
+1.3.6.1.3.79.2.1.1.1.9    radiusAccServTotalMalformedRequests Counter      RO  S   
+1.3.6.1.3.79.2.1.1.1.10   radiusAccServTotalBadAuthenticators Counter      RO  S   
+1.3.6.1.3.79.2.1.1.1.11   radiusAccServTotalPacketsDropped Counter      RO  S   
+1.3.6.1.3.79.2.1.1.1.12   radiusAccServTotalNoRecords Counter      RO  S   
+1.3.6.1.3.79.2.1.1.1.13   radiusAccServTotalUnknownTypes Counter      RO  S   
+1.3.6.1.3.79.2.1.1.1.14.1.1 radiusAccClientIndex    Integer      NA  C1  
+1.3.6.1.3.79.2.1.1.1.14.1.2 radiusAccClientAddress  IpAddress    RO  C2  
+1.3.6.1.3.79.2.1.1.1.14.1.3 radiusAccClientID       OctetString  RO  C3  (0,255)
+1.3.6.1.3.79.2.1.1.1.14.1.4 radiusAccServPacketsDropped Counter      RO  C4  
+1.3.6.1.3.79.2.1.1.1.14.1.5 radiusAccServRequests   Counter      RO  C5  
+1.3.6.1.3.79.2.1.1.1.14.1.6 radiusAccServDupRequests Counter      RO  C6  
+1.3.6.1.3.79.2.1.1.1.14.1.7 radiusAccServResponses  Counter      RO  C7  
+1.3.6.1.3.79.2.1.1.1.14.1.8 radiusAccServBadAuthenticators Counter      RO  C8  
+1.3.6.1.3.79.2.1.1.1.14.1.9 radiusAccServMalformedRequests Counter      RO  C9  
+1.3.6.1.3.79.2.1.1.1.14.1.10 radiusAccServNoRecords  Counter      RO  C10 
+1.3.6.1.3.79.2.1.1.1.14.1.11 radiusAccServUnknownTypes Counter      RO  C11 
+1.3.6.1.4.1.18.3.5.3.2.3.1.1 wfOspfGeneralDelete     Integer      RW  S   (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.1.2 wfOspfGeneralDisable    Integer      RW  S   (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.1.3 wfOspfGeneralState      Integer      RO  S   (1,4) e
+1.3.6.1.4.1.18.3.5.3.2.3.1.4 wfOspfRouterId          IpAddress    RW  S   
+1.3.6.1.4.1.18.3.5.3.2.3.1.5 wfOspfVersionNumber     Integer      RO  S   
+1.3.6.1.4.1.18.3.5.3.2.3.1.6 wfOspfAreaBdrRtrStatus  Integer      RO  S   (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.1.7 wfOspfASBdrRtrStatus    Integer      RW  S   (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.1.8 wfOspfTOSSupport        Integer      RO  S   (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.1.9 wfOspfSpfHoldDown       Integer      RW  S   (1,10) e
+1.3.6.1.4.1.18.3.5.3.2.3.1.10 wfOspfSlotMask          Integer      RW  S   (-33816576,0) e
+1.3.6.1.4.1.18.3.5.3.2.3.2.1.1 wfOspfAreaDelete        Integer      RW  C1  (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.2.1.2 wfOspfAreaDisable       Integer      RW  C2  (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.2.1.3 wfOspfAreaState         Integer      RO  C3  (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.2.1.4 wfOspfAreaId            IpAddress    RO  C4  
+1.3.6.1.4.1.18.3.5.3.2.3.2.1.5 wfOspfAuthType          Integer      RW  C5  (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.2.1.6 wfOspfImportASExtern    Integer      RW  C6  (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.2.1.7 wfOspfStubMetric        Integer      RW  C7  (1,16777215) e
+1.3.6.1.4.1.18.3.5.3.2.3.2.1.8 wfOspfImportSum         Integer      RW  C8  (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.2.1.9 wfOspfSpfCnt            Counter      RO  C9  
+1.3.6.1.4.1.18.3.5.3.2.3.3.1.1 wfOspfLsdbAreaId        IpAddress    RO  C1  
+1.3.6.1.4.1.18.3.5.3.2.3.3.1.2 wfOspfLsdbType          Integer      RO  C2  (1,5) e
+1.3.6.1.4.1.18.3.5.3.2.3.3.1.3 wfOspfLsdbLSID          IpAddress    RO  C3  
+1.3.6.1.4.1.18.3.5.3.2.3.3.1.4 wfOspfLsdbRouterId      IpAddress    RO  C4  
+1.3.6.1.4.1.18.3.5.3.2.3.3.1.5 wfOspfLsdbSequence      Integer      RO  C5  
+1.3.6.1.4.1.18.3.5.3.2.3.3.1.6 wfOspfLsdbAge           Integer      RO  C6  %ev                  wfOspfLsdbAge    lsdbmaxage      3600
+1.3.6.1.4.1.18.3.5.3.2.3.3.1.7 wfOspfLsdbChecksum      Integer      RO  C7  
+1.3.6.1.4.1.18.3.5.3.2.3.3.1.8 wfOspfLsdbAdvLen        Integer      RO  C8  
+1.3.6.1.4.1.18.3.5.3.2.3.4.1.1 wfOspfAreaRangeDelete   Integer      RW  C1  (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.4.1.2 wfOspfAreaRangeDisable  Integer      RW  C2  (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.4.1.3 wfOspfAreaRangeState    Integer      RO  C3  (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.4.1.4 wfOspfAreaRangeAreaID   IpAddress    RO  C4  
+1.3.6.1.4.1.18.3.5.3.2.3.4.1.5 wfOspfAreaRangeNet      IpAddress    RO  C5  
+1.3.6.1.4.1.18.3.5.3.2.3.4.1.6 wfOspfAreaRangeMask     IpAddress    RW  C6  
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.1 wfOspfIfDelete          Integer      RW  C1  (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.2 wfOspfIfDisable         Integer      RW  C2  (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.3 wfOspfIfState           Integer      RO  C3  (1,7) e
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.4 wfOspfIfIpAddress       IpAddress    RO  C4  
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.5 wfOspfAddressLessIf     Integer      RO  C5  
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.6 wfOspfIfAreaId          IpAddress    RW  C6  
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.7 wfOspfIfType            Integer      RW  C7  (1,3) e
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.8 wfOspfIfRtrPriority     Integer      RW  C8  (1,255) e
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.9 wfOspfIfTransitDelay    Integer      RW  C9  (1,3600) e
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.10 wfOspfIfRetransInterval Integer      RW  C10 (1,3600) e
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.11 wfOspfIfHelloInterval   Integer      RW  C11 (1,65535) e
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.12 wfOspfIfRtrDeadInterval Integer      RW  C12 (1,2147483647) e
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.13 wfOspfIfPollInterval    Integer      RW  C13 (1,2147483647) e
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.14 wfOspfIfDesignatedRouter IpAddress    RO  C14 
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.15 wfOspfIfBackupDesignatedRouter IpAddress    RO  C15 
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.16 wfOspfIfMetricCost      Integer      RW  C16 (1,65535) e
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.17 wfOspfIfAuthKey         OctetString  RW  C17 
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.18 wfOspfIfTxHellos        Counter      RO  C18 
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.19 wfOspfIfTxDBDescripts   Counter      RO  C19 
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.20 wfOspfIfTxLinkStateReqs Counter      RO  C20 
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.21 wfOspfIfTxLinkStateUpds Counter      RO  C21 
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.22 wfOspfIfTxLinkStateAcks Counter      RO  C22 
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.23 wfOspfIfRxHellos        Counter      RO  C23 
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.24 wfOspfIfRxDBDescripts   Counter      RO  C24 
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.25 wfOspfIfRxLinkStateReqs Counter      RO  C25 
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.26 wfOspfIfRxLinkStateUpds Counter      RO  C26 
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.27 wfOspfIfRxLinkStateAcks Counter      RO  C27 
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.28 wfOspfIfDrops           Counter      RO  C28 
+1.3.6.1.4.1.18.3.5.3.2.3.5.1.29 wfOspfMtuSize           Integer      RW  C29 (1,10000) e
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.1 wfOspfVirtIfDelete      Integer      RW  C1  (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.2 wfOspfVirtIfDisable     Integer      RW  C2  (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.3 wfOspfVirtIfState       Integer      RO  C3  (1,4) e
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.4 wfOspfVirtIfAreaID      IpAddress    RO  C4  
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.5 wfOspfVirtIfNeighbor    IpAddress    RO  C5  
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.6 wfOspfVirtIfTransitDelay Integer      RW  C6  (1,3600) e
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.7 wfOspfVirtIfRetransInterval Integer      RW  C7  (1,3600) e
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.8 wfOspfVirtIfHelloInterval Integer      RW  C8  (1,65535) e
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.9 wfOspfVirtIfRtrDeadInterval Integer      RW  C9  (1,2147483647) e
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.10 wfOspfVirtIfAuthKey     OctetString  RW  C10 
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.11 wfOspfVirtIfTxHellos    Counter      RO  C11 
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.12 wfOspfVirtIfTxDBDescripts Counter      RO  C12 
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.13 wfOspfVirtIfTxLinkStateReqs Counter      RO  C13 
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.14 wfOspfVirtIfTxLinkStateUpds Counter      RO  C14 
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.15 wfOspfVirtIfTxLinkStateAcks Counter      RO  C15 
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.16 wfOspfVirtIfRxHellos    Counter      RO  C16 
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.17 wfOspfVirtIfRxDBDescripts Counter      RO  C17 
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.18 wfOspfVirtIfRxLinkStateReqs Counter      RO  C18 
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.19 wfOspfVirtIfRxLinkStateUpds Counter      RO  C19 
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.20 wfOspfVirtIfRxLinkStateAcks Counter      RO  C20 
+1.3.6.1.4.1.18.3.5.3.2.3.6.1.21 wfOspfVirtIfDrops       Counter      RO  C21 
+1.3.6.1.4.1.18.3.5.3.2.3.7.1.1 wfOspfNbrDelete         Integer      RW  C1  (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.7.1.2 wfOspfNbrDisable        Integer      RW  C2  (1,2) e
+1.3.6.1.4.1.18.3.5.3.2.3.7.1.3 wfOspfNbrState          Integer      RO  C3  (1,8) e
+1.3.6.1.4.1.18.3.5.3.2.3.7.1.4 wfOspfNbrIpAddr         IpAddress    RO  C4  
+1.3.6.1.4.1.18.3.5.3.2.3.7.1.5 wfOspfNbrIfAddr         IpAddress    RW  C5  
+1.3.6.1.4.1.18.3.5.3.2.3.7.1.6 wfOspfNbrAddressLessIndex Integer      RO  C6  
+1.3.6.1.4.1.18.3.5.3.2.3.7.1.7 wfOspfNbrRtrId          IpAddress    RO  C7  
+1.3.6.1.4.1.18.3.5.3.2.3.7.1.8 wfOspfNbrOptions        Integer      RO  C8  
+1.3.6.1.4.1.18.3.5.3.2.3.7.1.9 wfOspfNbrPriority       Integer      RW  C9  (1,255) e
+1.3.6.1.4.1.18.3.5.3.2.3.7.1.10 wfOspfNbrEvents         Counter      RO  C10 
+1.3.6.1.4.1.18.3.5.3.2.3.7.1.11 wfOspfNbrLSRetransQLen  Gauge        RO  C11 
+1.3.6.1.4.1.18.3.5.3.2.3.8.1.1 wfOspfVirtNbrArea       IpAddress    RO  C1  
+1.3.6.1.4.1.18.3.5.3.2.3.8.1.2 wfOspfVirtNbrRtrId      IpAddress    RO  C2  
+1.3.6.1.4.1.18.3.5.3.2.3.8.1.3 wfOspfVirtNbrIpAddr     IpAddress    RO  C3  
+1.3.6.1.4.1.18.3.5.3.2.3.8.1.4 wfOspfVirtNbrOptions    Integer      RO  C4  
+1.3.6.1.4.1.18.3.5.3.2.3.8.1.5 wfOspfVirtNbrState      Integer      RO  C5  (1,8) e
+1.3.6.1.4.1.18.3.5.3.2.3.8.1.6 wfOspfVirtNbrEvents     Counter      RO  C6  
+1.3.6.1.4.1.18.3.5.3.2.3.8.1.7 wfOspfVirtNbrLSRetransQLen Gauge        RO  C7  
+1.3.6.1.4.1.18.3.5.3.2.3.9.1.1 wfOspfDynNbrState       Integer      RO  C1  (1,8) e
+1.3.6.1.4.1.18.3.5.3.2.3.9.1.2 wfOspfDynNbrIpAddr      IpAddress    RO  C2  
+1.3.6.1.4.1.18.3.5.3.2.3.9.1.3 wfOspfDynNbrIfAddr      IpAddress    RO  C3  
+1.3.6.1.4.1.18.3.5.3.2.3.9.1.4 wfOspfDynNbrAddressLessIndex Integer      RO  C4  
+1.3.6.1.4.1.18.3.5.3.2.3.9.1.5 wfOspfDynNbrRtrId       IpAddress    RO  C5  
+1.3.6.1.4.1.18.3.5.3.2.3.9.1.6 wfOspfDynNbrOptions     Integer      RO  C6  
+1.3.6.1.4.1.18.3.5.3.2.3.9.1.7 wfOspfDynNbrPriority    Integer      RO  C7  
+1.3.6.1.4.1.18.3.5.3.2.3.9.1.8 wfOspfDynNbrEvents      Counter      RO  C8  
+1.3.6.1.4.1.18.3.5.3.2.3.9.1.9 wfOspfDynNbrLSRetransQLen Gauge        RO  C9  
+1.3.6.1.4.1.23.2.5.1.1.1.1 ipxBasicSysInstance     Integer      RW  C1  
+1.3.6.1.4.1.23.2.5.1.1.1.2 ipxBasicSysExistState   Integer      RW  C2  (1,2) e
+1.3.6.1.4.1.23.2.5.1.1.1.3 ipxBasicSysNetNumber    OctetString  RW  C3  (4,4)
+1.3.6.1.4.1.23.2.5.1.1.1.4 ipxBasicSysNode         OctetString  RW  C4  (6,6)
+1.3.6.1.4.1.23.2.5.1.1.1.5 ipxBasicSysName         OctetString  RW  C5  (0,48)
+1.3.6.1.4.1.23.2.5.1.1.1.6 ipxBasicSysInReceives   Counter      RO  C6  
+1.3.6.1.4.1.23.2.5.1.1.1.7 ipxBasicSysInHdrErrors  Counter      RO  C7  
+1.3.6.1.4.1.23.2.5.1.1.1.8 ipxBasicSysInUnknownSockets Counter      RO  C8  
+1.3.6.1.4.1.23.2.5.1.1.1.9 ipxBasicSysInDiscards   Counter      RO  C9  
+1.3.6.1.4.1.23.2.5.1.1.1.10 ipxBasicSysInBadChecksums Counter      RO  C10 
+1.3.6.1.4.1.23.2.5.1.1.1.11 ipxBasicSysInDelivers   Counter      RO  C11 
+1.3.6.1.4.1.23.2.5.1.1.1.12 ipxBasicSysNoRoutes     Counter      RO  C12 
+1.3.6.1.4.1.23.2.5.1.1.1.13 ipxBasicSysOutRequests  Counter      RO  C13 
+1.3.6.1.4.1.23.2.5.1.1.1.14 ipxBasicSysOutMalformedRequests Counter      RO  C14 
+1.3.6.1.4.1.23.2.5.1.1.1.15 ipxBasicSysOutDiscards  Counter      RO  C15 
+1.3.6.1.4.1.23.2.5.1.1.1.16 ipxBasicSysOutPackets   Counter      RO  C16 
+1.3.6.1.4.1.23.2.5.1.1.1.17 ipxBasicSysConfigSockets Integer      RO  C17 
+1.3.6.1.4.1.23.2.5.1.1.1.18 ipxBasicSysOpenSocketFails Counter      RO  C18 
+1.3.6.1.4.1.23.2.5.1.2.1.1 ipxAdvSysInstance       Integer      RW  C1  
+1.3.6.1.4.1.23.2.5.1.2.1.2 ipxAdvSysMaxPathSplits  Integer      RW  C2  (1,32)
+1.3.6.1.4.1.23.2.5.1.2.1.3 ipxAdvSysMaxHops        Integer      RW  C3  
+1.3.6.1.4.1.23.2.5.1.2.1.4 ipxAdvSysInTooManyHops  Counter      RO  C4  
+1.3.6.1.4.1.23.2.5.1.2.1.5 ipxAdvSysInFiltered     Counter      RO  C5  
+1.3.6.1.4.1.23.2.5.1.2.1.6 ipxAdvSysInCompressDiscards Counter      RO  C6  
+1.3.6.1.4.1.23.2.5.1.2.1.7 ipxAdvSysNETBIOSPackets Counter      RO  C7  
+1.3.6.1.4.1.23.2.5.1.2.1.8 ipxAdvSysForwPackets    Counter      RO  C8  
+1.3.6.1.4.1.23.2.5.1.2.1.9 ipxAdvSysOutFiltered    Counter      RO  C9  
+1.3.6.1.4.1.23.2.5.1.2.1.10 ipxAdvSysOutCompressDiscards Counter      RO  C10 
+1.3.6.1.4.1.23.2.5.1.2.1.11 ipxAdvSysCircCount      Integer      RO  C11 
+1.3.6.1.4.1.23.2.5.1.2.1.12 ipxAdvSysDestCount      Integer      RO  C12 
+1.3.6.1.4.1.23.2.5.1.2.1.13 ipxAdvSysServCount      Integer      RO  C13 
+1.3.6.1.4.1.23.2.5.2.1.1.1 ipxCircSysInstance      Integer      RW  C1  
+1.3.6.1.4.1.23.2.5.2.1.1.2 ipxCircIndex            Integer      RW  C2  
+1.3.6.1.4.1.23.2.5.2.1.1.3 ipxCircExistState       Integer      RW  C3  (1,2) e
+1.3.6.1.4.1.23.2.5.2.1.1.4 ipxCircOperState        Integer      RW  C4  (1,3) e
+1.3.6.1.4.1.23.2.5.2.1.1.5 ipxCircIfIndex          Integer      RW  C5  
+1.3.6.1.4.1.23.2.5.2.1.1.6 ipxCircName             OctetString  RW  C6  (0,48)
+1.3.6.1.4.1.23.2.5.2.1.1.7 ipxCircType             Integer      RW  C7  (1,7) e
+1.3.6.1.4.1.23.2.5.2.1.1.8 ipxCircDialName         OctetString  RW  C8  (0,48)
+1.3.6.1.4.1.23.2.5.2.1.1.9 ipxCircLocalMaxPacketSize Integer      RW  C9  
+1.3.6.1.4.1.23.2.5.2.1.1.10 ipxCircCompressState    Integer      RW  C10 (1,2) e
+1.3.6.1.4.1.23.2.5.2.1.1.11 ipxCircCompressSlots    Integer      RW  C11 
+1.3.6.1.4.1.23.2.5.2.1.1.12 ipxCircStaticStatus     Integer      RW  C12 (1,7) e
+1.3.6.1.4.1.23.2.5.2.1.1.13 ipxCircCompressedSent   Counter      RO  C13 
+1.3.6.1.4.1.23.2.5.2.1.1.14 ipxCircCompressedInitSent Counter      RO  C14 
+1.3.6.1.4.1.23.2.5.2.1.1.15 ipxCircCompressedRejectsSent Counter      RO  C15 
+1.3.6.1.4.1.23.2.5.2.1.1.16 ipxCircUncompressedSent Counter      RO  C16 
+1.3.6.1.4.1.23.2.5.2.1.1.17 ipxCircCompressedReceived Counter      RO  C17 
+1.3.6.1.4.1.23.2.5.2.1.1.18 ipxCircCompressedInitReceived Counter      RO  C18 
+1.3.6.1.4.1.23.2.5.2.1.1.19 ipxCircCompressedRejectsReceived Counter      RO  C19 
+1.3.6.1.4.1.23.2.5.2.1.1.20 ipxCircUncompressedReceived Counter      RO  C20 
+1.3.6.1.4.1.23.2.5.2.1.1.21 ipxCircMediaType        OctetString  RO  C21 (2,2)
+1.3.6.1.4.1.23.2.5.2.1.1.22 ipxCircNetNumber        OctetString  RW  C22 (4,4)
+1.3.6.1.4.1.23.2.5.2.1.1.23 ipxCircStateChanges     Counter      RO  C23 
+1.3.6.1.4.1.23.2.5.2.1.1.24 ipxCircInitFails        Counter      RO  C24 
+1.3.6.1.4.1.23.2.5.2.1.1.25 ipxCircDelay            Integer      RO  C25 
+1.3.6.1.4.1.23.2.5.2.1.1.26 ipxCircThroughput       Integer      RO  C26 
+1.3.6.1.4.1.23.2.5.2.1.1.27 ipxCircNeighRouterName  OctetString  RO  C27 (0,48)
+1.3.6.1.4.1.23.2.5.2.1.1.28 ipxCircNeighInternalNetNum OctetString  RO  C28 (4,4)
+1.3.6.1.4.1.23.2.5.3.1.1.1 ipxDestSysInstance      Integer      RO  C1  
+1.3.6.1.4.1.23.2.5.3.1.1.2 ipxDestNetNum           OctetString  RO  C2  (4,4)
+1.3.6.1.4.1.23.2.5.3.1.1.3 ipxDestProtocol         Integer      RO  C3  (1,5) e
+1.3.6.1.4.1.23.2.5.3.1.1.4 ipxDestTicks            Integer      RO  C4  
+1.3.6.1.4.1.23.2.5.3.1.1.5 ipxDestHopCount         Integer      RO  C5  
+1.3.6.1.4.1.23.2.5.3.1.1.6 ipxDestNextHopCircIndex Integer      RO  C6  
+1.3.6.1.4.1.23.2.5.3.1.1.7 ipxDestNextHopNICAddress OctetString  RO  C7  (6,6) p
+1.3.6.1.4.1.23.2.5.3.1.1.8 ipxDestNextHopNetNum    OctetString  RO  C8  (4,4)
+1.3.6.1.4.1.23.2.5.3.2.1.1 ipxStaticRouteSysInstance Integer      RW  C1  
+1.3.6.1.4.1.23.2.5.3.2.1.2 ipxStaticRouteCircIndex Integer      RW  C2  
+1.3.6.1.4.1.23.2.5.3.2.1.3 ipxStaticRouteNetNum    OctetString  RW  C3  (4,4)
+1.3.6.1.4.1.23.2.5.3.2.1.4 ipxStaticRouteExistState Integer      RW  C4  (1,2) e
+1.3.6.1.4.1.23.2.5.3.2.1.5 ipxStaticRouteTicks     Integer      RW  C5  
+1.3.6.1.4.1.23.2.5.3.2.1.6 ipxStaticRouteHopCount  Integer      RW  C6  
+1.3.6.1.4.1.23.2.5.4.1.1.1 ipxServSysInstance      Integer      RO  C1  
+1.3.6.1.4.1.23.2.5.4.1.1.2 ipxServType             OctetString  RO  C2  (2,2)
+1.3.6.1.4.1.23.2.5.4.1.1.3 ipxServName             OctetString  RO  C3  (1,48)
+1.3.6.1.4.1.23.2.5.4.1.1.4 ipxServProtocol         Integer      RO  C4  (1,6) e
+1.3.6.1.4.1.23.2.5.4.1.1.5 ipxServNetNum           OctetString  RO  C5  (4,4)
+1.3.6.1.4.1.23.2.5.4.1.1.6 ipxServNode             OctetString  RO  C6  (6,6)
+1.3.6.1.4.1.23.2.5.4.1.1.7 ipxServSocket           OctetString  RO  C7  (2,2)
+1.3.6.1.4.1.23.2.5.4.1.1.8 ipxServHopCount         Integer      RO  C8  
+1.3.6.1.4.1.23.2.5.4.2.1.1 ipxDestServSysInstance  Integer      RO  C1  
+1.3.6.1.4.1.23.2.5.4.2.1.2 ipxDestServNetNum       OctetString  RO  C2  (4,4)
+1.3.6.1.4.1.23.2.5.4.2.1.3 ipxDestServNode         OctetString  RO  C3  (6,6)
+1.3.6.1.4.1.23.2.5.4.2.1.4 ipxDestServSocket       OctetString  RO  C4  (2,2)
+1.3.6.1.4.1.23.2.5.4.2.1.5 ipxDestServName         OctetString  RO  C5  (1,48)
+1.3.6.1.4.1.23.2.5.4.2.1.6 ipxDestServType         OctetString  RO  C6  (2,2)
+1.3.6.1.4.1.23.2.5.4.2.1.7 ipxDestServProtocol     Integer      RO  C7  (1,6) e
+1.3.6.1.4.1.23.2.5.4.2.1.8 ipxDestServHopCount     Integer      RO  C8  
+1.3.6.1.4.1.23.2.5.4.3.1.1 ipxStaticServSysInstance Integer      RW  C1  
+1.3.6.1.4.1.23.2.5.4.3.1.2 ipxStaticServCircIndex  Integer      RW  C2  
+1.3.6.1.4.1.23.2.5.4.3.1.3 ipxStaticServName       OctetString  RW  C3  (1,48)
+1.3.6.1.4.1.23.2.5.4.3.1.4 ipxStaticServType       OctetString  RW  C4  (2,2)
+1.3.6.1.4.1.23.2.5.4.3.1.5 ipxStaticServExistState Integer      RW  C5  (1,2) e
+1.3.6.1.4.1.23.2.5.4.3.1.6 ipxStaticServNetNum     OctetString  RW  C6  (4,4)
+1.3.6.1.4.1.23.2.5.4.3.1.7 ipxStaticServNode       OctetString  RW  C7  (6,6)
+1.3.6.1.4.1.23.2.5.4.3.1.8 ipxStaticServSocket     OctetString  RW  C8  (2,2)
+1.3.6.1.4.1.23.2.5.4.3.1.9 ipxStaticServHopCount   Integer      RW  C9  
+1.3.6.1.4.1.77.1.1.1      comVersionMaj           OctetString  RO  S   
+1.3.6.1.4.1.77.1.1.2      comVersionMin           OctetString  RO  S   
+1.3.6.1.4.1.77.1.1.3      comType                 OctetString  RO  S   
+1.3.6.1.4.1.77.1.1.4      comStatStart            Integer      RO  S   
+1.3.6.1.4.1.77.1.1.5      comStatNumNetIOs        Counter      RO  S   
+1.3.6.1.4.1.77.1.1.6      comStatFiNetIOs         Counter      RO  S   
+1.3.6.1.4.1.77.1.1.7      comStatFcNetIOs         Counter      RO  S   
+1.3.6.1.4.1.77.1.2.1      svDescription           OctetString  RW  S   (0,255) d
+1.3.6.1.4.1.77.1.2.2      svSvcNumber             Integer      RO  S   
+1.3.6.1.4.1.77.1.2.3.1.1  svSvcName               OctetString  RO  C1  (1,15) d
+1.3.6.1.4.1.77.1.2.3.1.2  svSvcInstalledState     Integer      RO  C2  (1,4) e
+1.3.6.1.4.1.77.1.2.3.1.3  svSvcOperatingState     Integer      RO  C3  (1,4) e
+1.3.6.1.4.1.77.1.2.3.1.4  svSvcCanBeUninstalled   Integer      RO  C4  (1,2) e
+1.3.6.1.4.1.77.1.2.3.1.5  svSvcCanBePaused        Integer      RO  C5  (1,2) e
+1.3.6.1.4.1.77.1.2.4      svStatOpens             Counter      RO  S   
+1.3.6.1.4.1.77.1.2.5      svStatDevOpens          Counter      RO  S   
+1.3.6.1.4.1.77.1.2.6      svStatQueuedJobs        Counter      RO  S   
+1.3.6.1.4.1.77.1.2.7      svStatSOpens            Counter      RO  S   
+1.3.6.1.4.1.77.1.2.8      svStatErrorOuts         Counter      RO  S   
+1.3.6.1.4.1.77.1.2.9      svStatPwErrors          Counter      RO  S   
+1.3.6.1.4.1.77.1.2.10     svStatPermErrors        Counter      RO  S   
+1.3.6.1.4.1.77.1.2.11     svStatSysErrors         Counter      RO  S   
+1.3.6.1.4.1.77.1.2.12     svStatSentBytes         Counter      RO  S   
+1.3.6.1.4.1.77.1.2.13     svStatRcvdBytes         Counter      RO  S   
+1.3.6.1.4.1.77.1.2.14     svStatAvResponse        Integer      RO  S   
+1.3.6.1.4.1.77.1.2.15     svSecurityMode          Integer      RO  S   (1,2) e
+1.3.6.1.4.1.77.1.2.16     svUsers                 Integer      RO  S   
+1.3.6.1.4.1.77.1.2.17     svStatReqBufsNeeded     Counter      RO  S   
+1.3.6.1.4.1.77.1.2.18     svStatBigBufsNeeded     Counter      RO  S   
+1.3.6.1.4.1.77.1.2.19     svSessionNumber         Integer      RO  S   
+1.3.6.1.4.1.77.1.2.20.1.1 svSesClientName         OctetString  RO  C1  (1,15) d
+1.3.6.1.4.1.77.1.2.20.1.2 svSesUserName           OctetString  RO  C2  (1,20) d
+1.3.6.1.4.1.77.1.2.20.1.4 svSesNumOpens           Integer      RO  C3  
+1.3.6.1.4.1.77.1.2.20.1.5 svSesTime               Counter      RO  C4  
+1.3.6.1.4.1.77.1.2.20.1.6 svSesIdleTime           Counter      RO  C5  
+1.3.6.1.4.1.77.1.2.20.1.7 svSesClientType         Integer      RO  C6  (1,10) e
+1.3.6.1.4.1.77.1.2.20.1.8 svSesState              Integer      RW  C7  (1,2) e
+1.3.6.1.4.1.77.1.2.21     svAutoDisconnects       Integer      RO  S   
+1.3.6.1.4.1.77.1.2.22     svDisConTime            Integer      RW  S   
+1.3.6.1.4.1.77.1.2.23     svAuditLogSize          Integer      RW  S   
+1.3.6.1.4.1.77.1.2.24     svUserNumber            Integer      RO  S   
+1.3.6.1.4.1.77.1.2.25.1.1 svUserName              OctetString  RO  C1  (1,20) d
+1.3.6.1.4.1.77.1.2.26     svShareNumber           Integer      RO  S   
+1.3.6.1.4.1.77.1.2.27.1.1 svShareName             OctetString  RO  C1  (1,12) d
+1.3.6.1.4.1.77.1.2.27.1.2 svSharePath             OctetString  RO  C2  (1,255) d
+1.3.6.1.4.1.77.1.2.27.1.3 svShareComment          OctetString  RO  C3  (0,255) d
+1.3.6.1.4.1.77.1.2.28     svPrintQNumber          Integer      RO  S   
+1.3.6.1.4.1.77.1.2.29.1.1 svPrintQName            OctetString  RO  C1  (1,12) d
+1.3.6.1.4.1.77.1.2.29.1.2 svPrintQNumJobs         Integer      RO  C2  
+1.3.6.1.4.1.77.1.3.1      wkstaStatSessStarts     Counter      RO  S   
+1.3.6.1.4.1.77.1.3.2      wkstaStatSessFails      Counter      RO  S   
+1.3.6.1.4.1.77.1.3.3      wkstaStatUses           Counter      RO  S   
+1.3.6.1.4.1.77.1.3.4      wkstaStatUseFails       Counter      RO  S   
+1.3.6.1.4.1.77.1.3.5      wkstaStatAutoRecs       Counter      RO  S   
+1.3.6.1.4.1.77.1.3.6      wkstaErrorLogSize       Integer      RW  S   
+1.3.6.1.4.1.77.1.3.7      wkstaUseNumber          Integer      RO  S   
+1.3.6.1.4.1.77.1.3.8.1.1  useLocalName            OctetString  RO  C1  (0,8) d
+1.3.6.1.4.1.77.1.3.8.1.2  useRemote               OctetString  RO  C2  (1,255) d
+1.3.6.1.4.1.77.1.3.8.1.3  useStatus               Integer      RO  C3  (1,6) e
+1.3.6.1.4.1.77.1.4.1      domPrimaryDomain        OctetString  RO  S   (1,15) d
+1.3.6.1.4.1.77.1.4.2      domLogonDomain          OctetString  RO  S   (1,15) d
+1.3.6.1.4.1.77.1.4.3      domOtherDomainNumber    Integer      RO  S   
+1.3.6.1.4.1.77.1.4.4.1.1  domOtherName            OctetString  RW  C1  (1,15) d
+1.3.6.1.4.1.77.1.4.5      domServerNumber         Integer      RO  S   
+1.3.6.1.4.1.77.1.4.6.1.1  domServerName           OctetString  RO  C1  (1,15) d
+1.3.6.1.4.1.77.1.4.7      domLogonNumber          Integer      RO  S   
+1.3.6.1.4.1.77.1.4.8.1.1  domLogonUser            OctetString  RO  C1  (1,20) d
+1.3.6.1.4.1.77.1.4.8.1.2  domLogonMachine         OctetString  RO  C2  (1,15) d
+1.3.6.1.4.1.311.1.3.1.1   parDhcpStartTime        OctetString  RO  S   (1,30) d
+1.3.6.1.4.1.311.1.3.1.2   parDhcpTotalNoOfDiscovers Counter      RO  S   
+1.3.6.1.4.1.311.1.3.1.3   parDhcpTotalNoOfRequests Counter      RO  S   
+1.3.6.1.4.1.311.1.3.1.4   parDhcpTotalNoOfReleases Counter      RO  S   
+1.3.6.1.4.1.311.1.3.1.5   parDhcpTotalNoOfOffers  Counter      RO  S   
+1.3.6.1.4.1.311.1.3.1.6   parDhcpTotalNoOfAcks    Counter      RO  S   
+1.3.6.1.4.1.311.1.3.1.7   parDhcpTotalNoOfNacks   Counter      RO  S   
+1.3.6.1.4.1.311.1.3.1.8   parDhcpTotalNoOfDeclines Counter      RO  S   
+1.3.6.1.4.1.311.1.3.2.1.1.1 subnetAdd               IpAddress    RO  C1  
+1.3.6.1.4.1.311.1.3.2.1.1.2 noAddInUse              Counter      RO  C2  
+1.3.6.1.4.1.311.1.3.2.1.1.3 noAddFree               Counter      RO  C3  
+1.3.6.1.4.1.311.1.3.2.1.1.4 noPendingOffers         Counter      RO  C4  
+1.3.6.1.4.1.311.1.7.2.1.1 totalBytesSentHighWord  Counter      RO  S   
+1.3.6.1.4.1.311.1.7.2.1.2 totalBytesSentLowWord   Counter      RO  S   
+1.3.6.1.4.1.311.1.7.2.1.3 totalBytesReceivedHighWord Counter      RO  S   
+1.3.6.1.4.1.311.1.7.2.1.4 totalBytesReceivedLowWord Counter      RO  S   
+1.3.6.1.4.1.311.1.7.2.1.5 totalFilesSent          Counter      RO  S   
+1.3.6.1.4.1.311.1.7.2.1.6 totalFilesReceived      Counter      RO  S   
+1.3.6.1.4.1.311.1.7.2.1.7 currentAnonymousUsers   Integer      RO  S   
+1.3.6.1.4.1.311.1.7.2.1.8 currentNonAnonymousUsers Integer      RO  S   
+1.3.6.1.4.1.311.1.7.2.1.9 totalAnonymousUsers     Counter      RO  S   
+1.3.6.1.4.1.311.1.7.2.1.10 totalNonAnonymousUsers  Counter      RO  S   
+1.3.6.1.4.1.311.1.7.2.1.11 maxAnonymousUsers       Counter      RO  S   
+1.3.6.1.4.1.311.1.7.2.1.12 maxNonAnonymousUsers    Counter      RO  S   
+1.3.6.1.4.1.311.1.7.2.1.13 currentConnections      Integer      RO  S   
+1.3.6.1.4.1.311.1.7.2.1.14 maxConnections          Counter      RO  S   
+1.3.6.1.4.1.311.1.7.2.1.15 connectionAttempts      Counter      RO  S   
+1.3.6.1.4.1.311.1.7.2.1.16 logonAttempts           Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.1 totalBytesSentHighWord  Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.2 totalBytesSentLowWord   Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.3 totalBytesReceivedHighWord Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.4 totalBytesReceivedLowWord Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.5 totalFilesSent          Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.6 totalFilesReceived      Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.7 currentAnonymousUsers   Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.8 currentNonAnonymousUsers Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.9 totalAnonymousUsers     Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.10 totalNonAnonymousUsers  Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.11 maxAnonymousUsers       Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.12 maxNonAnonymousUsers    Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.13 currentConnections      Integer      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.14 maxConnections          Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.15 connectionAttempts      Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.16 logonAttempts           Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.17 totalOptions            Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.18 totalGets               Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.19 totalPosts              Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.20 totalHeads              Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.21 totalPuts               Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.22 totalDeletes            Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.23 totalTraces             Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.24 totalMove               Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.25 totalCopy               Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.26 totalMkcol              Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.27 totalPropfind           Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.28 totalProppatch          Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.29 totalSearch             Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.30 totalLock               Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.31 totalUnlock             Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.32 totalOthers             Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.33 currentCGIRequests      Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.34 currentBGIRequests      Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.35 totalCGIRequests        Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.36 totalBGIRequests        Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.37 maxCGIRequests          Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.38 maxBGIRequests          Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.39 currentBlockedRequests  Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.40 totalBlockedRequests    Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.41 totalAllowedRequests    Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.42 totalRejectedRequests   Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.43 totalNotFoundErrors     Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.44 totalLockedErrors       Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.45 measuredBandwidth       Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.46 currentCALsforAuthenticatedUsers Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.47 maxCALsforAuthenticatedUsers Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.48 totalCALFailedAuthenticatedUser Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.49 currentCALsforSecureConnections Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.50 maxCALsforSecureConnections Counter      RO  S   
+1.3.6.1.4.1.311.1.7.3.1.51 totalCALFailedSecureConnection Counter      RO  S   
+1.3.6.1.4.1.311.1.8.1.1   ipxBaseOperState        Integer      RO  S   (1,2) e
+1.3.6.1.4.1.311.1.8.1.2   ipxBasePrimaryNetNumber OctetString  RO  S   (4,4)
+1.3.6.1.4.1.311.1.8.1.3   ipxBaseNode             OctetString  RO  S   (6,6) p
+1.3.6.1.4.1.311.1.8.1.4   ipxBaseSysName          OctetString  RO  S   (0,48)
+1.3.6.1.4.1.311.1.8.1.5   ipxBaseMaxPathSplits    Integer      RO  S   (1,32)
+1.3.6.1.4.1.311.1.8.1.6   ipxBaseIfCount          Integer      RO  S   
+1.3.6.1.4.1.311.1.8.1.7   ipxBaseDestCount        Integer      RO  S   
+1.3.6.1.4.1.311.1.8.1.8   ipxBaseServCount        Integer      RO  S   
+1.3.6.1.4.1.311.1.8.2.1.1.1 ipxIfIndex              Integer      RO  C1  
+1.3.6.1.4.1.311.1.8.2.1.1.2 ipxIfAdminState         Integer      RW  C2  (1,2) e
+1.3.6.1.4.1.311.1.8.2.1.1.3 ipxIfOperState          Integer      RO  C3  (1,3) e
+1.3.6.1.4.1.311.1.8.2.1.1.4 ipxIfAdapterIndex       Integer      RO  C4  
+1.3.6.1.4.1.311.1.8.2.1.1.5 ipxIfName               OctetString  RO  C5  (0,48)
+1.3.6.1.4.1.311.1.8.2.1.1.6 ipxIfType               Integer      RO  C6  (1,8) e
+1.3.6.1.4.1.311.1.8.2.1.1.7 ipxIfLocalMaxPacketSize Integer      RO  C7  
+1.3.6.1.4.1.311.1.8.2.1.1.8 ipxIfMediaType          Integer      RO  C8  
+1.3.6.1.4.1.311.1.8.2.1.1.9 ipxIfNetNumber          OctetString  RO  C9  (4,4)
+1.3.6.1.4.1.311.1.8.2.1.1.10 ipxIfMacAddress         OctetString  RO  C10 (6,6) p
+1.3.6.1.4.1.311.1.8.2.1.1.11 ipxIfDelay              Integer      RO  C11 
+1.3.6.1.4.1.311.1.8.2.1.1.12 ipxIfThroughput         Integer      RO  C12 
+1.3.6.1.4.1.311.1.8.2.1.1.13 ipxIfIpxWanEnable       Integer      RW  C13 (1,2) e
+1.3.6.1.4.1.311.1.8.2.1.1.14 ipxIfNetbiosAccept      Integer      RW  C14 (1,2) e
+1.3.6.1.4.1.311.1.8.2.1.1.15 ipxIfNetbiosDeliver     Integer      RW  C15 (1,4) e
+1.3.6.1.4.1.311.1.8.2.1.1.16 ipxIfInHdrErrors        Counter      RO  C16 
+1.3.6.1.4.1.311.1.8.2.1.1.17 ipxIfInFilterDrops      Counter      RO  C17 
+1.3.6.1.4.1.311.1.8.2.1.1.18 ipxIfInNoRoutes         Counter      RO  C18 
+1.3.6.1.4.1.311.1.8.2.1.1.19 ipxIfInDiscards         Counter      RO  C19 
+1.3.6.1.4.1.311.1.8.2.1.1.20 ipxIfInDelivers         Counter      RO  C20 
+1.3.6.1.4.1.311.1.8.2.1.1.21 ipxIfOutFilterDrops     Counter      RO  C21 
+1.3.6.1.4.1.311.1.8.2.1.1.22 ipxIfOutDiscards        Counter      RO  C22 
+1.3.6.1.4.1.311.1.8.2.1.1.23 ipxIfOutDelivers        Counter      RO  C23 
+1.3.6.1.4.1.311.1.8.2.1.1.24 ipxIfInNetbiosPackets   Counter      RO  C24 
+1.3.6.1.4.1.311.1.8.2.1.1.25 ipxIfOutNetbiosPackets  Counter      RO  C25 
+1.3.6.1.4.1.311.1.8.3.1.1.1 ipxDestNetNum           OctetString  RO  C1  (4,4)
+1.3.6.1.4.1.311.1.8.3.1.1.2 ipxDestProtocol         Integer      RO  C2  (1,5) e
+1.3.6.1.4.1.311.1.8.3.1.1.3 ipxDestTicks            Integer      RO  C3  
+1.3.6.1.4.1.311.1.8.3.1.1.4 ipxDestHopCount         Integer      RO  C4  
+1.3.6.1.4.1.311.1.8.3.1.1.5 ipxDestNextHopIfIndex   Integer      RO  C5  
+1.3.6.1.4.1.311.1.8.3.1.1.6 ipxDestNextHopMacAddress OctetString  RO  C6  (6,6) p
+1.3.6.1.4.1.311.1.8.3.1.1.7 ipxDestFlags            Integer      RO  C7  (0,3)
+1.3.6.1.4.1.311.1.8.3.2.1.1 ipxStaticRouteIfIndex   Integer      RO  C1  
+1.3.6.1.4.1.311.1.8.3.2.1.2 ipxStaticRouteNetNum    OctetString  RO  C2  (4,4)
+1.3.6.1.4.1.311.1.8.3.2.1.3 ipxStaticRouteEntryStatus Integer      RW  C3  (1,2) e
+1.3.6.1.4.1.311.1.8.3.2.1.4 ipxStaticRouteTicks     Integer      RW  C4  
+1.3.6.1.4.1.311.1.8.3.2.1.5 ipxStaticRouteHopCount  Integer      RW  C5  
+1.3.6.1.4.1.311.1.8.3.2.1.6 ipxStaticRouteNextHopMacAddress OctetString  RW  C6  (6,6) p
+1.3.6.1.4.1.311.1.8.4.1.1.1 ipxServType             OctetString  RO  C1  (2,2)
+1.3.6.1.4.1.311.1.8.4.1.1.2 ipxServName             OctetString  RO  C2  (1,48)
+1.3.6.1.4.1.311.1.8.4.1.1.3 ipxServProtocol         Integer      RO  C3  (1,6) e
+1.3.6.1.4.1.311.1.8.4.1.1.4 ipxServNetNum           OctetString  RO  C4  (4,4)
+1.3.6.1.4.1.311.1.8.4.1.1.5 ipxServNode             OctetString  RO  C5  (6,6)
+1.3.6.1.4.1.311.1.8.4.1.1.6 ipxServSocket           OctetString  RO  C6  (2,2)
+1.3.6.1.4.1.311.1.8.4.1.1.7 ipxServHopCount         Integer      RO  C7  
+1.3.6.1.4.1.311.1.8.4.2.1.1 ipxStaticServIfIndex    Integer      RO  C1  
+1.3.6.1.4.1.311.1.8.4.2.1.2 ipxStaticServType       OctetString  RO  C2  (2,2)
+1.3.6.1.4.1.311.1.8.4.2.1.3 ipxStaticServName       OctetString  RO  C3  (1,48)
+1.3.6.1.4.1.311.1.8.4.2.1.4 ipxStaticServEntryStatus Integer      RW  C4  (1,2) e
+1.3.6.1.4.1.311.1.8.4.2.1.5 ipxStaticServNetNum     OctetString  RW  C5  (4,4)
+1.3.6.1.4.1.311.1.8.4.2.1.6 ipxStaticServNode       OctetString  RW  C6  (6,6) p
+1.3.6.1.4.1.311.1.8.4.2.1.7 ipxStaticServSocket     OctetString  RW  C7  (2,2)
+1.3.6.1.4.1.311.1.8.4.2.1.8 ipxStaticServHopCount   Integer      RW  C8  
+1.3.6.1.4.1.311.1.9.1.1   ripsapBaseRipOperState  Integer      RO  S   (1,2) e
+1.3.6.1.4.1.311.1.9.1.2   ripsapBaseSapOperState  Integer      RO  S   (1,2) e
+1.3.6.1.4.1.311.1.9.2.1.1.1 ripIfIndex              Integer      RO  C1  
+1.3.6.1.4.1.311.1.9.2.1.1.2 ripIfAdminState         Integer      RW  C2  (1,2) e
+1.3.6.1.4.1.311.1.9.2.1.1.3 ripIfOperState          Integer      RO  C3  (1,3) e
+1.3.6.1.4.1.311.1.9.2.1.1.4 ripIfUpdateMode         Integer      RW  C4  (1,3) e
+1.3.6.1.4.1.311.1.9.2.1.1.5 ripIfUpdateInterval     Integer      RW  C5  
+1.3.6.1.4.1.311.1.9.2.1.1.6 ripIfAgeMultiplier      Integer      RW  C6  
+1.3.6.1.4.1.311.1.9.2.1.1.7 ripIfSupply             Integer      RW  C7  (1,2) e
+1.3.6.1.4.1.311.1.9.2.1.1.8 ripIfListen             Integer      RW  C8  (1,2) e
+1.3.6.1.4.1.311.1.9.2.1.1.9 ripIfOutPackets         Counter      RO  C9  
+1.3.6.1.4.1.311.1.9.2.1.1.10 ripIfInPackets          Counter      RO  C10 
+1.3.6.1.4.1.311.1.9.2.2.1.1 sapIfIndex              Integer      RO  C1  
+1.3.6.1.4.1.311.1.9.2.2.1.2 sapIfAdminState         Integer      RW  C2  (1,2) e
+1.3.6.1.4.1.311.1.9.2.2.1.3 sapIfOperState          Integer      RO  C3  (1,3) e
+1.3.6.1.4.1.311.1.9.2.2.1.4 sapIfUpdateMode         Integer      RW  C4  (1,3) e
+1.3.6.1.4.1.311.1.9.2.2.1.5 sapIfUpdateInterval     Integer      RW  C5  
+1.3.6.1.4.1.311.1.9.2.2.1.6 sapIfAgeMultiplier      Integer      RW  C6  
+1.3.6.1.4.1.311.1.9.2.2.1.7 sapIfSupply             Integer      RW  C7  (1,2) e
+1.3.6.1.4.1.311.1.9.2.2.1.8 sapIfListen             Integer      RW  C8  (1,2) e
+1.3.6.1.4.1.311.1.9.2.2.1.9 sapIfGetNearestServerReply Integer      RW  C9  (1,2) e
+1.3.6.1.4.1.311.1.9.2.2.1.10 sapIfOutPackets         Counter      RO  C10 
+1.3.6.1.4.1.311.1.9.2.2.1.11 sapIfInPackets          Counter      RO  C11 
+1.3.6.1.4.1.311.1.11.1.1  globalSystemRouteChanges Counter      RO  S   
+1.3.6.1.4.1.311.1.11.1.2  globalTotalResponseSends Counter      RO  S   
+1.3.6.1.4.1.311.1.11.1.3  globalLoggingLevel      Integer      RW  S   (1,4) e
+1.3.6.1.4.1.311.1.11.1.4  globalMaxRecQueueSize   Integer      RW  S   
+1.3.6.1.4.1.311.1.11.1.5  globalMaxSendQueueSize  Integer      RW  S   
+1.3.6.1.4.1.311.1.11.1.6  globalMinTriggeredUpdateInterval TimeTicks    RW  S   
+1.3.6.1.4.1.311.1.11.1.7  globalPeerFilterMode    Integer      RW  S   (1,3) e
+1.3.6.1.4.1.311.1.11.1.8  globalPeerFilterCount   Integer      RO  S   
+1.3.6.1.4.1.311.1.11.1.9.1.1 globalPFAddr            IpAddress    RW  C1  
+1.3.6.1.4.1.311.1.11.1.9.1.2 globalPFTag             Integer      RW  C2  (1,2) e
+1.3.6.1.4.1.311.1.11.2.1.1.1 ifSEIndex               Integer      RO  C1  
+1.3.6.1.4.1.311.1.11.2.1.1.2 ifSEState               Integer      RO  C2  (1,2) e
+1.3.6.1.4.1.311.1.11.2.1.1.3 ifSESendFailures        Counter      RO  C3  
+1.3.6.1.4.1.311.1.11.2.1.1.4 ifSEReceiveFailures     Counter      RO  C4  
+1.3.6.1.4.1.311.1.11.2.1.1.5 ifSERequestSends        Counter      RO  C5  
+1.3.6.1.4.1.311.1.11.2.1.1.6 ifSERequestReceiveds    Counter      RO  C6  
+1.3.6.1.4.1.311.1.11.2.1.1.7 ifSEResponseSends       Counter      RO  C7  
+1.3.6.1.4.1.311.1.11.2.1.1.8 ifSEResponseReceiveds   Counter      RO  C8  
+1.3.6.1.4.1.311.1.11.2.1.1.9 ifSEBadResponsePacketReceiveds Counter      RO  C9  
+1.3.6.1.4.1.311.1.11.2.1.1.10 ifSEBadResponseEntriesReceiveds Counter      RO  C10 
+1.3.6.1.4.1.311.1.11.2.1.1.11 ifSETriggeredUpdateSends Counter      RO  C11 
+1.3.6.1.4.1.311.1.11.2.2.1.1 ifCEIndex               Integer      RO  C1  
+1.3.6.1.4.1.311.1.11.2.2.1.2 ifCEState               Integer      RO  C2  (1,2) e
+1.3.6.1.4.1.311.1.11.2.2.1.3 ifCEMetric              Integer      RW  C3  (0,16)
+1.3.6.1.4.1.311.1.11.2.2.1.4 ifCEUpdateMode          Integer      RW  C4  (1,2) e
+1.3.6.1.4.1.311.1.11.2.2.1.5 ifCEAcceptMode          Integer      RW  C5  (1,4) e
+1.3.6.1.4.1.311.1.11.2.2.1.6 ifCEAnnounceMode        Integer      RW  C6  (1,4) e
+1.3.6.1.4.1.311.1.11.2.2.1.7 ifCEProtocolFlags       Integer      RW  C7  
+1.3.6.1.4.1.311.1.11.2.2.1.8 ifCERouteExpirationInterval TimeTicks    RW  C8  
+1.3.6.1.4.1.311.1.11.2.2.1.9 ifCERouteRemovalInterval TimeTicks    RW  C9  
+1.3.6.1.4.1.311.1.11.2.2.1.10 ifCEFullUpdateInterval  TimeTicks    RO  C10 
+1.3.6.1.4.1.311.1.11.2.2.1.11 ifCEAuthenticationType  Integer      RW  C11 (1,3) e
+1.3.6.1.4.1.311.1.11.2.2.1.12 ifCEAuthenticationKey   OctetString  RW  C12 (0,16)
+1.3.6.1.4.1.311.1.11.2.2.1.13 ifCERouteTag            Integer      RW  C13 
+1.3.6.1.4.1.311.1.11.2.2.1.14 ifCEUnicastPeerMode     Integer      RW  C14 (1,3) e
+1.3.6.1.4.1.311.1.11.2.2.1.15 ifCEAcceptFilterMode    Integer      RW  C15 (1,3) e
+1.3.6.1.4.1.311.1.11.2.2.1.16 ifCEAnnounceFilterMode  Integer      RW  C16 (1,3) e
+1.3.6.1.4.1.311.1.11.2.2.1.17 ifCEUnicastPeerCount    Integer      RW  C17 
+1.3.6.1.4.1.311.1.11.2.2.1.18 ifCEAcceptFilterCount   Integer      RW  C18 
+1.3.6.1.4.1.311.1.11.2.2.1.19 ifCEAnnounceFilterCount Integer      RW  C19 
+1.3.6.1.4.1.311.1.11.2.3.1.1 ifUPIfIndex             Integer      RW  C1  
+1.3.6.1.4.1.311.1.11.2.3.1.2 ifUPAddress             IpAddress    RW  C2  
+1.3.6.1.4.1.311.1.11.2.3.1.3 ifUPTag                 Integer      RW  C3  (1,2) e
+1.3.6.1.4.1.311.1.11.2.4.1.1 ifAcceptRFIfIndex       Integer      RW  C1  
+1.3.6.1.4.1.311.1.11.2.4.1.2 ifAcceptRFLoAddress     IpAddress    RW  C2  
+1.3.6.1.4.1.311.1.11.2.4.1.3 ifAcceptRFHiAddress     IpAddress    RW  C3  
+1.3.6.1.4.1.311.1.11.2.4.1.4 ifAcceptRFTag           Integer      RW  C4  (1,2) e
+1.3.6.1.4.1.311.1.11.2.5.1.1 ifAnnounceRFIfIndex     Integer      RW  C1  
+1.3.6.1.4.1.311.1.11.2.5.1.2 ifAnnounceRFLoAddress   IpAddress    RW  C2  
+1.3.6.1.4.1.311.1.11.2.5.1.3 ifAnnounceRFHiAddress   IpAddress    RW  C3  
+1.3.6.1.4.1.311.1.11.2.5.1.4 ifAnnounceRFTag         Integer      RW  C4  (1,2) e
+1.3.6.1.4.1.311.1.11.2.6.1.1 ifBindingIndex          Integer      RO  C1  
+1.3.6.1.4.1.311.1.11.2.6.1.2 ifBindingState          Integer      RO  C2  (1,2) e
+1.3.6.1.4.1.311.1.11.2.6.1.3 ifBindingCounts         Counter      RO  C3  
+1.3.6.1.4.1.311.1.11.2.7.1.1 ifAEIfIndex             Integer      RO  C1  
+1.3.6.1.4.1.311.1.11.2.7.1.2 ifAEAddress             IpAddress    RO  C2  
+1.3.6.1.4.1.311.1.11.2.7.1.3 ifAEMask                IpAddress    RO  C3  
+1.3.6.1.4.1.311.1.11.3.1.1.1 ifPSAddress             IpAddress    RO  C1  
+1.3.6.1.4.1.311.1.11.3.1.1.2 ifPSLastPeerRouteTag    Integer      RO  C2  
+1.3.6.1.4.1.311.1.11.3.1.1.3 ifPSLastPeerUpdateTickCount TimeTicks    RO  C3  
+1.3.6.1.4.1.311.1.11.3.1.1.4 ifPSLastPeerUpdateVersion Integer      RO  C4  (0,255)
+1.3.6.1.4.1.311.1.11.3.1.1.5 ifPSPeerBadResponsePackets Counter      RO  C5  
+1.3.6.1.4.1.311.1.11.3.1.1.6 ifPSPeerBadResponseEntries Counter      RO  C6  
+1.3.6.1.4.1.311.1.12.1.1  globalLoggingLevel      Integer      RW  S   (1,4) e
+1.3.6.1.4.1.311.1.12.1.2  globalMaxRecQueueSize   Integer      RW  S   
+1.3.6.1.4.1.311.1.12.1.3  globalServerCount       Integer      RO  S   
+1.3.6.1.4.1.311.1.12.1.4.1.1 globalBOOTPServerAddr   IpAddress    RW  C1  
+1.3.6.1.4.1.311.1.12.1.4.1.2 globalBOOTPServerTag    Integer      RW  C2  (1,2) e
+1.3.6.1.4.1.311.1.12.2.1.1.1 ifSEIndex               Integer      RO  C1  
+1.3.6.1.4.1.311.1.12.2.1.1.2 ifSEState               Integer      RO  C2  (1,2) e
+1.3.6.1.4.1.311.1.12.2.1.1.3 ifSESendFailures        Counter      RO  C3  
+1.3.6.1.4.1.311.1.12.2.1.1.4 ifSEReceiveFailures     Counter      RO  C4  
+1.3.6.1.4.1.311.1.12.2.1.1.5 ifSEArpUpdateFailures   Counter      RO  C5  
+1.3.6.1.4.1.311.1.12.2.1.1.6 ifSERequestReceiveds    Counter      RO  C6  
+1.3.6.1.4.1.311.1.12.2.1.1.7 ifSERequestDiscards     Counter      RO  C7  
+1.3.6.1.4.1.311.1.12.2.1.1.8 ifSEReplyReceiveds      Counter      RO  C8  
+1.3.6.1.4.1.311.1.12.2.1.1.9 ifSEReplyDiscards       Counter      RO  C9  
+1.3.6.1.4.1.311.1.12.2.2.1.1 ifCEIndex               Integer      RO  C1  
+1.3.6.1.4.1.311.1.12.2.2.1.2 ifCEState               Integer      RO  C2  (1,2) e
+1.3.6.1.4.1.311.1.12.2.2.1.3 ifCERelayMode           Integer      RW  C3  (1,2) e
+1.3.6.1.4.1.311.1.12.2.2.1.4 ifCEMaxHopCount         Integer      RW  C4  (1,16)
+1.3.6.1.4.1.311.1.12.2.2.1.5 ifCEMinSecondsSinceBoot Integer      RW  C5  
+1.3.6.1.4.1.311.1.12.2.3.1.1 ifBindingIndex          Integer      RO  C1  
+1.3.6.1.4.1.311.1.12.2.3.1.2 ifBindingState          Integer      RO  C2  (1,2) e
+1.3.6.1.4.1.311.1.12.2.3.1.3 ifBindingAddrCount      Integer      RO  C3  
+1.3.6.1.4.1.311.1.12.2.4.1.1 ifAEIfIndex             Integer      RO  C1  
+1.3.6.1.4.1.311.1.12.2.4.1.2 ifAEAddress             IpAddress    RO  C2  
+1.3.6.1.4.1.311.1.12.2.4.1.3 ifAEMask                IpAddress    RO  C3  
+1.3.6.1.4.1.311.1.15.1.1  acsSvcStatsIfNumber     Integer      RO  S   
+1.3.6.1.4.1.311.1.15.1.2  acsSvcStatsActiveApiSessions Integer      RO  S   
+1.3.6.1.4.1.311.1.15.1.3  acsSvcStatsActiveApiSockets Integer      RO  S   
+1.3.6.1.4.1.311.1.15.1.4  acsSvcStatsReceivedApiPathRequests Counter      RO  S   
+1.3.6.1.4.1.311.1.15.1.5  acsSvcStatsReceivedApiResvRequests Counter      RO  S   
+1.3.6.1.4.1.311.1.15.1.6  acsSvcStatsFailedApiRequests Counter      RO  S   
+1.3.6.1.4.1.311.1.15.1.7  acsSvcStatsFailedApiSends Counter      RO  S   
+1.3.6.1.4.1.311.1.15.1.8  acsSvcStatsApiNotifications Counter      RO  S   
+1.3.6.1.4.1.311.1.15.1.9  acsSvcStatsApiNotificationBytes Counter      RO  S   
+1.3.6.1.4.1.311.1.15.1.10 acsSvcStatsNetSockets   Integer      RO  S   
+1.3.6.1.4.1.311.1.15.1.11 acsSvcStatsTimers       Integer      RO  S   
+1.3.6.1.4.1.311.1.15.2.1.1.1 acsIfStatsIndex         Integer      RO  C1  
+1.3.6.1.4.1.311.1.15.2.1.1.2 acsIfStatsIpAddr        IpAddress    RO  C2  
+1.3.6.1.4.1.311.1.15.2.1.1.3 acsIfStatsRawIpSentBytes Counter      RO  C3  
+1.3.6.1.4.1.311.1.15.2.1.1.4 acsIfStatsRawIpReceivedBytes Counter      RO  C4  
+1.3.6.1.4.1.311.1.15.2.1.1.5 acsIfStatsReceivedRsvpPathMsgs Counter      RO  C5  
+1.3.6.1.4.1.311.1.15.2.1.1.6 acsIfStatsReceivedRsvpResvMsgs Counter      RO  C6  
+1.3.6.1.4.1.311.1.15.2.1.1.7 acsIfStatsReceivedRsvpPathErrMsgs Counter      RO  C7  
+1.3.6.1.4.1.311.1.15.2.1.1.8 acsIfStatsReceivedRsvpResvErrMsgs Counter      RO  C8  
+1.3.6.1.4.1.311.1.15.2.1.1.9 acsIfStatsReceivedRsvpPathTearMsgs Counter      RO  C9  
+1.3.6.1.4.1.311.1.15.2.1.1.10 acsIfStatsReceivedRsvpResvTearMsgs Counter      RO  C10 
+1.3.6.1.4.1.311.1.15.2.1.1.11 acsIfStatsReceivedRsvpConfirmMsgs Counter      RO  C11 
+1.3.6.1.4.1.311.1.15.2.1.1.12 acsIfStatsSentRsvpPathMsgs Counter      RO  C12 
+1.3.6.1.4.1.311.1.15.2.1.1.13 acsIfStatsSentRsvpResvMsgs Counter      RO  C13 
+1.3.6.1.4.1.311.1.15.2.1.1.14 acsIfStatsSentRsvpPathErrMsgs Counter      RO  C14 
+1.3.6.1.4.1.311.1.15.2.1.1.15 acsIfStatsSentRsvpResvErrMsgs Counter      RO  C15 
+1.3.6.1.4.1.311.1.15.2.1.1.16 acsIfStatsSentRsvpPathTearMsgs Counter      RO  C16 
+1.3.6.1.4.1.311.1.15.2.1.1.17 acsIfStatsSentRsvpResvTearMsgs Counter      RO  C17 
+1.3.6.1.4.1.311.1.15.2.1.1.18 acsIfStatsSentRsvpConfirmMsgs Counter      RO  C18 
+1.3.6.1.4.1.311.1.15.2.1.1.19 acsIfStatsAdmissionControlFailures Counter      RO  C19 
+1.3.6.1.4.1.311.1.15.2.1.1.20 acsIfStatsPolicyControlFailures Counter      RO  C20 
+1.3.6.1.4.1.311.1.15.2.1.1.21 acsIfStatsOtherFailures Counter      RO  C21 
+1.3.6.1.4.1.311.1.15.2.1.1.22 acsIfStatsInBlockadeStateResvs Counter      RO  C22 
+1.3.6.1.4.1.311.1.15.2.1.1.23 acsIfStatsResvTimeOuts  Counter      RO  C23 
+1.3.6.1.4.1.311.1.15.2.1.1.24 acsIfStatsPathTimeOuts  Counter      RO  C24 
+1.3.6.1.4.1.311.1.15.2.1.1.25 acsIfStatsReceiveFailsBigMsg Counter      RO  C25 
+1.3.6.1.4.1.311.1.15.2.1.1.26 acsIfStatsSendFailsBigMsg Counter      RO  C26 
+1.3.6.1.4.1.311.1.15.2.1.1.27 acsIfStatsReceiveFailsNoMemory Counter      RO  C27 
+1.3.6.1.4.1.311.1.15.2.1.1.28 acsIfStatsSendFailsNoMemory Counter      RO  C28 
+1.3.6.1.4.1.311.1.15.2.1.1.29 acsIfStatsActiveFlows   Integer      RO  C29 
+1.3.6.1.4.1.311.1.15.2.1.1.30 acsIfStatsAllocatedBandwidthBits Integer      RO  C30 
+1.3.6.1.4.1.311.1.15.2.1.1.31 acsIfStatsMaxAllocatedBandwidthBits Integer      RO  C31 
+1.3.6.1.4.1.311.1.15.3.1.1.1 acsMsidlpmStatsIndex    Integer      RO  C1  
+1.3.6.1.4.1.311.1.15.3.1.1.2 acsMsidlpmStatsSubnetAddr IpAddress    RO  C2  
+1.3.6.1.4.1.311.1.15.3.1.1.3 acsMsidlpmSendersAccepted Counter      RO  C3  
+1.3.6.1.4.1.311.1.15.3.1.1.4 acsMsidlpmSenderChgAccepted Counter      RO  C4  
+1.3.6.1.4.1.311.1.15.3.1.1.5 acsMsidlpmRejSndFlowRate Counter      RO  C5  
+1.3.6.1.4.1.311.1.15.3.1.1.6 acsMsidlpmRejSndPeakRate Counter      RO  C6  
+1.3.6.1.4.1.311.1.15.3.1.1.7 acsMsidlpmRejSndSumFlowRate Counter      RO  C7  
+1.3.6.1.4.1.311.1.15.3.1.1.8 acsMsidlpmRejSndSumPeakRate Counter      RO  C8  
+1.3.6.1.4.1.311.1.15.3.1.1.9 acsMsidlpmRejSndIdChange Counter      RO  C9  
+1.3.6.1.4.1.311.1.15.3.1.1.10 acsMsidlpmRejSndDuration Counter      RO  C10 
+1.3.6.1.4.1.311.1.15.3.1.1.11 acsMsidlpmRejSndCount   Counter      RO  C11 
+1.3.6.1.4.1.311.1.15.3.1.1.12 acsMsidlpmRejSndOthersPolicies Counter      RO  C12 
+1.3.6.1.4.1.311.1.15.3.1.1.13 acsMsidlpmReceiversAccepted Counter      RO  C13 
+1.3.6.1.4.1.311.1.15.3.1.1.14 acsMsidlpmReceiverChgAccepted Counter      RO  C14 
+1.3.6.1.4.1.311.1.15.3.1.1.15 acsMsidlpmRejRecvFlowRate Counter      RO  C15 
+1.3.6.1.4.1.311.1.15.3.1.1.16 acsMsidlpmRejRecvPeakRate Counter      RO  C16 
+1.3.6.1.4.1.311.1.15.3.1.1.17 acsMsidlpmRejRecvSumFlowRate Counter      RO  C17 
+1.3.6.1.4.1.311.1.15.3.1.1.18 acsMsidlpmRejRecvSumPeakRate Counter      RO  C18 
+1.3.6.1.4.1.311.1.15.3.1.1.19 acsMsidlpmRejRecvIdChange Counter      RO  C19 
+1.3.6.1.4.1.311.1.15.3.1.1.20 acsMsidlpmRejRecvDuration Counter      RO  C20 
+1.3.6.1.4.1.311.1.15.3.1.1.21 acsMsidlpmRejRecvCount  Counter      RO  C21 
+1.3.6.1.4.1.311.1.15.3.1.1.22 acsMsidlpmRejRecvOthersPolicies Counter      RO  C22 
+1.3.6.1.4.1.311.1.15.3.1.1.23 acsMsidlpmBadIdentityPes Counter      RO  C23 
+1.3.6.1.4.1.311.1.15.3.1.1.24 acsMsidlpmDsCacheSize   Integer      RO  C24 
+1.3.6.1.6.3.10.2.1.1      snmpEngineID            OctetString  RO  S   (5,32)
+1.3.6.1.6.3.10.2.1.2      snmpEngineBoots         Integer      RO  S   (1,2147483647)
+1.3.6.1.6.3.10.2.1.3      snmpEngineTime          Integer      RO  S   (0,2147483647)
+1.3.6.1.6.3.10.2.1.4      snmpEngineMaxMessageSize Integer      RO  S   (484,2147483647)
+%en          1.3                                      org                    
+%en          1.3.6                                    dod                    
+%en          1.3.6.1                                  internet               
+%en          1.3.6.1.1                                directory              
+%en          1.3.6.1.2                                mgmt                   
+%en          1.3.6.1.2.1                              mib-2                  
+%en          1.3.6.1.2.1.1                            system                 
+%en          1.3.6.1.2.1.2                            interfaces             
+%en          1.3.6.1.2.1.2.2                          ifTable                
+%en          1.3.6.1.2.1.2.2.1                        ifEntry                
+%en          1.3.6.1.2.1.3                            at                     
+%en          1.3.6.1.2.1.3.1                          atTable                
+%en          1.3.6.1.2.1.3.1.1                        atEntry                
+%en          1.3.6.1.2.1.4                            ip                     
+%en          1.3.6.1.2.1.4.20                         ipAddrTable            
+%en          1.3.6.1.2.1.4.20.1                       ipAddrEntry            
+%en          1.3.6.1.2.1.4.21                         ipRouteTable           
+%en          1.3.6.1.2.1.4.21.1                       ipRouteEntry           
+%en          1.3.6.1.2.1.4.22                         ipNetToMediaTable      
+%en          1.3.6.1.2.1.4.22.1                       ipNetToMediaEntry      
+%en          1.3.6.1.2.1.4.24                         ipForward              
+%en          1.3.6.1.2.1.4.24.2                       ipForwardTable         
+%en          1.3.6.1.2.1.4.24.2.1                     ipForwardEntry         
+%en          1.3.6.1.2.1.5                            icmp                   
+%en          1.3.6.1.2.1.6                            tcp                    
+%en          1.3.6.1.2.1.6.13                         tcpConnTable           
+%en          1.3.6.1.2.1.6.13.1                       tcpConnEntry           
+%en          1.3.6.1.2.1.7                            udp                    
+%en          1.3.6.1.2.1.7.5                          udpTable               
+%en          1.3.6.1.2.1.7.5.1                        udpEntry               
+%en          1.3.6.1.2.1.8                            egp                    
+%en          1.3.6.1.2.1.8.5                          egpNeighTable          
+%en          1.3.6.1.2.1.8.5.1                        egpNeighEntry          
+%en          1.3.6.1.2.1.10                           transmission           
+%en          1.3.6.1.2.1.11                           snmp                   
+%en          1.3.6.1.2.1.25                           host                   
+%en          1.3.6.1.2.1.25.1                         hrSystem               
+%en          1.3.6.1.2.1.25.2                         hrStorage              
+%en          1.3.6.1.2.1.25.2.1                       hrStorageTypes         
+%en          1.3.6.1.2.1.25.2.1.1                     hrStorageOther         
+%en          1.3.6.1.2.1.25.2.1.2                     hrStorageRam           
+%en          1.3.6.1.2.1.25.2.1.3                     hrStorageVirtualMemory 
+%en          1.3.6.1.2.1.25.2.1.4                     hrStorageFixedDisk     
+%en          1.3.6.1.2.1.25.2.1.5                     hrStorageRemovableDisk 
+%en          1.3.6.1.2.1.25.2.1.6                     hrStorageFloppyDisk    
+%en          1.3.6.1.2.1.25.2.1.7                     hrStorageCompactDisc   
+%en          1.3.6.1.2.1.25.2.1.8                     hrStorageRamDisk       
+%en          1.3.6.1.2.1.25.2.3                       hrStorageTable         
+%en          1.3.6.1.2.1.25.2.3.1                     hrStorageEntry         
+%en          1.3.6.1.2.1.25.3                         hrDevice               
+%en          1.3.6.1.2.1.25.3.1                       hrDeviceTypes          
+%en          1.3.6.1.2.1.25.3.1.1                     hrDeviceOther          
+%en          1.3.6.1.2.1.25.3.1.2                     hrDeviceUnknown        
+%en          1.3.6.1.2.1.25.3.1.3                     hrDeviceProcessor      
+%en          1.3.6.1.2.1.25.3.1.4                     hrDeviceNetwork        
+%en          1.3.6.1.2.1.25.3.1.5                     hrDevicePrinter        
+%en          1.3.6.1.2.1.25.3.1.6                     hrDeviceDiskStorage    
+%en          1.3.6.1.2.1.25.3.1.10                    hrDeviceVideo          
+%en          1.3.6.1.2.1.25.3.1.11                    hrDeviceAudio          
+%en          1.3.6.1.2.1.25.3.1.12                    hrDeviceCoprocessor    
+%en          1.3.6.1.2.1.25.3.1.13                    hrDeviceKeyboard       
+%en          1.3.6.1.2.1.25.3.1.14                    hrDeviceModem          
+%en          1.3.6.1.2.1.25.3.1.15                    hrDeviceParallelPort   
+%en          1.3.6.1.2.1.25.3.1.16                    hrDevicePointing       
+%en          1.3.6.1.2.1.25.3.1.17                    hrDeviceSerialPort     
+%en          1.3.6.1.2.1.25.3.1.18                    hrDeviceTape           
+%en          1.3.6.1.2.1.25.3.1.19                    hrDeviceClock          
+%en          1.3.6.1.2.1.25.3.1.20                    hrDeviceVolatileMemory 
+%en          1.3.6.1.2.1.25.3.1.21                    hrDeviceNonVolatileMemory
+%en          1.3.6.1.2.1.25.3.2                       hrDeviceTable          
+%en          1.3.6.1.2.1.25.3.2.1                     hrDeviceEntry          
+%en          1.3.6.1.2.1.25.3.3                       hrProcessorTable       
+%en          1.3.6.1.2.1.25.3.3.1                     hrProcessorEntry       
+%en          1.3.6.1.2.1.25.3.4                       hrNetworkTable         
+%en          1.3.6.1.2.1.25.3.4.1                     hrNetworkEntry         
+%en          1.3.6.1.2.1.25.3.5                       hrPrinterTable         
+%en          1.3.6.1.2.1.25.3.5.1                     hrPrinterEntry         
+%en          1.3.6.1.2.1.25.3.6                       hrDiskStorageTable     
+%en          1.3.6.1.2.1.25.3.6.1                     hrDiskStorageEntry     
+%en          1.3.6.1.2.1.25.3.7                       hrPartitionTable       
+%en          1.3.6.1.2.1.25.3.7.1                     hrPartitionEntry       
+%en          1.3.6.1.2.1.25.3.8                       hrFSTable              
+%en          1.3.6.1.2.1.25.3.8.1                     hrFSEntry              
+%en          1.3.6.1.2.1.25.3.9                       hrFSTypes              
+%en          1.3.6.1.2.1.25.3.9.1                     hrFSOther              
+%en          1.3.6.1.2.1.25.3.9.2                     hrFSUnknown            
+%en          1.3.6.1.2.1.25.3.9.3                     hrFSBerkeleyFFS        
+%en          1.3.6.1.2.1.25.3.9.4                     hrFSSys5FS             
+%en          1.3.6.1.2.1.25.3.9.5                     hrFSFat                
+%en          1.3.6.1.2.1.25.3.9.6                     hrFSHPFS               
+%en          1.3.6.1.2.1.25.3.9.7                     hrFSHFS                
+%en          1.3.6.1.2.1.25.3.9.8                     hrFSMFS                
+%en          1.3.6.1.2.1.25.3.9.9                     hrFSNTFS               
+%en          1.3.6.1.2.1.25.3.9.10                    hrFSVNode              
+%en          1.3.6.1.2.1.25.3.9.11                    hrFSJournaled          
+%en          1.3.6.1.2.1.25.3.9.12                    hrFSiso9660            
+%en          1.3.6.1.2.1.25.3.9.13                    hrFSRockRidge          
+%en          1.3.6.1.2.1.25.3.9.14                    hrFSNFS                
+%en          1.3.6.1.2.1.25.3.9.15                    hrFSNetware            
+%en          1.3.6.1.2.1.25.3.9.16                    hrFSAFS                
+%en          1.3.6.1.2.1.25.3.9.17                    hrFSDFS                
+%en          1.3.6.1.2.1.25.3.9.18                    hrFSAppleshare         
+%en          1.3.6.1.2.1.25.3.9.19                    hrFSRFS                
+%en          1.3.6.1.2.1.25.3.9.20                    hrFSDGCFS              
+%en          1.3.6.1.2.1.25.3.9.21                    hrFSBFS                
+%en          1.3.6.1.2.1.25.4                         hrSWRun                
+%en          1.3.6.1.2.1.25.4.2                       hrSWRunTable           
+%en          1.3.6.1.2.1.25.4.2.1                     hrSWRunEntry           
+%en          1.3.6.1.2.1.25.5                         hrSWRunPerf            
+%en          1.3.6.1.2.1.25.5.1                       hrSWRunPerfTable       
+%en          1.3.6.1.2.1.25.5.1.1                     hrSWRunPerfEntry       
+%en          1.3.6.1.2.1.25.6                         hrSWInstalled          
+%en          1.3.6.1.2.1.25.6.3                       hrSWInstalledTable     
+%en          1.3.6.1.2.1.25.6.3.1                     hrSWInstalledEntry     
+%en          1.3.6.1.3                                experimental           
+%en          1.3.6.1.3.60                             ipMRouteMIB            
+%en          1.3.6.1.3.60.1                           ipMRouteMIBObjects     
+%en          1.3.6.1.3.60.1.1                         ipMRoute               
+%en          1.3.6.1.3.60.1.1.2                       ipMRouteTable          
+%en          1.3.6.1.3.60.1.1.2.1                     ipMRouteEntry          
+%en          1.3.6.1.3.60.1.1.3                       ipMRouteNextHopTable   
+%en          1.3.6.1.3.60.1.1.3.1                     ipMRouteNextHopEntry   
+%en          1.3.6.1.3.60.1.1.4                       ipMRouteInterfaceTable 
+%en          1.3.6.1.3.60.1.1.4.1                     ipMRouteInterfaceEntry 
+%en          1.3.6.1.3.60.1.1.5                       ipMRouteBoundaryTable  
+%en          1.3.6.1.3.60.1.1.5.1                     ipMRouteBoundaryEntry  
+%en          1.3.6.1.3.60.1.1.6                       ipMRouteScopeTable     
+%en          1.3.6.1.3.60.1.1.6.1                     ipMRouteScopeEntry     
+%en          1.3.6.1.3.60.2                           ipMRouteMIBConformance 
+%en          1.3.6.1.3.60.2.1                         ipMRouteMIBCompliances 
+%en          1.3.6.1.3.60.2.2                         ipMRouteMIBGroups      
+%en          1.3.6.1.3.79                             radiusMIB              
+%en          1.3.6.1.3.79.1                           radiusAuthentication   
+%en          1.3.6.1.3.79.1.1                         radiusAuthServMIB      
+%en          1.3.6.1.3.79.1.1.1                       radiusAuthServMIBObjects
+%en          1.3.6.1.3.79.1.1.1.1                     radiusAuthServ         
+%en          1.3.6.1.3.79.1.1.1.1.15                  radiusAuthClientTable  
+%en          1.3.6.1.3.79.1.1.1.1.15.1                radiusAuthClientEntry  
+%en          1.3.6.1.3.79.1.1.2                       radiusAuthServMIBConformance
+%en          1.3.6.1.3.79.1.1.2.1                     radiusAuthServMIBCompliances
+%en          1.3.6.1.3.79.1.1.2.2                     radiusAuthServMIBGroups
+%en          1.3.6.1.3.79.2                           radiusAccounting       
+%en          1.3.6.1.3.79.2.1                         radiusAccServMIB       
+%en          1.3.6.1.3.79.2.1.1                       radiusAccServMIBObjects
+%en          1.3.6.1.3.79.2.1.1.1                     radiusAccServ          
+%en          1.3.6.1.3.79.2.1.1.1.14                  radiusAccClientTable   
+%en          1.3.6.1.3.79.2.1.1.1.14.1                radiusAccClientEntry   
+%en          1.3.6.1.3.79.2.1.2                       radiusAccServMIBConformance
+%en          1.3.6.1.3.79.2.1.2.1                     radiusAccServMIBCompliances
+%en          1.3.6.1.3.79.2.1.2.2                     radiusAccServMIBGroups 
+%en          1.3.6.1.4                                private                
+%en          1.3.6.1.4.1                              enterprises            
+%en          1.3.6.1.4.1.18                           wellfleet              
+%en          1.3.6.1.4.1.18.3.5.3.2.3.1               wfOspfGeneralGroup     
+%en          1.3.6.1.4.1.18.3.5.3.2.3.2               wfOspfAreaTable        
+%en          1.3.6.1.4.1.18.3.5.3.2.3.2.1             wfOspfAreaEntry        
+%en          1.3.6.1.4.1.18.3.5.3.2.3.3               wfOspfLsdbTable        
+%en          1.3.6.1.4.1.18.3.5.3.2.3.3.1             wfOspfLsdbEntry        
+%en          1.3.6.1.4.1.18.3.5.3.2.3.4               wfOspfAreaRangeTable   
+%en          1.3.6.1.4.1.18.3.5.3.2.3.4.1             wfOspfAreaRangeEntry   
+%en          1.3.6.1.4.1.18.3.5.3.2.3.5               wfOspfIfTable          
+%en          1.3.6.1.4.1.18.3.5.3.2.3.5.1             wfOspfIfEntry          
+%en          1.3.6.1.4.1.18.3.5.3.2.3.6               wfOspfVirtIfTable      
+%en          1.3.6.1.4.1.18.3.5.3.2.3.6.1             wfOspfVirtIfEntry      
+%en          1.3.6.1.4.1.18.3.5.3.2.3.7               wfOspfNbrTable         
+%en          1.3.6.1.4.1.18.3.5.3.2.3.7.1             wfOspfNbrEntry         
+%en          1.3.6.1.4.1.18.3.5.3.2.3.8               wfOspfVirtNbrTable     
+%en          1.3.6.1.4.1.18.3.5.3.2.3.8.1             wfOspfVirtNbrEntry     
+%en          1.3.6.1.4.1.18.3.5.3.2.3.9               wfOspfDynNbrTable      
+%en          1.3.6.1.4.1.18.3.5.3.2.3.9.1             wfOspfDynNbrEntry      
+%en          1.3.6.1.4.1.23                           novell                 
+%en          1.3.6.1.4.1.23.2                         mibDoc                 
+%en          1.3.6.1.4.1.23.2.5                       ipx                    
+%en          1.3.6.1.4.1.23.2.5.1                     ipxSystem              
+%en          1.3.6.1.4.1.23.2.5.1.1                   ipxBasicSysTable       
+%en          1.3.6.1.4.1.23.2.5.1.1.1                 ipxBasicSysEntry       
+%en          1.3.6.1.4.1.23.2.5.1.2                   ipxAdvSysTable         
+%en          1.3.6.1.4.1.23.2.5.1.2.1                 ipxAdvSysEntry         
+%en          1.3.6.1.4.1.23.2.5.2                     ipxCircuit             
+%en          1.3.6.1.4.1.23.2.5.2.1                   ipxCircTable           
+%en          1.3.6.1.4.1.23.2.5.2.1.1                 ipxCircEntry           
+%en          1.3.6.1.4.1.23.2.5.3                     ipxForwarding          
+%en          1.3.6.1.4.1.23.2.5.3.1                   ipxDestTable           
+%en          1.3.6.1.4.1.23.2.5.3.1.1                 ipxDestEntry           
+%en          1.3.6.1.4.1.23.2.5.3.2                   ipxStaticRouteTable    
+%en          1.3.6.1.4.1.23.2.5.3.2.1                 ipxStaticRouteEntry    
+%en          1.3.6.1.4.1.23.2.5.4                     ipxServices            
+%en          1.3.6.1.4.1.23.2.5.4.1                   ipxServTable           
+%en          1.3.6.1.4.1.23.2.5.4.1.1                 ipxServEntry           
+%en          1.3.6.1.4.1.23.2.5.4.2                   ipxDestServTable       
+%en          1.3.6.1.4.1.23.2.5.4.2.1                 ipxDestServEntry       
+%en          1.3.6.1.4.1.23.2.5.4.3                   ipxStaticServTable     
+%en          1.3.6.1.4.1.23.2.5.4.3.1                 ipxStaticServEntry     
+%en          1.3.6.1.4.1.23.2.5.5                     ipxTraps               
+%en          1.3.6.1.4.1.77                           lanmanager             
+%en          1.3.6.1.4.1.77.1                         lanmgr-2               
+%en          1.3.6.1.4.1.77.1.1                       common                 
+%en          1.3.6.1.4.1.77.1.2                       server                 
+%en          1.3.6.1.4.1.77.1.2.3                     svSvcTable             
+%en          1.3.6.1.4.1.77.1.2.3.1                   svSvcEntry             
+%en          1.3.6.1.4.1.77.1.2.20                    svSessionTable         
+%en          1.3.6.1.4.1.77.1.2.20.1                  svSessionEntry         
+%en          1.3.6.1.4.1.77.1.2.25                    svUserTable            
+%en          1.3.6.1.4.1.77.1.2.25.1                  svUserEntry            
+%en          1.3.6.1.4.1.77.1.2.27                    svShareTable           
+%en          1.3.6.1.4.1.77.1.2.27.1                  svShareEntry           
+%en          1.3.6.1.4.1.77.1.2.29                    svPrintQTable          
+%en          1.3.6.1.4.1.77.1.2.29.1                  svPrintQEntry          
+%en          1.3.6.1.4.1.77.1.3                       workstation            
+%en          1.3.6.1.4.1.77.1.3.8                     wkstaUseTable          
+%en          1.3.6.1.4.1.77.1.3.8.1                   wkstaUseEntry          
+%en          1.3.6.1.4.1.77.1.4                       domain                 
+%en          1.3.6.1.4.1.77.1.4.4                     domOtherDomainTable    
+%en          1.3.6.1.4.1.77.1.4.4.1                   domOtherDomainEntry    
+%en          1.3.6.1.4.1.77.1.4.6                     domServerTable         
+%en          1.3.6.1.4.1.77.1.4.6.1                   domServerEntry         
+%en          1.3.6.1.4.1.77.1.4.8                     domLogonTable          
+%en          1.3.6.1.4.1.77.1.4.8.1                   domLogonEntry          
+%en          1.3.6.1.4.1.311                          microsoft              
+%en          1.3.6.1.4.1.311.1                        software               
+%en          1.3.6.1.4.1.311.1.1                      systems                
+%en          1.3.6.1.4.1.311.1.1.3                    os                     
+%en          1.3.6.1.4.1.311.1.1.3.1                  windowsNT              
+%en          1.3.6.1.4.1.311.1.1.3.1.1                workstation            
+%en          1.3.6.1.4.1.311.1.1.3.1.2                server                 
+%en          1.3.6.1.4.1.311.1.1.3.1.3                dc                     
+%en          1.3.6.1.4.1.311.1.1.3.2                  windows                
+%en          1.3.6.1.4.1.311.1.3                      dhcp                   
+%en          1.3.6.1.4.1.311.1.3.1                    dhcpPar                
+%en          1.3.6.1.4.1.311.1.3.2                    dhcpScope              
+%en          1.3.6.1.4.1.311.1.3.2.1                  scopeTable             
+%en          1.3.6.1.4.1.311.1.3.2.1.1                scopeTableEntry        
+%en          1.3.6.1.4.1.311.1.7                      internetServer         
+%en          1.3.6.1.4.1.311.1.7.1                    inetSrvCommon          
+%en          1.3.6.1.4.1.311.1.7.1.1                  inetSrvStats           
+%en          1.3.6.1.4.1.311.1.7.2                    ftpServer              
+%en          1.3.6.1.4.1.311.1.7.2.1                  ftpStatistics          
+%en          1.3.6.1.4.1.311.1.7.3                    httpServer             
+%en          1.3.6.1.4.1.311.1.7.3.1                  httpStatistics         
+%en          1.3.6.1.4.1.311.1.8                      ipx                    
+%en          1.3.6.1.4.1.311.1.8.1                    ipxBase                
+%en          1.3.6.1.4.1.311.1.8.2                    ipxInterface           
+%en          1.3.6.1.4.1.311.1.8.2.1                  ipxIfTable             
+%en          1.3.6.1.4.1.311.1.8.2.1.1                ipxIfEntry             
+%en          1.3.6.1.4.1.311.1.8.3                    ipxForwarding          
+%en          1.3.6.1.4.1.311.1.8.3.1                  ipxDestTable           
+%en          1.3.6.1.4.1.311.1.8.3.1.1                ipxDestEntry           
+%en          1.3.6.1.4.1.311.1.8.3.2                  ipxStaticRouteTable    
+%en          1.3.6.1.4.1.311.1.8.3.2.1                ipxStaticRouteEntry    
+%en          1.3.6.1.4.1.311.1.8.4                    ipxServices            
+%en          1.3.6.1.4.1.311.1.8.4.1                  ipxServTable           
+%en          1.3.6.1.4.1.311.1.8.4.1.1                ipxServEntry           
+%en          1.3.6.1.4.1.311.1.8.4.2                  ipxStaticServTable     
+%en          1.3.6.1.4.1.311.1.8.4.2.1                ipxStaticServEntry     
+%en          1.3.6.1.4.1.311.1.8.5                    ipxTraps               
+%en          1.3.6.1.4.1.311.1.9                      ripsap                 
+%en          1.3.6.1.4.1.311.1.9.1                    ripsapBase             
+%en          1.3.6.1.4.1.311.1.9.2                    ripsapInterface        
+%en          1.3.6.1.4.1.311.1.9.2.1                  ripIfTable             
+%en          1.3.6.1.4.1.311.1.9.2.1.1                ripIfEntry             
+%en          1.3.6.1.4.1.311.1.9.2.2                  sapIfTable             
+%en          1.3.6.1.4.1.311.1.9.2.2.1                sapIfEntry             
+%en          1.3.6.1.4.1.311.1.11                     msiprip2               
+%en          1.3.6.1.4.1.311.1.11.1                   global                 
+%en          1.3.6.1.4.1.311.1.11.1.9                 globalPeerFilterTable  
+%en          1.3.6.1.4.1.311.1.11.1.9.1               globalPeerFilterEntry  
+%en          1.3.6.1.4.1.311.1.11.2                   interface              
+%en          1.3.6.1.4.1.311.1.11.2.1                 ifStatsTable           
+%en          1.3.6.1.4.1.311.1.11.2.1.1               ifStatsEntry           
+%en          1.3.6.1.4.1.311.1.11.2.2                 ifConfigTable          
+%en          1.3.6.1.4.1.311.1.11.2.2.1               ifConfigEntry          
+%en          1.3.6.1.4.1.311.1.11.2.3                 ifUnicastPeersTable    
+%en          1.3.6.1.4.1.311.1.11.2.3.1               ifUnicastPeersEntry    
+%en          1.3.6.1.4.1.311.1.11.2.4                 ifAcceptRouteFilterTable
+%en          1.3.6.1.4.1.311.1.11.2.4.1               ifAcceptRouteFilterEntry
+%en          1.3.6.1.4.1.311.1.11.2.5                 ifAnnounceRouteFilterTable
+%en          1.3.6.1.4.1.311.1.11.2.5.1               ifAnnounceRouteFilterEntry
+%en          1.3.6.1.4.1.311.1.11.2.6                 ifBindingTable         
+%en          1.3.6.1.4.1.311.1.11.2.6.1               ifBindingEntry         
+%en          1.3.6.1.4.1.311.1.11.2.7                 ifAddressTable         
+%en          1.3.6.1.4.1.311.1.11.2.7.1               ifAddressEntry         
+%en          1.3.6.1.4.1.311.1.11.3                   peer                   
+%en          1.3.6.1.4.1.311.1.11.3.1                 ifPeerStatsTable       
+%en          1.3.6.1.4.1.311.1.11.3.1.1               ifPeerStatsEntry       
+%en          1.3.6.1.4.1.311.1.12                     msipbootp              
+%en          1.3.6.1.4.1.311.1.12.1                   global                 
+%en          1.3.6.1.4.1.311.1.12.1.4                 globalBOOTPServerTable 
+%en          1.3.6.1.4.1.311.1.12.1.4.1               globalBOOTPServerEntry 
+%en          1.3.6.1.4.1.311.1.12.2                   interface              
+%en          1.3.6.1.4.1.311.1.12.2.1                 ifStatsTable           
+%en          1.3.6.1.4.1.311.1.12.2.1.1               ifStatsEntry           
+%en          1.3.6.1.4.1.311.1.12.2.2                 ifConfigTable          
+%en          1.3.6.1.4.1.311.1.12.2.2.1               ifConfigEntry          
+%en          1.3.6.1.4.1.311.1.12.2.3                 ifBindingTable         
+%en          1.3.6.1.4.1.311.1.12.2.3.1               ifBindingEntry         
+%en          1.3.6.1.4.1.311.1.12.2.4                 ifAddressTable         
+%en          1.3.6.1.4.1.311.1.12.2.4.1               ifAddressEntry         
+%en          1.3.6.1.4.1.311.1.15                     acsService             
+%en          1.3.6.1.4.1.311.1.15.1                   acsSvcStats            
+%en          1.3.6.1.4.1.311.1.15.2                   acsInterfaces          
+%en          1.3.6.1.4.1.311.1.15.2.1                 acsIfStatsTable        
+%en          1.3.6.1.4.1.311.1.15.2.1.1               acsIfStatsEntry        
+%en          1.3.6.1.4.1.311.1.15.3                   acsMsidlpmStats        
+%en          1.3.6.1.4.1.311.1.15.3.1                 acsMsidlpmStatsTable   
+%en          1.3.6.1.4.1.311.1.15.3.1.1               acsMsidlpmStatsEntry   
+%en          1.3.6.1.5                                security               
+%en          1.3.6.1.6                                snmpV2                 
+%en          1.3.6.1.6.1                              snmpDomains            
+%en          1.3.6.1.6.2                              snmpProxys             
+%en          1.3.6.1.6.3                              snmpModules            
+%en          1.3.6.1.6.3.10                           snmpFrameworkMIB       
+%en          1.3.6.1.6.3.10.1                         snmpFrameworkAdmin     
+%en          1.3.6.1.6.3.10.1.1                       snmpAuthProtocols      
+%en          1.3.6.1.6.3.10.1.2                       snmpPrivProtocols      
+%en          1.3.6.1.6.3.10.2                         snmpFrameworkMIBObjects
+%en          1.3.6.1.6.3.10.2.1                       snmpEngine             
+%en          1.3.6.1.6.3.10.3                         snmpFrameworkMIBConformance
+%en          1.3.6.1.6.3.10.3.1                       snmpFrameworkMIBCompliances
+%en          1.3.6.1.6.3.10.3.1.1                     snmpFrameworkMIBCompliance
+%en          1.3.6.1.6.3.10.3.2                       snmpFrameworkMIBGroups 
+%en          1.3.6.1.6.3.10.3.2.1                     snmpEngineGroup        
+%en          1.999                                    dummy                  
+%module     radiusAccServMIB     1.3.6.1.3.79.2.1
+%ev                  radiusAccServConfigReset other           1
+%ev                  radiusAccServConfigReset reset           2
+%ev                  radiusAccServConfigReset initializing    3
+%ev                  radiusAccServConfigReset running         4
+%ei   1.3.6.1.3.79.2.1.1.1.14.1 "radiusAccClientIndex"
+%group      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServMIB.2.2.1
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServIdent
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServUpTime
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServResetTime
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServConfigReset
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServTotalRequests
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServTotalInvalidRequests
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServTotalDupRequests
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServTotalResponses
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServTotalMalformedRequests
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServTotalBadAuthenticators
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServTotalPacketsDropped
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServTotalNoRecords
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServTotalUnknownTypes
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccClientAddress
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccClientID
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServPacketsDropped
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServRequests
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServDupRequests
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServResponses
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServBadAuthenticators
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServMalformedRequests
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServNoRecords
+%grmem      RADIUS-ACC-SERVER-MIB radiusAccServMIBGroup radiusAccServUnknownTypes
+%mib        radiusAccServMIBCompliance radiusAccServMIB.2.1.1
+%ei   1.3.6.1.4.1.311.1.15.2.1.1 "acsIfStatsIndex"
+%ei   1.3.6.1.4.1.311.1.15.3.1.1 "acsMsidlpmStatsIndex"
+%module     radiusAuthServMIB    1.3.6.1.3.79.1.1
+%ev                  radiusAuthServConfigReset other           1
+%ev                  radiusAuthServConfigReset reset           2
+%ev                  radiusAuthServConfigReset initializing    3
+%ev                  radiusAuthServConfigReset running         4
+%ei   1.3.6.1.3.79.1.1.1.1.15.1 "radiusAuthClientIndex"
+%group      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServMIB.2.2.1
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServIdent
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServUpTime
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServResetTime
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServConfigReset
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServTotalAccessRequests
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServTotalInvalidRequests
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServTotalDupAccessRequests
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServTotalAccessAccepts
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServTotalAccessRejects
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServTotalAccessChallenges
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServTotalMalformedAccessRequests
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServTotalBadAuthenticators
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServTotalPacketsDropped
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServTotalUnknownTypes
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthClientAddress
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthClientID
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServAccessRequests
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServDupAccessRequests
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServAccessAccepts
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServAccessRejects
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServAccessChallenges
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServMalformedAccessRequests
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServBadAuthenticators
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServPacketsDropped
+%grmem      RADIUS-AUTH-SERVER-MIB radiusAuthServMIBGroup radiusAuthServUnknownTypes
+%mib        radiusAuthServMIBCompliance radiusAuthServMIB.2.1.1
+%ei   1.3.6.1.4.1.311.1.3.2.1.1 "subnetAdd"
+%ei   1.3.6.1.2.1.25.2.3.1 "hrStorageIndex"
+%ei   1.3.6.1.2.1.25.3.2.1 "hrDeviceIndex"
+%ev                  hrDeviceStatus   unknown         1
+%ev                  hrDeviceStatus   running         2
+%ev                  hrDeviceStatus   warning         3
+%ev                  hrDeviceStatus   testing         4
+%ev                  hrDeviceStatus   down            5
+%ei   1.3.6.1.2.1.25.3.3.1 "hrDeviceIndex"
+%ei   1.3.6.1.2.1.25.3.4.1 "hrDeviceIndex"
+%ei   1.3.6.1.2.1.25.3.5.1 "hrDeviceIndex"
+%ev                  hrPrinterStatus  other           1
+%ev                  hrPrinterStatus  unknown         2
+%ev                  hrPrinterStatus  idle            3
+%ev                  hrPrinterStatus  printing        4
+%ev                  hrPrinterStatus  warmup          5
+%ei   1.3.6.1.2.1.25.3.6.1 "hrDeviceIndex"
+%ev                  hrDiskStorageAccess readWrite       1
+%ev                  hrDiskStorageAccess readOnly        2
+%ev                  hrDiskStorageMedia other           1
+%ev                  hrDiskStorageMedia unknown         2
+%ev                  hrDiskStorageMedia hardDisk        3
+%ev                  hrDiskStorageMedia floppyDisk      4
+%ev                  hrDiskStorageMedia opticalDiskROM  5
+%ev                  hrDiskStorageMedia opticalDiskWORM 6
+%ev                  hrDiskStorageMedia opticalDiskRW   7
+%ev                  hrDiskStorageMedia ramDisk         8
+%ev                  hrDiskStorageRemoveble true            1
+%ev                  hrDiskStorageRemoveble false           2
+%ei   1.3.6.1.2.1.25.3.7.1 "hrDeviceIndex hrPartitionIndex"
+%ei   1.3.6.1.2.1.25.3.8.1 "hrFSIndex"
+%ev                  hrFSAccess       readWrite       1
+%ev                  hrFSAccess       readOnly        2
+%ev                  hrFSBootable     true            1
+%ev                  hrFSBootable     false           2
+%ei   1.3.6.1.2.1.25.4.2.1 "hrSWRunIndex"
+%ev                  hrSWRunType      unknown         1
+%ev                  hrSWRunType      operatingSystem 2
+%ev                  hrSWRunType      deviceDriver    3
+%ev                  hrSWRunType      application     4
+%ev                  hrSWRunStatus    running         1
+%ev                  hrSWRunStatus    runnable        2
+%ev                  hrSWRunStatus    notRunnable     3
+%ev                  hrSWRunStatus    invalid         4
+%ei   1.3.6.1.2.1.25.5.1.1 "hrSWRunIndex"
+%ei   1.3.6.1.2.1.25.6.3.1 "hrSWInstalledIndex"
+%ev                  hrSWInstalledType unknown         1
+%ev                  hrSWInstalledType operatingSystem 2
+%ev                  hrSWInstalledType deviceDriver    3
+%ev                  hrSWInstalledType application     4
+%ei   1.3.6.1.2.1.4.24.2.1 "ipForwardDest ipForwardProto ipForwardPolicy ipForwardNextHop"
+%ev                  ipForwardType    other           1
+%ev                  ipForwardType    invalid         2
+%ev                  ipForwardType    local           3
+%ev                  ipForwardType    remote          4
+%ev                  ipForwardProto   other           1
+%ev                  ipForwardProto   local           2
+%ev                  ipForwardProto   netmgmt         3
+%ev                  ipForwardProto   icmp            4
+%ev                  ipForwardProto   egp             5
+%ev                  ipForwardProto   ggp             6
+%ev                  ipForwardProto   hello           7
+%ev                  ipForwardProto   rip             8
+%ev                  ipForwardProto   is-is           9
+%ev                  ipForwardProto   es-is           10
+%ev                  ipForwardProto   ciscoIgrp       11
+%ev                  ipForwardProto   bbnSpfIgp       12
+%ev                  ipForwardProto   ospf            13
+%ev                  ipForwardProto   bgp             14
+%ev                  ipForwardProto   idpr            15
+%ei   1.3.6.1.4.1.77.1.2.3.1 "svSvcName"
+%ev                  svSvcInstalledState uninstalled     1
+%ev                  svSvcInstalledState install-pending 2
+%ev                  svSvcInstalledState uninstall-pending 3
+%ev                  svSvcInstalledState installed       4
+%ev                  svSvcOperatingState active          1
+%ev                  svSvcOperatingState continue-pending 2
+%ev                  svSvcOperatingState pause-pending   3
+%ev                  svSvcOperatingState paused          4
+%ev                  svSvcCanBeUninstalled cannot-be-uninstalled 1
+%ev                  svSvcCanBeUninstalled can-be-uninstalled 2
+%ev                  svSvcCanBePaused cannot-be-paused 1
+%ev                  svSvcCanBePaused can-be-paused   2
+%ev                  svSecurityMode   share-level     1
+%ev                  svSecurityMode   user-level      2
+%ei   1.3.6.1.4.1.77.1.2.20.1 "svSesClientName svSesUserName"
+%ev                  svSesClientType  down-level      1
+%ev                  svSesClientType  dos-lm          2
+%ev                  svSesClientType  dos-lm-2        3
+%ev                  svSesClientType  os2-lm-1        4
+%ev                  svSesClientType  os2-lm-2        5
+%ev                  svSesClientType  dos-lm-2-1      6
+%ev                  svSesClientType  os2-lm-2-1      7
+%ev                  svSesClientType  afp-1-1         8
+%ev                  svSesClientType  afp-2-0         9
+%ev                  svSesClientType  nt-3-1          10
+%ev                  svSesState       active          1
+%ev                  svSesState       deleted         2
+%ei   1.3.6.1.4.1.77.1.2.25.1 "svUserName"
+%ei   1.3.6.1.4.1.77.1.2.27.1 "svShareName"
+%ei   1.3.6.1.4.1.77.1.2.29.1 "svPrintQName"
+%ei   1.3.6.1.4.1.77.1.3.8.1 "useLocalName useRemote"
+%ev                  useStatus        use-ok          1
+%ev                  useStatus        use-paused      2
+%ev                  useStatus        use-session-lost 3
+%ev                  useStatus        use-network-error 4
+%ev                  useStatus        use-connecting  5
+%ev                  useStatus        use-reconnecting 6
+%ei   1.3.6.1.4.1.77.1.4.4.1 "domOtherName"
+%ei   1.3.6.1.4.1.77.1.4.6.1 "domServerName"
+%ei   1.3.6.1.4.1.77.1.4.8.1 "domLogonUser domLogonMachine"
+%module     ipMRouteMIB          1.3.6.1.3.60
+%ev                  ipMRouteEnable   enabled         1
+%ev                  ipMRouteEnable   disabled        2
+%ei   1.3.6.1.3.60.1.1.2.1 "ipMRouteGroup ipMRouteSource ipMRouteSourceMask"
+%ev                  ipMRouteProtocol other           1
+%ev                  ipMRouteProtocol local           2
+%ev                  ipMRouteProtocol netmgmt         3
+%ev                  ipMRouteProtocol dvmrp           4
+%ev                  ipMRouteProtocol mospf           5
+%ev                  ipMRouteProtocol pimSparseDense  6
+%ev                  ipMRouteProtocol cbt             7
+%ev                  ipMRouteProtocol pimSparseMode   8
+%ev                  ipMRouteProtocol pimDenseMode    9
+%ev                  ipMRouteProtocol igmpOnly        10
+%ev                  ipMRouteRtProto  other           1
+%ev                  ipMRouteRtProto  local           2
+%ev                  ipMRouteRtProto  netmgmt         3
+%ev                  ipMRouteRtProto  icmp            4
+%ev                  ipMRouteRtProto  egp             5
+%ev                  ipMRouteRtProto  ggp             6
+%ev                  ipMRouteRtProto  hello           7
+%ev                  ipMRouteRtProto  rip             8
+%ev                  ipMRouteRtProto  isIs            9
+%ev                  ipMRouteRtProto  esIs            10
+%ev                  ipMRouteRtProto  ciscoIgrp       11
+%ev                  ipMRouteRtProto  bbnSpfIgp       12
+%ev                  ipMRouteRtProto  ospf            13
+%ev                  ipMRouteRtProto  bgp             14
+%ev                  ipMRouteRtProto  idpr            15
+%ev                  ipMRouteRtProto  ciscoEigrp      16
+%ev                  ipMRouteRtProto  dvmrp           17
+%ev                  ipMRouteRtType   unicast         1
+%ev                  ipMRouteRtType   multicast       2
+%ei   1.3.6.1.3.60.1.1.3.1 "ipMRouteNextHopGroup ipMRouteNextHopSource ipMRouteNextHopSourceMask ipMRouteNextHopIfIndex ipMRouteNextHopAddress"
+%ev                  ipMRouteNextHopState pruned          1
+%ev                  ipMRouteNextHopState forwarding      2
+%ev                  ipMRouteNextHopProtocol other           1
+%ev                  ipMRouteNextHopProtocol local           2
+%ev                  ipMRouteNextHopProtocol netmgmt         3
+%ev                  ipMRouteNextHopProtocol dvmrp           4
+%ev                  ipMRouteNextHopProtocol mospf           5
+%ev                  ipMRouteNextHopProtocol pimSparseDense  6
+%ev                  ipMRouteNextHopProtocol cbt             7
+%ev                  ipMRouteNextHopProtocol pimSparseMode   8
+%ev                  ipMRouteNextHopProtocol pimDenseMode    9
+%ev                  ipMRouteNextHopProtocol igmpOnly        10
+%ei   1.3.6.1.3.60.1.1.4.1 "ipMRouteInterfaceIfIndex"
+%ev                  ipMRouteInterfaceProtocol other           1
+%ev                  ipMRouteInterfaceProtocol local           2
+%ev                  ipMRouteInterfaceProtocol netmgmt         3
+%ev                  ipMRouteInterfaceProtocol dvmrp           4
+%ev                  ipMRouteInterfaceProtocol mospf           5
+%ev                  ipMRouteInterfaceProtocol pimSparseDense  6
+%ev                  ipMRouteInterfaceProtocol cbt             7
+%ev                  ipMRouteInterfaceProtocol pimSparseMode   8
+%ev                  ipMRouteInterfaceProtocol pimDenseMode    9
+%ev                  ipMRouteInterfaceProtocol igmpOnly        10
+%ei   1.3.6.1.3.60.1.1.5.1 "ipMRouteBoundaryIfIndex ipMRouteBoundaryAddress ipMRouteBoundaryAddressMask"
+%ei   1.3.6.1.3.60.1.1.6.1 "ipMRouteScopeAddress ipMRouteScopeAddressMask"
+%group      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRouteMIB.2.2.1
+%grmem      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRouteEnable
+%grmem      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRouteUpstreamNeighbor
+%grmem      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRouteInIfIndex
+%grmem      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRouteUpTime
+%grmem      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRouteExpiryTime
+%grmem      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRoutePkts
+%grmem      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRouteDifferentInIfPackets
+%grmem      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRouteOctets
+%grmem      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRouteNextHopState
+%grmem      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRouteNextHopUpTime
+%grmem      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRouteNextHopExpiryTime
+%grmem      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRouteNextHopProtocol
+%grmem      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRouteNextHopPkts
+%grmem      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRouteInterfaceTtl
+%grmem      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRouteInterfaceProtocol
+%grmem      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRouteInterfaceRateLimit
+%grmem      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRouteInterfaceInMcastOctets
+%grmem      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRouteInterfaceOutMcastOctets
+%grmem      IPMROUTE-MIB ipMRouteMIBBasicGroup ipMRouteProtocol
+%group      IPMROUTE-MIB ipMRouteMIBHopCountGroup ipMRouteMIB.2.2.2
+%grmem      IPMROUTE-MIB ipMRouteMIBHopCountGroup ipMRouteNextHopClosestMemberHops
+%group      IPMROUTE-MIB ipMRouteMIBBoundaryGroup ipMRouteMIB.2.2.3
+%grmem      IPMROUTE-MIB ipMRouteMIBBoundaryGroup ipMRouteBoundaryStatus
+%grmem      IPMROUTE-MIB ipMRouteMIBBoundaryGroup ipMRouteScopeName
+%grmem      IPMROUTE-MIB ipMRouteMIBBoundaryGroup ipMRouteScopeStatus
+%group      IPMROUTE-MIB ipMRouteMIBPktsOutGroup ipMRouteMIB.2.2.4
+%grmem      IPMROUTE-MIB ipMRouteMIBPktsOutGroup ipMRouteNextHopPkts
+%group      IPMROUTE-MIB ipMRouteMIBHCInterfaceGroup ipMRouteMIB.2.2.5
+%grmem      IPMROUTE-MIB ipMRouteMIBHCInterfaceGroup ipMRouteInterfaceHCInMcastOctets
+%grmem      IPMROUTE-MIB ipMRouteMIBHCInterfaceGroup ipMRouteInterfaceHCOutMcastOctets
+%group      IPMROUTE-MIB ipMRouteMIBRouteGroup ipMRouteMIB.2.2.6
+%grmem      IPMROUTE-MIB ipMRouteMIBRouteGroup ipMRouteRtProto
+%grmem      IPMROUTE-MIB ipMRouteMIBRouteGroup ipMRouteRtAddress
+%grmem      IPMROUTE-MIB ipMRouteMIBRouteGroup ipMRouteRtMask
+%grmem      IPMROUTE-MIB ipMRouteMIBRouteGroup ipMRouteRtType
+%mib        ipMRouteMIBCompliance ipMRouteMIB.2.1.1
+%ei   1.3.6.1.2.1.2.2.1 "ifIndex"
+%ev                  ifType           other           1
+%ev                  ifType           regular1822     2
+%ev                  ifType           hdh1822         3
+%ev                  ifType           ddn-x25         4
+%ev                  ifType           rfc877-x25      5
+%ev                  ifType           ethernet-csmacd 6
+%ev                  ifType           iso88023-csmacd 7
+%ev                  ifType           iso88024-tokenBus 8
+%ev                  ifType           iso88025-tokenRing 9
+%ev                  ifType           iso88026-man    10
+%ev                  ifType           starLan         11
+%ev                  ifType           proteon-10Mbit  12
+%ev                  ifType           proteon-80Mbit  13
+%ev                  ifType           hyperchannel    14
+%ev                  ifType           fddi            15
+%ev                  ifType           lapb            16
+%ev                  ifType           sdlc            17
+%ev                  ifType           ds1             18
+%ev                  ifType           e1              19
+%ev                  ifType           basicISDN       20
+%ev                  ifType           primaryISDN     21
+%ev                  ifType           propPointToPointSerial 22
+%ev                  ifType           ppp             23
+%ev                  ifType           softwareLoopback 24
+%ev                  ifType           eon             25
+%ev                  ifType           ethernet-3Mbit  26
+%ev                  ifType           nsip            27
+%ev                  ifType           slip            28
+%ev                  ifType           ultra           29
+%ev                  ifType           ds3             30
+%ev                  ifType           sip             31
+%ev                  ifType           frame-relay     32
+%ev                  ifAdminStatus    up              1
+%ev                  ifAdminStatus    down            2
+%ev                  ifAdminStatus    testing         3
+%ev                  ifOperStatus     up              1
+%ev                  ifOperStatus     down            2
+%ev                  ifOperStatus     testing         3
+%ei   1.3.6.1.2.1.3.1.1 "atIfIndex atNetAddress"
+%ev                  ipForwarding     forwarding      1
+%ev                  ipForwarding     not-forwarding  2
+%ei   1.3.6.1.2.1.4.20.1 "ipAdEntAddr"
+%ei   1.3.6.1.2.1.4.21.1 "ipRouteDest"
+%ev                  ipRouteType      other           1
+%ev                  ipRouteType      invalid         2
+%ev                  ipRouteType      direct          3
+%ev                  ipRouteType      indirect        4
+%ev                  ipRouteProto     other           1
+%ev                  ipRouteProto     local           2
+%ev                  ipRouteProto     netmgmt         3
+%ev                  ipRouteProto     icmp            4
+%ev                  ipRouteProto     egp             5
+%ev                  ipRouteProto     ggp             6
+%ev                  ipRouteProto     hello           7
+%ev                  ipRouteProto     rip             8
+%ev                  ipRouteProto     is-is           9
+%ev                  ipRouteProto     es-is           10
+%ev                  ipRouteProto     ciscoIgrp       11
+%ev                  ipRouteProto     bbnSpfIgp       12
+%ev                  ipRouteProto     ospf            13
+%ev                  ipRouteProto     bgp             14
+%ei   1.3.6.1.2.1.4.22.1 "ipNetToMediaIfIndex ipNetToMediaNetAddress"
+%ev                  ipNetToMediaType other           1
+%ev                  ipNetToMediaType invalid         2
+%ev                  ipNetToMediaType dynamic         3
+%ev                  ipNetToMediaType static          4
+%ev                  tcpRtoAlgorithm  other           1
+%ev                  tcpRtoAlgorithm  constant        2
+%ev                  tcpRtoAlgorithm  rsre            3
+%ev                  tcpRtoAlgorithm  vanj            4
+%ei   1.3.6.1.2.1.6.13.1 "tcpConnLocalAddress tcpConnLocalPort tcpConnRemAddress tcpConnRemPort"
+%ev                  tcpConnState     closed          1
+%ev                  tcpConnState     listen          2
+%ev                  tcpConnState     synSent         3
+%ev                  tcpConnState     synReceived     4
+%ev                  tcpConnState     established     5
+%ev                  tcpConnState     finWait1        6
+%ev                  tcpConnState     finWait2        7
+%ev                  tcpConnState     closeWait       8
+%ev                  tcpConnState     lastAck         9
+%ev                  tcpConnState     closing         10
+%ev                  tcpConnState     timeWait        11
+%ev                  tcpConnState     deleteTCB       12
+%ei   1.3.6.1.2.1.7.5.1 "udpLocalAddress udpLocalPort"
+%ei   1.3.6.1.2.1.8.5.1 "egpNeighAddr"
+%ev                  egpNeighState    idle            1
+%ev                  egpNeighState    acquisition     2
+%ev                  egpNeighState    down            3
+%ev                  egpNeighState    up              4
+%ev                  egpNeighState    cease           5
+%ev                  egpNeighMode     active          1
+%ev                  egpNeighMode     passive         2
+%ev                  egpNeighEventTrigger start           1
+%ev                  egpNeighEventTrigger stop            2
+%ev                  snmpEnableAuthenTraps enabled         1
+%ev                  snmpEnableAuthenTraps disabled        2
+%trap       coldStart        1.3.6.1.2.1.11       0          0         
+%trap       warmStart        1.3.6.1.2.1.11       1          0         
+%trap       linkDown         1.3.6.1.2.1.11       2          0         
+%tvar       linkDown         ifIndex             
+%trap       linkUp           1.3.6.1.2.1.11       3          0         
+%tvar       linkUp           ifIndex             
+%trap       authenticationFailure 1.3.6.1.2.1.11       4          0         
+%ev                  ipxBaseOperState down            1
+%ev                  ipxBaseOperState up              2
+%ei   1.3.6.1.4.1.311.1.8.2.1.1 "ipxIfIndex"
+%ev                  ipxIfAdminState  disabled        1
+%ev                  ipxIfAdminState  enabled         2
+%ev                  ipxIfOperState   down            1
+%ev                  ipxIfOperState   up              2
+%ev                  ipxIfOperState   sleeping        3
+%ev                  ipxIfType        other           1
+%ev                  ipxIfType        lan             2
+%ev                  ipxIfType        wanRouter       3
+%ev                  ipxIfType        wanWorkstation  4
+%ev                  ipxIfType        internal        5
+%ev                  ipxIfType        personalWanRouter 6
+%ev                  ipxIfType        routerWorkstationDialout 7
+%ev                  ipxIfType        standaloneWorkstationDialout 8
+%ev                  ipxIfIpxWanEnable disabled        1
+%ev                  ipxIfIpxWanEnable enabled         2
+%ev                  ipxIfNetbiosAccept disabled        1
+%ev                  ipxIfNetbiosAccept enabled         2
+%ev                  ipxIfNetbiosDeliver disabled        1
+%ev                  ipxIfNetbiosDeliver enabled         2
+%ev                  ipxIfNetbiosDeliver enabledForStaticlySeededNames 3
+%ev                  ipxIfNetbiosDeliver enabledWhenOperStateUp 4
+%ei   1.3.6.1.4.1.311.1.8.3.1.1 "ipxDestNetNum"
+%ev                  ipxDestProtocol  other           1
+%ev                  ipxDestProtocol  local           2
+%ev                  ipxDestProtocol  rip             3
+%ev                  ipxDestProtocol  nlsp            4
+%ev                  ipxDestProtocol  static          5
+%ei   1.3.6.1.4.1.311.1.8.3.2.1 "ipxStaticRouteIfIndex ipxStaticRouteNetNum"
+%ev                  ipxStaticRouteEntryStatus deleted         1
+%ev                  ipxStaticRouteEntryStatus created         2
+%ei   1.3.6.1.4.1.311.1.8.4.1.1 "ipxServType ipxServName"
+%ev                  ipxServProtocol  other           1
+%ev                  ipxServProtocol  local           2
+%ev                  ipxServProtocol  nlsp            4
+%ev                  ipxServProtocol  static          5
+%ev                  ipxServProtocol  sap             6
+%ei   1.3.6.1.4.1.311.1.8.4.2.1 "ipxStaticServIfIndex ipxStaticServType ipxStaticServName"
+%ev                  ipxStaticServEntryStatus deleted         1
+%ev                  ipxStaticServEntryStatus created         2
+%ev                  ripsapBaseRipOperState down            1
+%ev                  ripsapBaseRipOperState up              2
+%ev                  ripsapBaseSapOperState down            1
+%ev                  ripsapBaseSapOperState up              2
+%ei   1.3.6.1.4.1.311.1.9.2.1.1 "ripIfIndex"
+%ev                  ripIfAdminState  disabled        1
+%ev                  ripIfAdminState  enabled         2
+%ev                  ripIfOperState   down            1
+%ev                  ripIfOperState   up              2
+%ev                  ripIfOperState   sleeping        3
+%ev                  ripIfUpdateMode  standard        1
+%ev                  ripIfUpdateMode  none            2
+%ev                  ripIfUpdateMode  autostatic      3
+%ev                  ripIfSupply      disabled        1
+%ev                  ripIfSupply      enabled         2
+%ev                  ripIfListen      disabled        1
+%ev                  ripIfListen      enabled         2
+%ei   1.3.6.1.4.1.311.1.9.2.2.1 "sapIfIndex"
+%ev                  sapIfAdminState  disabled        1
+%ev                  sapIfAdminState  enabled         2
+%ev                  sapIfOperState   down            1
+%ev                  sapIfOperState   up              2
+%ev                  sapIfOperState   sleeping        3
+%ev                  sapIfUpdateMode  standard        1
+%ev                  sapIfUpdateMode  none            2
+%ev                  sapIfUpdateMode  autostatic      3
+%ev                  sapIfSupply      disabled        1
+%ev                  sapIfSupply      enabled         2
+%ev                  sapIfListen      disabled        1
+%ev                  sapIfListen      enabled         2
+%ev                  sapIfGetNearestServerReply disabled        1
+%ev                  sapIfGetNearestServerReply enabled         2
+%ev                  globalLoggingLevel none            1
+%ev                  globalLoggingLevel error           2
+%ev                  globalLoggingLevel warning         3
+%ev                  globalLoggingLevel information     4
+%ei   1.3.6.1.4.1.311.1.12.1.4.1 "globalBOOTPServerAddr"
+%ev                  globalBOOTPServerTag create          1
+%ev                  globalBOOTPServerTag delete          2
+%ei   1.3.6.1.4.1.311.1.12.2.1.1 "ifSEIndex"
+%ev                  ifSEState        enabled         1
+%ev                  ifSEState        bound           2
+%ei   1.3.6.1.4.1.311.1.12.2.2.1 "ifCEIndex"
+%ev                  ifCEState        enabled         1
+%ev                  ifCEState        bound           2
+%ev                  ifCERelayMode    disabled        1
+%ev                  ifCERelayMode    enabled         2
+%ei   1.3.6.1.4.1.311.1.12.2.3.1 "ifBindingIndex"
+%ev                  ifBindingState   enabled         1
+%ev                  ifBindingState   bound           2
+%ei   1.3.6.1.4.1.311.1.12.2.4.1 "ifAEIfIndex ifAEAddress ifAEMask"
+%ev                  globalLoggingLevel none            1
+%ev                  globalLoggingLevel error           2
+%ev                  globalLoggingLevel warning         3
+%ev                  globalLoggingLevel information     4
+%ev                  globalPeerFilterMode disable         1
+%ev                  globalPeerFilterMode include         2
+%ev                  globalPeerFilterMode exclude         3
+%ei   1.3.6.1.4.1.311.1.11.1.9.1 "globalPFAddr"
+%ev                  globalPFTag      create          1
+%ev                  globalPFTag      delete          2
+%ei   1.3.6.1.4.1.311.1.11.2.1.1 "ifSEIndex"
+%ev                  ifSEState        enabled         1
+%ev                  ifSEState        bound           2
+%ei   1.3.6.1.4.1.311.1.11.2.2.1 "ifCEIndex"
+%ev                  ifCEState        enabled         1
+%ev                  ifCEState        bound           2
+%ev                  ifCEUpdateMode   periodic        1
+%ev                  ifCEUpdateMode   demand          2
+%ev                  ifCEAcceptMode   disable         1
+%ev                  ifCEAcceptMode   rip1            2
+%ev                  ifCEAcceptMode   rip1Compat      3
+%ev                  ifCEAcceptMode   rip2            4
+%ev                  ifCEAnnounceMode disable         1
+%ev                  ifCEAnnounceMode rip1            2
+%ev                  ifCEAnnounceMode rip1Compat      3
+%ev                  ifCEAnnounceMode rip2            4
+%ev                  ifCEAuthenticationType noAuthentication 1
+%ev                  ifCEAuthenticationType simplePassword  2
+%ev                  ifCEAuthenticationType md5             3
+%ev                  ifCEUnicastPeerMode disable         1
+%ev                  ifCEUnicastPeerMode peerAlso        2
+%ev                  ifCEUnicastPeerMode peerOnly        3
+%ev                  ifCEAcceptFilterMode disable         1
+%ev                  ifCEAcceptFilterMode include         2
+%ev                  ifCEAcceptFilterMode exclude         3
+%ev                  ifCEAnnounceFilterMode disable         1
+%ev                  ifCEAnnounceFilterMode include         2
+%ev                  ifCEAnnounceFilterMode exclude         3
+%ei   1.3.6.1.4.1.311.1.11.2.3.1 "ifUPIfIndex ifUPAddress"
+%ev                  ifUPTag          create          1
+%ev                  ifUPTag          delete          2
+%ei   1.3.6.1.4.1.311.1.11.2.4.1 "ifAcceptRFIfIndex ifAcceptRFLoAddress ifAcceptRFHiAddress ifAcceptRFTag"
+%ev                  ifAcceptRFTag    create          1
+%ev                  ifAcceptRFTag    delete          2
+%ei   1.3.6.1.4.1.311.1.11.2.5.1 "ifAnnounceRFIfIndex ifAnnounceRFLoAddress ifAnnounceRFHiAddress"
+%ev                  ifAnnounceRFTag  create          1
+%ev                  ifAnnounceRFTag  delete          2
+%ei   1.3.6.1.4.1.311.1.11.2.6.1 "ifBindingIndex"
+%ev                  ifBindingState   enabled         1
+%ev                  ifBindingState   bound           2
+%ei   1.3.6.1.4.1.311.1.11.2.7.1 "ifAEIfIndex ifAEAddress ifAEMask"
+%ei   1.3.6.1.4.1.311.1.11.3.1.1 "ifPSAddress"
+%ei   1.3.6.1.4.1.23.2.5.1.1.1 "ipxBasicSysInstance"
+%ev                  ipxBasicSysExistState off             1
+%ev                  ipxBasicSysExistState on              2
+%ei   1.3.6.1.4.1.23.2.5.1.2.1 "ipxAdvSysInstance"
+%ei   1.3.6.1.4.1.23.2.5.2.1.1 "ipxCircSysInstance ipxCircIndex"
+%ev                  ipxCircExistState off             1
+%ev                  ipxCircExistState on              2
+%ev                  ipxCircOperState down            1
+%ev                  ipxCircOperState up              2
+%ev                  ipxCircOperState sleeping        3
+%ev                  ipxCircType      other           1
+%ev                  ipxCircType      broadcast       2
+%ev                  ipxCircType      ptToPt          3
+%ev                  ipxCircType      wanRIP          4
+%ev                  ipxCircType      unnumberedRIP   5
+%ev                  ipxCircType      dynamic         6
+%ev                  ipxCircType      wanWS           7
+%ev                  ipxCircCompressState off             1
+%ev                  ipxCircCompressState on              2
+%ev                  ipxCircStaticStatus unknown         1
+%ev                  ipxCircStaticStatus current         2
+%ev                  ipxCircStaticStatus changed         3
+%ev                  ipxCircStaticStatus read            4
+%ev                  ipxCircStaticStatus reading         5
+%ev                  ipxCircStaticStatus write           6
+%ev                  ipxCircStaticStatus writing         7
+%ei   1.3.6.1.4.1.23.2.5.3.1.1 "ipxDestSysInstance ipxDestNetNum"
+%ev                  ipxDestProtocol  other           1
+%ev                  ipxDestProtocol  local           2
+%ev                  ipxDestProtocol  rip             3
+%ev                  ipxDestProtocol  nlsp            4
+%ev                  ipxDestProtocol  static          5
+%ei   1.3.6.1.4.1.23.2.5.3.2.1 "ipxStaticRouteSysInstance ipxStaticRouteCircIndex ipxStaticRouteNetNum"
+%ev                  ipxStaticRouteExistState off             1
+%ev                  ipxStaticRouteExistState on              2
+%ei   1.3.6.1.4.1.23.2.5.4.1.1 "ipxServSysInstance ipxServType ipxServName"
+%ev                  ipxServProtocol  other           1
+%ev                  ipxServProtocol  local           2
+%ev                  ipxServProtocol  nlsp            4
+%ev                  ipxServProtocol  static          5
+%ev                  ipxServProtocol  sap             6
+%ei   1.3.6.1.4.1.23.2.5.4.2.1 "ipxDestServSysInstance ipxDestServNetNum ipxDestServNode ipxDestServSocket ipxDestServName ipxDestServType"
+%ev                  ipxDestServProtocol other           1
+%ev                  ipxDestServProtocol local           2
+%ev                  ipxDestServProtocol nlsp            4
+%ev                  ipxDestServProtocol static          5
+%ev                  ipxDestServProtocol sap             6
+%ei   1.3.6.1.4.1.23.2.5.4.3.1 "ipxStaticServSysInstance ipxStaticServCircIndex ipxStaticServName ipxStaticServType"
+%ev                  ipxStaticServExistState off             1
+%ev                  ipxStaticServExistState on              2
+%trap       ipxTrapCircuitDown 1.3.6.1.4.1.23.2.5.5 6          1         
+%tvar       ipxTrapCircuitDown ipxCircSysInstance  
+%tvar       ipxTrapCircuitDown ipxCircIndex        
+%trap       ipxTrapCircuitUp 1.3.6.1.4.1.23.2.5.5 6          2         
+%tvar       ipxTrapCircuitUp ipxCircSysInstance  
+%tvar       ipxTrapCircuitUp ipxCircIndex        
+%ev                  wfOspfGeneralDelete created         1
+%ev                  wfOspfGeneralDelete deleted         2
+%ev                  wfOspfGeneralDisable enabled         1
+%ev                  wfOspfGeneralDisable disabled        2
+%ev                  wfOspfGeneralState up              1
+%ev                  wfOspfGeneralState down            2
+%ev                  wfOspfGeneralState init            3
+%ev                  wfOspfGeneralState notpresent      4
+%ev                  wfOspfAreaBdrRtrStatus true            1
+%ev                  wfOspfAreaBdrRtrStatus false           2
+%ev                  wfOspfASBdrRtrStatus true            1
+%ev                  wfOspfASBdrRtrStatus false           2
+%ev                  wfOspfTOSSupport true            1
+%ev                  wfOspfTOSSupport false           2
+%ev                  wfOspfSpfHoldDown defval          1
+%ev                  wfOspfSpfHoldDown maximum         10
+%ev                  wfOspfSlotMask   slotmask        -33816576
+%ei   1.3.6.1.4.1.18.3.5.3.2.3.2.1 "wfOspfAreaId"
+%ev                  wfOspfAreaDelete created         1
+%ev                  wfOspfAreaDelete deleted         2
+%ev                  wfOspfAreaDisable enabled         1
+%ev                  wfOspfAreaDisable disabled        2
+%ev                  wfOspfAreaState  up              1
+%ev                  wfOspfAreaState  down            2
+%ev                  wfOspfAuthType   nopassword      1
+%ev                  wfOspfAuthType   simplepassword  2
+%ev                  wfOspfImportASExtern true            1
+%ev                  wfOspfImportASExtern false           2
+%ev                  wfOspfStubMetric minimum         1
+%ev                  wfOspfStubMetric maximum         16777215
+%ev                  wfOspfImportSum  true            1
+%ev                  wfOspfImportSum  false           2
+%ei   1.3.6.1.4.1.18.3.5.3.2.3.3.1 "wfOspfLsdbAreaId wfOspfLsdbType wfOspfLsdbLSID wfOspfLsdbRouterId"
+%ev                  wfOspfLsdbType   routerlink      1
+%ev                  wfOspfLsdbType   networklink     2
+%ev                  wfOspfLsdbType   summarylink     3
+%ev                  wfOspfLsdbType   assummarylink   4
+%ev                  wfOspfLsdbType   asexternallink  5
+%ei   1.3.6.1.4.1.18.3.5.3.2.3.4.1 "wfOspfAreaRangeAreaID wfOspfAreaRangeNet"
+%ev                  wfOspfAreaRangeDelete created         1
+%ev                  wfOspfAreaRangeDelete deleted         2
+%ev                  wfOspfAreaRangeDisable enabled         1
+%ev                  wfOspfAreaRangeDisable disabled        2
+%ev                  wfOspfAreaRangeState up              1
+%ev                  wfOspfAreaRangeState down            2
+%ei   1.3.6.1.4.1.18.3.5.3.2.3.5.1 "wfOspfIfIpAddress wfOspfAddressLessIf"
+%ev                  wfOspfIfDelete   created         1
+%ev                  wfOspfIfDelete   deleted         2
+%ev                  wfOspfIfDisable  enabled         1
+%ev                  wfOspfIfDisable  disabled        2
+%ev                  wfOspfIfState    down            1
+%ev                  wfOspfIfState    loopback        2
+%ev                  wfOspfIfState    waiting         3
+%ev                  wfOspfIfState    pointtopoint    4
+%ev                  wfOspfIfState    designatedrouter 5
+%ev                  wfOspfIfState    backupdesignatedrouter 6
+%ev                  wfOspfIfState    otherdesignatedrouter 7
+%ev                  wfOspfIfType     broadcast       1
+%ev                  wfOspfIfType     nbma            2
+%ev                  wfOspfIfType     pointtopoint    3
+%ev                  wfOspfIfRtrPriority defval          1
+%ev                  wfOspfIfRtrPriority maximum         255
+%ev                  wfOspfIfTransitDelay minimum         1
+%ev                  wfOspfIfTransitDelay maximum         3600
+%ev                  wfOspfIfRetransInterval minimum         1
+%ev                  wfOspfIfRetransInterval defval          5
+%ev                  wfOspfIfRetransInterval maximum         3600
+%ev                  wfOspfIfHelloInterval minimum         1
+%ev                  wfOspfIfHelloInterval defval          10
+%ev                  wfOspfIfHelloInterval maximum         65535
+%ev                  wfOspfIfRtrDeadInterval minimum         1
+%ev                  wfOspfIfRtrDeadInterval defval          40
+%ev                  wfOspfIfRtrDeadInterval maximum         2147483647
+%ev                  wfOspfIfPollInterval minimum         1
+%ev                  wfOspfIfPollInterval defval          120
+%ev                  wfOspfIfPollInterval maximum         2147483647
+%ev                  wfOspfIfMetricCost minimum         1
+%ev                  wfOspfIfMetricCost maximum         65535
+%ev                  wfOspfMtuSize    defval          1
+%ev                  wfOspfMtuSize    min             2
+%ev                  wfOspfMtuSize    maximum         10000
+%ei   1.3.6.1.4.1.18.3.5.3.2.3.6.1 "wfOspfVirtIfAreaID wfOspfVirtIfNeighbor"
+%ev                  wfOspfVirtIfDelete created         1
+%ev                  wfOspfVirtIfDelete deleted         2
+%ev                  wfOspfVirtIfDisable enabled         1
+%ev                  wfOspfVirtIfDisable disabled        2
+%ev                  wfOspfVirtIfState down            1
+%ev                  wfOspfVirtIfState pointtopoint    4
+%ev                  wfOspfVirtIfTransitDelay minimum         1
+%ev                  wfOspfVirtIfTransitDelay maximum         3600
+%ev                  wfOspfVirtIfRetransInterval minimum         1
+%ev                  wfOspfVirtIfRetransInterval defval          5
+%ev                  wfOspfVirtIfRetransInterval maximum         3600
+%ev                  wfOspfVirtIfHelloInterval minimum         1
+%ev                  wfOspfVirtIfHelloInterval defval          15
+%ev                  wfOspfVirtIfHelloInterval maximum         65535
+%ev                  wfOspfVirtIfRtrDeadInterval minimum         1
+%ev                  wfOspfVirtIfRtrDeadInterval defval          60
+%ev                  wfOspfVirtIfRtrDeadInterval maximum         2147483647
+%ei   1.3.6.1.4.1.18.3.5.3.2.3.7.1 "wfOspfNbrIpAddr wfOspfNbrAddressLessIndex"
+%ev                  wfOspfNbrDelete  created         1
+%ev                  wfOspfNbrDelete  deleted         2
+%ev                  wfOspfNbrDisable enabled         1
+%ev                  wfOspfNbrDisable disabled        2
+%ev                  wfOspfNbrState   down            1
+%ev                  wfOspfNbrState   attempt         2
+%ev                  wfOspfNbrState   init            3
+%ev                  wfOspfNbrState   twoway          4
+%ev                  wfOspfNbrState   exchangstart    5
+%ev                  wfOspfNbrState   exchange        6
+%ev                  wfOspfNbrState   loading         7
+%ev                  wfOspfNbrState   full            8
+%ev                  wfOspfNbrPriority defval          1
+%ev                  wfOspfNbrPriority maximum         255
+%ei   1.3.6.1.4.1.18.3.5.3.2.3.8.1 "wfOspfVirtNbrArea wfOspfVirtNbrRtrId"
+%ev                  wfOspfVirtNbrState down            1
+%ev                  wfOspfVirtNbrState attempt         2
+%ev                  wfOspfVirtNbrState init            3
+%ev                  wfOspfVirtNbrState twoway          4
+%ev                  wfOspfVirtNbrState exchangstart    5
+%ev                  wfOspfVirtNbrState exchange        6
+%ev                  wfOspfVirtNbrState loading         7
+%ev                  wfOspfVirtNbrState full            8
+%ei   1.3.6.1.4.1.18.3.5.3.2.3.9.1 "wfOspfDynNbrIpAddr wfOspfDynNbrAddressLessIndex"
+%ev                  wfOspfDynNbrState down            1
+%ev                  wfOspfDynNbrState attempt         2
+%ev                  wfOspfDynNbrState init            3
+%ev                  wfOspfDynNbrState twoway          4
+%ev                  wfOspfDynNbrState exchangstart    5
+%ev                  wfOspfDynNbrState exchange        6
+%ev                  wfOspfDynNbrState loading         7
+%ev                  wfOspfDynNbrState full            8
+%ei   1.3.6.1.2.1.2.2.1 "ifIndex"
+%ev                  ifType           other           1
+%ev                  ifType           regular1822     2
+%ev                  ifType           hdh1822         3
+%ev                  ifType           ddn-x25         4
+%ev                  ifType           rfc877-x25      5
+%ev                  ifType           ethernet-csmacd 6
+%ev                  ifType           iso88023-csmacd 7
+%ev                  ifType           iso88024-tokenBus 8
+%ev                  ifType           iso88025-tokenRing 9
+%ev                  ifType           iso88026-man    10
+%ev                  ifType           starLan         11
+%ev                  ifType           proteon-10Mbit  12
+%ev                  ifType           proteon-80Mbit  13
+%ev                  ifType           hyperchannel    14
+%ev                  ifType           fddi            15
+%ev                  ifType           lapb            16
+%ev                  ifType           sdlc            17
+%ev                  ifType           ds1             18
+%ev                  ifType           e1              19
+%ev                  ifType           basicISDN       20
+%ev                  ifType           primaryISDN     21
+%ev                  ifType           propPointToPointSerial 22
+%ev                  ifType           ppp             23
+%ev                  ifType           softwareLoopback 24
+%ev                  ifType           eon             25
+%ev                  ifType           ethernet-3Mbit  26
+%ev                  ifType           nsip            27
+%ev                  ifType           slip            28
+%ev                  ifType           ultra           29
+%ev                  ifType           ds3             30
+%ev                  ifType           sip             31
+%ev                  ifType           frame-relay     32
+%ev                  ifAdminStatus    up              1
+%ev                  ifAdminStatus    down            2
+%ev                  ifAdminStatus    testing         3
+%ev                  ifOperStatus     up              1
+%ev                  ifOperStatus     down            2
+%ev                  ifOperStatus     testing         3
+%ei   1.3.6.1.2.1.3.1.1 "atIfIndex atNetAddress"
+%ev                  ipForwarding     forwarding      1
+%ev                  ipForwarding     not-forwarding  2
+%ei   1.3.6.1.2.1.4.20.1 "ipAdEntAddr"
+%ei   1.3.6.1.2.1.4.21.1 "ipRouteDest"
+%ev                  ipRouteType      other           1
+%ev                  ipRouteType      invalid         2
+%ev                  ipRouteType      direct          3
+%ev                  ipRouteType      indirect        4
+%ev                  ipRouteProto     other           1
+%ev                  ipRouteProto     local           2
+%ev                  ipRouteProto     netmgmt         3
+%ev                  ipRouteProto     icmp            4
+%ev                  ipRouteProto     egp             5
+%ev                  ipRouteProto     ggp             6
+%ev                  ipRouteProto     hello           7
+%ev                  ipRouteProto     rip             8
+%ev                  ipRouteProto     is-is           9
+%ev                  ipRouteProto     es-is           10
+%ev                  ipRouteProto     ciscoIgrp       11
+%ev                  ipRouteProto     bbnSpfIgp       12
+%ev                  ipRouteProto     ospf            13
+%ev                  ipRouteProto     bgp             14
+%ei   1.3.6.1.2.1.4.22.1 "ipNetToMediaIfIndex ipNetToMediaNetAddress"
+%ev                  ipNetToMediaType other           1
+%ev                  ipNetToMediaType invalid         2
+%ev                  ipNetToMediaType dynamic         3
+%ev                  ipNetToMediaType static          4
+%ev                  tcpRtoAlgorithm  other           1
+%ev                  tcpRtoAlgorithm  constant        2
+%ev                  tcpRtoAlgorithm  rsre            3
+%ev                  tcpRtoAlgorithm  vanj            4
+%ei   1.3.6.1.2.1.6.13.1 "tcpConnLocalAddress tcpConnLocalPort tcpConnRemAddress tcpConnRemPort"
+%ev                  tcpConnState     closed          1
+%ev                  tcpConnState     listen          2
+%ev                  tcpConnState     synSent         3
+%ev                  tcpConnState     synReceived     4
+%ev                  tcpConnState     established     5
+%ev                  tcpConnState     finWait1        6
+%ev                  tcpConnState     finWait2        7
+%ev                  tcpConnState     closeWait       8
+%ev                  tcpConnState     lastAck         9
+%ev                  tcpConnState     closing         10
+%ev                  tcpConnState     timeWait        11
+%ev                  tcpConnState     deleteTCB       12
+%ei   1.3.6.1.2.1.7.5.1 "udpLocalAddress udpLocalPort"
+%ei   1.3.6.1.2.1.8.5.1 "egpNeighAddr"
+%ev                  egpNeighState    idle            1
+%ev                  egpNeighState    acquisition     2
+%ev                  egpNeighState    down            3
+%ev                  egpNeighState    up              4
+%ev                  egpNeighState    cease           5
+%ev                  egpNeighMode     active          1
+%ev                  egpNeighMode     passive         2
+%ev                  egpNeighEventTrigger start           1
+%ev                  egpNeighEventTrigger stop            2
+%ev                  snmpEnableAuthenTraps enabled         1
+%ev                  snmpEnableAuthenTraps disabled        2
+%module     snmpFrameworkMIB     1.3.6.1.6.3.10
+%group      SNMP-FRAMEWORK-MIB snmpEngineGroup      snmpFrameworkMIB.3.2.1
+%grmem      SNMP-FRAMEWORK-MIB snmpEngineGroup      snmpEngineID
+%grmem      SNMP-FRAMEWORK-MIB snmpEngineGroup      snmpEngineBoots
+%grmem      SNMP-FRAMEWORK-MIB snmpEngineGroup      snmpEngineTime
+%grmem      SNMP-FRAMEWORK-MIB snmpEngineGroup      snmpEngineMaxMessageSize
+%mib        snmpFrameworkMIBCompliance snmpFrameworkMIB.3.1.1
+%ei   1.3.6.1.2.1.2.2.1 "ifIndex"
+%ev                  ifType           other           1
+%ev                  ifType           regular1822     2
+%ev                  ifType           hdh1822         3
+%ev                  ifType           ddn-x25         4
+%ev                  ifType           rfc877-x25      5
+%ev                  ifType           ethernet-csmacd 6
+%ev                  ifType           iso88023-csmacd 7
+%ev                  ifType           iso88024-tokenBus 8
+%ev                  ifType           iso88025-tokenRing 9
+%ev                  ifType           iso88026-man    10
+%ev                  ifType           starLan         11
+%ev                  ifType           proteon-10Mbit  12
+%ev                  ifType           proteon-80Mbit  13
+%ev                  ifType           hyperchannel    14
+%ev                  ifType           fddi            15
+%ev                  ifType           lapb            16
+%ev                  ifType           sdlc            17
+%ev                  ifType           ds1             18
+%ev                  ifType           e1              19
+%ev                  ifType           basicISDN       20
+%ev                  ifType           primaryISDN     21
+%ev                  ifType           propPointToPointSerial 22
+%ev                  ifType           ppp             23
+%ev                  ifType           softwareLoopback 24
+%ev                  ifType           eon             25
+%ev                  ifType           ethernet-3Mbit  26
+%ev                  ifType           nsip            27
+%ev                  ifType           slip            28
+%ev                  ifType           ultra           29
+%ev                  ifType           ds3             30
+%ev                  ifType           sip             31
+%ev                  ifType           frame-relay     32
+%ev                  ifAdminStatus    up              1
+%ev                  ifAdminStatus    down            2
+%ev                  ifAdminStatus    testing         3
+%ev                  ifOperStatus     up              1
+%ev                  ifOperStatus     down            2
+%ev                  ifOperStatus     testing         3
+%ei   1.3.6.1.2.1.3.1.1 "atIfIndex atNetAddress"
+%ev                  ipForwarding     forwarding      1
+%ev                  ipForwarding     not-forwarding  2
+%ei   1.3.6.1.2.1.4.20.1 "ipAdEntAddr"
+%ei   1.3.6.1.2.1.4.21.1 "ipRouteDest"
+%ev                  ipRouteType      other           1
+%ev                  ipRouteType      invalid         2
+%ev                  ipRouteType      direct          3
+%ev                  ipRouteType      indirect        4
+%ev                  ipRouteProto     other           1
+%ev                  ipRouteProto     local           2
+%ev                  ipRouteProto     netmgmt         3
+%ev                  ipRouteProto     icmp            4
+%ev                  ipRouteProto     egp             5
+%ev                  ipRouteProto     ggp             6
+%ev                  ipRouteProto     hello           7
+%ev                  ipRouteProto     rip             8
+%ev                  ipRouteProto     is-is           9
+%ev                  ipRouteProto     es-is           10
+%ev                  ipRouteProto     ciscoIgrp       11
+%ev                  ipRouteProto     bbnSpfIgp       12
+%ev                  ipRouteProto     ospf            13
+%ev                  ipRouteProto     bgp             14
+%ei   1.3.6.1.2.1.4.22.1 "ipNetToMediaIfIndex ipNetToMediaNetAddress"
+%ev                  ipNetToMediaType other           1
+%ev                  ipNetToMediaType invalid         2
+%ev                  ipNetToMediaType dynamic         3
+%ev                  ipNetToMediaType static          4
+%ev                  tcpRtoAlgorithm  other           1
+%ev                  tcpRtoAlgorithm  constant        2
+%ev                  tcpRtoAlgorithm  rsre            3
+%ev                  tcpRtoAlgorithm  vanj            4
+%ei   1.3.6.1.2.1.6.13.1 "tcpConnLocalAddress tcpConnLocalPort tcpConnRemAddress tcpConnRemPort"
+%ev                  tcpConnState     closed          1
+%ev                  tcpConnState     listen          2
+%ev                  tcpConnState     synSent         3
+%ev                  tcpConnState     synReceived     4
+%ev                  tcpConnState     established     5
+%ev                  tcpConnState     finWait1        6
+%ev                  tcpConnState     finWait2        7
+%ev                  tcpConnState     closeWait       8
+%ev                  tcpConnState     lastAck         9
+%ev                  tcpConnState     closing         10
+%ev                  tcpConnState     timeWait        11
+%ev                  tcpConnState     deleteTCB       12
+%ei   1.3.6.1.2.1.7.5.1 "udpLocalAddress udpLocalPort"
+%ei   1.3.6.1.2.1.8.5.1 "egpNeighAddr"
+%ev                  egpNeighState    idle            1
+%ev                  egpNeighState    acquisition     2
+%ev                  egpNeighState    down            3
+%ev                  egpNeighState    up              4
+%ev                  egpNeighState    cease           5
+%ev                  egpNeighMode     active          1
+%ev                  egpNeighMode     passive         2
+%ev                  egpNeighEventTrigger start           1
+%ev                  egpNeighEventTrigger stop            2
+%ev                  snmpEnableAuthenTraps enabled         1
+%ev                  snmpEnableAuthenTraps disabled        2
+%module     snmpFrameworkMIB     1.3.6.1.6.3.10
+%group      SNMP-FRAMEWORK-MIB snmpEngineGroup      snmpFrameworkMIB.3.2.1
+%grmem      SNMP-FRAMEWORK-MIB snmpEngineGroup      snmpEngineID
+%grmem      SNMP-FRAMEWORK-MIB snmpEngineGroup      snmpEngineBoots
+%grmem      SNMP-FRAMEWORK-MIB snmpEngineGroup      snmpEngineTime
+%grmem      SNMP-FRAMEWORK-MIB snmpEngineGroup      snmpEngineMaxMessageSize
+%mib        snmpFrameworkMIBCompliance snmpFrameworkMIB.3.1.1

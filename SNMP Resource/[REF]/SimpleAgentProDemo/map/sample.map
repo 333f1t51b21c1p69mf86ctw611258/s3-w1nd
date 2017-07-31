@@ -1,0 +1,65 @@
+<DeviceMap
+	Release = "11.0"
+	Description = "Demo map with multiple IP addresses"
+	UserData = ""
+	SetupFile = ""
+	Interface = ""
+	InterfaceName = ""
+	Separator = ":"
+	StartInterfaceNum = "0"
+	Username = "John Doe">
+	<Device
+		<General
+			Name = "192.168.16.10"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = ""
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+			DisplayTag = "switch-1"
+			ModelingFile = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			LibraryDevice = "Catalyst 1900 Switch"
+			MibFile = ".\..\devices\cisco\cisco.cmf"
+			AgentFile = ".\..\devices\cisco\Cat1900.var"
+			TrapMgr = ""
+			ResponseDelay = "0"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+		/>
+	</Device>
+	<Device
+		<General
+			Name = "192.168.16.11"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = ""
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+			DisplayTag = "router-1"
+			ModelingFile = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			LibraryDevice = "M5 Router"
+			MibFile = ".\..\devices\juniper\juniper.cmf"
+			AgentFile = ".\..\devices\juniper\m_5.var"
+			TrapMgr = ""
+			ResponseDelay = "0"
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+		/>
+	</Device>
+</DeviceMap>

@@ -1,0 +1,58 @@
+<DeviceMap
+	Release = "4.0"
+	Description = "Sample map with multihomed device and proxied one. Use public & public:card1 as community strings."
+	UserData = ""
+	SetupFile = ""
+	Interface = ""
+	Separator = ":"
+	StartInterfaceNum = "0"
+	Username = "">
+	<Device
+		<General
+			Name = "192.168.5.5"
+			MultiHome = "1"
+			DHCP = "0"
+			SubnetMask = "255.255.255.0"
+			MacAddress = ""
+			Interface = ""
+			UserData = ""
+			TopologyData = ""
+			DisplayTag = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev1.var"
+			TrapMgr = ""
+			ResponseDelay = "0"
+			ModelingFile = ""
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SnmpPort = "161"
+			SecurityLevel = "NoAuthNoPriv"
+		/>
+	/>
+	<Device
+		<General
+			Name = "card1:192.168.5.5"
+			MultiHome = "0"
+			DHCP = "0"
+			UserData = ""
+			TopologyData = ""
+			DisplayTag = ""
+		/>
+		<Snmp
+			ReadCommunity = "public"
+			WriteCommunity = "private"
+			MibFile = "mib2.cmf"
+			AgentFile = "dev2.var"
+			TrapMgr = ""
+			ResponseDelay = "0"
+			ModelingFile = ""
+			SnmpStr = "V1V2V3"
+			MtuSize = "1500"
+			SecurityLevel = "NoAuthNoPriv"
+		/>
+	/>
+</DeviceMap>

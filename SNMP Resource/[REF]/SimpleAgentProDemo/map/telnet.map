@@ -1,0 +1,27 @@
+<DeviceMap
+	Release = "3.0"
+	Description = ""
+	Username = ""
+	DefaultDevice = "192.168.100.244/161">
+	<Device
+		Name = "192.168.100.244"
+		ReadCommunity = "public"
+		WriteCommunity = "private"
+		MibFile = "mib2.cmf"
+		AgentFile = "dev1.var"
+		TrapMgr = "none"
+		ResponseDelay = "0"
+		MultiHome = "1"
+		DHCP = "0"
+		ModelingFile = "none"
+		SnmpStr = "V1V2V3"
+		MtuSize = "1500"
+		SubnetMask = "255.255.255.0"
+		MacAddress = "none"
+		SnmpPort = "161"
+		SecurityLevel = "NoAuthNoPriv"
+		AuthType = "MD5"
+		TelnetPort = "23"
+		TelnetFile = "c1538.tel"
+	/>
+</DeviceMap>

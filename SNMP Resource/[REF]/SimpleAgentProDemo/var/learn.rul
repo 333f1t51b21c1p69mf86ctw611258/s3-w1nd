@@ -1,0 +1,33 @@
+# Lines starting with this character are treated as comments
+#
+# Format of the file is as follows:
+#    <variable name>            <value type string>
+#    %NUMROWS                   <table_entry_oid>  <numrows>
+#    %DYNROW                    ALL
+#
+# <variable name> <value_type string>
+#    A best match is used for overriding the learn defaults.
+#
+#    In the case shown below, the ifOutOctets for all interfaces 
+#    except for interface 1, will use randomup(5000,100) while
+#    the value type for ifOutOctets.1 will use randomup(0,100)
+#
+#    In the case of ifSpeed, the current value of the variable
+#    obtained during the walk, would be used instead of %s
+#    as in a sprintf() call
+#    Only %s format is currently supported
+#
+# %NUMROWS    <table_entry_oid>  <numrows>
+#    this allows you to override the default number of rows
+#    specified during the "Create From MIB" phase.
+# 
+# %DYNROW   ALL
+#    including this line will make the SimpleAgentPro create
+#    templates for all tables, even Read-Only ones.
+#
+ifOutOctets                   randomup(5000, 100)
+ifOutOctets.1                 randomup(0, 100)
+ifSpeed                       fixed(%s)
+# ignore all nodes under egp
+1.3.6.1.2.1.8                 ignore
+

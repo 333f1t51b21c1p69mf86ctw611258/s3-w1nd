@@ -1,0 +1,31 @@
+﻿<?xml version='1.0' encoding='utf-8' ?>
+<tocdata>
+<book name="Modeling and Setup File Commands" url="pro_205.htm#Modeling_and_Setup_Filebc-142" >
+  <item name="Variable Data Store Commands" url="pro_205.htm#Variable_Data_Storebc-143" />
+  <item name="Trap-Related Commands" url="pro_205.htm#Trap_Related_Commandsbc-144" />
+  <item name="Syslog-Related Commands" url="pro_205.htm#Syslog_Related_Commandsbc-145" />
+  <item name="Agent Parameter Commands" url="pro_205.htm#Agent_Parameter_Commandsbc-146" />
+  <item name="Agent Behavior Commands" url="pro_205.htm#Agent_Behavior_Commandsbc-147" />
+  <item name="PDU Processing Commands" url="pro_205.htm#PDU_Processing_Commandsbc-148" />
+  <item name="TCL/SNMP Debugging Commands" url="pro_205.htm#TCL_SNMP_Debuggingbc-149" />
+  <item name="Diffie-Hellman Commands" url="pro_205.htm#Diffie_Hellman_Commandsbc-150" />
+  <item name="DHCP Commands" url="pro_205.htm#DHCP_Commandsbc-151" />
+  <item name="Stopwatch Related Commands" url="pro_205.htm#Stopwatch_Relatedbc-152" />
+  <item name="FTP Server Commands" url="pro_205.htm#FTP_Server_Commandsbc-153" />
+  <item name="FTP Client Commands" url="pro_205.htm#FTP_Client_Commandsbc-154" />
+  <item name="TFTP Server Commands" url="pro_205.htm#TFTP_Server_Commandsbc-155" />
+  <item name="TFTP Client Commands" url="pro_205.htm#TFTP_Client_Commandsbc-156" />
+  <item name="TOD Related Commands" url="pro_205.htm#TOD_Related_Commandsbc-157" />
+  <item name="NTP Related Commands" url="pro_205.htm#NTP_Related_Commandsbc-158" />
+  <item name="Telnet/CLI Related Commands" url="pro_205.htm#Telnet_CLI_Relatedbc-159" />
+  <item name="TL1 Related Commands" url="pro_205.htm#TL1_Related_Commandsbc-160" />
+  <item name="Netflow Related Commands" url="pro_205.htm#Netflow_Related_Commandsbc-161" />
+  <item name="SOAP and XML Related Commands" url="pro_205.htm#SOAP_and_XML_Relatedbc-162" />
+  <item name="HTTP Client Related Commands" url="pro_205.htm#HTTP_Client_Relatedbc-163" />
+  <item name="Radius Related Commands" url="pro_205.htm#Radius_Related_Commandsbc-164" />
+  <item name="IPMI Related Commands" url="pro_205.htm#IPMI_Related_Commandsbc-165" />
+  <item name="Netconf Related Commands" url="pro_205.htm#Netconf_Related_Commandsbc-166" />
+</book>
+<item name="Commands Available for Use in Setup Files Only" url="pro_205.htm#Commands_Available_forbc-167" />
+
+</tocdata>
